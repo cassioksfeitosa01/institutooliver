@@ -110,7 +110,7 @@ textarea {
   /* CONTROLADOR DA FOTO: Aqui nós aumentamos a altura dela */
   .sec2 .caixa-imagem img {
     width: 100%;
-    height: 700px;      /* AUMENTA A ALTURA: Vá aumentando esse número para a foto crescer para baixo! */
+    height: 860px;      /* AUMENTA A ALTURA: Vá aumentando esse número para a foto crescer para baixo! */
     object-fit: cover;  /* MÁGICA: Não deixa a foto esticar ou distorcer o desenho */
     display: block;
   }
@@ -126,11 +126,6 @@ textarea {
     bottom: 20px;       /* Mude para 0px, 15px, 20px para achar o ponto perfeito */
   }
 
-
-  .sec3{
-    margin-top: 0px; /* Mantém colado na de cima */
-
-  }
 
 
 
