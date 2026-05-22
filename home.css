@@ -95,8 +95,15 @@ textarea {
     line-height: 1.4;
 }
 
-.sec2 .caixa-texto {
-    top: 40%;
+
+  /* TODO: AJUSTE DAS DE CADA SEÇÃO */
+
+  .sec1 {
+    transform: translateY(50px);
+  }
+
+  .sec2 .caixa-texto {
+    top: 50%;
 
     
 }
@@ -105,18 +112,12 @@ textarea {
     background: #000;
 }
 
-  /* TODO: AJUSTE DAS DE CADA SEÇÃO */
+.sec3 {
+    padding-bottom: 200px;
+    background: #000;
+}
 
-  .sec1 {
-    transform: translateY(50px);
-  }
-
-  /* O ponto antes do nome indica que é uma classe do HTML */
-  .sec2 .caixa-texto {
-    margin-top: 80px;
-    /* Altere o valor para abaixar o quanto quiser */
-  }
-       /* Coloca esta seção "na frente" da que vem abaixo */
+       
 }
 
 
