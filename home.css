@@ -32,3 +32,498 @@ textarea {
     background: transparent;
     border: none;
 }
+
+/*FIXME:CELULAR (Telas ATÉ 768px - EM PÉ)*/
+
+@media screen and (max-width: 768px) {
+
+    /* Aplica suas cores e tamanhos automáticos */
+    .titulo {
+        color: #e5b702;
+        font-weight: 900;
+        font-size: 6.5vw;
+        /* Encolhe e estica sozinho no celular */
+        margin-bottom: 10px;
+    }
+
+    .subtitulo {
+        color: #ffffff;
+        font-size: 4.5vw;
+        /* Adapta o tamanho automaticamente */
+        margin-bottom: 15px;
+    }
+
+    .descricao {
+        color: #99a0aa;
+        font-size: 3.8vw;
+        /* Garante que a última linha caiba em qualquer tela */
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    /*TODO: Seção 1 */
+
+    .sec1 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .sec1 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec1 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec1 .caixa-texto {
+        position: absolute;
+        top: 35%;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 2;
+    }
+
+    /*TODO: Seção 2 */
+
+    .sec2 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+        /* ESCONDE A LINHA: Pinta o fundo de preto para esconder frestas */
+        background-color: #010101;
+
+        /* CRIA O ESPAÇO EMBAIXO: Empurra a próxima seção para não ficar colada */
+        padding-bottom: 70px;
+    }
+
+    .sec2 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec2 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec2 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 50%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    /*TODO: Seção 3 */
+
+    .sec3 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+        /* ESCONDE A LINHA: Pinta o fundo de preto para esconder frestas */
+        background-color: #010101;
+
+        /* CRIA O ESPAÇO EMBAIXO: Empurra a próxima seção para não ficar colada */
+        padding-bottom: 250px;
+    }
+
+    .sec3 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec3 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec3 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 45%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    /*TODO: Seção 4 */
+    .sec4 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .sec4 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec4 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec4 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 43%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    /*TODO:Seção 5 */
+    .sec5 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .sec5 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec5 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec5 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 35%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    /*TODO: Seção 6 */
+
+    .sec6 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .sec6 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec6 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec6 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 50%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    /*TODO: Seção 7 */
+
+    .sec7 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .sec7 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec7 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec7 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 50%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    /*TODO: Seção 8  */
+
+    .sec8 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .sec8 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec8 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec8 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 50%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    /*TODO: Seção 9 */
+
+    .sec9 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+        /* ESCONDE A LINHA: Pinta o fundo de preto para esconder frestas */
+        background-color: #010101;
+
+        /* CRIA O ESPAÇO EMBAIXO: Empurra a próxima seção para não ficar colada */
+        padding-bottom: 250px;
+    }
+
+    .sec9 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec9 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec9 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 50%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    /* TODO: Seção 11 */
+
+    .sec11 {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+        /* ESCONDE A LINHA: Pinta o fundo de preto para esconder frestas */
+        background-color: #010101;
+
+        /* CRIA O ESPAÇO EMBAIXO: Empurra a próxima seção para não ficar colada */
+        padding-bottom: 660px;
+    }
+
+    .sec11 .caixa-imagem {
+        width: 100vw;
+        /* Ocupa a largura exata do visor do celular */
+        height: auto;
+    }
+
+    .sec11 .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sec11 .caixa-texto {
+        /* Transforma a caixa de texto em uma camada flutuante */
+        position: absolute;
+
+        /* Empurra o texto para baixo, deixando os 40% de cima livres para o desenho */
+        top: 26%;
+
+        /* Garante que o texto ocupe quase toda a largura da tela do celular */
+        width: 90%;
+
+        /* Centraliza a caixa flutuante horizontalmente na tela */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Alinha as letras no centro para um visual mais profissional */
+        text-align: center;
+
+        /* Garante que o texto fique na camada da frente da imagem */
+        z-index: 2;
+    }
+
+    .slider .slide {
+        height: 150px;
+        width: 180px;
+    }
+
+    .slider .slide-track {
+        width: calc(180px * 14);
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-180px * 7));
+        }
+    }
+}
