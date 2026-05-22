@@ -1,0 +1,34 @@
+/* TODO: CSS GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove marcadores de bolinha de listas (ul, ol) */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove o sublinhado dos links e herda a cor do texto */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Evita que imagens quebrem o layout ou fiquem com espaços soltos */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Limpa bordas e aparências padrões de botões e inputs */
+button,
+input,
+textarea {
+    font: inherit;
+    background: transparent;
+    border: none;
+}
