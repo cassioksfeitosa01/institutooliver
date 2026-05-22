@@ -1,4 +1,4 @@
-    // FIXME: SCRIPT DO MENU: ABRE, FECHA, FAZ O "X" E CONTROLA OS SUBMENUS
+ // FIXME: SCRIPT DO MENU: ABRE, FECHA, FAZ O "X" E CONTROLA OS SUBMENUS
     
     document.addEventListener("DOMContentLoaded", () => {
             const btnMenu = document.getElementById("btn-menu");
@@ -71,5 +71,3 @@
                 realizarBusca(e.target.value, document.getElementById("resultados-lateral"), true);
             });
         });
-
-        
