@@ -33,92 +33,67 @@ textarea {
   border: none;
 }
 
+/* Estilos para Mobile (Celular) */
 @media screen and (max-width: 768px) {
-  .titulo {
+
+    .titulo {
     color: #e5b702;
     font-weight: 900;
-    font-size: 6.5vw;
-    /* Encolhe e estica sozinho no celular */
-    margin-bottom: 10px;
+    font-size: 28px; /* Tamanho ideal e forte para destaque no celular */
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px; /* Deixa as letras maiúsculas mais elegantes */
   }
 
   .subtitulo {
     color: #ffffff;
-    font-size: 4.5vw;
-    /* Adapta o tamanho automaticamente */
-    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 20px; /* Tamanho médio equilibrado */
+    margin-bottom: 12px;
+    line-height: 1.3; /* Evita que as linhas do subtítulo fiquem coladas */
   }
 
   .descricao {
     color: #99a0aa;
-    font-size: 3.8vw;
-    /* Garante que a última linha caiba em qualquer tela */
-    line-height: 1.6;
-    margin-bottom: 25px;
+    font-size: 15px; /* Padrão perfeito para leitura de textos longos no mobile */
+    line-height: 1.6; /* Dá um respiro excelente para os olhos do usuário */
+    margin-bottom: 20px; /* Um pouquinho mais de espaço antes do próximo elemento */
   }
+
 
   .sec {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    overflow: hidden;
-}
 
-.sec .caixa-imagem img {
-    width: 100%;
-    display: block;
-}
-
-.sec .caixa-texto {
-    position: absolute;
-
-    bottom: 8%;
-    /* desce o texto pra parte preta */
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 90%;
-
-    text-align: center;
-
-    z-index: 2;
-
-    padding: 10px;
-
-    box-sizing: border-box;
-}
-
-.caixa-texto h1,
-.caixa-texto p {
-    margin-bottom: 10px;
-    line-height: 1.4;
-}
-
-
-  /* TODO: AJUSTE DAS DE CADA SEÇÃO */
-
-  .sec1 {
-    transform: translateY(50px);
+    /* CONTROLADOR DA FOTO INTEIRA: Baixa a foto para sair de trás do cabeçalho */
+    margin-top: 50px; /* Aumente esse número positivo para a foto IR DESCENDO */
   }
 
-  .sec2 .caixa-texto {
-    top: 50%;
+  .caixa-imagem {
+    width: 100%;
+    margin-bottom: 70px; 
+  }
 
-    
-}
-.sec2 {
-    padding-bottom: 45px;
-    background: #000;
+  .caixa-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .caixa-texto {
+    width: 100%;       
+    padding: 20px;     
+    text-align: center; 
+    margin-top: -50px; 
+  }
+
+
+
 }
 
-.sec3 {
-    padding-bottom: 200px;
-    background: #000;
-}
 
-       
-}
+
 
 
 
