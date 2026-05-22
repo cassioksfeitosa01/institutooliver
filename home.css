@@ -36,46 +36,49 @@ textarea {
 /* Estilos para Mobile (Celular) */
 @media screen and (max-width: 768px) {
 
-    .titulo {
+  .titulo {
     color: #e5b702;
     font-weight: 900;
-    font-size: 28px; /* Tamanho ideal e forte para destaque no celular */
+    font-size: 28px;
+    /* Tamanho ideal e forte para destaque no celular */
     margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.5px; /* Deixa as letras maiúsculas mais elegantes */
+    letter-spacing: 0.5px;
+    /* Deixa as letras maiúsculas mais elegantes */
   }
 
   .subtitulo {
     color: #ffffff;
     font-weight: 700;
-    font-size: 20px; /* Tamanho médio equilibrado */
+    font-size: 20px;
+    /* Tamanho médio equilibrado */
     margin-bottom: 12px;
-    line-height: 1.3; /* Evita que as linhas do subtítulo fiquem coladas */
+    line-height: 1.3;
+    /* Evita que as linhas do subtítulo fiquem coladas */
   }
 
   .descricao {
     color: #99a0aa;
-    font-size: 15px; /* Padrão perfeito para leitura de textos longos no mobile */
-    line-height: 1.6; /* Dá um respiro excelente para os olhos do usuário */
-    margin-bottom: 20px; /* Um pouquinho mais de espaço antes do próximo elemento */
+    font-size: 15px;
+    /* Padrão perfeito para leitura de textos longos no mobile */
+    line-height: 1.6;
+    /* Dá um respiro excelente para os olhos do usuário */
+    margin-bottom: 20px;
+    /* Um pouquinho mais de espaço antes do próximo elemento */
   }
 
 
+  /* SUA PRIMEIRA SEÇÃO */
   .sec {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    /* OBRIGATÓRIO: Cria a caixinha protetora para o texto não fugir */
     width: 100%;
-
-    /* CONTROLADOR DA FOTO INTEIRA: Baixa a foto para sair de trás do cabeçalho */
-    margin-top: 50px; /* Aumente esse número positivo para a foto IR DESCENDO */
+    margin-top: 60px;
+    /* Afasta do cabeçalho */
   }
 
   .caixa-imagem {
     width: 100%;
-    
-    /* CONTROLADOR DA FOTO: Empurra tudo o que está abaixo dela para baixo */
-    /* Aumente esse número para a foto empurrar o texto mais para baixo */
-    margin-bottom: 70px; 
   }
 
   .caixa-imagem img {
@@ -85,15 +88,18 @@ textarea {
   }
 
   .caixa-texto {
-    width: 100%;       
-    padding: 20px;     
-    text-align: center; 
+    position: absolute;
+    /* O texto flutua sobre a foto e NÃO empurra nada para baixo */
+    width: 100%;
+    padding: 20px;
+    text-align: center;
 
-    /* CONTROLADOR DO TEXTO: Puxa o texto para cima (entra na área da foto) */
-    /* Aumente o número negativo (ex: -70px) para o texto SUBIR mais */
-    /* Diminue o número negativo (ex: -30px) para o texto DESCER */
-    margin-top: -50px; 
+    /* SEU CONTROLADOR DE ALTURA INDEPENDENTE */
+    /* Altere apenas este número para subir ou descer o texto na foto */
+    bottom: -10px;
+    /* 20px deixa no fundo preto. Aumente para 80px, 120px para ir subindo pro meio */
   }
+
 
 
 
