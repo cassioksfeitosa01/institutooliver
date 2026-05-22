@@ -104,10 +104,15 @@ textarea {
 
 }
 
-/* AJUSTE DAS DE CADA SEÇÃO */
+/* TODO: AJUSTE DAS DE CADA SEÇÃO */
 
 .sec1 {
     transform: translateY(50px);
+}
+
+.sec2 .caixa-texto{
+      top: 60%;
+    /* Move a caixa de texto para 35% da altura da seção */
 }
 
 }
