@@ -67,14 +67,10 @@ textarea {
     /* Um pouquinho mais de espaço antes do próximo elemento */
   }
 
-
-  /* SUA PRIMEIRA SEÇÃO */
   .sec {
     position: relative;
-    /* OBRIGATÓRIO: Cria a caixinha protetora para o texto não fugir */
     width: 100%;
-    margin-top: 60px;
-    /* Afasta do cabeçalho */
+    
   }
 
   .caixa-imagem {
@@ -83,52 +79,40 @@ textarea {
 
   .caixa-imagem img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    /* Faz a foto se ajustar e preencher a caixa sem distorcer */
     display: block;
   }
 
   .caixa-texto {
     position: absolute;
-    /* O texto flutua sobre a foto e NÃO empurra nada para baixo */
     width: 100%;
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
+    /* Garante que o padding não quebre a largura */
 
-    /* SEU CONTROLADOR DE ALTURA INDEPENDENTE */
-    /* Altere apenas este número para subir ou descer o texto na foto */
-    bottom: -10px;
-    /* 20px deixa no fundo preto. Aumente para 80px, 120px para ir subindo pro meio */
+    /* Posiciona exatamente 40px abaixo do meio */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(70px);
   }
 
-  /* SUA SEGUNDA SEÇÃO */
-  .sec2 {
-    position: relative;
-    width: 100%;
-    margin-top: 0px;
+  .sec1{
+
+    margin-top: 60px;
+
+
   }
 
-  /* CONTROLADOR DA FOTO: Aqui nós aumentamos a altura dela */
-  .sec2 .caixa-imagem img {
-    width: 100%;
-    height: 860px;      /* AUMENTA A ALTURA: Vá aumentando esse número para a foto crescer para baixo! */
-    object-fit: cover;  /* MÁGICA: Não deixa a foto esticar ou distorcer o desenho */
-    display: block;
+  .sec2{
+
+    margin-top: -1px;
+
+
+
   }
-
-  /* CONTROLADOR DO TEXTO */
-  .sec2 .caixa-texto {
-    position: absolute;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    
-    /* Agora você tem espaço! Use números seguros para encaixar no fundo preto */
-    bottom: 20px;       /* Mude para 0px, 15px, 20px para achar o ponto perfeito */
-  }
-
-
-
-
 
 
 
