@@ -412,3 +412,59 @@ textarea {
 .botao:active {
     transform: scale(0.95);
 }
+
+/* FIXME: RODAPÉ CONFIGURAÇÃO DO  (FOOTER) */
+
+/* Seleciona a tag principal do rodapé da página */
+footer {
+    /* Define a cor de fundo do rodapé como preto puro */
+    background-color: #000000;
+
+    /* Faz o rodapé ocupar toda a largura disponível da tela (100%) */
+    width: 100%;
+
+    /* Cria uma linha amarela/dourada de 2 pixels de espessura no topo do rodapé */
+    border-top: 2px solid #e5b702;
+
+    /* Ativa o modelo Flexbox para alinhar os elementos dentro do rodapé */
+    display: flex;
+
+    /* Organiza os elementos internos empilhados um embaixo do outro (em coluna) */
+    flex-direction: column;
+
+    /* Centraliza horizontalmente todos os elementos que estão dentro do rodapé */
+    align-items: center;
+
+    /* Centraliza verticalmente todos os elementos que estão dentro do rodapé */
+    justify-content: center;
+
+    /* Define 12px de espaço interno no topo/base e 0 nas laterais (deixa a barra fina) */
+    padding: 8px 0;
+
+    /* Remove qualquer espaço externo no topo para colar perfeitamente na seção anterior */
+    margin-top: 0;
+}
+
+/* Seleciona a imagem/logotipo que está dentro do rodapé */
+.footer-logo {
+    /* Força a altura da imagem a ficar fixa em 30 pixels, ignorando outras regras */
+    height: 30px !important;
+
+    /* Faz a largura se ajustar sozinha e proporcionalmente à altura definida */
+    width: auto !important;
+
+    /* Cria um espaço de 5 pixels abaixo da logo para ela não grudar no texto */
+    margin-bottom: 5px;
+}
+
+/* Seleciona as tags de parágrafo de texto que estão dentro do rodapé */
+footer p {
+    /* Define a cor do texto em um tom de cinza claro/médio */
+    color: #99a0aa;
+
+    /* Define o tamanho da fonte do texto para 12 pixels */
+    font-size: 12px;
+
+    /* Reseta e remove qualquer margem padrão que o navegador coloque no parágrafo */
+    margin: 0;
+}
