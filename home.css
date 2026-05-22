@@ -61,46 +61,49 @@ textarea {
     position: relative;
     width: 100%;
     overflow: hidden;
-    display: block;
-  }
+}
 
-  .sec .caixa-imagem {
-    width: 100vw;
-    /* Ocupa a largura exata do visor do celular */
-    height: auto;
-  }
-
-  .sec .caixa-imagem img {
+.sec .caixa-imagem img {
     width: 100%;
-    height: auto;
     display: block;
-  }
+}
 
-  .sec .caixa-texto {
-
+.sec .caixa-texto {
     position: absolute;
-    /* Permite posicionar o texto livremente sobre a imagem */
 
-    top: 45%;
-    /* Move a caixa de texto para 35% da altura da seção */
-
-    width: 90%;
-    /* Faz a caixa ocupar 90% da largura disponível */
+    bottom: 8%;
+    /* desce o texto pra parte preta */
 
     left: 50%;
-    /* Move o início da caixa para o centro horizontal da tela */
 
     transform: translateX(-50%);
-    /* Puxa a caixa metade do próprio tamanho para trás,
-       deixando ela perfeitamente centralizada */
+
+    width: 90%;
 
     text-align: center;
-    /* Centraliza todos os textos dentro da caixa */
 
     z-index: 2;
-    /* Coloca a caixa acima da imagem e de elementos com z-index menor */
 
-  }
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+
+.caixa-texto h1,
+.caixa-texto p {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.sec2 .caixa-texto {
+    top: 40%;
+
+    
+}
+.sec2 {
+    padding-bottom: 45px;
+    background: #000;
+}
 
   /* TODO: AJUSTE DAS DE CADA SEÇÃO */
 
@@ -110,14 +113,10 @@ textarea {
 
   /* O ponto antes do nome indica que é uma classe do HTML */
   .sec2 .caixa-texto {
-    margin-top: 50px;
+    margin-top: 80px;
     /* Altere o valor para abaixar o quanto quiser */
   }
-  .se2 {
-      margin-bottom: 200px;
-    /* Aumente ou diminua os pixels para mudar o tamanho do espaço */
-  }
-
+       /* Coloca esta seção "na frente" da que vem abaixo */
 }
 
 
