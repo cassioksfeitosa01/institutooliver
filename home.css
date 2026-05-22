@@ -72,6 +72,9 @@ textarea {
 
   .caixa-imagem {
     width: 100%;
+    
+    /* CONTROLADOR DA FOTO: Empurra tudo o que está abaixo dela para baixo */
+    /* Aumente esse número para a foto empurrar o texto mais para baixo */
     margin-bottom: 70px; 
   }
 
@@ -85,8 +88,13 @@ textarea {
     width: 100%;       
     padding: 20px;     
     text-align: center; 
+
+    /* CONTROLADOR DO TEXTO: Puxa o texto para cima (entra na área da foto) */
+    /* Aumente o número negativo (ex: -70px) para o texto SUBIR mais */
+    /* Diminue o número negativo (ex: -30px) para o texto DESCER */
     margin-top: -50px; 
   }
+
 
 
 
