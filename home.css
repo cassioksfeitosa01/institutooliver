@@ -33,7 +33,8 @@ textarea {
     border: none;
 }
 
-        .titulo {
+@media screen and (max-width: 768px){
+     .titulo {
         color: #e5b702;
         font-weight: 900;
         font-size: 6.5vw;
@@ -82,7 +83,7 @@ textarea {
     position: absolute;
     /* Permite posicionar o texto livremente sobre a imagem */
 
-    top: 40%;
+    top: 45%;
     /* Move a caixa de texto para 35% da altura da seção */
 
     width: 90%;
@@ -101,4 +102,313 @@ textarea {
     z-index: 2;
     /* Coloca a caixa acima da imagem e de elementos com z-index menor */
 
+}
+
+/* AJUSTE DAS DE CADA SEÇÃO */
+
+.sec1 {
+    transform: translateY(40px);
+}
+
+}
+
+/* FIXME: BARRA DE NAVEGAÇÃO E MENU */
+.navbar {
+    background-color: #000000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3%;
+    border-bottom: 2px solid #e5b702;
+    box-sizing: border-box;
+}
+
+.nav-logo img {
+    height: 35px !important;
+    width: auto !important;
+    display: block;
+}
+
+/* --- BUSCA DO TOPO (MANTIDA IGUAL) --- */
+.busca-topo-container {
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
+    position: relative;
+}
+
+#campo-busca-topo {
+    width: 100%;
+    padding: 10px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#campo-busca-topo:focus {
+    border-color: #e5b702;
+}
+
+#resultados-topo {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1002;
+}
+
+/* --- MENU LATERAL (X) --- */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffce08;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #050505;
+    padding: 80px 25px 25px 25px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+/* BUSCA LATERAL (MANTIDA IGUAL) */
+.busca-lateral-container {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+#campo-busca-lateral {
+    width: 100%;
+    padding: 10px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#campo-busca-lateral:focus {
+    border-color: #e5b702;
+}
+
+/* Links e Itens do Menu */
+.nav-links a,
+.menu-item-cat {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 0;
+    display: block;
+    cursor: pointer;
+}
+
+.nav-links a:hover,
+.menu-item-cat:hover {
+    color: #ffce08;
+}
+
+/* ESTILO DOS SUBMENUS (Para aceitar vários níveis) */
+.submenu {
+    display: none;
+    padding-left: 15px;
+    border-left: 2px solid #e5b702;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.submenu.open {
+    display: block;
+}
+
+/* Estilo dos itens dentro dos submenus */
+.submenu a {
+    font-size: 14px;
+    font-weight: normal;
+    color: #99a0aa;
+}
+
+.resultado-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #222;
+    display: block;
+    font-size: 14px;
+    color: #fff;
+}
+
+.resultado-item:hover {
+    background: #222;
+    color: #ffce08;
+}
+
+.menu-escondido {
+    display: none !important;
+}
+
+/*FIXME: BOTÃO*/
+
+.caixa-botao {
+    display: flex;
+    flex-direction: column;
+    /* Padrão: um embaixo do outro */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    /* Espaço entre os botões */
+    width: 100%;
+    margin: 20px 0;
+}
+
+/*:REGRA PARA 4 BOTÕES: Se houver pelo menos 4, vira Grid 2x2 */
+
+.caixa-botao:has(.botao:nth-child(4)) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Duas colunas */
+    justify-items: center;
+    gap: 10px;
+    padding: 0 5%;
+}
+
+/* O BOTÃO ESTILIZADO */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+
+    background-color: #ffce08;
+    color: #000000;
+
+    /* Ajuste de fonte responsiva */
+    font-size: clamp(14px, 3.5vw, 18px);
+
+    white-space: normal;
+    /* Permite quebrar linha se o texto for grande */
+    word-wrap: break-word;
+    line-height: 1.2;
+
+    /* Espaçamento interno */
+    padding: 0.6em 2vw;
+
+    /* Altura mínima para elegância */
+    min-height: 3em;
+
+    border-radius: 5px;
+
+    /* Largura automática para se adaptar ao container */
+    width: 100%;
+    max-width: 85%;
+    /* Limita para não ficar colado nas bordas */
+
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* Garante que o padding não aumente o tamanho final */
+}
+
+/* Ajuste específico para os botões ficarem iguais no grid 2x2 */
+.caixa-botao:has(.botao:nth-child(4)) .botao {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    /* Faz todos terem a mesma altura no grid */
+}
+
+/* O RAIO DE BRILHO: Linha de luz passando continuamente */
+.botao::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    animation: passarBrilho 3s infinite ease-in-out;
+}
+
+/* ANIMAÇÃO DO BRILHO */
+@keyframes passarBrilho {
+    0% {
+        left: -50%;
+    }
+
+    30% {
+        left: 125%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+/* Efeito ao tocar */
+.botao:active {
+    transform: scale(0.95);
 }
