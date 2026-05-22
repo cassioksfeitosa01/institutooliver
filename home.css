@@ -60,8 +60,7 @@ textarea {
     .sec {
         position: relative;
         width: 100%;
-        margin: 0;
-        padding: 0;
+
         overflow: hidden;
         display: block;
     }
@@ -106,14 +105,32 @@ textarea {
 
 /* TODO: AJUSTE DAS DE CADA SEÇÃO */
 
-.sec1 {
+.sec1{
     transform: translateY(50px);
 }
 
-.sec2 .caixa-texto{
-      top: 53%;
-    /* Move a caixa de texto para 35% da altura da seção */
+
+/* Adicione apenas isto para a segunda seção */
+.sec2 {
+    height: 1084px; /* Define a altura que você precisa */
 }
+
+.sec2 .caixa-imagem {
+    height: 100%; /* Obriga a caixa a ter os mesmos 1084px */
+}
+
+.sec2 .caixa-imagem img {
+    height: 100%;       /* Força a foto a esticar até o final */
+    object-fit: cover;  /* Faz a foto preencher tudo sem distorcer e sem deixar espaços */
+}
+
+}
+
+
+
+
+
+
 
 }
 
