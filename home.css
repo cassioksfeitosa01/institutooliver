@@ -37,7 +37,23 @@ textarea {
 @media screen and (max-width: 768px) {}
 
 /*FIXME: COMPUTADO TELAS ACIMA DE 769PX*/
-@media screen and (min-width: 769px) {}
+@media screen and (min-width: 769px) {
+
+  .caixa-imagem{
+
+  }
+
+    .caixa-imagem img{
+
+  }
+
+  .caixa-texto{
+
+  }
+
+}
+
+
 
 /*FIXME:CELULAR (Telas ATÉ 600px - EM PÉ)*/
 @media (max-width: 600px) {
