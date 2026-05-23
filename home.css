@@ -33,27 +33,177 @@ textarea {
   border: none;
 }
 
+.titulo {
+  color: #e5b702;
+  font-weight: 900;
+  font-size: 28px;
+  /* Tamanho ideal e forte para destaque no celular */
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* Deixa as letras maiúsculas mais elegantes */
+}
+
+.subtitulo {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+  /* Tamanho médio equilibrado */
+  margin-bottom: 12px;
+  line-height: 1.3;
+  /* Evita que as linhas do subtítulo fiquem coladas */
+}
+
+.descricao {
+  color: #99a0aa;
+  font-size: 15px;
+  /* Padrão perfeito para leitura de textos longos no mobile */
+  line-height: 1.6;
+  /* Dá um respiro excelente para os olhos do usuário */
+  margin-bottom: 20px;
+  /* Um pouquinho mais de espaço antes do próximo elemento */
+}
+
 /*FIXME: CELULAR TELAS ACIMA DE 768PX*/
 @media screen and (max-width: 768px) {}
 
 /*FIXME: COMPUTADO TELAS ACIMA DE 769PX*/
 @media screen and (min-width: 769px) {
 
-  .caixa-imagem{
-
+  /* ==========================================================================
+   REGRAS GERAIS PARA TODAS AS SEÇÕES (Aplica na sec1, sec2, etc.)
+   ========================================================================== */
+  .sec {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 620px;
+    margin: 0 auto;
+    overflow: hidden;
   }
 
-    .caixa-imagem img{
-
+  /* Força a imagem de fundo de qualquer seção a ir para trás */
+  .caixa-imagem,
+  .caixa-imagem picture,
+  .caixa-imagem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  .caixa-texto{
-
+  .caixa-imagem img {
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
   }
+
+  /* Configuração base da Caixa de Texto para TODAS as seções */
+  .caixa-texto {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 40%;
+    /* Garante os 40% de largura para quebrar o texto */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    /* Texto branco padrão */
+  }
+
+  /* ==========================================================================
+   AS CHAVES QUE LIGAM OS LADOS (O caminho direto que você queria)
+   ========================================================================== */
+
+  /* Quando você colocar 'texto-esquerda' no HTML, ativa isso: */
+  .caixa-texto.texto-esquerda {
+    /* ==========================================================================
+     1. CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA)
+     ========================================================================== */
+    /* Garante que a caixa comece encostada no lado esquerdo da tela */
+    margin-left: 0;
+
+    /* Cria uma margem na direita para o texto não passar do meio da tela.
+     Se quiser o texto terminando antes do meio, mude para 55% ou 60% */
+    margin-right: 50%;
+
+    /* ==========================================================================
+     2. CONTROLE DE ALTURA E SUBIR/BAIXAR O TEXTO
+     ========================================================================== */
+    /* Remove o "height: 100%" padrão para o texto não ocupar a seção inteira */
+    height: auto;
+
+    /* AJUSTE PARA SUBIR OU BAIXAR: 
+     Vou deixar uma margem inicial de 100px. 
+     Aumente o valor para BAIXAR o texto (ex: 150px). 
+     Diminua o valor para SUBIR o texto (ex: 40px). */
+    margin-top: 150px;
+
+    /* ==========================================================================
+     3. CONTROLE DE LARGURA (DEIXAR MAIS LARGA OU ESTREITA)
+     ========================================================================== */
+    /* Altera a largura máxima do texto na esquerda. 
+     Aumente para o texto ficar MAIS LARGO (ocupar mais espaço em direção ao centro). 
+     Diminua para o texto ficar MAIS ESTREITO (quebrar linhas mais rápido). */
+    max-width: 38%;
+
+    /* ==========================================================================
+     4. ALINHAMENTO DA ESCRITA
+     ========================================================================== */
+    /* Alinha os blocos (como títulos e botões) no início da escrita (esquerda) */
+    align-items: flex-start;
+
+    /* Faz as frases começarem retas pela esquerda */
+    text-align: left;
+  }
+
+  /* Quando você colocar 'texto-direita' no HTML, ativa isso: */
+  .caixa-texto.texto-direita {
+    /* ==========================================================================
+     1. CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA)
+     ========================================================================== */
+    /* Empurra a caixa para começar perto do MEIO da seção. 
+     Se quiser mais para a esquerda diminua (ex: 45%). Se quiser mais para a direita aumente (ex: 55%) */
+    margin-left: 50%;
+    margin-right: auto;
+
+    /* ==========================================================================
+     2. CONTROLE DE ALTURA E SUBIR/BAIXAR O TEXTO
+     ========================================================================== */
+    /* Remove o "height: 100%" padrão para o texto não ocupar a seção inteira */
+    height: auto;
+
+    /* AJUSTE PARA SUBIR OU BAIXAR: Escolha uma das duas opções abaixo para usar:
+     Opção A (Mais fácil): Use 'margin-top' com px para empurrar o texto para baixo.
+     Opção B: Mude o 'justify-content' da seção se quiser centralizado. 
+     Vou deixar uma margem inicial de 100px. Aumente para BAIXAR, diminua para SUBIR. */
+    margin-top: 100px;
+
+    /* ==========================================================================
+     3. CONTROLE DE LARGURA (DEIXAR MAIS LARGA OU ESTREITA)
+     ========================================================================== */
+    /* Altera a largura máxima do texto. 
+     Aumente para o texto ficar MAIS LARGO (ocupar mais espaço para a direita). 
+     Diminua para o texto ficar MAIS ESTREITO (quebrar linhas mais rápido). */
+    max-width: 45%;
+
+    /* ==========================================================================
+     4. ALINHAMENTO DA ESCRITA
+     ========================================================================== */
+    /* Alinha os blocos (como o botão) no início da escrita */
+    align-items: flex-start;
+
+    /* Faz as frases começarem da esquerda para a direita, como uma leitura normal */
+    text-align: left;
+  }
+
+
+
 
 }
-
-
 
 /*FIXME:CELULAR (Telas ATÉ 600px - EM PÉ)*/
 @media (max-width: 600px) {
