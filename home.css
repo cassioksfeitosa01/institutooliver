@@ -160,7 +160,6 @@ textarea {
     text-align: left;
   }
 
-  /* Quando você colocar 'texto-direita' no HTML, ativa isso: */
   .caixa-texto.texto-direita {
     /* ==========================================================================
      1. CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA)
@@ -188,7 +187,7 @@ textarea {
     /* Altera a largura máxima do texto. 
      Aumente para o texto ficar MAIS LARGO (ocupar mais espaço para a direita). 
      Diminua para o texto ficar MAIS ESTREITO (quebrar linhas mais rápido). */
-    max-width: 45%;
+    max-width: 50%;
 
     /* ==========================================================================
      4. ALINHAMENTO DA ESCRITA
@@ -200,8 +199,18 @@ textarea {
     text-align: left;
   }
 
+ .sec3 .caixa-texto{
+  max-width: 50%;
+ }
 
+  .sec5 .caixa-texto{
+  max-width: 50%;
+ }
 
+  .sec7 .caixa-texto{
+  max-width: 50%;
+ }
+  
 
 }
 
@@ -220,6 +229,19 @@ textarea {
     height: 28px !important;
   }
 }
+
+.lista-check {
+  list-style: none; /* Remove a bola padrão */
+  padding-left: 0;
+}
+
+.lista-check li::before {
+  content: "✓ "; /* Desenha o V direto */
+  color: #FFD62F; /* Cor do V (troque por gold se quiser dourado) */
+  font-weight: bold;
+  margin-right: 8px;
+}
+
 
 /* FIXME: BARRA DE NAVEGAÇÃO E MENU */
 .navbar {
@@ -727,6 +749,7 @@ body {
     transform: translateX(calc(-180px * 7));
   }
 }
+
 
 
 /* FIXME: RODAPÉ CONFIGURAÇÃO DO  (FOOTER) */
