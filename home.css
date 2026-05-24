@@ -1,106 +1,100 @@
-/* TODO: CSS GERAL */
+/* FIXME: CSS PARA CORRIGIR ERROS NO CODIGO */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Remove marcadores de bolinha de listas (ul, ol) */
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 /* Remove o sublinhado dos links e herda a cor do texto */
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Evita que imagens quebrem o layout ou fiquem com espaços soltos */
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Limpa bordas e aparências padrões de botões e inputs */
 button,
 input,
 textarea {
-  font: inherit;
-  background: transparent;
-  border: none;
+    font: inherit;
+    background: transparent;
+    border: none;
 }
 
+/*FIXME: TITULO DESCRIÇÃO  */
+
 .titulo {
-  color: #e5b702;
-  font-weight: 900;
-  font-size: 28px;
-  /* Tamanho ideal e forte para destaque no celular */
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  /* Deixa as letras maiúsculas mais elegantes */
+    color: #e5b702;
+    font-weight: 900;
+    font-size: 28px;
+    /* Tamanho ideal e forte para destaque no celular */
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    /* Deixa as letras maiúsculas mais elegantes */
 }
 
 .subtitulo {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 20px;
-  /* Tamanho médio equilibrado */
-  margin-bottom: 12px;
-  line-height: 1.3;
-  /* Evita que as linhas do subtítulo fiquem coladas */
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    /* Tamanho médio equilibrado */
+    margin-bottom: 12px;
+    line-height: 1.3;
+    /* Evita que as linhas do subtítulo fiquem coladas */
 }
 
 .descricao {
-  color: #99a0aa;
-  font-size: 15px;
-  /* Padrão perfeito para leitura de textos longos no mobile */
-  line-height: 1.6;
-  /* Dá um respiro excelente para os olhos do usuário */
-  margin-bottom: 20px;
-  /* Um pouquinho mais de espaço antes do próximo elemento */
+    color: #99a0aa;
+    font-size: 15px;
+    /* Padrão perfeito para leitura de textos longos no mobile */
+    line-height: 1.6;
+    /* Dá um respiro excelente para os olhos do usuário */
+    margin-bottom: 20px;
+    /* Um pouquinho mais de espaço antes do próximo elemento */
 }
 
-/*FIXME: CELULAR TELAS ACIMA DE 768PX*/
-@media screen and (max-width: 768px) {}
-
-/*TODO: COMPUTADO TELAS ACIMA DE 769PX*/
-@media screen and (min-width: 769px) {
-
-  /* ==========================================================================
-   REGRAS GERAIS PARA TODAS AS SEÇÕES (Aplica na sec1, sec2, etc.)
-   ========================================================================== */
-  .sec {
+/* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
+.sec {
     position: relative;
     width: 100%;
     max-width: 1920px;
     height: 620px;
     margin: 0 auto;
     overflow: hidden;
-  }
+}
 
-  /* Força a imagem de fundo de qualquer seção a ir para trás */
-  .caixa-imagem,
-  .caixa-imagem picture,
-  .caixa-imagem img {
+/* TODO: Força a imagem de fundo de qualquer seção a ir para trás */
+.caixa-imagem,
+.caixa-imagem picture,
+.caixa-imagem img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  }
+}
 
-  .caixa-imagem img {
+.caixa-imagem img {
     object-fit: cover;
     object-position: center;
     z-index: 1;
-  }
+}
 
-  /* Configuração base da Caixa de Texto para TODAS as seções */
-  .caixa-texto {
+/* TODO:Configuração base da Caixa de Texto para TODAS as seções */
+.caixa-texto {
     position: relative;
     z-index: 2;
     height: 100%;
@@ -110,19 +104,15 @@ textarea {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #ffffff;
     /* Texto branco padrão */
-  }
+}
 
-  /* ==========================================================================
-   AS CHAVES QUE LIGAM OS LADOS (O caminho direto que você queria)
-   ========================================================================== */
+/*TODO: AS CHAVES QUE LIGAM OS LADOS  */
 
-  /* Quando você colocar 'texto-esquerda' no HTML, ativa isso: */
-  .caixa-texto.texto-esquerda {
-    /* ==========================================================================
-     1. CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA)
-     ========================================================================== */
+/* Quando você colocar 'texto-esquerda' no HTML, ativa isso: */
+.caixa-texto.texto-esquerda {
+
+    /* CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA) */
     /* Garante que a caixa comece encostada no lado esquerdo da tela */
     margin-left: 0;
 
@@ -142,9 +132,8 @@ textarea {
      Diminua o valor para SUBIR o texto (ex: 40px). */
     margin-top: 150px;
 
-    /* ==========================================================================
-     3. CONTROLE DE LARGURA (DEIXAR MAIS LARGA OU ESTREITA)
-     ========================================================================== */
+    /* TODO:CONTROLE DE LARGURA (DEIXAR MAIS LARGA OU ESTREITA) */
+
     /* Altera a largura máxima do texto na esquerda. 
      Aumente para o texto ficar MAIS LARGO (ocupar mais espaço em direção ao centro). 
      Diminua para o texto ficar MAIS ESTREITO (quebrar linhas mais rápido). */
@@ -158,13 +147,13 @@ textarea {
 
     /* Faz as frases começarem retas pela esquerda */
     text-align: left;
-  }
+}
 
-  .caixa-texto.texto-direita {
-    /* ==========================================================================
-     1. CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA)
-     ========================================================================== */
+.caixa-texto.texto-direita {
+    /* 1. CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA) */
+
     /* Empurra a caixa para começar perto do MEIO da seção. 
+
      Se quiser mais para a esquerda diminua (ex: 45%). Se quiser mais para a direita aumente (ex: 55%) */
     margin-left: 50%;
     margin-right: auto;
@@ -197,613 +186,597 @@ textarea {
 
     /* Faz as frases começarem da esquerda para a direita, como uma leitura normal */
     text-align: left;
-  }
-
- .sec3 .caixa-texto{
-  max-width: 50%;
- }
-
-  .sec5 .caixa-texto{
-  max-width: 50%;
- }
-
-  .sec7 .caixa-texto{
-  max-width: 50%;
- }
-  
-
 }
 
-/*FIXME:CELULAR (Telas ATÉ 600px - EM PÉ)*/
-@media (max-width: 600px) {
-  .busca-topo-container {
-    margin: 0 10px;
-  }
-
-  #campo-busca-topo {
-    padding: 8px 15px;
-    font-size: 12px;
-  }
-
-  .nav-logo img {
-    height: 28px !important;
-  }
+.sec3 .caixa-texto {
+    max-width: 50%;
 }
 
-.lista-check {
-  list-style: none; /* Remove a bola padrão */
-  padding-left: 0;
+.sec5 .caixa-texto {
+    max-width: 50%;
 }
 
-.lista-check li::before {
-  content: "✓ "; /* Desenha o V direto */
-  color: #FFD62F; /* Cor do V (troque por gold se quiser dourado) */
-  font-weight: bold;
-  margin-right: 8px;
+.sec7 .caixa-texto {
+    max-width: 50%;
 }
-
 
 /* FIXME: BARRA DE NAVEGAÇÃO E MENU */
 .navbar {
-  background-color: #000000;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 3%;
-  border-bottom: 2px solid #e5b702;
-  box-sizing: border-box;
+    background-color: #000000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3%;
+    border-bottom: 2px solid #e5b702;
+    box-sizing: border-box;
 }
 
 .nav-logo img {
-  height: 35px !important;
-  width: auto !important;
-  display: block;
+    height: 35px !important;
+    width: auto !important;
+    display: block;
 }
 
-/* --- BUSCA DO TOPO (MANTIDA IGUAL) --- */
+/*TODO: BUSCA DO TOPO  */
 .busca-topo-container {
-  flex-grow: 1;
-  max-width: 500px;
-  margin: 0 20px;
-  position: relative;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
+    position: relative;
 }
 
 #campo-busca-topo {
-  width: 100%;
-  padding: 10px 20px;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 25px;
-  color: #fff;
-  font-size: 14px;
-  outline: none;
-  transition: border 0.3s;
+    width: 100%;
+    padding: 10px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
 }
 
 #campo-busca-topo:focus {
-  border-color: #e5b702;
+    border-color: #e5b702;
 }
 
 #resultados-topo {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 100%;
-  background: #111;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  max-height: 300px;
-  overflow-y: auto;
-  z-index: 1002;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1002;
 }
 
-/* --- MENU LATERAL (X) --- */
+/* TODO: MENU LATERAL (X) */
 .menu-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 30px;
-  height: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
 }
 
 .menu-toggle span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #ffce08;
-  transition: all 0.3s ease-in-out;
-  border-radius: 2px;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffce08;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
 }
 
 .menu-toggle.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
 }
 
 .menu-toggle.active span:nth-child(2) {
-  opacity: 0;
+    opacity: 0;
 }
 
 .menu-toggle.active span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 .nav-links {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 300px;
-  height: 100vh;
-  background-color: #050505;
-  padding: 80px 25px 25px 25px;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
-  transition: right 0.3s ease-in-out;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #050505;
+    padding: 80px 25px 25px 25px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
 }
 
 .nav-links.active {
-  right: 0;
+    right: 0;
 }
 
-/* BUSCA LATERAL (MANTIDA IGUAL) */
+/*TODO: BUSCA LATERAL */
 .busca-lateral-container {
-  padding: 10px 0;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #333;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
 }
 
 #campo-busca-lateral {
-  width: 100%;
-  padding: 10px 20px;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 25px;
-  color: #fff;
-  font-size: 14px;
-  outline: none;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
 }
 
 #campo-busca-lateral:focus {
-  border-color: #e5b702;
+    border-color: #e5b702;
 }
 
-/* Links e Itens do Menu */
+/*TODO: Links e Itens do Menu */
 .nav-links a,
 .menu-item-cat {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 0;
-  display: block;
-  cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 0;
+    display: block;
+    cursor: pointer;
 }
 
 .nav-links a:hover,
 .menu-item-cat:hover {
-  color: #ffce08;
+    color: #ffce08;
 }
 
-/* ESTILO DOS SUBMENUS (Para aceitar vários níveis) */
+/* TODO:ESTILO DOS SUBMENUS (Para aceitar vários níveis) */
 .submenu {
-  display: none;
-  padding-left: 15px;
-  border-left: 2px solid #e5b702;
-  margin-bottom: 5px;
-  background-color: rgba(255, 255, 255, 0.02);
+    display: none;
+    padding-left: 15px;
+    border-left: 2px solid #e5b702;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
 .submenu.open {
-  display: block;
+    display: block;
 }
 
-/* Estilo dos itens dentro dos submenus */
+/*TODO: Estilo dos itens dentro dos submenus */
 .submenu a {
-  font-size: 14px;
-  font-weight: normal;
-  color: #99a0aa;
+    font-size: 14px;
+    font-weight: normal;
+    color: #99a0aa;
 }
 
 .resultado-item {
-  padding: 12px 15px;
-  border-bottom: 1px solid #222;
-  display: block;
-  font-size: 14px;
-  color: #fff;
+    padding: 12px 15px;
+    border-bottom: 1px solid #222;
+    display: block;
+    font-size: 14px;
+    color: #fff;
 }
 
 .resultado-item:hover {
-  background: #222;
-  color: #ffce08;
+    background: #222;
+    color: #ffce08;
 }
 
 .menu-escondido {
-  display: none !important;
+    display: none !important;
 }
 
 /*FIXME: BOTÃO*/
 
 .caixa-botao {
-  display: flex;
-  flex-direction: column;
-  /* Padrão: um embaixo do outro */
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  /* Espaço entre os botões */
-  width: 100%;
-  margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    /* Padrão: um embaixo do outro */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    /* Espaço entre os botões */
+    width: 100%;
+    margin: 20px 0;
 }
 
-/*:REGRA PARA 4 BOTÕES: Se houver pelo menos 4, vira Grid 2x2 */
+/*TODO: REGRA PARA 4 BOTÕES: Se houver pelo menos 4, vira Grid 2x2 */
 
 .caixa-botao:has(.botao:nth-child(4)) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* Duas colunas */
-  justify-items: center;
-  gap: 10px;
-  padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Duas colunas */
+    justify-items: center;
+    gap: 10px;
+    padding: 0 5%;
 }
 
-/* O BOTÃO ESTILIZADO */
+/*TODO: O BOTÃO ESTILIZADO */
 .botao {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
 
-  background-color: #ffce08;
-  color: #000000;
+    background-color: #ffce08;
+    color: #000000;
 
-  /* Ajuste de fonte responsiva */
-  font-size: clamp(14px, 3.5vw, 18px);
+    /* Ajuste de fonte responsiva */
+    font-size: clamp(14px, 3.5vw, 18px);
 
-  white-space: normal;
-  /* Permite quebrar linha se o texto for grande */
-  word-wrap: break-word;
-  line-height: 1.2;
+    white-space: normal;
+    /* Permite quebrar linha se o texto for grande */
+    word-wrap: break-word;
+    line-height: 1.2;
 
-  /* Espaçamento interno */
-  padding: 0.6em 2vw;
+    /* Espaçamento interno */
+    padding: 0.6em 2vw;
 
-  /* Altura mínima para elegância */
-  min-height: 3em;
+    /* Altura mínima para elegância */
+    min-height: 3em;
 
-  border-radius: 5px;
+    border-radius: 5px;
 
-  /* Largura automática para se adaptar ao container */
-  width: 100%;
-  max-width: 85%;
-  /* Limita para não ficar colado nas bordas */
+    /* Largura automática para se adaptar ao container */
+    width: 100%;
+    max-width: 85%;
+    /* Limita para não ficar colado nas bordas */
 
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  /* Garante que o padding não aumente o tamanho final */
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* Garante que o padding não aumente o tamanho final */
 }
 
-/* Ajuste específico para os botões ficarem iguais no grid 2x2 */
+/* TODO:Ajuste específico para os botões ficarem iguais no grid 2x2 */
 .caixa-botao:has(.botao:nth-child(4)) .botao {
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  /* Faz todos terem a mesma altura no grid */
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    /* Faz todos terem a mesma altura no grid */
 }
 
-/* O RAIO DE BRILHO: Linha de luz passando continuamente */
+/* TODO: O RAIO DE BRILHO: Linha de luz passando continuamente */
 .botao::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 30%;
-  height: 100%;
-  background: linear-gradient(to right,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0) 100%);
-  transform: skewX(-25deg);
-  animation: passarBrilho 3s infinite ease-in-out;
-}
-
-/* ANIMAÇÃO DO BRILHO */
-@keyframes passarBrilho {
-  0% {
+    content: "";
+    position: absolute;
+    top: 0;
     left: -50%;
-  }
-
-  30% {
-    left: 125%;
-  }
-
-  100% {
-    left: 125%;
-  }
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    animation: passarBrilho 3s infinite ease-in-out;
 }
 
-/* Efeito ao tocar */
+/* TODO: ANIMAÇÃO DO BRILHO */
+@keyframes passarBrilho {
+    0% {
+        left: -50%;
+    }
+
+    30% {
+        left: 125%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+/* TODO: Efeito ao tocar */
 .botao:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 /*FIXME: ESTRUTURA DA SEÇÃO DO MURAL OLIVER  */
 
 .mural-oliver {
-  padding: 60px 5%;
-  /* Espaço interno: 60px cima/baixo e 5% nas laterais */
-  background: #000;
-  /* Cor de fundo da seção (Preto) */
+    padding: 60px 5%;
+    /* Espaço interno: 60px cima/baixo e 5% nas laterais */
+    background: #000;
+    /* Cor de fundo da seção (Preto) */
 }
 
-/* --- GRID ESTILO MASONRY (O PAINEL DAS FOTOS) --- */
+/* TODO: GRID ESTILO MASONRY (O PAINEL DAS FOTOS) --- */
 
 .masonry-grid {
-  column-gap: 15px;
-  /* Espaço entre as colunas de fotos */
-  width: 100%;
-  /* Ocupa toda a largura disponível */
-  max-width: 2000px;
-  /* Não deixa o mural passar de 2000px de largura */
-  margin: 0 auto;
-  /* Centraliza o mural na página */
-  max-height: 2000px;
-  /* Limita a altura total do mural */
-  overflow-y: auto;
-  /* Cria a rolagem se as fotos passarem da altura máxima */
-  padding-right: 10px;
-  /* Espaço para a barra de rolagem não colar nas fotos */
-  column-count: 4;
-  /* Define que o mural terá 2 colunas (Mude isso no @media) */
+    column-gap: 15px;
+    /* Espaço entre as colunas de fotos */
+    width: 100%;
+    /* Ocupa toda a largura disponível */
+    max-width: 2000px;
+    /* Não deixa o mural passar de 2000px de largura */
+    margin: 0 auto;
+    /* Centraliza o mural na página */
+    max-height: 2000px;
+    /* Limita a altura total do mural */
+    overflow-y: auto;
+    /* Cria a rolagem se as fotos passarem da altura máxima */
+    padding-right: 10px;
+    /* Espaço para a barra de rolagem não colar nas fotos */
+    column-count: 4;
+    /* Define que o mural terá 2 colunas (Mude isso no @media) */
 }
 
-/* --- ESTILO DE CADA ITEM (MOLDURA DA FOTO) --- */
+/* TODO: ESTILO DE CADA ITEM (MOLDURA DA FOTO) --- */
 
 .masonry-item {
-  display: inline-block;
-  /* Faz o item se ajustar corretamente nas colunas */
-  width: 100%;
-  /* Garante que o item preencha a largura da coluna */
-  margin-bottom: 15px;
-  /* Espaço entre uma foto e a de baixo */
-  border-radius: 10px;
-  /* Arredonda os cantos da moldura */
-  overflow: hidden;
-  /* Esconde o que sobrar da foto ou do brilho nas bordas */
-  border: 1px solid rgba(219, 175, 0, 0.3);
-  /* Borda dourada fina com transparência */
-  background: #0a0a0a;
-  /* Cor de fundo escura para o item */
-  break-inside: avoid;
-  /* Impede que o item seja cortado entre duas colunas */
-  position: relative;
-  /* Permite posicionar o efeito de brilho dentro dele */
+    display: inline-block;
+    /* Faz o item se ajustar corretamente nas colunas */
+    width: 100%;
+    /* Garante que o item preencha a largura da coluna */
+    margin-bottom: 15px;
+    /* Espaço entre uma foto e a de baixo */
+    border-radius: 10px;
+    /* Arredonda os cantos da moldura */
+    overflow: hidden;
+    /* Esconde o que sobrar da foto ou do brilho nas bordas */
+    border: 1px solid rgba(219, 175, 0, 0.3);
+    /* Borda dourada fina com transparência */
+    background: #0a0a0a;
+    /* Cor de fundo escura para o item */
+    break-inside: avoid;
+    /* Impede que o item seja cortado entre duas colunas */
+    position: relative;
+    /* Permite posicionar o efeito de brilho dentro dele */
 }
 
-/* --- ESTILO DA IMAGEM --- */
+/* TODO:ESTILO DA IMAGEM */
 
 .masonry-item img {
-  width: 100%;
-  /* Imagem ocupa toda a largura do item */
-  height: auto;
-  /* Mantém a proporção da altura da foto */
-  display: block;
-  /* Remove espaços vazios abaixo da imagem */
-  transition: transform 0.5s ease;
-  /* Suaviza o movimento de zoom */
+    width: 100%;
+    /* Imagem ocupa toda a largura do item */
+    height: auto;
+    /* Mantém a proporção da altura da foto */
+    display: block;
+    /* Remove espaços vazios abaixo da imagem */
+    transition: transform 0.5s ease;
+    /* Suaviza o movimento de zoom */
 }
 
-/* --- EFEITO DE BRILHO (O REFLEXO DE LUZ) --- */
+/* TODO: EFEITO DE BRILHO (O REFLEXO DE LUZ) */
 
 .masonry-item::after {
-  content: "";
-  /* Necessário para criar o elemento do brilho */
-  position: absolute;
-  /* Posiciona o brilho por cima da foto */
-  top: 0;
-  /* Alinha ao topo */
-  left: -100%;
-  /* Começa escondido do lado esquerdo */
-  width: 60%;
-  /* Largura da faixa de brilho */
-  height: 100%;
-  /* Altura total do item */
+    content: "";
+    /* Necessário para criar o elemento do brilho */
+    position: absolute;
+    /* Posiciona o brilho por cima da foto */
+    top: 0;
+    /* Alinha ao topo */
+    left: -100%;
+    /* Começa escondido do lado esquerdo */
+    width: 60%;
+    /* Largura da faixa de brilho */
+    height: 100%;
+    /* Altura total do item */
 
-  /* Cria o degradê branco/transparente do reflexo */
+    /* Cria o degradê branco/transparente do reflexo */
 
-  background: linear-gradient(to right,
-      transparent,
-      rgba(219, 175, 0, 0.4),
-      transparent);
-  transform: skewX(-25deg);
-  /* Inclina a faixa de brilho para ficar na diagonal */
-  pointer-events: none;
-  /* Garante que o brilho não atrapalhe o clique do mouse */
+    background: linear-gradient(to right,
+            transparent,
+            rgba(219, 175, 0, 0.4),
+            transparent);
+    transform: skewX(-25deg);
+    /* Inclina a faixa de brilho para ficar na diagonal */
+    pointer-events: none;
+    /* Garante que o brilho não atrapalhe o clique do mouse */
 }
 
-/* --- AÇÕES AO PASSAR O MOUSE (HOVER) --- */
+/* TODO: AÇÕES AO PASSAR O MOUSE (HOVER) */
 
 .masonry-item:hover::after {
-  animation: brilhoAnim 0.8s forwards;
-  /* Inicia a animação de brilho quando encosta o mouse */
+    animation: brilhoAnim 0.8s forwards;
+    /* Inicia a animação de brilho quando encosta o mouse */
 }
 
 .masonry-item:hover img {
-  transform: scale(1.08);
-  /* Aumenta a foto em 8% (Zoom) ao passar o mouse */
+    transform: scale(1.08);
+    /* Aumenta a foto em 8% (Zoom) ao passar o mouse */
 }
 
-/* --- LÓGICA DA ANIMAÇÃO DO BRILHO --- */
+/*  TODO: LÓGICA DA ANIMAÇÃO DO BRILHO --- */
 
 @keyframes brilhoAnim {
-  0% {
-    left: -100%;
-  }
+    0% {
+        left: -100%;
+    }
 
-  /* Início: Brilho fora da foto na esquerda */
-  100% {
-    left: 100%;
-  }
+    /* Início: Brilho fora da foto na esquerda */
+    100% {
+        left: 100%;
+    }
 
-  /* Fim: Brilho atravessa e sai pela direita */
+    /* Fim: Brilho atravessa e sai pela direita */
 }
 
-/* --- ESTILO DA BARRA DE ROLAGEM (SCROLLBAR) --- */
+/* TODO: ESTILO DA BARRA DE ROLAGEM (SCROLLBAR) --- */
 
 .masonry-grid::-webkit-scrollbar {
-  width: 5px;
-  /* Largura da barra de rolagem */
+    width: 5px;
+    /* Largura da barra de rolagem */
 }
 
 .masonry-grid::-webkit-scrollbar-thumb {
-  background: #ffce08;
-  /* Cor dourada da barra de rolagem */
-  border-radius: 10px;
-  /* Deixa a barra arredondada */
+    background: #ffce08;
+    /* Cor dourada da barra de rolagem */
+    border-radius: 10px;
+    /* Deixa a barra arredondada */
 }
+
 
 /* FIXME: SLIDE DE FOTOS ESTILO ESTEIRA */
 /* Bloqueia a rolagem lateral do site */
 html,
 body {
-  overflow-x: hidden;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .slider {
-  width: 100%;
-  max-width: 100vw;
-  overflow: hidden;
-  position: relative;
-  background: #000000;
-  padding: 10px 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background: #000000;
+    padding: 10px 0;
 }
 
 .slider .slide-track {
-  display: flex;
-  /* ATENÇÃO: Mudamos para 180px (largura de cada slide) x 14 slides */
-  width: calc(180px * 14);
-  animation: scroll 40s linear infinite;
+    display: flex;
+    /* ATENÇÃO: Mudamos para 180px (largura de cada slide) x 14 slides */
+    width: calc(180px * 14);
+    animation: scroll 40s linear infinite;
 }
 
 .slider .slide {
-  height: 140px;
-  /* Mantive a altura que você gostou */
-  width: 180px;
-  /* APERTEI A LARGURA: de 250px para 180px (mais quadradinho) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  box-sizing: border-box;
+    height: 140px;
+    /* Mantive a altura que você gostou */
+    width: 180px;
+    /* APERTEI A LARGURA: de 250px para 180px (mais quadradinho) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .slider .slide img {
-  width: 100%;
-  height: 100%;
-  /* MUDANÇA AQUI: "fill" ou "contain" faz a foto se adaptar. 
+    width: 100%;
+    height: 100%;
+    /* MUDANÇA AQUI: "fill" ou "contain" faz a foto se adaptar. 
        Use "cover" se quiser que preencha tudo, ou "contain" se não quiser que corte nada de jeito nenhum. */
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #e5b702;
-  box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e5b702;
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
 }
 
 .slide a {
-  display: block;
-  width: 100%;
-  height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .slider:hover .slide-track {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 /* ANIMAÇÃO AJUSTADA PARA A NOVA LARGURA */
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
+    0% {
+        transform: translateX(0);
+    }
 
-  100% {
-    /* ATENÇÃO: Mudamos para -180px (metade do total de slides) */
-    transform: translateX(calc(-180px * 7));
-  }
+    100% {
+        /* ATENÇÃO: Mudamos para -180px (metade do total de slides) */
+        transform: translateX(calc(-180px * 7));
+    }
 }
 
+/* FIXME: LISTA - CHECK CONFIGURÇAÕ*/
+.lista-check {
+    list-style: none;
+    /* Remove a bola padrão */
+    padding-left: 0;
+}
+
+.lista-check li::before {
+    content: "✓ ";
+    /* Desenha o V direto */
+    color: #FFD62F;
+    /* Cor do V (troque por gold se quiser dourado) */
+    font-weight: bold;
+    margin-right: 8px;
+}
 
 
 /* FIXME: RODAPÉ CONFIGURAÇÃO DO  (FOOTER) */
 
 /* Seleciona a tag principal do rodapé da página */
 footer {
-  /* Define a cor de fundo do rodapé como preto puro */
-  background-color: #000000;
+    /* Define a cor de fundo do rodapé como preto puro */
+    background-color: #000000;
 
-  /* Faz o rodapé ocupar toda a largura disponível da tela (100%) */
-  width: 100%;
+    /* Faz o rodapé ocupar toda a largura disponível da tela (100%) */
+    width: 100%;
 
-  /* Cria uma linha amarela/dourada de 2 pixels de espessura no topo do rodapé */
-  border-top: 2px solid #e5b702;
+    /* Cria uma linha amarela/dourada de 2 pixels de espessura no topo do rodapé */
+    border-top: 2px solid #e5b702;
 
-  /* Ativa o modelo Flexbox para alinhar os elementos dentro do rodapé */
-  display: flex;
+    /* Ativa o modelo Flexbox para alinhar os elementos dentro do rodapé */
+    display: flex;
 
-  /* Organiza os elementos internos empilhados um embaixo do outro (em coluna) */
-  flex-direction: column;
+    /* Organiza os elementos internos empilhados um embaixo do outro (em coluna) */
+    flex-direction: column;
 
-  /* Centraliza horizontalmente todos os elementos que estão dentro do rodapé */
-  align-items: center;
+    /* Centraliza horizontalmente todos os elementos que estão dentro do rodapé */
+    align-items: center;
 
-  /* Centraliza verticalmente todos os elementos que estão dentro do rodapé */
-  justify-content: center;
+    /* Centraliza verticalmente todos os elementos que estão dentro do rodapé */
+    justify-content: center;
 
-  /* Define 12px de espaço interno no topo/base e 0 nas laterais (deixa a barra fina) */
-  padding: 8px 0;
+    /* Define 12px de espaço interno no topo/base e 0 nas laterais (deixa a barra fina) */
+    padding: 8px 0;
 
-  /* Remove qualquer espaço externo no topo para colar perfeitamente na seção anterior */
-  margin-top: 0;
+    /* Remove qualquer espaço externo no topo para colar perfeitamente na seção anterior */
+    margin-top: 0;
 }
 
 /* Seleciona a imagem/logotipo que está dentro do rodapé */
 .footer-logo {
-  /* Força a altura da imagem a ficar fixa em 30 pixels, ignorando outras regras */
-  height: 30px !important;
+    /* Força a altura da imagem a ficar fixa em 30 pixels, ignorando outras regras */
+    height: 30px !important;
 
-  /* Faz a largura se ajustar sozinha e proporcionalmente à altura definida */
-  width: auto !important;
+    /* Faz a largura se ajustar sozinha e proporcionalmente à altura definida */
+    width: auto !important;
 
-  /* Cria um espaço de 5 pixels abaixo da logo para ela não grudar no texto */
-  margin-bottom: 5px;
+    /* Cria um espaço de 5 pixels abaixo da logo para ela não grudar no texto */
+    margin-bottom: 5px;
 }
 
 /* Seleciona as tags de parágrafo de texto que estão dentro do rodapé */
 footer p {
-  /* Define a cor do texto em um tom de cinza claro/médio */
-  color: #99a0aa;
+    /* Define a cor do texto em um tom de cinza claro/médio */
+    color: #99a0aa;
 
-  /* Define o tamanho da fonte do texto para 12 pixels */
-  font-size: 12px;
+    /* Define o tamanho da fonte do texto para 12 pixels */
+    font-size: 12px;
 
-  /* Reseta e remove qualquer margem padrão que o navegador coloque no parágrafo */
-  margin: 0;
+    /* Reseta e remove qualquer margem padrão que o navegador coloque no parágrafo */
+    margin: 0;
 }
