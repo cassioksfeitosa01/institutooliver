@@ -47,7 +47,7 @@ textarea {
 }
 
 .subtitulo {
-    color: #ffffff;
+    color: #99A0AA;
     font-weight: 700;
     font-size: 20px;
     /* Tamanho médio equilibrado */
@@ -107,84 +107,26 @@ textarea {
     /* Texto branco padrão */
 }
 
-/*TODO: AS CHAVES QUE LIGAM OS LADOS  */
+/*TODO: CAIXA DE TEXO DO LADO ESQUEDO */
 
-/* Quando você colocar 'texto-esquerda' no HTML, ativa isso: */
 .caixa-texto.texto-esquerda {
-
-    /* CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA) */
-    /* Garante que a caixa comece encostada no lado esquerdo da tela */
     margin-left: 0;
-
-    /* Cria uma margem na direita para o texto não passar do meio da tela.
-     Se quiser o texto terminando antes do meio, mude para 55% ou 60% */
     margin-right: 50%;
-
-    /* ==========================================================================
-     2. CONTROLE DE ALTURA E SUBIR/BAIXAR O TEXTO
-     ========================================================================== */
-    /* Remove o "height: 100%" padrão para o texto não ocupar a seção inteira */
-    height: auto;
-
-    /* AJUSTE PARA SUBIR OU BAIXAR: 
-     Vou deixar uma margem inicial de 100px. 
-     Aumente o valor para BAIXAR o texto (ex: 150px). 
-     Diminua o valor para SUBIR o texto (ex: 40px). */
-    margin-top: 150px;
-
-    /* TODO:CONTROLE DE LARGURA (DEIXAR MAIS LARGA OU ESTREITA) */
-
-    /* Altera a largura máxima do texto na esquerda. 
-     Aumente para o texto ficar MAIS LARGO (ocupar mais espaço em direção ao centro). 
-     Diminua para o texto ficar MAIS ESTREITO (quebrar linhas mais rápido). */
+    height: aut o;
     max-width: 38%;
-
-    /* ==========================================================================
-     4. ALINHAMENTO DA ESCRITA
-     ========================================================================== */
-    /* Alinha os blocos (como títulos e botões) no início da escrita (esquerda) */
     align-items: flex-start;
-
-    /* Faz as frases começarem retas pela esquerda */
     text-align: left;
 }
 
+/*TODO: CAIXA DE TEXO DO LADO DIREITO */
+
 .caixa-texto.texto-direita {
-    /* 1. CONTROLE DE POSIÇÃO (ESQUERDA / DIREITA) */
-
-    /* Empurra a caixa para começar perto do MEIO da seção. 
-
-     Se quiser mais para a esquerda diminua (ex: 45%). Se quiser mais para a direita aumente (ex: 55%) */
     margin-left: 50%;
     margin-right: auto;
-
-    /* ==========================================================================
-     2. CONTROLE DE ALTURA E SUBIR/BAIXAR O TEXTO
-     ========================================================================== */
-    /* Remove o "height: 100%" padrão para o texto não ocupar a seção inteira */
     height: auto;
-
-    /* AJUSTE PARA SUBIR OU BAIXAR: Escolha uma das duas opções abaixo para usar:
-     Opção A (Mais fácil): Use 'margin-top' com px para empurrar o texto para baixo.
-     Opção B: Mude o 'justify-content' da seção se quiser centralizado. 
-     Vou deixar uma margem inicial de 100px. Aumente para BAIXAR, diminua para SUBIR. */
     margin-top: 100px;
-
-    /* ==========================================================================
-     3. CONTROLE DE LARGURA (DEIXAR MAIS LARGA OU ESTREITA)
-     ========================================================================== */
-    /* Altera a largura máxima do texto. 
-     Aumente para o texto ficar MAIS LARGO (ocupar mais espaço para a direita). 
-     Diminua para o texto ficar MAIS ESTREITO (quebrar linhas mais rápido). */
     max-width: 50%;
-
-    /* ==========================================================================
-     4. ALINHAMENTO DA ESCRITA
-     ========================================================================== */
-    /* Alinha os blocos (como o botão) no início da escrita */
     align-items: flex-start;
-
-    /* Faz as frases começarem da esquerda para a direita, como uma leitura normal */
     text-align: left;
 }
 
