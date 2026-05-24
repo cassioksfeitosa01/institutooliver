@@ -67,7 +67,7 @@ textarea {
 /*FIXME: CELULAR TELAS ACIMA DE 768PX*/
 @media screen and (max-width: 768px) {}
 
-/*FIXME: COMPUTADO TELAS ACIMA DE 769PX*/
+/*TODO: COMPUTADO TELAS ACIMA DE 769PX*/
 @media screen and (min-width: 769px) {
 
   /* ==========================================================================
