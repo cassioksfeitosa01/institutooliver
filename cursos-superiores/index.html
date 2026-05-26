@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- CONFIGURAÇÃO BÁSICA E OTIMIZAÇÕES -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  
+  <title>Soldado PM-SP - Instituto Óliver | Preparatório Online</title>
+  <meta name="description" content="Prepare-se para o concurso de Soldado da Polícia Militar de São Paulo com o Instituto Óliver." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  
+  <!-- LINKS DO CSS (Padrão + Específico do Concurso) -->
+  <link rel="stylesheet" href="../-css/padrao.css">
+  <link rel="stylesheet" href="../-css/paginas.css">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <!-- Sempre coloque alt, width e height reais da imagem para nota 100 -->
+      <img src="../-imagens/logo.png" alt="Logo Oficial do Instituto Óliver" width="180" height="35">
+    </div>
+    
+    <div class="busca-topo-container">
+      <input type="text" id="campo-busca-topo" placeholder="Buscar concurso...">
+      <div id="resultados-topo"></div>
+    </div>
+    
+    <button id="btn-menu" class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- MENU LATERAL DESLIZANTE -->
+  <div id="nav-lista" class="nav-links">
+    <div class="busca-lateral-container">
+      <input type="text" id="campo-busca-lateral" placeholder="Buscar no menu...">
+      <div id="resultados-lateral"></div>
+    </div>
+    <a href="../index.html">Página Inicial</a>
+    <span class="menu-item-cat">Carreiras Policiais ▾</span>
+    <div class="submenu">
+      <a href="../carreiras-policiais/pm-sp.html">PM - São Paulo</a>
+      <a href="../carreiras-policiais/pm-mg.html">PM - Minas Gerais</a>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL DA PÁGINA (HERO SECTION) -->
+  <main style="margin-top: 80px; padding: 20px 5%;">
+    <section class="chamada-principal">
+      <h1 class="titulo">A farda começa na preparação</h1>
+      <h2 class="subtitulo">Concurso Soldado PM-SP — Sua aprovação começa aqui.</h2>
+      
+      <p class="descricao">
+        Você nasceu para isso. Agora é hora de vestir a farda — e passar. Tenha acesso a um ecossistema completo que transforma esforço em direção, preparação em confiança e sonhos em conquista com professores de vivência real.
+      </p>
+      
+      <!-- SEU BOTÃO INTELIGENTE QUE BRILHA -->
+      <div class="caixa-botao">
+        <a href="https://seu-checkout.com" class="botao">Quero Minha Vaga</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ DA PÁGINA -->
+  <footer>
+    <img class="footer-logo" src="../-imagens/logo.png" alt="Logotipo de rodapé do Instituto Óliver" width="150" height="30">
+    <p style="color: rgba(255, 255, 255, 0.5); font-size: 12px; margin-top: 5px;">
+      2026 © Instituto Óliver | Todos os direitos reservados
+    </p>
+  </footer>
+
+  <!-- SCRIPT DO MOTOR DO MENU E BUSCAS -->
+  <script src="../-js/menu.js"></script>
+</body>
+</html>
