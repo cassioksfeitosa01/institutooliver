@@ -13,7 +13,7 @@
         overflow: hidden;
     }
 
-    /* Cola as imagens sem deixar buraco e mantém o topo intacto */
+        /* Cola as imagens mantendo a proporção real (sem zoom agressivo) */
     .caixa-imagem,
     .caixa-imagem picture,
     .caixa-imagem img {
@@ -22,10 +22,11 @@
         left: 0;
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important; /* Preenche a tela toda sem encolher nas laterais */
-        object-position: top center !important; /* Garante que o desenho do topo se encontre */
+        object-fit: fill !important; /* Força a imagem a se ajustar à tela sem cortar os lados */
+        object-position: top center !important;
         z-index: 1;
     }
+
 
     /* 2. CORREÇÃO DO TEXTO (DO MEIO PARA O FINAL DA TELA) */
     .caixa-texto {
@@ -75,15 +76,14 @@
     .sec2 .caixa-texto { padding-bottom: 0px !important; }
     .sec4 .caixa-texto { padding-bottom: 0px !important; }
   .sec5 .caixa-texto { padding-bottom: 0px !important; }
-    .sec6 .caixa-texto { padding-bottom: 0px !important; }
+    .sec6 .caixa-texto { padding-bottom: 20px !important; }
     .sec7 .caixa-texto { padding-bottom: 0px !important; }
     .sec8 .caixa-texto { padding-bottom: 0px !important; }
+    .sec5 .caixa-texto { min-height: 120vh !important; }
 
-        .sec5 { min-height: 130vh !important; }
-    .sec5 .caixa-texto { min-height: 130vh !important; }
+    
 
-      .sec2 { min-height: 120vh !important; }
-    .sec2 .caixa-texto { min-height: 120vh !important; }
+    
 
     
  
