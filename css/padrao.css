@@ -458,11 +458,11 @@ body {
 }
 
   /* FIXME: CONFIGURAÇÃO PARA CELULAR (Telas até 768px)*/
-  
+
 @media (max-width: 768px) {
 
     .sec11 { 
-        height: 1000px !important; /* Aumenta o espaço para o texto grande no celular */
+        height: 1250px !important; /* Aumenta o espaço para o texto grande no celular */
           background-color: #000000 !important; /* Pinta o novo espaço de preto */
             
         display: flex !important;
