@@ -3,107 +3,97 @@
 
     /* 1. Reset de Seções e Imagens */
     .sec {
-        height: auto !important;
+        height: auto !important; /* Deixa a altura livre para a imagem mandar */
         min-height: 100vh;
-        /* Cada seção ocupa a altura da tela */
         display: flex;
         flex-direction: column;
         margin: 0 !important;
-        /* Remove margens que criam buracos brancos */
         padding: 0 !important;
+        position: relative;
+        overflow: hidden;
     }
 
+    /* Cola as imagens sem deixar buraco e mantém o topo intacto */
     .caixa-imagem,
+    .caixa-imagem picture,
     .caixa-imagem img {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100% !important;
         height: 100% !important;
-        object-fit: cover;
+        object-fit: cover !important; /* Preenche a tela toda sem encolher nas laterais */
+        object-position: top center !important; /* Garante que o desenho do topo se encontre */
         z-index: 1;
     }
 
-    /* 2. CORREÇÃO DO TEXTO (CENTRALIZAÇÃO TOTAL) */
-    .caixa-texto,
-    .caixa-texto.texto-esquerda,
-    .caixa-texto.texto-direita {
-        /* Reset de posições do Desktop */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        margin-top: 0 !important;
+    /* 2. CORREÇÃO DO TEXTO (DO MEIO PARA O FINAL DA TELA) */
+    .caixa-texto {
+        /* Reseta todas as larguras e margens do PC */
+        margin: 0 !important;
         max-width: 100% !important;
         width: 100% !important;
+        min-height: 100vh; /* Garante que a seção tenha o tamanho da tela */
 
-        /* Centralização real */
+        /* Empurra o texto para a parte de baixo (fundo preto) */
         display: flex !important;
         flex-direction: column !important;
-        justify-content: center !important;
-        /* Centraliza verticalmente */
-        align-items: center !important;
-        /* Centraliza horizontalmente */
+        justify-content: flex-end !important; 
+        align-items: center !important; 
         text-align: center !important;
-        /* Centraliza as linhas de texto */
-
-        padding: 60px 20px !important;
-        /* Respiro nas laterais */
+        
+        /* Espaço interno para o texto respirar no fundo preto */
+        padding: 80px 24px 60px 24px !important; 
+        
         z-index: 2;
         position: relative;
+        box-sizing: border-box;
     }
 
-    /* 3. AJUSTE DE ALTURA DO TEXTO (Para ele não sumir) */
-    .caixa-texto {
+    /* Força as caixas da esquerda e direita do PC a virarem uma só no celular */
+    .caixa-texto.texto-esquerda,
+    .caixa-texto.texto-direita {
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
         height: 100% !important;
-        min-height: 100vh;
+        align-items: center !important;
+        text-align: center !important;
     }
 
-    /* 4. AJUSTES INDIVIDUAIS (Se precisar de mais espaço no topo de alguma) */
-
-    .sec1 {
-        margin-top: 55px !important;
+    /* 3. LIMPEZA DE MARGENS DO PC QUE QUEBRAM O MOBILE */
+    .sec1, .sec2, .sec3, .sec4, .sec5, .sec6, .sec7 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
-
-    /* Apenas a primeira por causa do menu */
-
-    /* Se o texto de alguma seção específica estiver muito alto ou baixo, ajuste o padding-top dela aqui: */
-    .sec1 .caixa-texto {
-        padding-top: 50vh !important;
-        /* Começa exatamente na metade da tela */
-    }
-
-    .sec2 .caixa-texto {
-        padding-top: 80vh !important;
-        /* Começa exatamente na metade da tela */
-    }
-
-    .sec3 .caixa-texto {
-        padding-top: 80vh !important;
-        /* Começa exatamente na metade da tela */
-    }
-
-    .sec4 .caixa-texto {
-        padding-top: 60vh !important;
-        /* Começa exatamente na metade da tela */
-    }
-
-
-    .sec5 .caixa-texto {
-        padding-top: 80vh !important;
-    }
-
+    
+    .sec2 .caixa-texto,
     .sec6 .caixa-texto {
-        padding-top: 60vh !important;
+        margin-top: 0 !important;
     }
+    .sec1 .caixa-texto { padding-bottom: 0px !important; }
+    .sec2 .caixa-texto { padding-bottom: 0px !important; }
+    .sec4 .caixa-texto { padding-bottom: 0px !important; }
+  .sec5 .caixa-texto { padding-bottom: 0px !important; }
+    .sec6 .caixa-texto { padding-bottom: 0px !important; }
+    .sec7 .caixa-texto { padding-bottom: 0px !important; }
+    .sec8 .caixa-texto { padding-bottom: 0px !important; }
 
-    .sec7 .caixa-texto {
-        padding-top: 60vh !important;
-    }
+        .sec5 { min-height: 130vh !important; }
+    .sec5 .caixa-texto { min-height: 130vh !important; }
 
-    .sec8 .caixa-texto {
-        padding-top: 60vh !important;
-    }
+      .sec2 { min-height: 120vh !important; }
+    .sec2 .caixa-texto { min-height: 120vh !important; }
+
+    
+ 
 
 
+
+
+
+
+    
 
 }
 
