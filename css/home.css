@@ -1,12 +1,10 @@
 /* --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
-    /* Ajusta as seções para o celular */
+
   /* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
 .sec1 {
   margin-top: 55px !important; 
 }
-
-
     /* Pega direto na raiz da caixa de texto e reseta tudo de uma vez */
   .caixa-texto {
         max-width: 100% !important; 
@@ -14,9 +12,6 @@
         margin-top: 110px !important;
     }
 }
-
-
-
 
 
 /* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
@@ -313,4 +308,4 @@ body {
     margin-right: 8px;
 }
 
-
+S
