@@ -462,7 +462,7 @@ body {
 @media (max-width: 768px) {
 
     .sec11 { 
-        height: 1200px !important; /* Aumenta o espaço para o texto grande no celular */
+        height: 1150px !important; /* Aumenta o espaço para o texto grande no celular */
           background-color: #000000 !important; /* Pinta o novo espaço de preto */
             
         display: flex !important;
