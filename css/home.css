@@ -1,7 +1,8 @@
-/* --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
+
+/* FIXME: --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
 
-    /* 1. Base das Seções (A altura você vai definir individualmente lá embaixo) */
+    /* TODO:Base das Seções (A altura você vai definir individualmente lá embaixo) */
     .sec {
         display: flex;
         flex-direction: column;
@@ -11,7 +12,7 @@
         overflow: hidden;
     }
 
-    /* Imagem se adapta ao tamanho exato que você der para a seção */
+    /*TODO: Imagem se adapta ao tamanho exato que você der para a seção */
     .caixa-imagem,
     .caixa-imagem picture,
     .caixa-imagem img {
@@ -25,7 +26,7 @@
         z-index: 1;
     }
 
-    /* 2. Caixa de Texto (Sempre colada no fundo preto da seção) */
+    /* TODO: Caixa de Texto (Sempre colada no fundo preto da seção) */
     .caixa-texto {
         margin: 0 !important;
         max-width: 100% !important;
@@ -44,7 +45,7 @@
         box-sizing: border-box;
     }
 
-    /* Limpa as configurações de lado do PC */
+    /* TODO: Limpa as configurações de lado do PC */
     .caixa-texto.texto-esquerda,
     .caixa-texto.texto-direita {
         margin: 0 !important;
@@ -53,7 +54,7 @@
         text-align: center !important;
     }
 
-    /* Limpa margens do PC que quebram o mobile */
+    /*TODO:Limpa margens do PC que quebram o mobile */
     .sec1, .sec2, .sec3, .sec4, .sec5, .sec6, .sec7, .sec8 {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
@@ -62,22 +63,41 @@
         margin-top: 0 !important;
     }
 
-
-    /* ======================================================= */
-    /* 3. COLOQUE AQUI A ALTURA DE CADA SEÇÃO (Ajuste os valores) */
-    /* ======================================================= */
-
-    .sec1 { height: 500px !important; }
+ /* TODO: COLOQUE AQUI A ALTURA DE CADA SEÇÃO (Ajuste os valores) */
+    .sec1 { 
+        margin-top: 50px !important; /* Altere 80px para a altura exata do seu menu */
+         height: 500px !important;
+    }
+    
+   
     .sec2 { height: 750px !important; }
-    .sec3 { height: 550px !important; }
-    .sec4 { height: 700px !important; }
+    /* SEÇÃO 3: Altura original de 300px + espaço embaixo adicionado aqui */
+
+
+    .sec4 { height: 650px !important; }
     .sec5 { height: 850px !important; } /* Deixei maior para o texto caber */
     .sec6 { height: 650px !important; }
     .sec7 { height: 650px !important; }
     .sec8 { height: 700px !important; }
 
-}
+    
 
+     .sec3{
+        padding-top: 50px !important; /* Cria o espaço em cima do texto e joga ele para baixo */
+
+     }
+
+   
+
+
+    /* Força a seção 4 a respeitar o fim da seção 3 e ir para baixo */
+    .sec4 {
+        position: relative !important;
+        clear: both !important;
+    }
+
+
+}
 
 /* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
 .sec {
@@ -126,7 +146,7 @@
     margin-left: 0;
     margin-right: 50%;
     height: aut o;
-    max-width: 50%;
+    max-width: 55%;
     align-items: flex-start;
     text-align: left;
 }
@@ -144,10 +164,29 @@
 }
 
 /*TODO: CONFIGURÇAÕ INDIVIDUAL PARA CADA SEÇÃO*/
-.sec1 .caixa-texto{
-     max-width: 40%;
+.sec1 .caixa-texto {
+    max-width: 40%;
 }
 
+.sec2 .caixa-texto {
+    margin-top: 200px;
+}
+
+.sec3 .caixa-texto {
+    max-width: 55%;
+}
+
+.sec5 .caixa-texto {
+    max-width: 55%;
+}
+
+.sec6 .caixa-texto {
+    margin-top: 200px;
+}
+
+.sec7 .caixa-texto {
+    max-width: 55%;
+}
 
 
 /*FIXME: ESTRUTURA DA SEÇÃO DO MURAL OLIVER  */
@@ -216,33 +255,6 @@
     /* Suaviza o movimento de zoom */
 }
 
-/* TODO: EFEITO DE BRILHO (O REFLEXO DE LUZ) */
-
-.masonry-item::after {
-    content: "";
-    /* Necessário para criar o elemento do brilho */
-    position: absolute;
-    /* Posiciona o brilho por cima da foto */
-    top: 0;
-    /* Alinha ao topo */
-    left: -100%;
-    /* Começa escondido do lado esquerdo */
-    width: 60%;
-    /* Largura da faixa de brilho */
-    height: 100%;
-    /* Altura total do item */
-
-    /* Cria o degradê branco/transparente do reflexo */
-
-    background: linear-gradient(to right,
-            transparent,
-            rgba(219, 175, 0, 0.4),
-            transparent);
-    transform: skewX(-25deg);
-    /* Inclina a faixa de brilho para ficar na diagonal */
-    pointer-events: none;
-    /* Garante que o brilho não atrapalhe o clique do mouse */
-}
 
 /* TODO: AÇÕES AO PASSAR O MOUSE (HOVER) */
 
@@ -356,21 +368,3 @@ body {
         transform: translateX(calc(-180px * 7));
     }
 }
-
-/* FIXME: LISTA - CHECK CONFIGURÇAÕ*/
-.lista-check {
-    list-style: none;
-    /* Remove a bola padrão */
-    padding-left: 0;
-}
-
-.lista-check li::before {
-    content: "✓ ";
-    /* Desenha o V direto */
-    color: #FFD62F;
-    /* Cor do V (troque por gold se quiser dourado) */
-    font-weight: bold;
-    margin-right: 8px;
-}
-
-S
