@@ -457,13 +457,12 @@ body {
       max-width: 55%;
 }
 
-/* ==========================================================================
-   CONFIGURAÇÃO PARA CELULAR (Telas até 768px)
-   ========================================================================== */
+  /* FIXME: CONFIGURAÇÃO PARA CELULAR (Telas até 768px)*/
+  
 @media (max-width: 768px) {
 
     .sec11 { 
-        height: 1270px !important; /* Aumenta o espaço para o texto grande no celular */
+        height: 1000px !important; /* Aumenta o espaço para o texto grande no celular */
           background-color: #000000 !important; /* Pinta o novo espaço de preto */
             
         display: flex !important;
@@ -483,12 +482,24 @@ body {
         object-fit: cover !important;
     }
 
-    /* Garante que o texto fique por cima da imagem e centralizado */
+      /* Garante que o texto ocupe toda a largura, fique centralizado e abaixo da foto */
     .sec11 .caixa-texto {
         position: relative;
         z-index: 2;
-        padding: 40px 24px 30px 24px !important;
+        width: 100% !important; /* Força a caixa a ocupar a largura total do celular */
+        max-width: 100% !important; /* Remove travas de tamanho do PC */
+        margin: 0 auto !important; /* Centraliza a caixa na tela */
+        
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important; /* Empurra o texto para a base dos 950px */
+        align-items: center !important; /* Centraliza os blocos de texto internamente */
+        text-align: center !important; /* Centraliza as letras */
+        
+        padding: 40px 24px 0px 24px !important; /* Mantém o fundo zerado para colar embaixo */
+        box-sizing: border-box !important;
     }
+
 
      .lista-check li {
         font-size: 15px; /* Diminui um pouco a letra para não quebrar muita linha no celular */
