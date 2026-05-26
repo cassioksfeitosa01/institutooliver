@@ -456,6 +456,7 @@ body {
     margin-top: 75px;
       max-width: 55%;
 }
+<<<<<<< HEAD
 
   /* FIXME: CONFIGURAÇÃO PARA CELULAR (Telas até 768px)*/
 
@@ -514,10 +515,17 @@ body {
 
 
 /* FIXME: CONFIGURÃO LISTA - CHECK CUPUTADOR*/
+=======
+/*TODO: CAIXA DE TEXO DO LADO ESQUEDO */
+
+
+/* FIXME: LISTA - CHECK CONFIGURÇAÕ*/
+>>>>>>> 24344f6 (atualização nos aquivos)
 
 .lista-check {
     list-style: none; /* Remove a bola padrão */
     padding-left: 0;
+<<<<<<< HEAD
     margin-bottom: 20px;
 }
 
@@ -526,15 +534,31 @@ body {
     line-height: 1.6; /* Espaçamento bom entre as linhas */
     color: rgba(255, 255, 255, 0.75); /* Cor branca com transparência */
     margin-bottom: 12px; /* Espaço entre um item e outro */
+=======
+}
+
+.lista-check li {
+    color: rgba(255, 255, 255, 0.75); /* Garante que a letra fique branca */
+>>>>>>> 24344f6 (atualização nos aquivos)
 }
 
 .lista-check li::before {
     content: "✓ "; /* Desenha o V direto */
+<<<<<<< HEAD
     color: #FFD62F; /* Cor amarela do V */
     font-weight: bold; /* Deixa o V mais destacado */
     margin-right: 10px; /* Distância entre o V e o texto */
 }
 
+=======
+    color: #FFD62F; /* Cor do V */
+    margin-right: 8px;
+}
+
+
+
+
+>>>>>>> 24344f6 (atualização nos aquivos)
 /* FIXME: RODAPÉ CONFIGURAÇÃO DO  (FOOTER) */
 
 /*TODO: Seleciona a tag principal do rodapé da página */

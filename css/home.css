@@ -1,8 +1,15 @@
 
+<<<<<<< HEAD
 /* FIXME: --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
 
     /* TODO:Base das Seções (A altura você vai definir individualmente lá embaixo) */
+=======
+/* --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
+@media (max-width: 768px) {
+
+    /* 1. Base das Seções (A altura você vai definir individualmente lá embaixo) */
+>>>>>>> 24344f6 (atualização nos aquivos)
     .sec {
         display: flex;
         flex-direction: column;
@@ -11,6 +18,76 @@
         position: relative;
         overflow: hidden;
     }
+<<<<<<< HEAD
+=======
+
+    /* Imagem se adapta ao tamanho exato que você der para a seção */
+    .caixa-imagem,
+    .caixa-imagem picture,
+    .caixa-imagem img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; 
+        object-position: top center !important; /* Mantém o desenho do topo alinhado */
+        z-index: 1;
+    }
+
+    /* 2. Caixa de Texto (Sempre colada no fundo preto da seção) */
+    .caixa-texto {
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 100% !important; /* Ocupa a altura total que você der para a seção */
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important; /* Empurra o texto para baixo */
+        align-items: center !important;
+        text-align: center !important;
+        
+        padding: 40px 24px 30px 24px !important; /* Ajuste o último número se quiser subir/descer o texto */
+        z-index: 2;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    /* Limpa as configurações de lado do PC */
+    .caixa-texto.texto-esquerda,
+    .caixa-texto.texto-direita {
+        margin: 0 !important;
+        max-width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Limpa margens do PC que quebram o mobile */
+    .sec1, .sec2, .sec3, .sec4, .sec5, .sec6, .sec7, .sec8 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .sec2 .caixa-texto, .sec6 .caixa-texto {
+        margin-top: 0 !important;
+    }
+
+
+    /* ======================================================= */
+    /* 3. COLOQUE AQUI A ALTURA DE CADA SEÇÃO (Ajuste os valores) */
+    /* ======================================================= */
+
+    .sec1 { height: 500px !important; }
+    .sec2 { height: 750px !important; }
+    .sec3 { height: 550px !important; }
+    .sec4 { height: 700px !important; }
+    .sec5 { height: 850px !important; } /* Deixei maior para o texto caber */
+    .sec6 { height: 650px !important; }
+    .sec7 { height: 650px !important; }
+    .sec8 { height: 700px !important; }
+
+}
+>>>>>>> 24344f6 (atualização nos aquivos)
 
     /*TODO: Imagem se adapta ao tamanho exato que você der para a seção */
     .caixa-imagem,
@@ -98,6 +175,9 @@
 
 
 }
+
+
+
 
 /* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
 .sec {
@@ -367,4 +447,8 @@ body {
         /* ATENÇÃO: Mudamos para -180px (metade do total de slides) */
         transform: translateX(calc(-180px * 7));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 24344f6 (atualização nos aquivos)
