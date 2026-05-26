@@ -412,6 +412,121 @@ body {
     display: none !important;
 }
 
+.sec{
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 620px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* TODO: Força a imagem de fundo de qualquer seção a ir para trás */
+.caixa-imagem,
+.caixa-imagem picture,
+.caixa-imagem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.caixa-imagem img {
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+/* TODO:Configuração base da Caixa de Texto para TODAS as seções */
+.caixa-texto {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 40%;
+    /* Garante os 40% de largura para quebrar o texto */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0px;
+    
+}
+
+.sec11 .caixa-texto{
+    margin-top: 75px;
+      max-width: 55%;
+}
+
+/* ==========================================================================
+   CONFIGURAÇÃO PARA CELULAR (Telas até 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    .sec11 { 
+        height: 1270px !important; /* Aumenta o espaço para o texto grande no celular */
+          background-color: #000000 !important; /* Pinta o novo espaço de preto */
+            
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important; /* Empurra o texto para a parte preta */
+    }
+
+    /* Trava a imagem do rodapé para não esticar no celular */
+    .sec11 .caixa-imagem,
+     .sec11 .caixa-imagem picture,
+     .sec11 .caixa-imagem img {
+        height: 500px !important; /* Foto mantém o tamanho original no topo */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* Garante que o texto fique por cima da imagem e centralizado */
+    .sec11 .caixa-texto {
+        position: relative;
+        z-index: 2;
+        padding: 40px 24px 0px 24px !important;
+    }
+
+     .lista-check li {
+        font-size: 15px; /* Diminui um pouco a letra para não quebrar muita linha no celular */
+        margin-bottom: 10px; /* Diminui o espaço entre os itens para economizar tela */
+        text-align: left; /* Garante que o texto fique alinhado à esquerda por causa do ícone */
+    }
+
+    .lista-check li::before {
+        margin-right: 8px; /* Ajusta a proximidade do V no mobile */
+    }
+}
+
+
+/* FIXME: LISTA - CHECK CONFIGURÇAÕ*/
+
+.lista-check {
+    list-style: none; /* Remove a bola padrão */
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.lista-check li {
+    font-size: 18px; /* Tamanho da letra no PC */
+    line-height: 1.6; /* Espaçamento bom entre as linhas */
+    color: rgba(255, 255, 255, 0.75); /* Cor branca com transparência */
+    margin-bottom: 12px; /* Espaço entre um item e outro */
+}
+
+.lista-check li::before {
+    content: "✓ "; /* Desenha o V direto */
+    color: #FFD62F; /* Cor amarela do V */
+    font-weight: bold; /* Deixa o V mais destacado */
+    margin-right: 10px; /* Distância entre o V e o texto */
+}
+
+
+
+
 /* FIXME: RODAPÉ CONFIGURAÇÃO DO  (FOOTER) */
 
 /*TODO: Seleciona a tag principal do rodapé da página */
