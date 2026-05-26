@@ -1,7 +1,22 @@
+
+<<<<<<< HEAD
+<<<<<<< HEAD
 /* FIXME: --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
 
     /* TODO:Base das Seções (A altura você vai definir individualmente lá embaixo) */
+=======
+/* --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
+@media (max-width: 768px) {
+
+    /* 1. Base das Seções (A altura você vai definir individualmente lá embaixo) */
+>>>>>>> 24344f6 (atualização nos aquivos)
+=======
+/* FIXME: --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
+@media (max-width: 768px) {
+
+    /* TODO:Base das Seções (A altura você vai definir individualmente lá embaixo) */
+>>>>>>> be3149b (atualização de pasta)
     .sec {
         display: flex;
         flex-direction: column;
@@ -10,6 +25,8 @@
         position: relative;
         overflow: hidden;
     }
+<<<<<<< HEAD
+=======
 
     /*TODO: Imagem se adapta ao tamanho exato que você der para a seção */
     .caixa-imagem,
@@ -62,17 +79,101 @@
         margin-top: 0 !important;
     }
 
-    /* TODO: COLOQUE AQUI A ALTURA DE CADA SEÇÃO (Ajuste os valores) */
+ /* TODO: COLOQUE AQUI A ALTURA DE CADA SEÇÃO (Ajuste os valores) */
     .sec1 { 
         margin-top: 50px !important; /* Altere 80px para a altura exata do seu menu */
-        height: 500px !important;
+    }
+
+
+
+    .sec1 {   height: 500px !important; }
+    .sec2 { height: 750px !important; }
+    .sec3 { height: 800px !important; }
+    .sec4 { height: 650px !important; }
+    .sec5 { height: 850px !important; } 
+    .sec6 { height: 650px !important; }
+    .sec7 { height: 650px !important; }
+    .sec8 { height: 700px !important; }
+
+        /* Limita o tamanho da foto na seção 3 para ela não esticar */
+    .sec3 .caixa-imagem,
+    .sec3 .caixa-imagem picture,
+    .sec3 .caixa-imagem img {
+        height: 500px !important; /* Mantém a foto com o tamanho original */
+    }
+
+        .sec3 { 
+        height: 800px !important; 
+        background-color: #000000 !important; 
+    }
+
+
+
+}
+>>>>>>> 24344f6 (atualização nos aquivos)
+
+<<<<<<< HEAD
+    /*TODO: Imagem se adapta ao tamanho exato que você der para a seção */
+    .caixa-imagem,
+    .caixa-imagem picture,
+    .caixa-imagem img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; 
+        object-position: top center !important; /* Mantém o desenho do topo alinhado */
+        z-index: 1;
+    }
+
+    /* TODO: Caixa de Texto (Sempre colada no fundo preto da seção) */
+    .caixa-texto {
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 100% !important; /* Ocupa a altura total que você der para a seção */
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important; /* Empurra o texto para baixo */
+        align-items: center !important;
+        text-align: center !important;
+        
+        padding: 40px 24px 30px 24px !important; /* Ajuste o último número se quiser subir/descer o texto */
+        z-index: 2;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    /* TODO: Limpa as configurações de lado do PC */
+    .caixa-texto.texto-esquerda,
+    .caixa-texto.texto-direita {
+        margin: 0 !important;
+        max-width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /*TODO:Limpa margens do PC que quebram o mobile */
+    .sec1, .sec2, .sec3, .sec4, .sec5, .sec6, .sec7, .sec8 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .sec2 .caixa-texto, .sec6 .caixa-texto {
+        margin-top: 0 !important;
+    }
+
+ /* TODO: COLOQUE AQUI A ALTURA DE CADA SEÇÃO (Ajuste os valores) */
+    .sec1 { 
+        margin-top: 50px !important; /* Altere 80px para a altura exata do seu menu */
+         height: 500px !important;
     }
     
+   
     .sec2 { height: 750px !important; }
+    /* SEÇÃO 3: Altura original de 300px + espaço embaixo adicionado aqui */
 
-    .sec3 {
-        padding-top: 50px !important; /* Cria o espaço em cima do texto e joga ele para baixo */
-    }
 
     .sec4 { height: 650px !important; }
     .sec5 { height: 850px !important; } /* Deixei maior para o texto caber */
@@ -80,13 +181,30 @@
     .sec7 { height: 650px !important; }
     .sec8 { height: 700px !important; }
 
+    
+
+     .sec3{
+        padding-top: 50px !important; /* Cria o espaço em cima do texto e joga ele para baixo */
+
+     }
+
+   
+
+
     /* Força a seção 4 a respeitar o fim da seção 3 e ir para baixo */
     .sec4 {
         position: relative !important;
         clear: both !important;
     }
+
+
 }
 
+
+
+
+=======
+>>>>>>> be3149b (atualização de pasta)
 /* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
 .sec {
     position: relative;
@@ -125,19 +243,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Texto branco padrão */
 }
 
 /*TODO: CAIXA DE TEXO DO LADO ESQUEDO */
+
 .caixa-texto.texto-esquerda {
     margin-left: 0;
     margin-right: 50%;
-    height: auto;
+    height: aut o;
     max-width: 55%;
     align-items: flex-start;
     text-align: left;
 }
 
 /*TODO: CAIXA DE TEXO DO LADO DIREITO */
+
 .caixa-texto.texto-direita {
     margin-left: 50%;
     margin-right: auto;
@@ -173,7 +294,9 @@
     max-width: 55%;
 }
 
+
 /*FIXME: ESTRUTURA DA SEÇÃO DO MURAL OLIVER  */
+
 .mural-oliver {
     padding: 60px 5%;
     /* Espaço interno: 60px cima/baixo e 5% nas laterais */
@@ -182,6 +305,7 @@
 }
 
 /* TODO: GRID ESTILO MASONRY (O PAINEL DAS FOTOS) --- */
+
 .masonry-grid {
     column-gap: 15px;
     /* Espaço entre as colunas de fotos */
@@ -190,5 +314,163 @@
     max-width: 2000px;
     /* Não deixa o mural passar de 2000px de largura */
     margin: 0 auto;
-    /* Centraliza o mural */
+    /* Centraliza o mural na página */
+    max-height: 2000px;
+    /* Limita a altura total do mural */
+    overflow-y: auto;
+    /* Cria a rolagem se as fotos passarem da altura máxima */
+    padding-right: 10px;
+    /* Espaço para a barra de rolagem não colar nas fotos */
+    column-count: 4;
+    /* Define que o mural terá 2 colunas (Mude isso no @media) */
+}
+
+/* TODO: ESTILO DE CADA ITEM (MOLDURA DA FOTO) --- */
+
+.masonry-item {
+    display: inline-block;
+    /* Faz o item se ajustar corretamente nas colunas */
+    width: 100%;
+    /* Garante que o item preencha a largura da coluna */
+    margin-bottom: 15px;
+    /* Espaço entre uma foto e a de baixo */
+    border-radius: 10px;
+    /* Arredonda os cantos da moldura */
+    overflow: hidden;
+    /* Esconde o que sobrar da foto ou do brilho nas bordas */
+    border: 1px solid rgba(219, 175, 0, 0.3);
+    /* Borda dourada fina com transparência */
+    background: #0a0a0a;
+    /* Cor de fundo escura para o item */
+    break-inside: avoid;
+    /* Impede que o item seja cortado entre duas colunas */
+    position: relative;
+    /* Permite posicionar o efeito de brilho dentro dele */
+}
+
+/* TODO:ESTILO DA IMAGEM */
+
+.masonry-item img {
+    width: 100%;
+    /* Imagem ocupa toda a largura do item */
+    height: auto;
+    /* Mantém a proporção da altura da foto */
+    display: block;
+    /* Remove espaços vazios abaixo da imagem */
+    transition: transform 0.5s ease;
+    /* Suaviza o movimento de zoom */
+}
+
+
+/* TODO: AÇÕES AO PASSAR O MOUSE (HOVER) */
+
+.masonry-item:hover::after {
+    animation: brilhoAnim 0.8s forwards;
+    /* Inicia a animação de brilho quando encosta o mouse */
+}
+
+.masonry-item:hover img {
+    transform: scale(1.08);
+    /* Aumenta a foto em 8% (Zoom) ao passar o mouse */
+}
+
+/*  TODO: LÓGICA DA ANIMAÇÃO DO BRILHO --- */
+
+@keyframes brilhoAnim {
+    0% {
+        left: -100%;
+    }
+
+    /* Início: Brilho fora da foto na esquerda */
+    100% {
+        left: 100%;
+    }
+
+    /* Fim: Brilho atravessa e sai pela direita */
+}
+
+/* TODO: ESTILO DA BARRA DE ROLAGEM (SCROLLBAR) --- */
+
+.masonry-grid::-webkit-scrollbar {
+    width: 5px;
+    /* Largura da barra de rolagem */
+}
+
+.masonry-grid::-webkit-scrollbar-thumb {
+    background: #ffce08;
+    /* Cor dourada da barra de rolagem */
+    border-radius: 10px;
+    /* Deixa a barra arredondada */
+}
+
+
+/* FIXME: SLIDE DE FOTOS ESTILO ESTEIRA */
+/* Bloqueia a rolagem lateral do site */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background: #000000;
+    padding: 10px 0;
+}
+
+.slider .slide-track {
+    display: flex;
+    /* ATENÇÃO: Mudamos para 180px (largura de cada slide) x 14 slides */
+    width: calc(180px * 14);
+    animation: scroll 40s linear infinite;
+}
+
+.slider .slide {
+    height: 140px;
+    /* Mantive a altura que você gostou */
+    width: 180px;
+    /* APERTEI A LARGURA: de 250px para 180px (mais quadradinho) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.slider .slide img {
+    width: 100%;
+    height: 100%;
+    /* MUDANÇA AQUI: "fill" ou "contain" faz a foto se adaptar. 
+       Use "cover" se quiser que preencha tudo, ou "contain" se não quiser que corte nada de jeito nenhum. */
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e5b702;
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+.slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.slider:hover .slide-track {
+    animation-play-state: paused;
+}
+
+/* ANIMAÇÃO AJUSTADA PARA A NOVA LARGURA */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* ATENÇÃO: Mudamos para -180px (metade do total de slides) */
+        transform: translateX(calc(-180px * 7));
+    }
 }
