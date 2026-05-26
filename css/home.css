@@ -5,12 +5,17 @@
 .sec1 {
   margin-top: 55px !important; 
 }
-    /* Pega direto na raiz da caixa de texto e reseta tudo de uma vez */
-  .caixa-texto {
+
+ /* Pega direto na raiz da caixa de texto e reseta tudo de uma vez */
+.caixa-texto {
         max-width: 100% !important; 
         margin: 0 !important;        
         margin-top: 110px !important;
     }
+
+    .sec2 .caixa-texto {
+  margin-top: 350px !important; 
+}
 }
 
 
