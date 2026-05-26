@@ -3,7 +3,9 @@
 
   /* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
 .sec1 {
-  margin-top: 55px !important; 
+  margin-top: 55px !important;
+    margin-top: 55px !important; 
+  max-width: 860;
 }
 
  /* Pega direto na raiz da caixa de texto e reseta tudo de uma vez */
