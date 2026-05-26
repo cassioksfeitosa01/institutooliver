@@ -14,9 +14,16 @@
     }
 
     .sec2 .caixa-texto {
-  margin-top: 350px !important; 
+  margin-top: 300px !important; 
+ }
 
-    }
+     .sec3 .caixa-texto {
+  margin-top: 350px !important; 
+ }
+
+     .sec4 .caixa-texto {
+  margin-top: 220px !important; 
+ }
 }
 
 
