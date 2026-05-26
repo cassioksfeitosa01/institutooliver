@@ -1,33 +1,111 @@
 /* --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
 
-  /* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
-.sec1 {
-  margin-top: 55px !important;
-    margin-top: 55px !important; 
-  max-width: 860;
-}
+    /* 1. Reset de Seções e Imagens */
+    .sec {
+        height: auto !important;
+        min-height: 100vh;
+        /* Cada seção ocupa a altura da tela */
+        display: flex;
+        flex-direction: column;
+        margin: 0 !important;
+        /* Remove margens que criam buracos brancos */
+        padding: 0 !important;
+    }
 
- /* Pega direto na raiz da caixa de texto e reseta tudo de uma vez */
-.caixa-texto {
-        max-width: 100% !important; 
-        margin: 0 !important;        
-        margin-top: 110px !important;
+    .caixa-imagem,
+    .caixa-imagem img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    /* 2. CORREÇÃO DO TEXTO (CENTRALIZAÇÃO TOTAL) */
+    .caixa-texto,
+    .caixa-texto.texto-esquerda,
+    .caixa-texto.texto-direita {
+        /* Reset de posições do Desktop */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+
+        /* Centralização real */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        /* Centraliza verticalmente */
+        align-items: center !important;
+        /* Centraliza horizontalmente */
+        text-align: center !important;
+        /* Centraliza as linhas de texto */
+
+        padding: 60px 20px !important;
+        /* Respiro nas laterais */
+        z-index: 2;
+        position: relative;
+    }
+
+    /* 3. AJUSTE DE ALTURA DO TEXTO (Para ele não sumir) */
+    .caixa-texto {
+        height: 100% !important;
+        min-height: 100vh;
+    }
+
+    /* 4. AJUSTES INDIVIDUAIS (Se precisar de mais espaço no topo de alguma) */
+
+    .sec1 {
+        margin-top: 55px !important;
+    }
+
+    /* Apenas a primeira por causa do menu */
+
+    /* Se o texto de alguma seção específica estiver muito alto ou baixo, ajuste o padding-top dela aqui: */
+    .sec1 .caixa-texto {
+        padding-top: 50vh !important;
+        /* Começa exatamente na metade da tela */
     }
 
     .sec2 .caixa-texto {
-  margin-top: 300px !important; 
- }
+        padding-top: 80vh !important;
+        /* Começa exatamente na metade da tela */
+    }
 
-     .sec3 .caixa-texto {
-  margin-top: 350px !important; 
- }
+    .sec3 .caixa-texto {
+        padding-top: 80vh !important;
+        /* Começa exatamente na metade da tela */
+    }
 
-     .sec4 .caixa-texto {
-  margin-top: 220px !important; 
- }
+    .sec4 .caixa-texto {
+        padding-top: 60vh !important;
+        /* Começa exatamente na metade da tela */
+    }
+
+
+    .sec5 .caixa-texto {
+        padding-top: 80vh !important;
+    }
+
+    .sec6 .caixa-texto {
+        padding-top: 60vh !important;
+    }
+
+    .sec7 .caixa-texto {
+        padding-top: 60vh !important;
+    }
+
+    .sec8 .caixa-texto {
+        padding-top: 60vh !important;
+    }
+
+
+
 }
-
 
 /* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
 .sec {
