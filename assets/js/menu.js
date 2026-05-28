@@ -30,6 +30,14 @@ fetch('/rodape.html')
     })
     .catch(err => console.error("❌ Erro no Rodapé:", err));
 
+    // Função para carregar a seção do professor )
+
+    fetch('/professor.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('secao-professor').innerHTML = data;
+    });
+
 // Toda a sua lógica de abrir, fechar e BUSCA
 function inicializarLogicaMenu() {
     const btnMenu = document.getElementById("btn-menu");
