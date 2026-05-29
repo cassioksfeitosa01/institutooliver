@@ -1,0 +1,192 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Signika Negative', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Faixa Topo */
+.top-bar {
+    background: #c39912; /* Dourado */
+    color: #fff;
+    text-align: center;
+    padding: 10px 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero {
+    background: #001a33; /* Azul Marinho */
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #c39912;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Vídeo */
+.video-container {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 3px solid #c39912;
+}
+
+.aspect-ratio {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.aspect-ratio iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Botão Principal */
+.btn-main {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Badges */
+.trust-badges {
+    background: #eee;
+    padding: 30px 0;
+}
+
+.badge-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.badge {
+    background: #001a33;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Pricing */
+.pricing {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.price-card {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.price-card.featured {
+    border: 2px solid #c39912;
+    transform: scale(1.05);
+}
+
+.price span {
+    display: block;
+    font-size: 2rem;
+    color: #c39912;
+    font-weight: bold;
+}
+
+.btn-buy {
+    display: block;
+    background: #001a33;
+    color: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* FAQ Accordion */
+.faq {
+    background: #fff;
+    padding: 60px 0;
+}
+
+details {
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+summary {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.content {
+    padding-top: 10px;
+    color: #666;
+}
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 1.8rem; }
+    .price-card.featured { transform: scale(1); }
+}
