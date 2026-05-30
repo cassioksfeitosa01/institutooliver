@@ -1,6 +1,56 @@
+* TODO: CSS RESET REMOVE FALHA DO NAVEGADOR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove marcadores de bolinha de listas (ul, ol) */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove o sublinhado dos links e herda a cor do texto */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Evita que imagens quebrem o layout ou fiquem com espaços soltos */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Limpa bordas e aparências padrões de botões e inputs */
+button,
+input,
+textarea {
+    font: inherit;
+    background: transparent;
+    border: none;
+}
+
+html,
+body {
+    /* Garante que o site sempre ocupe 100% da largura da tela do celular ou computador */
+    width: 100%;
+
+    /* Bloqueia a rolagem para os lados. Evita que o site fique "dançando" ou com uma barra branca feia na direita */
+    overflow-x: hidden;
+
+    /* Define uma fonte limpa, moderna e sem serifa (Arial) como padrão para todas as 150 páginas */
+    font-family: 'Arial', sans-serif;
+
+    /* Faz a página deslizar suavemente (efeito de rolagem macia) quando o aluno clica em um botão que o joga para outra seção */
+    scroll-behavior: smooth;
+}
+
 /* Estilos da Seção de Cursos */
 .secao-cursos {
-    background-color: #0c0c0c;
+    background-color: #010101;
     padding: 60px 20px;
     color: #ffffff;
     font-family: 'Segoe UI', Roboto, sans-serif;
@@ -25,7 +75,7 @@
 }
 
 .destaque-rosa {
-    color: #e2498a;
+    color: #e5b702;
 }
 
 .titulo-pagina p {
@@ -75,7 +125,7 @@
 
 /* TEXTO ABAIXO DA FOTO */
 .overlay {
-    background: #1a1a1a;
+    background: #010101;
     padding: 15px;
     width: 100%;
     display: flex;
@@ -106,8 +156,8 @@
 .botao-saber-mais {
     display: block;
     text-align: center;
-    background-color: #e2498a;
-    color: #fff;
+    background-color: #ffce08;
+    color: #121115;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 8px;
