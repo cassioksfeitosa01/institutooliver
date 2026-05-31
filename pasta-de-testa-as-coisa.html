@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esteira Infinita Profissional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+    <style>
+        body { background-color: #000; color: white; overflow-x: hidden; }
+
+        /* 1. CONTAINER QUE SEGURA TUDO */
+        .esteira-wrapper {
+            width: 100vw;
+            overflow: hidden;
+            padding: 50px 0;
+            position: relative;
+            background: #000;
+        }
+
+        /* 2. O TRILHO (TRACK) - O SEGREDO ESTÁ AQUI */
+        .esteira-track {
+            display: flex;
+            width: max-content; /* Faz o trilho ter o tamanho exato da soma dos vídeos */
+            flex-wrap: nowrap;
+            animation: rolar-infinito 30s linear infinite; /* Movimento contínuo */
+        }
+
+        /* Classe que o JS usa para travar tudo no PLAY */
+        .travado-total {
+            animation-play-state: paused !important;
+        }
+
+        /* Pausa ao passar o mouse no PC */
+        .esteira-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* 3. CARD DO VÍDEO (Estilo Shorts) */
+        .short-card {
+            width: 250px;
+            height: 440px;
+            margin-right: 20px; /* Espaço entre um vídeo e outro */
+            flex-shrink: 0; /* Impede o vídeo de "espremer" em telas grandes */
+            background: #111;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 1px solid #222;
+        }
+
+        .short-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 4. A MÁGICA DO LOOP INFINITO */
+        @keyframes rolar-infinito {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Ele move exatamente METADE do trilho. 
+                   Como a segunda metade é igual à primeira, o olho não vê o reset. */
+                transform: translateX(-50%);
+            }
+        }
+
+        h2 { text-align: center; color: #fff; margin-bottom: 40px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Depoimentos Clientes</h2>
+    </div>
+
+    <div class="esteira-wrapper">
+        <div class="esteira-track" id="esteira">
+            
+            <!-- GRUPO 1 (Seus vídeos originais) -->
+            <!-- DICA: Se tiver poucos vídeos, repita-os aqui dentro para preencher a largura da tela -->
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/000/fff?text=Video+1" controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/222/fff?text=Video+2" controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/000/fff?text=Video+3" controls preload="metadata">
+                    <source src="https://exit109.com/Rabbitwinks/RW20seconds_1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/222/fff?text=Video+4" controls preload="metadata">
+                    <source src="https://exit109.com/Rabbitwinks/RW20seconds_2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- GRUPO 2 (Cópia idêntica do Grupo 1) -->
+            <!-- Isso aqui é o que faz o efeito "espelho". Quando o Grupo 1 acaba, o 2 já está na tela -->
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/000/fff?text=Video+1" controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/222/fff?text=Video+2" controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/000/fff?text=Video+3" controls preload="metadata">
+                    <source src="https://exit109.com/Rabbitwinks/RW20seconds_1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/222/fff?text=Video+4" controls preload="metadata">
+                    <source src="https://exit109.com/Rabbitwinks/RW20seconds_2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+                        <div class="short-card">
+                <video poster="https://placehold.co/250x440/000/fff?text=Video+1" controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/222/fff?text=Video+2" controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/000/fff?text=Video+3" controls preload="metadata">
+                    <source src="https://exit109.com/Rabbitwinks/RW20seconds_1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/222/fff?text=Video+4" controls preload="metadata">
+                    <source src="https://exit109.com/Rabbitwinks/RW20seconds_2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+                        <div class="short-card">
+                <video poster="https://placehold.co/250x440/000/fff?text=Video+1" controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/222/fff?text=Video+2" controls preload="metadata">
+                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/000/fff?text=Video+3" controls preload="metadata">
+                    <source src="https://exit109.com/Rabbitwinks/RW20seconds_1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="short-card">
+                <video poster="https://placehold.co/250x440/222/fff?text=Video+4" controls preload="metadata">
+                    <source src="https://exit109.com/Rabbitwinks/RW20seconds_2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const esteira = document.getElementById('esteira');
+        const vids = document.querySelectorAll('video');
+
+        vids.forEach(v => {
+            // Travamento total ao dar play
+            v.addEventListener('play', () => {
+                esteira.classList.add('travado-total');
+                // Pausa os outros para não virar bagunça sonora
+                vids.forEach(outro => { if (outro !== v) outro.pause(); });
+            });
+
+            // Retoma a esteira ao pausar ou terminar
+            v.addEventListener('pause', () => {
+                esteira.classList.remove('travado-total');
+            });
+            v.addEventListener('ended', () => {
+                esteira.classList.remove('travado-total');
+            });
+        });
+    </script>
+
+</body>
+</html>
