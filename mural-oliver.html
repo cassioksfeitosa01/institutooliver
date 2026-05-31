@@ -1,0 +1,176 @@
+<style>
+    /* ESTRUTURA DA SEÇÃO */
+    .mural-oliver {
+        padding: 40px 5%;
+        background: #000;
+        color: #fff;
+    }
+
+    .container-texto-mural {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .container-texto-mural h2 { color: #ffce08; font-weight: bold; margin-bottom: 5px; }
+    .container-texto-mural h3 { color: #ccc; font-size: 1.2rem; }
+
+    /* GRID ESTILO MASONRY */
+    .masonry-grid {
+        column-gap: 15px;
+        width: 100%;
+        max-width: 2000px;
+        margin: 0 auto;
+        max-height: 800px; /* Altura limite para o scroll interno */
+        overflow-y: auto;
+        padding-right: 10px;
+        column-count: 4; /* 4 colunas no PC */
+    }
+
+    /* ESTILO DE CADA ITEM */
+    .masonry-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(219, 175, 0, 0.3);
+        background: #0a0a0a;
+        break-inside: avoid;
+        position: relative;
+    }
+
+    .masonry-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    /* EFEITO DE BRILHO AO PASSAR O MOUSE */
+    .masonry-item::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,206,8,0.3) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        transition: none;
+    }
+
+    .masonry-item:hover::after {
+        animation: brilhoAnim 0.8s forwards;
+    }
+
+    .masonry-item:hover img {
+        transform: scale(1.08);
+    }
+
+    @keyframes brilhoAnim {
+        0% { left: -100%; }
+        100% { left: 150%; }
+    }
+
+    /* BARRA DE ROLAGEM DOURADA */
+    .masonry-grid::-webkit-scrollbar { width: 6px; }
+    .masonry-grid::-webkit-scrollbar-thumb {
+        background: #ffce08;
+        border-radius: 10px;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 1024px) { .masonry-grid { column-count: 3; } }
+    @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
+</style>
+
+<!--TODO: SEÇÃO MURAL OLIVER DEPOIMENTOS DE RESULTADOS AUTOMÁTICO   -->
+
+      <div class="container-texto" style="text-align: center; margin-bottom: 30px; padding: 0 20px">
+        <h2 class="titulo">Depoimentos:</h2>
+        <h3 class="subtitulo">Veja o que nossos alunos estão dizendo</h3>
+      </div>
+
+      <div class="masonry-grid">
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778580012-afzst-r2cf-depoimento-1.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778583694-afzst-r2cf-depoimento-15.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778583405-afzst-r2cf-depoimento-14.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778583261-afzst-r2cf-depoimento-13.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778583106-afzst-r2cf-depoimento-11.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582081-afzst-r2cf-depoimento-6.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582358-afzst-r2cf-depoimento-7.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582518-afzst-r2cf-depoimento-8.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582769-afzst-r2cf-depoimento-9.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582963-afzst-r2cf-depoimento-10.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584055-afzst-r2cf-depoimento-16.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584185-afzst-r2cf-depoimento-18.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584391-afzst-r2cf-depoimento-19.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584757-afzst-r2cf-depoimento-20.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584878-afzst-r2cf-depoimento-21.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585095-afzst-r2cf-depoimento-22.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585187-afzst-r2cf-depoimento-23.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585312-afzst-r2cf-depoimento-3.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585443-afzst-r2cf-depoimento-17.webp" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585533-afzst-r2cf-depoimento-26.webp" />
+        </div>
+      </div>
+    </section>

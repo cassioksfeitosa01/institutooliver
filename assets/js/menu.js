@@ -1,50 +1,103 @@
-// Função para carregar o Menu
-fetch('/menu.html')
-    .then(response => {
-        if (!response.ok) throw new Error('Não achei o arquivo menu.html');
-        return response.text();
-    })
-    .then(data => {
-        const container = document.getElementById('menu-principal');
-        if (container) {
-            container.innerHTML = data;
-            console.log("✅ Menu carregado com sucesso!");
-            // Agora que o menu existe, ativa os botões e a busca
-            inicializarLogicaMenu();
-        }
-    })
-    .catch(err => console.error("❌ Erro no Menu:", err));
+// ======================================================
+// 1. CARREGAMENTO INTELIGENTE DE MÓDULOS (FETCH CONDICIONAL)
+// ======================================================
 
-// Função para carregar o Rodapé (Separada para não travar o menu)
-fetch('/rodape.html')
-    .then(response => {
-        if (!response.ok) throw new Error('Não achei o arquivo rodape.html');
-        return response.text();
-    })
-    .then(data => {
-        const container = document.getElementById('rodape-principal');
-        if (container) {
-            container.innerHTML = data;
-            console.log("✅ Rodapé carregado com sucesso!");
-        }
-    })
-    .catch(err => console.error("❌ Erro no Rodapé:", err));
+// --- MENU (Sempre carrega se houver a div) ---
+const containerMenu = document.getElementById('menu-principal');
+if (containerMenu) {
+    fetch('/menu.html')
+        .then(response => response.text())
+        .then(data => {
+            containerMenu.innerHTML = data;
+            console.log("✅ Menu carregado!");
+            inicializarLogicaMenu(); // Ativa a busca e os cliques do menu
+        })
+        .catch(err => console.error("Erro no Menu:", err));
+}
 
-    // Função para carregar a seção do professor )
+// --- RODAPÉ ---
+const containerRodape = document.getElementById('rodape-principal');
+if (containerRodape) {
+    fetch('/rodape.html')
+        .then(response => response.text())
+        .then(data => {
+            containerRodape.innerHTML = data;
+            console.log("✅ Rodapé carregado!");
+        })
+        .catch(err => console.error("Erro no Rodapé:", err));
+}
 
+// --- SEÇÃO PROFESSOR ---
+const containerProfessor = document.getElementById('secao-professor');
+if (containerProfessor) {
     fetch('/professor.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('secao-professor').innerHTML = data;
-    });
+        .then(response => response.text())
+        .then(data => {
+            containerProfessor.innerHTML = data;
+            console.log("✅ Professor carregado!");
+        });
+}
 
-// Toda a sua lógica de abrir, fechar e BUSCA
+// --- ESTEIRA DE VÍDEOS (Só carrega se a div existir na página) ---
+const containerVideos = document.getElementById('secao-depoimentos');
+if (containerVideos) {
+    fetch('/depoimentos.html')
+        .then(response => response.text())
+        .then(data => {
+            containerVideos.innerHTML = data;
+            console.log("✅ Esteira de vídeos carregada apenas para esta página!");
+            inicializarLogicaVideos(); // Ativa a pausa no play
+        })
+        .catch(err => console.error("Erro na Esteira:", err));
+}
+
+// --- MURAL OLIVER DE FOTOS (Só carrega se a div existir na página) ---
+const containerMural = document.getElementById('mural-oliver-auto');
+if (containerMural) {
+    fetch('/mural-oliver.html')
+        .then(response => response.text())
+        .then(data => {
+            containerMural.innerHTML = data;
+            console.log("✅ Mural Oliver carregado apenas para esta página!");
+        })
+        .catch(err => console.error("Erro no Mural:", err));
+}
+
+
+// ======================================================
+// 2. LÓGICA DOS VÍDEOS (Travar esteira ao dar Play)
+// ======================================================
+
+function inicializarLogicaVideos() {
+    const track = document.getElementById('trilho-videos');
+    if (!track) return;
+
+    const vids = track.querySelectorAll('video');
+
+    vids.forEach(v => {
+        v.addEventListener('play', () => {
+            track.classList.add('pausada-total'); // Trava animação CSS
+            vids.forEach(outro => {
+                if (outro !== v) outro.pause(); // Pausa outros vídeos
+            });
+        });
+
+        v.addEventListener('pause', () => track.classList.remove('pausada-total'));
+        v.addEventListener('ended', () => track.classList.remove('pausada-total'));
+    });
+}
+
+
+// ======================================================
+// 3. LÓGICA DO MENU E BUSCA (Sua lógica original preservada)
+// ======================================================
+
 function inicializarLogicaMenu() {
     const btnMenu = document.getElementById("btn-menu");
     const navLista = document.getElementById("nav-lista");
     const categorias = document.querySelectorAll(".menu-item-cat");
 
-    // --- LÓGICA DA BUSCA (Ajustada) ---
+    // Lógica da Busca
     const todosOsLinks = Array.from(document.querySelectorAll(".nav-links a")).map(a => ({
         texto: a.innerText,
         link: a.href
@@ -90,7 +143,7 @@ function inicializarLogicaMenu() {
         });
     }
 
-    // --- LÓGICA DE ABRIR/FECHAR ---
+    // Lógica de Abrir/Fechar Menu
     if (btnMenu && navLista) {
         btnMenu.addEventListener("click", (e) => {
             e.stopPropagation();
