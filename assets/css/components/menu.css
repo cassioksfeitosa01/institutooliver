@@ -1,0 +1,190 @@
+<!-- FIXME:MENU DE NAVEGAÇÃO TOPO DO SITE COMPLETO-->
+
+/* FIXME: BARRA DE NAVEGAÇÃO E MENU */
+.navbar {
+    background-color: #000000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3%;
+    border-bottom: 2px solid #e5b702;
+    box-sizing: border-box;
+}
+
+.nav-logo img {
+    height: 35px !important;
+    width: auto !important;
+    display: block;
+}
+
+/*TODO: BUSCA DO TOPO  */
+.busca-topo-container {
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
+    position: relative;
+}
+
+#campo-busca-topo {
+    width: 100%;
+    padding: 10px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#campo-busca-topo:focus {
+    border-color: #e5b702;
+}
+
+#resultados-topo {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1002;
+}
+
+/* TODO: MENU LATERAL (X) */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffce08;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #050505;
+    padding: 80px 25px 25px 25px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+/*TODO: BUSCA LATERAL */
+.busca-lateral-container {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+#campo-busca-lateral {
+    width: 100%;
+    padding: 10px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#campo-busca-lateral:focus {
+    border-color: #e5b702;
+}
+
+/*TODO: Links e Itens do Menu */
+.nav-links a,
+.menu-item-cat {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 0;
+    display: block;
+    cursor: pointer;
+}
+
+.nav-links a:hover,
+.menu-item-cat:hover {
+    color: #ffce08;
+}
+
+/* TODO:ESTILO DOS SUBMENUS (Para aceitar vários níveis) */
+.submenu {
+    display: none;
+    padding-left: 15px;
+    border-left: 2px solid #e5b702;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.submenu.open {
+    display: block;
+}
+
+/*TODO: Estilo dos itens dentro dos submenus */
+.submenu a {
+    font-size: 14px;
+    font-weight: normal;
+    color: #99a0aa;
+}
+
+.resultado-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #222;
+    display: block;
+    font-size: 14px;
+    color: #fff;
+}
+
+.resultado-item:hover {
+    background: #222;
+    color: #ffce08;
+}
+
+.menu-escondido {
+    display: none !important;
+}

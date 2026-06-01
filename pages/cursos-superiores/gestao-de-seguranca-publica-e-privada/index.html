@@ -2,26 +2,56 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superior Sequencial - Instituto Óliver</title>
+    <!-- CONFIGURAÇÃO BÁSICA DO SITE -->
+    <meta charset="UTF-8" />
+    <!-- AJUSTE DE TELA (Faz o site caber certinho no celular e não abrir com zoom) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- TÍTULO DO SITE (aparece no Google e na aba do navegador) -->
+    <title>Curso - Superior Sequencial em Gestão de
+        Segurança Pública e Privada -Instituto Óliver - Escola Preparatória Online - Carreiras Policiais - </title>
+    <!-- DESCRIÇÃO DO SITE (aparece no Google abaixo do título) -->
+    <meta name="description" content="Prepare-se para as Carreiras Policiais com o Instituto Óliver." />
+    <!-- INSTRUÇÃO PARA ROBÔS DO GOOGLE (SEO) -->
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="stylesheet" href="/assets/css/vendas.css">
+    <link rel="stylesheet" href="">
+    <link rel="icon"
+        href="/assets/images/computador/home/favicon-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
+        type="image/png" />
+    <!-- PRELOAD MOBILE -->
+    <link rel="preload"
+        href="https://jlbgigwrwbhayhufgkdq.supabase.co/storage/v1/object/public/videos/vendas/curso-superior-sequencial-em-gestao-de-seguranca-publica-e-privada-instituto-oliver.mp4"
+        as="image" media="(max-width: 768px)" fetchpriority="high" />
+    <!-- PRELOAD DESKTOP -->
+    <link rel="preload"
+        href="https://jlbgigwrwbhayhufgkdq.supabase.co/storage/v1/object/public/videos/vendas/curso-superior-sequencial-em-gestao-de-seguranca-publica-e-privada-instituto-oliver.mp4"
+        as="image" media="(min-width: 769px)" fetchpriority="high" />
+
+    <!--TODO: Google Tag Manager -->
+    <script src="/assets/javascript/rastreamento-gtm.js"></script>
 </head>
 
 <body>
+
+    <!-- Container do Menu Global de Navegação -->
+    <div id="menu-principal"></div>
 
     <main>
         <!-- SEÇÃO HERO -->
         <section class="hero">
             <picture class="hero-bg-container">
-                <source media="(max-width: 768px)" srcset="/assets/images/fundo-celular.jpg" />
-                <img src="/assets/images/fundo-pc.jpg" alt="Fundo" class="hero-bg" />
+                <source media="(max-width: 768px)" srcset="/assets/images/celular/vendas/superior-sequencial-em-gestao-de-seguranca-publica-e-privada-en-3-meses-ead-cursos-superior-instituto-oliver-escola-preparatoria-online-carreiras-policiais-site-oficial.avif" />
+                <img src="/assets/images/computador/vendas/superior-sequencial-em-gestao-de-seguranca-publica-e-privada-en-3-meses-ead-cursos-superior-instituto-oliver-escola-preparatoria-online-carreiras-policiais-site-oficial.avif" alt="Fundo" class="hero-bg" />
             </picture>
+
             <div class="hero-overlay"></div>
+
             <div class="container hero-content">
                 <h1><span class="highlight">Curso Superior ACELERADO:</span> <br>Superior Sequencial em Gestão de
                     Segurança Pública e Privada <span class="highlight">em 3 MESES</span></h1>
                 <p class="subtitle">Assista agora ao vídeo abaixo:</p>
+
+                <!-- VÍDEO INSTANTÂNEO COM BORDA DOURADA -->
                 <div class="video-wrapper">
                     <div class="video-container">
                         <video
@@ -29,6 +59,7 @@
                             controls autoplay muted loop playsinline></video>
                     </div>
                 </div>
+
                 <div class="hero-buttons">
                     <a href="#" class="botao-cta">QUERO MINHA MATRÍCULA AGORA</a>
                 </div>
@@ -66,7 +97,6 @@
                     <p class="text-white">Obtenha CURSO SUPERIOR em 3 MESES com nosso curso superior sequencial
                         reconhecido pelo MEC e aceito em 80% dos concursos públicos que cobram NÍVEL SUPERIOR.</p>
 
-                    <!-- TEXTO DOURADO COM CLASSE FORTE -->
                     <div class="chamada-dourada">
                         Não perca tempo, confira abaixo os preços de compra e garanta seu nível superior agora mesmo!
                     </div>
@@ -94,6 +124,7 @@
                 </div>
             </div>
         </section>
+
 
         <section class="faq">
             <div class="container">
@@ -218,8 +249,16 @@
                 </details>
             </div>
         </section>
+
     </main>
 
+    <!-- Container da Seção do Professor Matheus -->
+    <div id="secao-professor"></div>
+    <!-- Container do Rodapé Principal do Site -->
+    <div id="rodape-principal"></div>
+
+    <!-- Montador de pagias Embutido  -->
+    <script src="/assets/javascript/montador-de-paginas.js"></script>
 </body>
 
 </html>

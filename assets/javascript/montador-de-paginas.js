@@ -5,7 +5,7 @@
 // --- MENU (Sempre carrega se houver a div) ---
 const containerMenu = document.getElementById('menu-principal');
 if (containerMenu) {
-    fetch('/menu.html')
+    fetch('/components/menu.html')
         .then(response => response.text())
         .then(data => {
             containerMenu.innerHTML = data;
@@ -18,7 +18,7 @@ if (containerMenu) {
 // --- RODAPÉ ---
 const containerRodape = document.getElementById('rodape-principal');
 if (containerRodape) {
-    fetch('/rodape.html')
+    fetch('/components/rodape.html')
         .then(response => response.text())
         .then(data => {
             containerRodape.innerHTML = data;
@@ -30,7 +30,7 @@ if (containerRodape) {
 // --- SEÇÃO PROFESSOR ---
 const containerProfessor = document.getElementById('secao-professor');
 if (containerProfessor) {
-    fetch('/professor.html')
+    fetch('/components/professor.html')
         .then(response => response.text())
         .then(data => {
             containerProfessor.innerHTML = data;
@@ -41,7 +41,7 @@ if (containerProfessor) {
 // --- ESTEIRA DE VÍDEOS (Só carrega se a div existir na página) ---
 const containerVideos = document.getElementById('secao-depoimentos');
 if (containerVideos) {
-    fetch('/depoimentos.html')
+    fetch('/components/depoimentos.html')
         .then(response => response.text())
         .then(data => {
             containerVideos.innerHTML = data;
@@ -54,7 +54,7 @@ if (containerVideos) {
 // --- MURAL OLIVER DE FOTOS (Só carrega se a div existir na página) ---
 const containerMural = document.getElementById('mural-oliver-auto');
 if (containerMural) {
-    fetch('/mural-oliver.html')
+    fetch('/components/mural-oliver.html')
         .then(response => response.text())
         .then(data => {
             containerMural.innerHTML = data;
@@ -86,7 +86,6 @@ function inicializarLogicaVideos() {
         v.addEventListener('ended', () => track.classList.remove('pausada-total'));
     });
 }
-
 
 // ======================================================
 // 3. LÓGICA DO MENU E BUSCA (Sua lógica original preservada)

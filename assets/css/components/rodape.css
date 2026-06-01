@@ -1,0 +1,109 @@
+
+    /* FIXME: RODAPÉ CONFIGURAÇÃO DO  (FOOTER) */
+
+/*TODO: Seleciona a tag principal do rodapé da página */
+footer {
+    background-color: #000000;
+    width: 100%;
+    border-top: 2px solid #e5b702;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 30px;
+
+    padding: 28px 35px;
+    margin-top: 0;
+
+    flex-wrap: wrap;
+}
+
+/* LOGO */
+.footer-logo {
+    height: 75px !important;
+    width: auto !important;
+
+    margin-bottom: 0;
+
+    object-fit: contain;
+}
+
+/* TEXTOS */
+.footer-textos {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-width: 900px;
+}
+
+/* PARÁGRAFOS */
+footer p {
+    color: #b7bec8;
+
+    font-size: 15px;
+
+    margin: 0;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.3px;
+}
+
+/* LINKS DO FOOTER */
+.footer-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-top: 5px;
+}
+
+/* LINKS */
+.footer-links a {
+    color: #ff3b3b;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+/* HOVER */
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+
+    footer {
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        height: 58px !important;
+    }
+
+    footer p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+}
