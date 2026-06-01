@@ -7,31 +7,30 @@
     <link rel="stylesheet" href="/assets/css/vendas.css">
 </head>
 <body>
-<main>
+
+    <main>
     <!-- SEÇÃO HERO -->
     <section class="hero">
-        <!-- AS FOTOS DE FUNDO -->
         <picture class="hero-bg-container">
-            <!-- Foto para Celular -->
-            <source media="(max-width: 768px)" srcset="/assets/images/celular/vendas/superior-sequencial-em-gestao-de-seguranca-publica-e-privada-en-3-meses-ead-cursos-superior-instituto-oliver-escola-preparatoria-online-carreiras-policiais-site-oficial.avif" />
-            <!-- Foto para PC -->
-            <img src="/assets/images/computador/vendas/superior-sequencial-em-gestao-de-seguranca-publica-e-privada-en-3-meses-ead-cursos-superior-instituto-oliver-escola-preparatoria-online-carreiras-policiais-site-oficial.avif" alt="Fundo Hero" class="hero-bg" />
+            <source media="(max-width: 768px)" srcset="/assets/images/fundo-celular.jpg" />
+            <img src="/assets/images/fundo-pc.jpg" alt="Fundo" class="hero-bg" />
         </picture>
         
-        <!-- Camada escura para dar leitura ao texto -->
         <div class="hero-overlay"></div>
 
-        <!-- CONTEÚDO NA FRENTE -->
         <div class="container hero-content">
-            <h1><span class="highlight">Curso Superior ACELERADO:</span> Superior Sequencial em Gestão de Segurança Pública e Privada <span class="highlight">em 3 MESES</span> EAD</h1>
+            <h1><span class="highlight">Curso Superior ACELERADO:</span> <br>Superior Sequencial em Gestão de Segurança Pública e Privada <span class="highlight">em 3 MESES</span></h1>
             <p class="subtitle">Assista agora ao vídeo abaixo:</p>
 
-            <div class="video-container">
-                <video src="https://jlbgigwrwbhayhufgkdq.supabase.co/storage/v1/object/public/videos/vendas/curso-superior-sequencial-em-gestao-de-seguranca-publica-e-privada-instituto-oliver.mp4" controls autoplay muted loop playsinline></video>
+            <!-- VÍDEO COM BORDA DOURADA E MAIS ALTO -->
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <video src="https://jlbgigwrwbhayhufgkdq.supabase.co/storage/v1/object/public/videos/vendas/curso-superior-sequencial-em-gestao-de-seguranca-publica-e-privada-instituto-oliver.mp4" controls autoplay muted loop playsinline></video>
+                </div>
             </div>
 
             <div class="hero-buttons">
-                <a href="#" class="botao-cta">MATRICULAR AGORA</a>
+                <a href="#" class="botao-cta">QUERO MINHA MATRÍCULA AGORA</a>
             </div>
         </div>
     </section>
@@ -43,37 +42,33 @@
             <div class="trust-item"><span>📜</span> <p>Lei Federal 9394/96</p></div>
             <div class="trust-item"><span>🏛️</span> <p>Reconhecido pelo MEC</p></div>
             <div class="trust-item"><span>🎓</span> <p>+ de 1.000 alunos formados</p></div>
-            <div class="trust-item"><span>✅</span> <p>Aceito em concursos</p></div>
-            <div class="trust-item"><span>✅</span> <p>Abate matérias</p></div>
         </div>
     </section>
 
-    <!-- SEÇÃO DE PREÇOS -->
+    <!-- SEÇÃO DE PREÇOS (CARDS PRETOS E MENORES) -->
     <section class="pricing-cards">
         <div class="container">
             <div class="section-title">
-                <p>Obtenha CURSO SUPERIOR em 3 MESES com nosso curso reconhecido pelo MEC.</p>
                 <h3>Garanta seu nível superior agora mesmo!</h3>
             </div>
 
             <div class="grid-cards">
                 <!-- CARD 1 -->
                 <div class="card">
-                    <div class="card-badge">MAIS VENDIDO</div>
-                    <img src="/assets/images/computador/vendas/mockup-gestao-seguranca-publica-privada.avif" alt="Curso">
+                    <img src="https://institutooliver.com.br/wp-content/uploads/2024/02/mockup-gestao-seguranca-publica-privada.webp" alt="Curso">
                     <div class="card-content">
                         <h4>Plano Cartão / Pix</h4>
-                        <div class="price">12x de <span>R$ 105,00</span></div>
+                        <div class="price">12x de <span class="gold">R$ 105,00</span></div>
                         <a href="#" class="botao-card">Fazer Matrícula</a>
                     </div>
                 </div>
 
                 <!-- CARD 2 -->
                 <div class="card">
-                    <img src="/assets/images/computador/vendas/mockup-gestao-seguranca-publica-privada.avif" alt="Curso">
+                    <img src="https://institutooliver.com.br/wp-content/uploads/2024/02/mockup-gestao-seguranca-publica-privada.webp" alt="Curso">
                     <div class="card-content">
                         <h4>Boleto Bancário</h4>
-                        <div class="price">8x de <span>R$ 162,25</span></div>
+                        <div class="price">8x de <span class="gold">R$ 162,25</span></div>
                         <a href="#" class="botao-card outline">Fazer Matrícula</a>
                     </div>
                 </div>
@@ -81,7 +76,7 @@
         </div>
     </section>
 
-    <section class="faq">
+        <section class="faq">
             <div class="container">
                 <h2>FAQ - Principais Dúvidas</h2>
 
@@ -206,5 +201,8 @@
         </section>
 
 </main>
+
+
+
 </body>
 </html>
