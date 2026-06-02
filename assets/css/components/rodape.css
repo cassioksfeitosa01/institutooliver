@@ -1,5 +1,234 @@
+/* CONFIGURAÇÃO DA SEÇÃO PROFESSOR MATHEUS OLIVER */
 
-    /* FIXME: RODAPÉ CONFIGURAÇÃO DO  (FOOTER) */
+/*FIXME: TITULO, SUBITITULO, DESCRIÇÃO  */
+.titulo {
+    /* Cor amarela/dourada marcante do Instituto Óliver */
+    color: #e5b702;
+
+    /* 28px convertido para rem. Forte e imponente no topo da página */
+    font-size: 1.75rem;
+
+    /* O negrito mais grosso possível, excelente para chamar atenção */
+    font-weight: 900;
+
+    /* Afasta o título do subtítulo com um respiro elegante (8px) */
+    margin-bottom: 0.5rem;
+
+    text-transform: uppercase;
+
+    /* Afasta levemente as letras para o texto em maiúsculo não embolar */
+    letter-spacing: 0.05rem;
+
+    /* Altura da linha ideal para títulos grandes */
+    line-height: 1.2;
+}
+
+.subtitulo {
+    /* Cor cinza clara elegante para contraste */
+    color: #FFFFFF;
+
+    /* 20px convertido para rem. Dá o destaque secundário perfeito */
+    font-size: 1.25rem;
+
+    /* Negrito tradicional (Bold), dando contraste com o título */
+    font-weight: 700;
+
+    /* Espaço até começar a descrição (12px) */
+    margin-bottom: 0.75rem;
+
+    /* Respiro ideal para o subtítulo não colar se quebrar em duas linhas */
+    line-height: 1.3;
+}
+
+.descricao {
+    /* Mesma cor cinza suave para uma leitura limpa */
+    color: rgba(255, 255, 255, 0.75);
+
+    /* 15px convertido para rem. O tamanho universal ideal para leitura no mobile */
+    font-size: 0.9375rem;
+
+    /* Peso normal (Regular) para o texto longo ficar leve e fácil de ler */
+    font-weight: 400;
+
+    /* 1.6 de espaço entre linhas evita que o aluno se perca na leitura */
+    line-height: 1.6;
+
+    /* Dá um espaço maior (20px) antes de vir o próximo bloco ou o botão de compra */
+    margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   MACAQUICE CONTROLADA: CONFIGURAÇÃO EXCLUSIVA PARA O TOPO DA PM
+   ========================================================================== */
+
+.subtitulo2 {
+    color: #e5b702; /* Amarelo dourado marcante no subtítulo */
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.titulo2 {
+    color: #FFFFFF; /* Título principal em branco para destacar bem */
+    font-size: 35;
+    font-weight: 100;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.sec11 {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 620px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  /* TODO: Força a imagem de fundo de qualquer seção a ir para trás */
+  .sec11 .caixa-imagem,
+  .sec11 .caixa-imagem picture,
+  .sec11 .caixa-imagem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sec11 .caixa-imagem img {
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+  }
+
+  /* TODO:Configuração base da Caixa de Texto para TODAS as seções */
+  .sec11 .caixa-texto {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 40%;
+    /* Garante os 40% de largura para quebrar o texto */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0px;
+
+  }
+
+  .sec11 .caixa-texto {
+    margin-top: 75px;
+    max-width: 55%;
+  }
+
+  /* FIXME: CONFIGURAÇÃO PARA CELULAR (Telas até 768px)*/
+
+  @media (max-width: 768px) {
+
+    .sec11 {
+      height: 1170px !important;
+      /* Aumenta o espaço para o texto grande no celular */
+      background-color: #000000 !important;
+      /* Pinta o novo espaço de preto */
+
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      /* Empurra o texto para a parte preta */
+    }
+
+    /* Trava a imagem do rodapé para não esticar no celular */
+    .sec11 .caixa-imagem,
+    .sec11 .caixa-imagem picture,
+    .sec11 .caixa-imagem img {
+      height: 500px !important;
+      /* Foto mantém o tamanho original no topo */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      object-fit: cover !important;
+    }
+
+    /* Garante que o texto ocupe toda a largura, fique centralizado e abaixo da foto */
+    .sec11 .caixa-texto {
+      position: relative;
+      z-index: 2;
+      width: 100% !important;
+      /* Força a caixa a ocupar a largura total do celular */
+      max-width: 100% !important;
+      /* Remove travas de tamanho do PC */
+      margin: 0 auto !important;
+      /* Centraliza a caixa na tela */
+
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      /* Empurra o texto para a base dos 950px */
+      align-items: center !important;
+      /* Centraliza os blocos de texto internamente */
+      text-align: center !important;
+      /* Centraliza as letras */
+
+      padding: 40px 24px 0px 24px !important;
+      /* Mantém o fundo zerado para colar embaixo */
+      box-sizing: border-box !important;
+    }
+
+
+    .lista-check li {
+      font-size: 15px;
+      /* Diminui um pouco a letra para não quebrar muita linha no celular */
+      margin-bottom: 10px;
+      /* Diminui o espaço entre os itens para economizar tela */
+      text-align: left;
+      /* Garante que o texto fique alinhado à esquerda por causa do ícone */
+    }
+
+    .lista-check li::before {
+      margin-right: 8px;
+      /* Ajusta a proximidade do V no mobile */
+    }
+  }
+
+
+  /* FIXME: CONFIGURÃO LISTA - CHECK CUPUTADOR*/
+
+  .lista-check {
+    list-style: none;
+    /* Remove a bola padrão */
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  
+  .lista-check li {
+    font-size: 18px;
+    /* Tamanho da letra no PC */
+    line-height: 1.6;
+    /* Espaçamento bom entre as linhas */
+    color: rgba(255, 255, 255, 0.75);
+    /* Cor branca com transparência */
+    margin-bottom: 12px;
+    /* Espaço entre um item e outro */
+  }
+
+  .lista-check li::before {
+    content: "✓ ";
+    /* Desenha o V direto */
+    color: #FFD62F;
+    /* Cor amarela do V */
+    font-weight: bold;
+    /* Deixa o V mais destacado */
+    margin-right: 10px;
+    /* Distância entre o V e o texto */
+  }
+
+
+/* FIXME: RODAPÉ CONFIGURAÇÃO DO  (FOOTER) */
 
 /*TODO: Seleciona a tag principal do rodapé da página */
 footer {

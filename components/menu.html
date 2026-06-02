@@ -1,378 +1,365 @@
-
-
 <header>
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="https://institutooliver.online">
+        <img
+          src="/assets/images/computador/home/logo-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
+          alt="Logo Instituto Oliver - Escola Preparatória" loading="eager" fetchpriority="high" width="500"
+          height="190" />
+      </a>
+    </div>
 
-   <nav class="navbar">
-      <div class="nav-logo">
-        <a href="https://institutooliver.online">
-          <img
-            src="/assets/images/computador/home/logo-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif" />
-        </a>
+    <!-- BUSCA DO TOPO -->
+    <div class="busca-topo-container">
+      <input type="text" id="campo-busca-topo" placeholder="🔎 Buscar curso..." autocomplete="off" />
+      <div id="resultados-topo"></div>
+    </div>
+
+    <div class="menu-toggle" id="btn-menu">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- MENU LATERAL -->
+    <div class="nav-links" id="nav-lista">
+
+      <!-- BUSCA LATERAL -->
+      <div class="busca-lateral-container">
+        <input type="text" id="campo-busca-lateral" placeholder="🔎 Buscar curso..." autocomplete="off" />
+        <div id="resultados-lateral"></div>
       </div>
 
-      <!-- TODO: BUSCA DO TOPO (SUA BUSCA ORIGINAL) -->
+      <a href="https://institutooliver.online/">Página Inicial</a>
 
-      <div class="busca-topo-container">
-        <input type="text" id="campo-busca-topo" placeholder="🔎 Buscar curso..." autocomplete="off" />
-        <div id="resultados-topo"></div>
+      <!-- CATEGORIA: CURSOS SUPERIORES -->
+      <div class="menu-item-cat">Cursos de Nível Superior ▾</div>
+      <div class="submenu">
+        <a href="/cursos-superiores/gestao-de-seguranca-publica-e-privada/">Gestão de Segurança Pública e Privada</a>
+        <a href="/outros-cursos/curso-eja-ensino-de-jovens-a-adultos/">EJA Supletivo + Superior Sequencial de Gestão de
+          Segurança Pública e Privada</a>
+        <a
+          href="/cursos-superiores/superior-sequencial-de-gestao-de-seguranca-publica-e-privada-tecnologo-de-rh-ou-gestao-publica/">Superior
+          Sequencial de Gestão de Segurança Pública e Privada + Tecnólogo de RH ou Gestão Pública</a>
+        <a href="/cursos-superiores/teologia/">Teologia</a>
+        <a href="/cursos-superiores/superior-bacharelado-educacao-fisica/">Educação Física</a>
+        <a href="/cursos-superiores/superior-tecnologo-gestao-publica/">Gestão Pública</a>
+        <a href="/cursos-superiores/recursos-humanos/">Recursos Humanos</a>
+        <a href="/cursos-superiores/direito-penal-e-processo-penal/">Direito Penal e Processo Penal</a>
+        <a href="/cursos-superiores/direito-penal-militar-e-processo-penal-militar/">Direito Penal Militar e Processo
+          Penal Militar</a>
+        <a href="/cursos-superiores/direito-constitucional-e-administrativo/">Direito Constitucional e
+          Administrativo</a>
       </div>
 
-      <div class="menu-toggle" id="btn-menu">
-        <span></span><span></span><span></span>
-      </div>
+      <!-- CATEGORIA: CARREIRAS POLICIAIS -->
+      <div class="menu-item-cat">Carreiras Policiais ▾</div>
+      <div class="submenu">
+        <a href="/carreiras-policiais/preparatorio-completoto-carreiras-policiais-do-o-brasil/">Carreiras Policiais
+          Preparatório Completo</a>
 
-      <!-- TODO: MENU LATERAL -->
-
-      <div class="nav-links" id="nav-lista">
-
-        <!-- TODO:BUSCA LATERAL (SUA BUSCA ORIGINAL) -->
-
-        <div class="busca-lateral-container">
-          <input type="text" id="campo-busca-lateral" placeholder="🔎 Buscar curso..." autocomplete="off" />
-          <div id="resultados-lateral"></div>
+        <!-- SUB-CATEGORIA: POLÍCIA MILITAR -->
+        <div class="menu-item-cat">Polícia Militar ▾</div>
+        <div class="submenu">
+          <a href="/carreiras-policiais/policia-militar/acre-ac/">PM (AC)</a>
+          <a href="/carreiras-policiais/policia-militar/alagoas-al/">PM (AL)</a>
+          <a href="/carreiras-policiais/policia-militar/amapa-ap/">PM (AP)</a>
+          <a href="/carreiras-policiais/policia-militar/amazonas-am/">PM (AM)</a>
+          <a href="/carreiras-policiais/policia-militar/bahia-ba/">PM (BA)</a>
+          <a href="/carreiras-policiais/policia-militar/ceara-ce/">PM (CE)</a>
+          <a href="/carreiras-policiais/policia-militar/distrito-federal-df/">PM (DF)</a>
+          <a href="/carreiras-policiais/policia-militar/espirito-santo-es/">PM (ES)</a>
+          <a href="/carreiras-policiais/policia-militar/goias-go/">PM (GO)</a>
+          <a href="/carreiras-policiais/policia-militar/maranhao-ma/">PM (MA)</a>
+          <a href="/carreiras-policiais/policia-militar/mato-grosso-mt/">PM (MT)</a>
+          <a href="/carreiras-policiais/policia-militar/mato-grosso-do-sul-ms/">PM (MS)</a>
+          <a href="/carreiras-policiais/policia-militar/minas-gerais-mg/">PM (MG)</a>
+          <a href="/carreiras-policiais/policia-militar/para-pa/">PM (PA)</a>
+          <a href="/carreiras-policiais/policia-militar/paraiba-pb/">PM (PB)</a>
+          <a href="/carreiras-policiais/policia-militar/parana-pr/">PM (PR)</a>
+          <a href="/carreiras-policiais/policia-militar/pernambuco-pe/">PM (PE)</a>
+          <a href="/carreiras-policiais/policia-militar/piaui-pi/">PM (PI)</a>
+          <a href="/carreiras-policiais/policia-militar/rio-de-janeiro-rj/">PM (RJ)</a>
+          <a href="/carreiras-policiais/policia-militar/rio-grande-do-norte-rn/">PM (RN)</a>
+          <a href="/carreiras-policiais/policia-militar/rio-grande-do-sul-rs/">PM (RS)</a>
+          <a href="/carreiras-policiais/policia-militar/rondonia-ro/">PM (RO)</a>
+          <a href="/carreiras-policiais/policia-militar/roraima-rr/">PM (RR)</a>
+          <a href="/carreiras-policiais/policia-militar/santa-catarina-sc/">PM (SC)</a>
+          <a href="/carreiras-policiais/policia-militar/sao-paulo-sp/">PM (SP)</a>
+          <a href="/carreiras-policiais/policia-militar/sergipe-se/">PM (SE)</a>
+          <a href="/carreiras-policiais/policia-militar/tocantins-to/">PM (TO)</a>
         </div>
 
-        <a href="https://institutooliver.online/">Página Inicial</a>
-
-        <!--TODO:CATEGORIA: CURSOS SUPERIORES -->
-
-        <div class="menu-item-cat">Cursos de Nível Superior ▾</div>
+        <!-- SUB-CATEGORIA: POLÍCIA CIVIL -->
+        <div class="menu-item-cat">Polícia Civil ▾</div>
         <div class="submenu">
-          <a href="/cursos-superiores/gestao-de-seguranca-publica-e-privada/">Gestão
-            de Segurança Pública e Privada</a>
-          <a href="/outros-cursos/curso-eja-ensino-de-jovens-e-adultos/">EJA Supletivo + Superior
-            Sequencial de Gestão de Segurança Pública e Privada</a>
-          <a href="/cursos-superiores/superior-sequencial-de-gestao-de-seguranca-publica-e-privada-tecnologo-de-rh-ou-gestao-publica/">Superior Sequencial de
-            Gestão de Segurança Pública e Privada + Tecnólogo de RH ou Gestão Pública</a>
-          <a href="/cursos-superiores/teologia/">Teologia</a>
-          <a href="/cursos-superiores/superior-bacharelado-educacao-fisica/">Educação Física</a>
-          <a href="/cursos-superiores/superior-tecnologo-gestao-publica/">Gestão Pública</a>
-          <a href="/cursos-superiores/recursos-humanos/">Recursos Humanos</a>
-          <a href="/cursos-superiores/direito-penal-e-processo-penal/">Direito Penal e Processo Penal</a>
-          <a href="/cursos-superiores/direito-penal-militar-e-processo-penal-militar/">Direito Penal Militar e Processo Penal Militar</a>
-          <a href="/cursos-superiores/direito-constitucional-e-administrativo/">Direito Constitucional e Administrativo</a>
+          <a href="/carreiras-policiais/policia-civil/acre-ac/">PC (AC)</a>
+          <a href="/carreiras-policiais/policia-civil/alagoas-al/">PC (AL)</a>
+          <a href="/carreiras-policiais/policia-civil/amapa-ap/">PC (AP)</a>
+          <a href="/carreiras-policiais/policia-civil/amazonas-am/">PC (AM)</a>
+          <a href="/carreiras-policiais/policia-civil/bahia-ba/">PC (BA)</a>
+          <a href="/carreiras-policiais/policia-civil/ceara-ce/">PC (CE)</a>
+          <a href="/carreiras-policiais/policia-civil/distrito-federal-df/">PC (DF)</a>
+          <a href="/carreiras-policiais/policia-civil/espirito-santo-es/">PC (ES)</a>
+          <a href="/carreiras-policiais/policia-civil/goias-go/">PC (GO)</a>
+          <a href="/carreiras-policiais/policia-civil/maranhao-ma/">PC (MA)</a>
+          <a href="/carreiras-policiais/policia-civil/mato-grosso-mt/">PC (MT)</a>
+          <a href="/carreiras-policiais/policia-civil/mato-grosso-do-sul-ms/">PC (MS)</a>
+          <a href="/carreiras-policiais/policia-civil/minas-gerais-mg/">PC (MG)</a>
+          <a href="/carreiras-policiais/policia-civil/para-pa/">PC (PA)</a>
+          <a href="/carreiras-policiais/policia-civil/paraiba-pb/">PC (PB)</a>
+          <a href="/carreiras-policiais/policia-civil/parana-pr/">PC (PR)</a>
+          <a href="/carreiras-policiais/policia-civil/pernambuco-pe/">PC (PE)</a>
+          <a href="/carreiras-policiais/policia-civil/piaui-pi/">PC (PI)</a>
+          <a href="/carreiras-policiais/policia-civil/rio-de-janeiro-rj/">PC (RJ)</a>
+          <a href="/carreiras-policiais/policia-civil/rio-grande-do-norte-rn/">PC (RN)</a>
+          <a href="/carreiras-policiais/policia-civil/rio-grande-do-sul-rs/">PC (RS)</a>
+          <a href="/carreiras-policiais/policia-civil/rondonia-ro/">PC (RO)</a>
+          <a href="/carreiras-policiais/policia-civil/roraima-rr/">PC (RR)</a>
+          <a href="/carreiras-policiais/policia-civil/santa-catarina-sc/">PC (SC)</a>
+          <a href="/carreiras-policiais/policia-civil/sao-paulo-sp/">PC (SP)</a>
+          <a href="/carreiras-policiais/policia-civil/sergipe-se/">PC (SE)</a>
+          <a href="/carreiras-policiais/policia-civil/tocantins-to/">PC (TO)</a>
         </div>
 
-        <!-- TODO:CATEGORIA: CARREIRAS POLICIAIS (COM SUB-CATEGORIAS) -->
-
-        <div class="menu-item-cat">Carreiras Policiais ▾</div>
+        <!-- SUB-CATEGORIA: POLÍCIA PENAL -->
+        <div class="menu-item-cat">Polícia Penal ▾</div>
         <div class="submenu">
-          <a href="/carreiras-policiais/preparatorio-completoto-carreiras-policiais-do-o-brasil/">Carreiras Policiais Preparatório Completo</a>
+          <a href="/carreiras-policiais/policia-penal/acre-ac/">PP (AC)</a>
+          <a href="/carreiras-policiais/policia-penal/alagoas-al/">PP (AL)</a>
+          <a href="/carreiras-policiais/policia-penal/amapa-ap/">PP (AP)</a>
+          <a href="/carreiras-policiais/policia-penal/amazonas-am/">PP (AM)</a>
+          <a href="/carreiras-policiais/policia-penal/bahia-ba/">PP (BA)</a>
+          <a href="/carreiras-policiais/policia-penal/ceara-ce/">PP (CE)</a>
+          <a href="/carreiras-policiais/policia-penal/distrito-federal-df/">PP (DF)</a>
+          <a href="/carreiras-policiais/policia-penal/espirito-santo-es/">PP (ES)</a>
+          <a href="/carreiras-policiais/policia-penal/goias-go/">PP (GO)</a>
+          <a href="/carreiras-policiais/policia-penal/maranhao-ma/">PP (MA)</a>
+          <a href="/carreiras-policiais/policia-penal/mato-grosso-mt/">PP (MT)</a>
+          <a href="/carreiras-policiais/policia-penal/mato-grosso-do-sul-ms/">PP (MS)</a>
+          <a href="/carreiras-policiais/policia-penal/minas-gerais-mg/">PP (MG)</a>
+          <a href="/carreiras-policiais/policia-penal/para-pa/">PP (PA)</a>
+          <a href="/carreiras-policiais/policia-penal/paraiba-pb/">PP (PB)</a>
+          <a href="/carreiras-policiais/policia-penal/parana-pr/">PP (PR)</a> <!-- Corrigido link e nome -->
+          <a href="/carreiras-policiais/policia-penal/pernambuco-pe/">PP (PE)</a>
+          <a href="/carreiras-policiais/policia-penal/piaui-pi/">PP (PI)</a>
+          <a href="/carreiras-policiais/policia-penal/rio-de-janeiro-rj/">PP (RJ)</a>
+          <a href="/carreiras-policiais/policia-penal/rio-grande-do-norte-rn/">PP (RN)</a>
+          <a href="/carreiras-policiais/policia-penal/rio-grande-do-sul-rs/">PP (RS)</a>
+          <a href="/carreiras-policiais/policia-penal/rondonia-ro/">PP (RO)</a>
+          <a href="/carreiras-policiais/policia-penal/roraima-rr/">PP (RR)</a>
+          <a href="/carreiras-policiais/policia-penal/santa-catarina-sc/">PP (SC)</a>
+          <a href="/carreiras-policiais/policia-penal/sao-paulo-sp/">PP (SP)</a>
+          <a href="/carreiras-policiais/policia-penal/sergipe-se/">PP (SE)</a>
+          <a href="/carreiras-policiais/policia-penal/tocantins-to/">PP (TO)</a>
+        </div>
 
-          <!--TODO: CATEGORIA: POLÍCIA MILITAR (COM SUB-CATEGORIAS)-->
-
-          <div class="menu-item-cat">Polícia Militar ▾</div>
-          <div class="submenu">
-            <a href="/carreiras-policiais/policia-militar/acre-ac/">PM - Polícia Militar - Acre (AC)</a>
-            <a href="/carreiras-policiais/policia-militar/alagoas-al/">PM - Polícia Militar - Alagoas (AL)</a>
-            <a href="/carreiras-policiais/policia-militar/amapa-ap/">PM - Polícia Militar - Amapá (AP)</a>
-            <a href="/carreiras-policiais/policia-militar/amazonas-am/">PM - Polícia Militar - Amazonas (AM)</a>
-            <a href="/carreiras-policiais/policia-militar/bahia-ba/">PM - Polícia Militar - Bahia (BA)</a>
-            <a href="/carreiras-policiais/policia-militar/ceara-ce/">PM - Polícia Militar - Ceará (CE)</a>
-            <a href="/carreiras-policiais/policia-militar/distrito-federal-df/">PM - Polícia Militar - Distrito Federal (DF)</a>
-            <a href="/carreiras-policiais/policia-militar/espirito-santo-es/">PM - Polícia Militar - Espírito Santo (ES)</a>
-            <a href="/carreiras-policiais/policia-militar/goias-go/">PM - Polícia Militar - Goiás (GO)</a>
-            <a href="/carreiras-policiais/policia-militar/maranhao-ma/">PM - Polícia Militar - Maranhão (MA)</a>
-            <a href="/carreiras-policiais/policia-militar/mato-grosso-mt/">PM - Polícia Militar - Mato Grosso (MT)</a>
-            <a href="/carreiras-policiais/policia-militar/mato-grosso-do-sul-ms/">PM - Polícia Militar - Mato Grosso do Sul (MS)</a>
-            <a href="/carreiras-policiais/policia-militar/minas-gerais-mg/">PM - Polícia Militar - Minas Gerais (MG)</a>
-            <a href="/carreiras-policiais/policia-militar/para-pa/">PM - Polícia Militar - Pará  (PA)</a>
-            <a href="/carreiras-policiais/policia-militar/paraiba-pb/">PM - Polícia Militar - Paraíba (PB)</a>
-            <a href="/carreiras-policiais/policia-militar/parana-pr/">PM - Polícia Militar - Paraná (PR)</a>
-            <a href="/carreiras-policiais/policia-militar/pernambuco-pe/">PM - Polícia Militar - Pernambuco (PE)</a>
-            <a href="/carreiras-policiais/policia-militar/piaui-pi/">PM - Polícia Militar - Piauí (PI)</a>
-            <a href="/carreiras-policiais/policia-militar/rio-de-janeiro-rj/">PM - Polícia Militar - Rio de Janeiro (RJ)</a>
-            <a href="/carreiras-policiais/policia-militar/rio-grande-do-norte-rn/">PM - Polícia Militar - Rio Grande do Norte (RN)</a>
-            <a href="/carreiras-policiais/policia-militar/rio-grande-do-sul-rs/">PM - Polícia Militar - Rio Grande do Sul (RS)</a>
-            <a href="/carreiras-policiais/policia-militar/rondonia-ro/">PM - Polícia Militar - Rondônia (RO)</a>
-            <a href="/carreiras-policiais/policia-militar/roraima-rr/">PM - Polícia Militar - Roraima (RR)</a>
-            <a href="/carreiras-policiais/policia-militar/santa-catarina-sc/">PM - Polícia Militar - Santa Catarina (SC)</a>
-            <a href="/carreiras-policiais/policia-militar/sao-paulo-sp/">PM - Polícia Militar - São Paulo (SP)</a>
-            <a href="/carreiras-policiais/policia-militar/sergipe-se/">PM - Polícia Militar - Sergipe (SE)</a>
-            <a href="/carreiras-policiais/policia-militar/tocantins-to/">PM - Polícia Militar - Tocantins (TO)</a>
-          </div>
-
-          <!--TODO: CATEGORIA: POLÍCIA CIVIL (COM SUB-CATEGORIAS)-->
-
-          <div class="menu-item-cat">Polícia Civil ▾</div>
-          <div class="submenu">
-            <a href="/carreiras-policiais/policia-civil/acre-ac/">PC - Polícia Civil - Acre (AC)</a>
-            <a href="/carreiras-policiais/policia-civil/alagoas-al/">PC - Polícia Civil - Alagoas (AL)</a>
-            <a href="/carreiras-policiais/policia-civil/amapa-ap/">PC - Polícia Civil - Amapá (AP)</a>
-            <a href="/carreiras-policiais/policia-civil/amazonas-am/">PC - Polícia Civil - Amazonas (AM)</a>
-            <a href="/carreiras-policiais/policia-civil/bahia-ba/">PC - Polícia Civil - Bahia (BA)</a>
-            <a href="/carreiras-policiais/policia-civil/ceara-ce/">PC - Polícia Civil - Ceará (CE)</a>
-            <a href="/carreiras-policiais/policia-civil/distrito-federal-df/">PC - Polícia Civil - Distrito Federal (DF)</a>
-            <a href="/carreiras-policiais/policia-civil/espirito-santo-es/">PC - Polícia Civil - Espírito Santo (ES)</a>
-            <a href="/carreiras-policiais/policia-civil/goias-go/">PC - Polícia Civil - Goiás (GO)</a>
-            <a href="/carreiras-policiais/policia-civil/maranhao-ma/">PC - Polícia Civil - Maranhão (MA)</a>
-            <a href="/carreiras-policiais/policia-civil/mato-grosso-mt/">PC - Polícia Civil - Mato Grosso (MT)</a>
-            <a href="/carreiras-policiais/policia-civil/mato-grosso-do-sul-ms/">PC - Polícia Civil - Mato Grosso do Sul (MS)</a>
-            <a href="/carreiras-policiais/policia-civil/minas-gerais-mg/">PC - Polícia Civil - Minas Gerais (MG)</a>
-            <a href="/carreiras-policiais/policia-civil/para-pa/">PC - Polícia Civil - Pará  (PA)</a>
-            <a href="/carreiras-policiais/policia-civil/paraiba-pb/">PC - Polícia Civil - Paraíba (PB)</a>
-            <a href="/carreiras-policiais/policia-civil/parana-pr/">PC - Polícia Civil - Paraná (PR)</a>
-            <a href="/carreiras-policiais/policia-civil/pernambuco-pe/">PC - Polícia Civil - Pernambuco (PE)</a>
-            <a href="/carreiras-policiais/policia-civil/piaui-pi/">PC - Polícia Civil - Piauí (PI)</a>
-            <a href="/carreiras-policiais/policia-civil/rio-de-janeiro-rj/">PC - Polícia Civil - Rio de Janeiro (RJ)</a>
-            <a href="/carreiras-policiais/policia-civil/rio-grande-do-norte-rn/">PC - Polícia Civil - Rio Grande do Norte (RN)</a>
-            <a href="/carreiras-policiais/policia-civil/rio-grande-do-sul-rs/">PC - Polícia Civil - Rio Grande do Sul (RS)</a>
-            <a href="/carreiras-policiais/policia-civil/rondonia-ro/">PC - Polícia Civil - Rondônia (RO)</a>
-            <a href="/carreiras-policiais/policia-civil/roraima-rr/">PC - Polícia Civil - Roraima (RR)</a>
-            <a href="/carreiras-policiais/policia-civil/santa-catarina-sc/">PC - Polícia Civil - Santa Catarina (SC)</a>
-            <a href="/carreiras-policiais/policia-civil/sao-paulo-sp/">PC - Polícia Civil - São Paulo (SP)</a>
-            <a href="/carreiras-policiais/policia-civil/sergipe-se/">PC - Polícia Civil - Sergipe (SE)</a>
-            <a href="/carreiras-policiais/policia-civil/tocantins-to/">PC - Polícia Civil - Tocantins (TO)</a>
-          </div>
-
-          <!--TODO: CATEGORIA: POLÍCIA PENAL (COM SUB-CATEGORIAS)-->
-
-          <div class="menu-item-cat">Polícia Penal ▾</div>
-          <div class="submenu">
-            <a href="/carreiras-policiais/policia-penal/acre-ac/">PP - Policial Penal - Acre (AC)</a>
-            <a href="/carreiras-policiais/policia-penal/alagoas-al/">PP - Policial Penal - Alagoas (AL)</a>
-            <a href="/carreiras-policiais/policia-penal/amapa-ap/">PP - Policial Penal - Amapá (AP)</a>
-            <a href="/carreiras-policiais/policia-penal/amazonas-am/">PP - Policial Penal - Amazonas (AM)</a>
-            <a href="/carreiras-policiais/policia-penal/bahia-ba/">PP - Policial Penal - Bahia (BA)</a>
-            <a href="/carreiras-policiais/policia-penal/ceara-ce/">PP - Policial Penal - Ceará (CE)</a>
-            <a href="/carreiras-policiais/policia-penal/distrito-federal-df/">PP - Policial Penal - Distrito Federal (DF)</a>
-            <a href="/carreiras-policiais/policia-penal/espirito-santo-es/">PP - Policial Penal - Espírito Santo (ES)</a>
-            <a href="/carreiras-policiais/policia-penal/goias-go/">PP - Policial Penal - Goiás (GO)</a>
-            <a href="/carreiras-policiais/policia-penal/maranhao-ma/">PP - Policial Penal - Maranhão (MA)</a>
-            <a href="/carreiras-policiais/policia-penal/mato-grosso-mt/">PP - Policial Penal - Mato Grosso (MT)</a>
-            <a href="/carreiras-policiais/policia-penal/mato-grosso-do-sul-ms/">PP - Policial Penal - Mato Grosso do Sul (MS)</a>
-            <a href="/carreiras-policiais/policia-penal/minas-gerais-mg/">PP - Policial Penal - Minas Gerais (MG)</a>
-            <a href="/carreiras-policiais/policia-penal/para-pa/">PP - Policial Penal - Pará  (PA)</a>
-            <a href="/carreiras-policiais/policia-penal/paraiba-pb/">PP - Policial Penal - Paraíba (PB)</a>
-            <a href="/carreiras-policiais/policia-penal/paraiba-pb/">PP - Policial Penal - Paraná (PR)</a>
-            <a href="/carreiras-policiais/policia-penal/pernambuco-pe/">PP - Policial Penal - Pernambuco (PE)</a>
-            <a href="/carreiras-policiais/policia-penal/piaui-pi/">PP - Policial Penal - Piauí (PI)</a>
-            <a href="/carreiras-policiais/policia-penal/rio-de-janeiro-rj/">PP - Policial Penal - Rio de Janeiro (RJ)</a>
-            <a href="/carreiras-policiais/policia-penal/rio-grande-do-norte-rn/">PP - Policial Penal - Rio Grande do Norte (RN)</a>
-            <a href="/carreiras-policiais/policia-penal/rio-grande-do-sul-rs/">PP - Policial Penal - Rio Grande do Sul (RS)</a>
-            <a href="/carreiras-policiais/policia-penal/rondonia-ro/">PP - Policial Penal - Rondônia (RO)</a>
-            <a href="/carreiras-policiais/policia-penal/roraima-rr/">PP - Policial Penal - Roraima (RR)</a>
-            <a href="/carreiras-policiais/policia-penal/santa-catarina-sc/">PP - Policial Penal - Santa Catarina (SC)</a>
-            <a href="/carreiras-policiais/policia-penal/sao-paulo-sp/">PP - Policial Penal - São Paulo (SP)</a>
-            <a href="/carreiras-policiais/policia-penal/sergipe-se/">PP - Policial Penal - Sergipe (SE)</a>
-            <a href="/carreiras-policiais/policia-penal/tocantins-to/">PP - Policial Penal - Tocantins (TO)</a>
-          </div>
-
-          <!--TODO: CATEGORIA: POLÍCIA FEDERAL (COM SUB-CATEGORIAS)-->
-
-          <div class="menu-item-cat">Polícia Federal ▾</div>
-          <div class="submenu">
-             <a href="/carreiras-policiais/policia-federal/pf-federal/">Polícia Federal</a>
+        <!-- SUB-CATEGORIA: POLÍCIA FEDERAL -->
+        <div class="menu-item-cat">Polícia Federal ▾</div>
+        <div class="submenu">
+          <a href="/carreiras-policiais/policia-federal/pf-federal/">Polícia Federal</a>
           <a href="/carreiras-policiais/policia-federal/administrativo/">Polícia Federal Administrativo</a>
-          <a href="/carreiras-policiais/policia-federal/rodoviária/">Polícia Rodoviária Federal</a>
-          </div>
-
-          <!--TODO: CATEGORIA: GUARDA MUNICIPAL (COM SUB-CATEGORIAS)-->
-
-          <div class="menu-item-cat">Guarda Municipal ▾</div>
-          <div class="submenu">
-            <a href="#">GCM - Guarda Municipal - Brasil (BR)</a>
-            <a href="#">GCM - Guarda Municipal - Almirante Tamandaré - Paraná (PR)</a>
-            <a href="#">GCM - Guarda Municipal - Altaneira - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Alto Alegre do Maranhão - Maranhão (MA)</a>
-            <a href="#">GCM - Guarda Municipal - Alto Longá - Piauí (PI)</a>
-            <a href="#">GCM - Guarda Municipal - Aparecida de Goiânia - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Aracaju - Sergipe (SE)</a>
-            <a href="#">GCM - Guarda Municipal - Arapiraca - Alagoas (AL)</a>
-            <a href="#">GCM - Guarda Municipal - Araucária - Paraná (PR)</a>
-            <a href="#">GCM - Guarda Municipal - Arcoverde - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - Artur Nogueira - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Atibaia - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Autazes - Amazonas (AM)</a>
-            <a href="#">GCM - Guarda Municipal - Bacuri - Maranhão (MA)</a>
-            <a href="#">GCM - Guarda Municipal - Bagé - Rio Grande do Sul (RS)</a>
-            <a href="#">GCM - Guarda Municipal - Bebedouro - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Belém - Pará (PA)</a>
-            <a href="#">GCM - Guarda Municipal - Belo Horizonte - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Boa Vista - Roraima (RR)</a>
-            <a href="#">GCM - Guarda Municipal - Bom Jesus da Lapa - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Botucatu - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Caçapava - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Cachoeiro - Espírito Santo (ES)</a>
-            <a href="#">GCM - Guarda Municipal - Caldas Novas - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Camaragibe - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - Cametá - Pará (PA)</a>
-            <a href="#">GCM - Guarda Municipal - Camocim - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Campina Grande - Paraíba (PB)</a>
-            <a href="#">GCM - Guarda Municipal - Campinas - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Campo Grande - Mato Grosso do Sul (MS)</a>
-            <a href="#">GCM - Guarda Municipal - Campos dos Goytacazes - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Capivari - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Carapicuíba - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Cariacica - Espírito Santo (ES)</a>
-            <a href="#">GCM - Guarda Municipal - Cascavel - Paraná (PR)</a>
-            <a href="#">GCM - Guarda Municipal - Cedro - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Chã Grande - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Chorozinho - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Cianorte - Paraná (PR)</a>
-            <a href="#">GCM - Guarda Municipal - Codó - Maranhão (MA)</a>
-            <a href="#">GCM - Guarda Municipal - Coelho Neto - Maranhão (MA)</a>
-            <a href="#">GCM - Guarda Municipal - Conceição do Jacuípe - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Conselheiro Lafaiete - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Corumbá - Mato Grosso do Sul (MS)</a>
-            <a href="#">GCM - Guarda Municipal - Cotia - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Cruzeiro - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Cubatão - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Cuiabá - Mato Grosso (MT)</a>
-            <a href="#">GCM - Guarda Municipal - Curitiba - Paraná (PR)</a>
-            <a href="#">GCM - Guarda Municipal - Cristalina - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Dourados - Mato Grosso do Sul (MS)</a>
-            <a href="#">GCM - Guarda Municipal - Duque de Caxias - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Embu das Artes - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Eunápolis - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Florianópolis - Santa Catarina (SC)</a>
-            <a href="#">GCM - Guarda Municipal - Fortaleza - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Foz do Iguaçu - Paraná (PR)</a>
-            <a href="#">GCM - Guarda Municipal - Franco da Rocha - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Goiânia - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Guaíra - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Guanambi - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Guapó - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Guaratuba - Paraná (PR)</a>
-            <a href="#">GCM - Guarda Municipal - Garanhuns - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - Horizonte - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Imperatriz - Maranhão (MA)</a>
-            <a href="#">GCM - Guarda Municipal - Itabaianinha - Sergipe (SE)</a>
-            <a href="#">GCM - Guarda Municipal - Itaberaba - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Itabirito - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Itajubá - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Itambé - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Itapajé - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Itapissuma - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - Itatiba - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Jaboatão dos Guararapes - Paraíba (PB)</a>
-            <a href="#">GCM - Guarda Municipal - João Pessoa - Paraíba (PB)</a>
-            <a href="#">GCM - Guarda Municipal - Jales - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Jandira - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Jeremoabo - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - João Alfredo - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - Lins - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Macaíba - Rio Grande do Norte (RN)</a>
-            <a href="#">GCM - Guarda Municipal - Macapá - Amapá (AP)</a>
-            <a href="#">GCM - Guarda Municipal - Maceió - Alagoas (AL)</a>
-            <a href="#">GCM - Guarda Municipal - Mairiporã - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Manacapuru - Amazonas (AM)</a>
-            <a href="#">GCM - Guarda Municipal - Manaus - Amazonas (AM)</a>
-            <a href="#">GCM - Guarda Municipal - Marabá - Pará (PA)</a>
-            <a href="#">GCM - Guarda Municipal - Marituba - Pará (PA)</a>
-            <a href="#">GCM - Guarda Municipal - Montes Claros - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Mongaguá - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Natal - Rio Grande do Norte (RN)</a>
-            <a href="#">GCM - Guarda Municipal - Nilópolis - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Niterói - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Nova Iguaçu - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Nova Serrana - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Nova Venécia - Espírito Santo (ES)</a>
-            <a href="#">GCM - Guarda Municipal - Novo Gama - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Olinda - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - Palhoça - Santa Catarina (SC)</a>
-            <a href="#">GCM - Guarda Municipal - Palmas - Tocantins (TO)</a>
-            <a href="#">GCM - Guarda Municipal - Palmeiras de Goiás - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Paraty - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Parnamirim - Rio Grande do Norte (RN)</a>
-            <a href="#">GCM - Guarda Municipal - Passos - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Pedro Velho - Rio Grande do Norte (RN)</a>
-            <a href="#">GCM - Guarda Municipal - Peruíbe - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Petrópolis - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Poções - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Poços de Caldas - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Porto Alegre - Rio Grande do Sul (RS)</a>
-            <a href="#">GCM - Guarda Municipal - Porto Belo - Santa Catarina (SC)</a>
-            <a href="#">GCM - Guarda Municipal - Porto Nacional - Tocantins (TO)</a>
-            <a href="#">GCM - Guarda Municipal - Porto Velho - Rondônia (RO)</a>
-            <a href="#">GCM - Guarda Municipal - Potiraguá - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Recife - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - Rio Verde - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Ribeirão das Neves - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Rio de Janeiro - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Rorainópolis - Roraima (RR)</a>
-            <a href="#">GCM - Guarda Municipal - Sabará - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Salvador - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Santa Helena - Maranhão (MA)</a>
-            <a href="#">GCM - Guarda Municipal - Santana - Amapá (AP)</a>
-            <a href="#">GCM - Guarda Municipal - Santa Quitéria - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Santa Rita - Paraíba (PB)</a>
-            <a href="#">GCM - Guarda Municipal - Santo Amaro - Maranhão (MA)</a>
-            <a href="#">GCM - Guarda Municipal - Santos - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - São Bernardo do Campo - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - São Benedito do Sul - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - São Caetano do Sul - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - São Carlos - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - São Cristóvão - Sergipe (SE)</a>
-            <a href="#">GCM - Guarda Municipal - São Gabriel da Cachoeira - Amazonas (AM)</a>
-            <a href="#">GCM - Guarda Municipal - São Luís do Quitunde - Alagoas (AL)</a>
-            <a href="#">GCM - Guarda Municipal - São Józé do Rio Preto - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - São Raimundo das Mangabeiras - Maranhão (MA)</a>
-            <a href="#">GCM - Guarda Municipal - São Paulo - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - São Sebastião - Alagoas (AL)</a>
-            <a href="#">GCM - Guarda Municipal - Sapucaia - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Saquarema - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Serra - Espírito Santo (ES)</a>
-            <a href="#">GCM - Guarda Municipal - Serrania - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Sumaré - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Surubim - Pernambuco (PE)</a>
-            <a href="#">GCM - Guarda Municipal - Sorocaba - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Tatuí - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Taubaté - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Tamboril - Ceará (CE)</a>
-            <a href="#">GCM - Guarda Municipal - Teixeira de Freitas - Bahia (BA)</a>
-            <a href="#">GCM - Guarda Municipal - Teresina - Piauí (PI)</a>
-            <a href="#">GCM - Guarda Municipal - Teresópolis - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Três Rios - Rio de Janeiro (RJ)</a>
-            <a href="#">GCM - Guarda Municipal - Tucuruí - Pará (PA)</a>
-            <a href="#">GCM - Guarda Municipal - Uberaba - Minas Gerais (MG)</a>
-            <a href="#">GCM - Guarda Municipal - Umuarama - Paraná (PR)</a>
-            <a href="#">GCM - Guarda Municipal - Urucurituba - Amazonas (AM)</a>
-            <a href="#">GCM - Guarda Municipal - Valinhos - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Valparaíso de Goiás - Goiás (GO)</a>
-            <a href="#">GCM - Guarda Municipal - Vargem Grande Paulista - São Paulo (SP)</a>
-            <a href="#">GCM - Guarda Municipal - Várzea Grande - Mato Grosso do Sul (MS)</a>
-            <a href="#">GCM - Guarda Municipal - Vitória - Espírito Santo (ES)</a>
-            <a href="#">GCM - Guarda Municipal - Votorantim - São Paulo (SP)</a>
-          </div>
-
-          <!--TODO: CATEGORIA: BOMBEIRO MILITAR (COM SUB-CATEGORIAS)-->
-
-          <div class="menu-item-cat">Bombeiro Militar ▾</div>
-          <div class="submenu">
-            <a href="/carreiras-policiais/bombeiro-militar/Alagoas/">CBM - Bombeiro Militar - Alagoas (AL)</a>
-            <a href="/carreiras-policiais/bombeiro-militar/Amapá/">CBM - Bombeiro Militar - Amapá (AP)</a>
-            <a href="/carreiras-policiais/bombeiro-militar/Goiás/">CBM - Bombeiro Militar - Goiás (GO)</a>
-            <a href="/carreiras-policiais/bombeiro-militar/Minas Gerais/">CBM - Bombeiro Militar - Minas Gerais (MG)</a>
-            <a href="/carreiras-policiais/bombeiro-militar/Pará/">CBM - Bombeiro Militar - Pará (PA)</a>
-          </div>
+          <a href="/carreiras-policiais/policia-federal/rodoviaria/">Polícia Rodoviária Federal</a>
+          <!-- Corrigido URL -->
         </div>
 
-        <!--TODO: CATEGORIA: PÓS-GRADUAÇÃO (COM SUB-CATEGORIAS)-->
-
-        <div class="menu-item-cat">Pós-Graduação ▾</div>
+        <!-- SUB-CATEGORIA: GUARDA MUNICIPAL (Omiti a lista gigante para o código caber aqui, mas mantenha a sua) -->
+        <div class="menu-item-cat">Guarda Municipal ▾</div>
         <div class="submenu">
-          <a href="/cursos-superiores/direito-penal-e-processo-penal/">Direito Penal e Processo Penal</a>
-          <a href="/cursos-superiores/direito-penal-militar-e-processo-penal-militar/">Direito Penal Militar e Processo Penal Militar</a>
-          <a href="/cursos-superiores/direito-constitucional-e-administrativo/">Direito Constitucional e Administrativo</a>
+          <a href="#">GCM - Guarda Municipal - Brasil (BR)</a>
+          <a href="#">GCM - Guarda Municipal - Almirante Tamandaré - Paraná (PR)</a>
+          <a href="#">GCM - Guarda Municipal - Altaneira - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Alto Alegre do Maranhão - Maranhão (MA)</a>
+          <a href="#">GCM - Guarda Municipal - Alto Longá - Piauí (PI)</a>
+          <a href="#">GCM - Guarda Municipal - Aparecida de Goiânia - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Aracaju - Sergipe (SE)</a>
+          <a href="#">GCM - Guarda Municipal - Arapiraca - Alagoas (AL)</a>
+          <a href="#">GCM - Guarda Municipal - Araucária - Paraná (PR)</a>
+          <a href="#">GCM - Guarda Municipal - Arcoverde - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - Artur Nogueira - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Atibaia - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Autazes - Amazonas (AM)</a>
+          <a href="#">GCM - Guarda Municipal - Bacuri - Maranhão (MA)</a>
+          <a href="#">GCM - Guarda Municipal - Bagé - Rio Grande do Sul (RS)</a>
+          <a href="#">GCM - Guarda Municipal - Bebedouro - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Belém - Pará (PA)</a>
+          <a href="#">GCM - Guarda Municipal - Belo Horizonte - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Boa Vista - Roraima (RR)</a>
+          <a href="#">GCM - Guarda Municipal - Bom Jesus da Lapa - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Botucatu - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Caçapava - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Cachoeiro - Espírito Santo (ES)</a>
+          <a href="#">GCM - Guarda Municipal - Caldas Novas - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Camaragibe - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - Cametá - Pará (PA)</a>
+          <a href="#">GCM - Guarda Municipal - Camocim - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Campina Grande - Paraíba (PB)</a>
+          <a href="#">GCM - Guarda Municipal - Campinas - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Campo Grande - Mato Grosso do Sul (MS)</a>
+          <a href="#">GCM - Guarda Municipal - Campos dos Goytacazes - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Capivari - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Carapicuíba - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Cariacica - Espírito Santo (ES)</a>
+          <a href="#">GCM - Guarda Municipal - Cascavel - Paraná (PR)</a>
+          <a href="#">GCM - Guarda Municipal - Cedro - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Chã Grande - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Chorozinho - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Cianorte - Paraná (PR)</a>
+          <a href="#">GCM - Guarda Municipal - Codó - Maranhão (MA)</a>
+          <a href="#">GCM - Guarda Municipal - Coelho Neto - Maranhão (MA)</a>
+          <a href="#">GCM - Guarda Municipal - Conceição do Jacuípe - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Conselheiro Lafaiete - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Corumbá - Mato Grosso do Sul (MS)</a>
+          <a href="#">GCM - Guarda Municipal - Cotia - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Cruzeiro - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Cubatão - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Cuiabá - Mato Grosso (MT)</a>
+          <a href="#">GCM - Guarda Municipal - Curitiba - Paraná (PR)</a>
+          <a href="#">GCM - Guarda Municipal - Cristalina - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Dourados - Mato Grosso do Sul (MS)</a>
+          <a href="#">GCM - Guarda Municipal - Duque de Caxias - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Embu das Artes - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Eunápolis - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Florianópolis - Santa Catarina (SC)</a>
+          <a href="#">GCM - Guarda Municipal - Fortaleza - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Foz do Iguaçu - Paraná (PR)</a>
+          <a href="#">GCM - Guarda Municipal - Franco da Rocha - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Goiânia - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Guaíra - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Guanambi - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Guapó - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Guaratuba - Paraná (PR)</a>
+          <a href="#">GCM - Guarda Municipal - Garanhuns - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - Horizonte - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Imperatriz - Maranhão (MA)</a>
+          <a href="#">GCM - Guarda Municipal - Itabaianinha - Sergipe (SE)</a>
+          <a href="#">GCM - Guarda Municipal - Itaberaba - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Itabirito - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Itajubá - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Itambé - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Itapajé - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Itapissuma - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - Itatiba - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Jaboatão dos Guararapes - Paraíba (PB)</a>
+          <a href="#">GCM - Guarda Municipal - João Pessoa - Paraíba (PB)</a>
+          <a href="#">GCM - Guarda Municipal - Jales - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Jandira - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Jeremoabo - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - João Alfredo - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - Lins - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Macaíba - Rio Grande do Norte (RN)</a>
+          <a href="#">GCM - Guarda Municipal - Macapá - Amapá (AP)</a>
+          <a href="#">GCM - Guarda Municipal - Maceió - Alagoas (AL)</a>
+          <a href="#">GCM - Guarda Municipal - Mairiporã - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Manacapuru - Amazonas (AM)</a>
+          <a href="#">GCM - Guarda Municipal - Manaus - Amazonas (AM)</a>
+          <a href="#">GCM - Guarda Municipal - Marabá - Pará (PA)</a>
+          <a href="#">GCM - Guarda Municipal - Marituba - Pará (PA)</a>
+          <a href="#">GCM - Guarda Municipal - Montes Claros - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Mongaguá - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Natal - Rio Grande do Norte (RN)</a>
+          <a href="#">GCM - Guarda Municipal - Nilópolis - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Niterói - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Nova Iguaçu - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Nova Serrana - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Nova Venécia - Espírito Santo (ES)</a>
+          <a href="#">GCM - Guarda Municipal - Novo Gama - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Olinda - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - Palhoça - Santa Catarina (SC)</a>
+          <a href="#">GCM - Guarda Municipal - Palmas - Tocantins (TO)</a>
+          <a href="#">GCM - Guarda Municipal - Palmeiras de Goiás - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Paraty - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Parnamirim - Rio Grande do Norte (RN)</a>
+          <a href="#">GCM - Guarda Municipal - Passos - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Pedro Velho - Rio Grande do Norte (RN)</a>
+          <a href="#">GCM - Guarda Municipal - Peruíbe - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Petrópolis - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Poções - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Poços de Caldas - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Porto Alegre - Rio Grande do Sul (RS)</a>
+          <a href="#">GCM - Guarda Municipal - Porto Belo - Santa Catarina (SC)</a>
+          <a href="#">GCM - Guarda Municipal - Porto Nacional - Tocantins (TO)</a>
+          <a href="#">GCM - Guarda Municipal - Porto Velho - Rondônia (RO)</a>
+          <a href="#">GCM - Guarda Municipal - Potiraguá - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Recife - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - Rio Verde - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Ribeirão das Neves - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Rio de Janeiro - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Rorainópolis - Roraima (RR)</a>
+          <a href="#">GCM - Guarda Municipal - Sabará - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Salvador - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Santa Helena - Maranhão (MA)</a>
+          <a href="#">GCM - Guarda Municipal - Santana - Amapá (AP)</a>
+          <a href="#">GCM - Guarda Municipal - Santa Quitéria - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Santa Rita - Paraíba (PB)</a>
+          <a href="#">GCM - Guarda Municipal - Santo Amaro - Maranhão (MA)</a>
+          <a href="#">GCM - Guarda Municipal - Santos - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - São Bernardo do Campo - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - São Benedito do Sul - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - São Caetano do Sul - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - São Carlos - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - São Cristóvão - Sergipe (SE)</a>
+          <a href="#">GCM - Guarda Municipal - São Gabriel da Cachoeira - Amazonas (AM)</a>
+          <a href="#">GCM - Guarda Municipal - São Luís do Quitunde - Alagoas (AL)</a>
+          <a href="#">GCM - Guarda Municipal - São Józé do Rio Preto - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - São Raimundo das Mangabeiras - Maranhão (MA)</a>
+          <a href="#">GCM - Guarda Municipal - São Paulo - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - São Sebastião - Alagoas (AL)</a>
+          <a href="#">GCM - Guarda Municipal - Sapucaia - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Saquarema - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Serra - Espírito Santo (ES)</a>
+          <a href="#">GCM - Guarda Municipal - Serrania - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Sumaré - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Surubim - Pernambuco (PE)</a>
+          <a href="#">GCM - Guarda Municipal - Sorocaba - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Tatuí - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Taubaté - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Tamboril - Ceará (CE)</a>
+          <a href="#">GCM - Guarda Municipal - Teixeira de Freitas - Bahia (BA)</a>
+          <a href="#">GCM - Guarda Municipal - Teresina - Piauí (PI)</a>
+          <a href="#">GCM - Guarda Municipal - Teresópolis - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Três Rios - Rio de Janeiro (RJ)</a>
+          <a href="#">GCM - Guarda Municipal - Tucuruí - Pará (PA)</a>
+          <a href="#">GCM - Guarda Municipal - Uberaba - Minas Gerais (MG)</a>
+          <a href="#">GCM - Guarda Municipal - Umuarama - Paraná (PR)</a>
+          <a href="#">GCM - Guarda Municipal - Urucurituba - Amazonas (AM)</a>
+          <a href="#">GCM - Guarda Municipal - Valinhos - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Valparaíso de Goiás - Goiás (GO)</a>
+          <a href="#">GCM - Guarda Municipal - Vargem Grande Paulista - São Paulo (SP)</a>
+          <a href="#">GCM - Guarda Municipal - Várzea Grande - Mato Grosso do Sul (MS)</a>
+          <a href="#">GCM - Guarda Municipal - Vitória - Espírito Santo (ES)</a>
+          <a href="#">GCM - Guarda Municipal - Votorantim - São Paulo (SP)</a>
         </div>
 
-        <!--TODO: CATEGORIA: OUTROS CURSOS (COM SUB-CATEGORIAS) -->
-
-        <div class="menu-item-cat">Outros Cursos ▾</div>
+        <!-- SUB-CATEGORIA: BOMBEIRO MILITAR -->
+        <div class="menu-item-cat">Bombeiro Militar ▾</div>
         <div class="submenu">
-          <a href="/outros-cursos/curso-eja-ensino-de-jovens-e-adultos/">Curso EJA - Ensino de Jovens e Adultos</a>
-          <a href="/outros-cursos/portugues-do-zero/">Português do Zero</a>
-          <a href="/outros-cursos/redacao-do-zero/">Redação do Zero</a>
-          <a href="/outros-cursos/cnh-de-primeira/">CNH de Primeira</a>
-          <a href="/outros-cursos/raciocinio-logico-matematico-do-zero/">Raciocínio Lógico Matemático do Zero</a>
-          <a href="/outros-cursos/esa-escola-de-sargentos-das-armas/">ESA - Escola de Sargentos das Armas</a>
+          <a href="/carreiras-policiais/bombeiro-militar/alagoas/">CBM (AL)</a>
+          <a href="/carreiras-policiais/bombeiro-militar/amapa/">CBM (AP)</a>
+          <a href="/carreiras-policiais/bombeiro-militar/goias/">CBM (GO)</a>
+          <a href="/carreiras-policiais/bombeiro-militar/minas-gerais/">CBM (MG)</a>
+          <a href="/carreiras-policiais/bombeiro-militar/para/">CBM (PA)</a>
         </div>
-
       </div>
 
-    </nav>
+      <!-- CATEGORIA: PÓS-GRADUAÇÃO -->
+      <div class="menu-item-cat">Pós-Graduação ▾</div>
+      <div class="submenu">
+        <a href="/cursos-superiores/direito-penal-e-processo-penal/">Direito Penal e Processo Penal</a>
+        <a href="/cursos-superiores/direito-penal-militar-e-processo-penal-militar/">Direito Penal Militar e Processo
+          Penal Militar</a>
+        <a href="/cursos-superiores/direito-constitucional-e-administrativo/">Direito Constitucional e
+          Administrativo</a>
+      </div>
 
+      <!-- CATEGORIA: OUTROS CURSOS -->
+      <div class="menu-item-cat">Outros Cursos ▾</div>
+      <div class="submenu">
+        <a href="/outros-cursos/curso-eja-ensino-de-jovens-e-adultos/">Curso EJA</a>
+        <a href="/outros-cursos/portugues-do-zero/">Português do Zero</a>
+        <a href="/outros-cursos/redacao-do-zero/">Redação do Zero</a>
+        <a href="/outros-cursos/cnh-de-primeira/">CNH de Primeira</a>
+        <a href="/outros-cursos/raciocinio-logico-matematico-do-zero/">Raciocínio Lógico Matemático do Zero</a>
+        <a href="/outros-cursos/esa-escola-de-sargentos-das-armas/">ESA</a>
+      </div>
+    </div>
+  </nav>
 </header>
-   
-

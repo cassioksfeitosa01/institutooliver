@@ -1,6 +1,5 @@
-// ======================================================
+
 // 1. CARREGAMENTO INTELIGENTE DE MÓDULOS (FETCH CONDICIONAL)
-// ======================================================
 
 // --- MENU (Sempre carrega se houver a div) ---
 const containerMenu = document.getElementById('menu-principal');
@@ -27,17 +26,6 @@ if (containerRodape) {
         .catch(err => console.error("Erro no Rodapé:", err));
 }
 
-// --- SEÇÃO PROFESSOR ---
-const containerProfessor = document.getElementById('secao-professor');
-if (containerProfessor) {
-    fetch('/components/professor.html')
-        .then(response => response.text())
-        .then(data => {
-            containerProfessor.innerHTML = data;
-            console.log("✅ Professor carregado!");
-        });
-}
-
 // --- ESTEIRA DE VÍDEOS (Só carrega se a div existir na página) ---
 const containerVideos = document.getElementById('secao-depoimentos');
 if (containerVideos) {
@@ -51,22 +39,9 @@ if (containerVideos) {
         .catch(err => console.error("Erro na Esteira:", err));
 }
 
-// --- MURAL OLIVER DE FOTOS (Só carrega se a div existir na página) ---
-const containerMural = document.getElementById('mural-oliver-auto');
-if (containerMural) {
-    fetch('/components/mural-oliver.html')
-        .then(response => response.text())
-        .then(data => {
-            containerMural.innerHTML = data;
-            console.log("✅ Mural Oliver carregado apenas para esta página!");
-        })
-        .catch(err => console.error("Erro no Mural:", err));
-}
 
-
-// ======================================================
 // 2. LÓGICA DOS VÍDEOS (Travar esteira ao dar Play)
-// ======================================================
+
 
 function inicializarLogicaVideos() {
     const track = document.getElementById('trilho-videos');
@@ -87,9 +62,7 @@ function inicializarLogicaVideos() {
     });
 }
 
-// ======================================================
-// 3. LÓGICA DO MENU E BUSCA (Sua lógica original preservada)
-// ======================================================
+// 3. LÓGICA DO MENU E BUSCA 
 
 function inicializarLogicaMenu() {
     const btnMenu = document.getElementById("btn-menu");

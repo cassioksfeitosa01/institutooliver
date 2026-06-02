@@ -1,181 +1,163 @@
 
-/* FIXME: --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
-@media (max-width: 768px) {
-    /* TODO:Base das Seções (A altura você vai definir individualmente lá embaixo) */
+    /*
+   FIXME: CONFIGURAÇÃO GLOBAL DAS SEÇÕES (Desktop e Geral) *
+
+/*  CELULAR */
+
+   @media (max-width: 768px) {
+    
     .sec {
-        display: flex;
-        flex-direction: column;
-        margin: 0 !important;
-        padding: 0 !important;
-        position: relative;
-        overflow: hidden;
+        position: relative !important; /* Mantém a estrutura de camadas */
+        width: 100% !important;
+        overflow: hidden !important;
     }
 
-    /*TODO: Imagem se adapta ao tamanho exato que você der para a seção */
+    /* Imagem no Mobile */
     .caixa-imagem,
     .caixa-imagem picture,
     .caixa-imagem img {
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important; 
-        object-position: top center !important; /* Mantém o desenho do topo alinhado */
-        z-index: 1;
+        z-index: 1 !important;
     }
 
-    /* TODO: Caixa de Texto (Sempre colada no fundo preto da seção) */
-    .caixa-texto {
-        margin: 0 !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        height: 100% !important; /* Ocupa a altura total que você der para a seção */
+    .caixa-imagem img {
+        object-position: top center !important;
+        object-fit: cover !important;
+    }
 
+    /* Texto no Mobile (Flutuando sobre a foto) */
+    .caixa-texto {
+        position: absolute !important; /* AGORA FLUTUA DA FORMA CORRETA */
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 2 !important;
+        width: 100% !important;
+        height: 100% !important;
+        
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-end !important; /* Empurra o texto para baixo */
-        align-items: center !important;
-        text-align: center !important;
+        justify-content: flex-end !important; /* Texto no pé da seção */
+        align-items: center !important;        /* Centraliza o bloco do flex */
+        text-align: center !important;       /* Centraliza as linhas de texto */
         
-        padding: 40px 24px 30px 24px !important; /* Ajuste o último número se quiser subir/descer o texto */
-        z-index: 2;
-        position: relative;
-        box-sizing: border-box;
+        padding: 40px 20px !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%) !important;
+        box-sizing: border-box !important;
     }
 
-    /* TODO: Limpa as configurações de lado do PC */
-    .caixa-texto.texto-esquerda,
-    .caixa-texto.texto-direita {
-        margin: 0 !important;
+    /* 🚀 CORREÇÃO DO DESALINHAMENTO: Reseta as regras de flex-start do Desktop */
+    .caixa-texto.texto-esquerda .titulo, .caixa-texto.texto-direita .titulo,
+    .caixa-texto.texto-esquerda .subtitulo, .caixa-texto.texto-direita .subtitulo,
+    .caixa-texto.texto-esquerda .descricao, .caixa-texto.texto-direita .descricao,
+    .caixa-texto.texto-esquerda .caixa-botao, .caixa-texto.texto-direita .caixa-botao {
         max-width: 100% !important;
-        align-items: center !important;
-        text-align: center !important;
+        align-items: center !important; /* Força títulos e botões a centralizarem */
+        text-align: center !important;  /* Garante o texto no meio */
     }
 
-    /*TODO:Limpa margens do PC que quebram o mobile */
-    .sec1, .sec2, .sec3, .sec4, .sec5, .sec6, .sec7, .sec8 {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-    }
-    .sec2 .caixa-texto, .sec6 .caixa-texto {
-        margin-top: 0 !important;
-    }
-
- /* TODO: COLOQUE AQUI A ALTURA DE CADA SEÇÃO (Ajuste os valores) */
-    .sec1 { 
-        margin-top: 50px !important; /* Altere 80px para a altura exata do seu menu */
-    }
-
-    .sec1 {   height: 500px !important; }
+    /* ALTURAS INDIVIDUAIS MOBILE */
+    .sec1 { height: 550px !important; margin-top: 60px !important; } 
     .sec2 { height: 750px !important; }
-    .sec3 { height: 800px !important; }
+    .sec3 { height: 800px !important; background-color: #000 !important; }
     .sec4 { height: 650px !important; }
     .sec5 { height: 850px !important; } 
     .sec6 { height: 650px !important; }
     .sec7 { height: 650px !important; }
     .sec8 { height: 700px !important; }
 
-        /* Limita o tamanho da foto na seção 3 para ela não esticar */
-    .sec3 .caixa-imagem,
-    .sec3 .caixa-imagem picture,
+    /* Ajuste especial para a foto da Sec3 não esticar */
     .sec3 .caixa-imagem img {
-        height: 500px !important; /* Mantém a foto com o tamanho original */
+        height: 500px !important;
+        object-fit: contain !important;
+        top: 0 !important;
     }
-
-        .sec3 { 
-        height: 800px !important; 
-        background-color: #000000 !important; 
-    }
-
 }
 
-/* FIXME: CONFIGURÇAÕ DAS SEÇAÕ */
+/*  COMPUTADOR */
+
 .sec {
-    position: relative;
+    position: relative; /* Mantém tudo dentro da seção */
     width: 100%;
     max-width: 1920px;
-    height: 620px;
+    height: 620px; /* Altura fixa para o texto ter onde flutuar */
     margin: 0 auto;
     overflow: hidden;
 }
 
-/* TODO: Força a imagem de fundo de qualquer seção a ir para trás */
-.caixa-imagem,
-.caixa-imagem picture,
-.caixa-imagem img {
+/* Camada de Fundo (A Imagem) */
+.caixa-imagem {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1; /* Fica no fundo */
 }
 
 .caixa-imagem img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
-    z-index: 1;
 }
 
-/* TODO:Configuração base da Caixa de Texto para TODAS as seções */
+/* Camada da Frente (O Texto) */
 .caixa-texto {
-    position: relative;
-    z-index: 2;
+    position: absolute; /* AGORA ELE SOBE PARA CIMA DA FOTO */
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    max-width: 40%;
-    /* Garante os 40% de largura para quebrar o texto */
-    padding: 40px;
+    z-index: 2; /* Fica por cima da imagem */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* Texto branco padrão */
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 0 5%; /* Afastamento das bordas do site */
+    box-sizing: border-box;
+    pointer-events: none; /* Evita que a caixa invisível bloqueie cliques na imagem se precisar */
 }
 
-/*TODO: CAIXA DE TEXO DO LADO ESQUEDO */
+/* Garante que os botões dentro do texto voltem a ser clicáveis */
+.caixa-texto * {
+    pointer-events: auto;
+}
 
+/* Alinhamento Esquerdo */
 .caixa-texto.texto-esquerda {
-    margin-left: 0;
-    margin-right: 50%;
-    height: aut o;
-    max-width: 55%;
-    align-items: flex-start;
+    align-items: flex-start; /* Texto para a esquerda */
     text-align: left;
 }
 
-/*TODO: CAIXA DE TEXO DO LADO DIREITO */
-
+/* Alinhamento Direito */
 .caixa-texto.texto-direita {
-    margin-left: 50%;
-    margin-right: auto;
-    height: auto;
-    margin-top: 100px;
-    max-width: 50%;
-    align-items: flex-start;
-    text-align: left;
+    align-items: flex-end; /* Mantém o bloco colado na direita */
+    text-align: left;      /* Faz o texto começar normal (esquerda para a direita) */
 }
 
-/*TODO: CONFIGURÇAÕ INDIVIDUAL PARA CADA SEÇÃO*/
-.sec1 .caixa-texto {
-    max-width: 40%;
+/* 🚀 CORREÇÃO AQUI: Força todos os títulos e textos da direita a iniciarem juntos */
+.caixa-texto.texto-direita .titulo,
+.caixa-texto.texto-direita .subtitulo,
+.caixa-texto.texto-direita .descricao,
+.caixa-texto.texto-direita .caixa-botao {
+    width: 100%;           /* Obriga a caixa de texto a respeitar o tamanho total */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Faz o texto interno começar da esquerda do bloco */
 }
 
-.sec2 .caixa-texto {
-    margin-top: 200px;
+
+
+
+/* Limita a largura do texto para não cobrir a cara das pessoas na foto */
+.titulo, .subtitulo, .descricao, .caixa-botao {
+    max-width: 550px; 
 }
 
-.sec3 .caixa-texto {
-    max-width: 55%;
+/* Ajustes Verticais corrigidos para não quebrar o Flexbox */
+.sec2 .caixa-texto, .sec6 .caixa-texto {
+    justify-content: center; 
 }
-
-.sec5 .caixa-texto {
-    max-width: 55%;
-}
-
-.sec6 .caixa-texto {
-    margin-top: 200px;
-}
-
-.sec7 .caixa-texto {
-    max-width: 55%;
-}
-

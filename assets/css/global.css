@@ -1,4 +1,4 @@
-/* FIXME: CSS PADRAÕ INSTITUTO ÓLIVER: PARA TODO O SITE*/
+/* CSS PADRAÕ INSTITUTO ÓLIVER: PARA TODO O SITE*/
 
 /* TODO: CSS RESET REMOVE FALHA DO NAVEGADOR */
 * {
@@ -107,43 +107,6 @@ body {
     /* Dá um espaço maior (20px) antes de vir o próximo bloco ou o botão de compra */
     margin-bottom: 1.25rem;
 }
-
-/* ==========================================================================
-   MACAQUICE CONTROLADA: CONFIGURAÇÃO EXCLUSIVA PARA O TOPO DA PM
-   ========================================================================== */
-
-.subtitulo2 {
-    color: #e5b702; /* Amarelo dourado marcante no subtítulo */
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-}
-
-.titulo2 {
-    color: #FFFFFF; /* Título principal em branco para destacar bem */
-    font-size: 35;
-    font-weight: 100;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    line-height: 1.2;
-}
-
-/* Ajuste rápido para o mobile não estourar as letras */
-@media (max-width: 768px) {
-    .titulo2 {
-        font-size: 26px;
-    }
-    .subtitulo2 {
-        font-size: 12px;
-    }
-    .descricao2 {
-        font-size: 14px;
-        padding: 0 10px;
-    }
-}
-
 
 /*FIXME: BOTÃO*/
 
@@ -256,7 +219,3 @@ body {
 .botao:active {
     transform: scale(0.95);
 }
-
-
-
-
