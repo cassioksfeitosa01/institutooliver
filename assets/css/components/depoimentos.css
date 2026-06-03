@@ -188,7 +188,7 @@
         width: 100%;
         max-width: 2000px;
         margin: 0 auto;
-        max-height: 1000px; /* Altura limite para o scroll interno */
+        max-height: 1700px; /* Altura limite para o scroll interno */
         overflow-y: auto;
         padding-right: 10px;
         column-count: 4; /* 4 colunas no PC */
@@ -248,6 +248,15 @@
     }
 
     /* RESPONSIVIDADE */
-    @media (max-width: 1024px) { .masonry-grid { column-count: 4; } }
-    @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
+    @media (max-width: 768px) {
+
+        /* GRID ESTILO MASONRY */
+    .masonry-grid {
+        max-width: 2000px;
+        max-height: 1700px; /* Altura limite para o scroll interno */
+        column-count: 2; /* 2 colunas no no celular */
+    }
+    
+    
+    }
 
