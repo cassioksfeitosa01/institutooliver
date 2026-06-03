@@ -45,7 +45,6 @@
         text-align: center !important;       /* Centraliza as linhas de texto */
         
         padding: 40px 20px !important;
-        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%) !important;
         box-sizing: border-box !important;
     }
 
@@ -61,9 +60,9 @@
 
     /* ALTURAS INDIVIDUAIS MOBILE */
     .sec1 { height: 550px !important; margin-top: 60px !important; } 
-    .sec2 { height: 750px !important; }
-    .sec3 { height: 800px !important; background-color: #000 !important; }
-    .sec4 { height: 650px !important; }
+    .sec2 { height: 700px !important; }
+    .sec3 { height: 700px !important; background-color: #000 !important; }
+    .sec4 { height: 600px !important; }
     .sec5 { height: 850px !important; } 
     .sec6 { height: 650px !important; }
     .sec7 { height: 650px !important; }
@@ -75,6 +74,18 @@
         object-fit: contain !important;
         top: 0 !important;
     }
+
+          .sec2 .caixa-texto {
+ margin-top: 50px
+      }
+
+      .sec3 .caixa-texto {
+ margin-top: 55px
+      }
+
+          .sec4 .caixa-texto {
+ margin-top: 58px
+      }
 }
 
 /*  COMPUTADOR */
@@ -121,10 +132,6 @@
     pointer-events: none; /* Evita que a caixa invisível bloqueie cliques na imagem se precisar */
 }
 
-/* Garante que os botões dentro do texto voltem a ser clicáveis */
-.caixa-texto * {
-    pointer-events: auto;
-}
 
 /* Alinhamento Esquerdo */
 .caixa-texto.texto-esquerda {
