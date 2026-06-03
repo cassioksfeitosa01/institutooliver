@@ -1,3 +1,121 @@
+/* Container do Slider Manual */
+.slider-container {
+    position: relative;
+    width: 100%;
+    background: #000;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Wrapper limita a área de visualização e deixa espaço fixo para as setas nas laterais */
+.slider-wrapper-manual {
+    width: calc(100% - 100px); /* Garante espaço de 50px de cada lado para as setas não cobrirem o vídeo */
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.slider-wrapper-manual:active {
+    cursor: grabbing;
+}
+
+.slider-trilho-manual {
+    display: flex;
+    transition: transform 0.5s ease-out;
+    width: 100%;
+}
+
+/* --- ESTILO RESPONSIVO DOS CARDS (O segredo do ajuste de tela) --- */
+.card-short {
+    height: 440px;
+    flex-shrink: 0;
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+    
+    /* Configuração padrão para PC Grande: Mostra 4 cards inteiros na tela */
+    width: calc((100% - 60px) / 4); 
+    margin-right: 20px;
+}
+
+/* Remove a margem do último card para o cálculo matemático fechar perfeito */
+.card-short:last-child {
+    margin-right: 0;
+}
+
+/* Garante que o vídeo preencha o card corretamente */
+.card-short video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Setas de Navegação (Mantidas visíveis em todos os dispositivos) */
+.seta-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    font-size: 1.8rem;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.seta-slider:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.seta-esquerda { left: 10px; }
+.seta-direita { right: 10px; }
+
+
+/* ==========================================================================
+   MEDIA QUERIES (Ajusta a quantidade de cards na tela dinamicamente)
+   ========================================================================== */
+
+/* Notebooks / Telas Médias: Mostra 3 cards por vez */
+@media (max-width: 1200px) {
+    .card-short {
+        width: calc((100% - 40px) / 3);
+    }
+}
+
+/* Tablets / Telas Pequenas: Mostra 2 cards por vez */
+@media (max-width: 900px) {
+    .card-short {
+        width: calc((100% - 20px) / 2);
+    }
+}
+
+/* Celulares (Mobile): Mostra APENAS 1 CARD inteiro na tela, sem cortar, com as setas aparecendo */
+@media (max-width: 600px) {
+    .seta-slider {
+        padding: 12px 8px; /* Setas ligeiramente menores no celular para economizar espaço */
+        font-size: 1.5rem;
+    }
+    
+    .slider-wrapper-manual {
+        width: calc(100% - 80px); /* Deixa exatamente 40px nas laterais para as setas */
+    }
+
+    .card-short {
+        width: 100%; /* O card ocupa 100% do espaço disponível do wrapper (Apenas 1 na tela) */
+        margin-right: 20px; /* Mantém o espaçamento para o próximo card que está escondido */
+    }
+}
+
+
+
+
 
 
 .esteira-wrapper {
