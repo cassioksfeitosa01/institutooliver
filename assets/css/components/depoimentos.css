@@ -167,111 +167,87 @@
 }
 
 
-  /* ==========================================================================
-   ESTEIRA AUTOMÁTICA INTELIGENTE (ESTILO MURAL ÓLIVER ADAPTATIVO)
-   ========================================================================== */
-
-/* Container que segura a esteira na página */
-.esteira-wrapper {
-    position: relative;
-    width: 100%;
-    background: #000;
-    padding: 30px 0;
-    overflow: hidden; /* Esconde o que vaza da tela */
-}
-
-/* O trilho horizontal que faz o movimento infinito */
-.esteira-trilho-fotos {
-    display: flex;
-    align-items: center; /* Centraliza os prints na linha do horizonte */
-    width: max-content;
-    
-    /* 
-       👇 VELOCIDADE DA ESTEIRA AQUI EMBAIXO! 
-       Atualmente está em '80s' (80 segundos) para ficar bem lenta.
-       - Se quiser MAIS DEVAGAR ainda: aumente o número (Ex: 100s, 120s)
-       - Se quiser MAIS RÁPIDA: diminua o número (Ex: 60s, 40s)
-    */
-    animation: rolarMuralFotos 80s linear infinite;
-}
-
-/* Pausa a esteira se o usuário colocar o mouse em cima (Puxa a lógica do seu script) */
-.esteira-trilho-fotos:hover {
-    animation-play-state: paused;
-}
-
-/* ITEM DA ESTEIRA (Cópia exata da inteligência do seu Masonry-Item) */
-.card-foto {
-    display: inline-block;
-    flex-shrink: 0;
-    overflow: hidden;
-    border: 1px solid rgba(219, 175, 0, 0.3);
-    background: #0a0a0a;
-    position: relative;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-/* IMAGEM DO PRINT (Se adapta sozinha sem cortes e sem esticar) */
-.card-foto img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain; /* Garante 100% do print na tela */
-    transition: transform 0.5s ease;
-}
-
-/* --- COMPORTAMENTO NO PC --- */
-@media (min-width: 769px) {
-    .card-foto {
-        width: 280px; /* Largura padrão excelente para leitura no PC */
-        margin-right: 18px; /* Espaçamento entre os prints */
+    /* ESTRUTURA DA SEÇÃO  MURAL ÓLIVER*/
+    .mural-oliver {
+        padding: 40px 5%;
+        background: #000;
+        color: #fff;
     }
-}
 
-/* --- COMPORTAMENTO NO CELULAR (Se adapta sem bordinhas vazando) --- */
-@media (max-width: 768px) {
-    .card-foto {
-        width: 85vw; /* Print grande na tela do celular (85% da largura) */
-        margin-right: 12px; /* Frestinha para indicar que tem mais */
+    .container-texto-mural {
+        text-align: center;
+        margin-bottom: 30px;
     }
-}
 
+    .container-texto-mural h2 { color: #ffce08; font-weight: bold; margin-bottom: 5px; }
+    .container-texto-mural h3 { color: #ccc; font-size: 1.2rem; }
 
-/* ==========================================================================
-   EFEITOS VISUAIS PREMIUM (Puxados do seu código original)
-   ========================================================================== */
+    /* GRID ESTILO MASONRY */
+    .masonry-grid {
+        column-gap: 15px;
+        width: 100%;
+        max-width: 2000px;
+        margin: 0 auto;
+        max-height: 1000px; /* Altura limite para o scroll interno */
+        overflow-y: auto;
+        padding-right: 10px;
+        column-count: 4; /* 4 colunas no PC */
+    }
 
-/* Efeito de Brilho passando por dentro do Print */
-.card-foto::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,206,8,0.3) 50%, rgba(255,255,255,0) 100%);
-    transform: skewX(-25deg);
-    pointer-events: none;
-}
+    /* ESTILO DE CADA ITEM */
+    .masonry-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(219, 175, 0, 0.3);
+        background: #0a0a0a;
+        break-inside: avoid;
+        position: relative;
+    }
 
-.card-foto:hover::after {
-    animation: brilhoMuralAnim 0.8s forwards;
-}
+    .masonry-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+    }
 
-.card-foto:hover img {
-    transform: scale(1.05); /* Leve zoom ao passar o mouse */
-}
+    /* EFEITO DE BRILHO AO PASSAR O MOUSE */
+    .masonry-item::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,206,8,0.3) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        transition: none;
+    }
 
-@keyframes brilhoMuralAnim {
-    0% { left: -100%; }
-    100% { left: 150%; }
-}
+    .masonry-item:hover::after {
+        animation: brilhoAnim 0.8s forwards;
+    }
 
-/* Animação que faz a esteira andar de lado infinitamente */
-@keyframes rolarMuralFotos {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Move metade do bloco duplicado */
-}
+    .masonry-item:hover img {
+        transform: scale(1.08);
+    }
 
+    @keyframes brilhoAnim {
+        0% { left: -100%; }
+        100% { left: 150%; }
+    }
+
+    /* BARRA DE ROLAGEM DOURADA */
+    .masonry-grid::-webkit-scrollbar { width: 6px; }
+    .masonry-grid::-webkit-scrollbar-thumb {
+        background: #ffce08;
+        border-radius: 10px;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 1024px) { .masonry-grid { column-count: 4; } }
+    @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
 
