@@ -1,6 +1,7 @@
-// 1. CARREGAMENTO INTELIGENTE DE MÓDULOS (FETCH CONDICIONAL)
 
-// --- MENU (Sempre carrega se houver a div) ---
+// 1. CARREGAMENTO DOS COMPONENTES (FETCH)
+
+// --- MENU ---
 const containerMenu = document.getElementById('menu-principal');
 if (containerMenu) {
     fetch('/components/menu.html')
@@ -8,9 +9,24 @@ if (containerMenu) {
         .then(data => {
             containerMenu.innerHTML = data;
             console.log("✅ Menu carregado!");
-            inicializarLogicaMenu(); // Ativa a busca e os cliques do menu
+            inicializarLogicaMenu();
         })
         .catch(err => console.error("Erro no Menu:", err));
+}
+
+
+// --- DEPOIMENTOS (ESTEIRA AUTOMÁTICA COM SLIDER) ---
+const containerDepoimentos = document.getElementById('secao-depoimentos');
+if (containerDepoimentos) {
+    fetch('/components/depoimentos.html')
+        .then(response => response.text())
+        .then(data => {
+            containerDepoimentos.innerHTML = data;
+            console.log("✅ Depoimentos carregados!");
+            // Dispara a lógica do slider embutida abaixo
+            inicializarLogicaEsteiraAutomatica();
+        })
+        .catch(err => console.error("Erro nos Depoimentos:", err));
 }
 
 // --- RODAPÉ ---
@@ -25,139 +41,82 @@ if (containerRodape) {
         .catch(err => console.error("Erro no Rodapé:", err));
 }
 
-// --- ESTEIRA DE VÍDEOS (Só carrega se a div existir na página) ---
-const containerVideos = document.getElementById('secao-depoimentos');
-if (containerVideos) {
-    fetch('/components/depoimentos.html')
-        .then(response => response.text())
-        .then(data => {
-            containerVideos.innerHTML = data;
-            console.log("✅ Esteira de vídeos carregada apenas para esta página!");
-            inicializarLogicaVideos(); // Ativa a pausa no play e os novos controles
-        })
-        .catch(err => console.error("Erro na Esteira:", err));
-}
+// ==========================================
+// LÓGICA DO SLIDER MANUAL (EMBUTIDO)
+// ==========================================
+function inicializarLogicaEsteiraAutomatica() {
+    // Altere para id="wrapper-slider" no wrapper do seu HTML caso queira id próprio,
+    // ou mantemos a classe padrão .slider-wrapper-manual para selecionar
+    const wrapper = document.querySelector(".slider-wrapper-manual");
+    const trilho = document.getElementById("trilho-slider");
+    const btnPrev = document.getElementById("prev-btn");
+    const btnNext = document.getElementById("next-btn");
 
+    if (!wrapper || !trilho) return;
 
-// 2. LÓGICA DOS VÍDEOS (Travar esteira ao dar Play e Controles do Slider Manual)
+    // --- CONTROLE DAS SETAS ---
+    function obterLarguraMovimento() {
+        const card = trilho.querySelector(".card-short");
+        return card ? card.offsetWidth + 16 : 300; // 16px é o espaçamento gap do CSS
+    }
 
-function inicializarLogicaVideos() {
-    // --- MANTIDO: Lógica Original da Esteira Automática (Sem alterações) ---
-    const track = document.getElementById('trilho-videos');
-    if (track) {
-        const vids = track.querySelectorAll('video');
-        vids.forEach(v => {
-            v.addEventListener('play', () => {
-                track.classList.add('pausada-total'); // Trava animação CSS
-                vids.forEach(outro => {
-                    if (outro !== v) outro.pause(); // Pausa outros vídeos
-                });
-            });
-            v.addEventListener('pause', () => track.classList.remove('pausada-total'));
-            v.addEventListener('ended', () => track.classList.remove('pausada-total'));
+    if (btnNext) {
+        btnNext.addEventListener("click", () => {
+            wrapper.scrollBy({ left: obterLarguraMovimento(), behavior: "smooth" });
         });
     }
 
-    // --- NOVO: Lógica Exclusiva do Slider Manual (Setas e Movimento do Dedo/Mouse) ---
-    const trilhoManual = document.getElementById('trilho-slider');
-    const wrapperManual = document.querySelector('.slider-wrapper-manual');
-    const btnPrev = document.getElementById('prev-btn');
-    const btnNext = document.getElementById('next-btn');
-
-    // Só executa se a estrutura do slider manual existir no HTML injetado
-    if (trilhoManual && wrapperManual && btnPrev && btnNext) {
-        let isDragging = false;
-        let startX = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-        let animationId = 0;
-
-        // Calcula o limite máximo de rolagem para não rolar para o vazio
-        function obterScrollMaximo() {
-            return trilhoManual.scrollWidth - wrapperManual.clientWidth;
-        }
-
-        function definirPosicaoSlider() {
-            trilhoManual.style.transform = `translateX(${currentTranslate}px)`;
-        }
-
-        function animacao() {
-            definirPosicaoSlider();
-            if (isDragging) requestAnimationFrame(animacao);
-        }
-
-        // Eventos de Clique nas Setas (Avança/Volta 270px correspondente ao card + margem)
-        btnNext.addEventListener('click', () => {
-            const maxScroll = obterScrollMaximo();
-            currentTranslate -= 270;
-            if (Math.abs(currentTranslate) > maxScroll) currentTranslate = -maxScroll;
-            prevTranslate = currentTranslate;
-            trilhoManual.style.transition = "transform 0.3s ease-out";
-            definirPosicaoSlider();
+    if (btnPrev) {
+        btnPrev.addEventListener("click", () => {
+            wrapper.scrollBy({ left: -obterLarguraMovimento(), behavior: "smooth" });
         });
-
-        btnPrev.addEventListener('click', () => {
-            currentTranslate += 270;
-            if (currentTranslate > 0) currentTranslate = 0;
-            prevTranslate = currentTranslate;
-            trilhoManual.style.transition = "transform 0.3s ease-out";
-            definirPosicaoSlider();
-        });
-
-        // Funções para início, movimento e fim do toque/arrasto
-        function dragStart(e) {
-            isDragging = true;
-            trilhoManual.style.transition = "none"; // Remove transição para o movimento ficar fluido
-            startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-            animationId = requestAnimationFrame(animacao);
-        }
-
-        function dragMove(e) {
-            if (!isDragging) return;
-            const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-            const diffX = currentX - startX;
-            currentTranslate = prevTranslate + diffX;
-
-            // Cria uma resistência elástica nas bordas do slider
-            const maxScroll = obterScrollMaximo();
-            if (currentTranslate > 0) currentTranslate = currentTranslate * 0.3;
-            if (currentTranslate < -maxScroll) {
-                const ultrapassou = currentTranslate + maxScroll;
-                currentTranslate = -maxScroll + (ultrapassou * 0.3);
-            }
-        }
-
-        function dragEnd() {
-            if (!isDragging) return;
-            isDragging = false;
-            cancelAnimationFrame(animationId);
-            
-            // Ajusta e trava os limites corretos ao soltar
-            const maxScroll = obterScrollMaximo();
-            if (currentTranslate > 0) currentTranslate = 0;
-            if (currentTranslate < -maxScroll) currentTranslate = -maxScroll;
-            
-            trilhoManual.style.transition = "transform 0.3s ease-out";
-            prevTranslate = currentTranslate;
-            definirPosicaoSlider();
-        }
-
-        // Ouvintes de Eventos para Mouse
-        wrapperManual.addEventListener('mousedown', dragStart);
-        window.addEventListener('mousemove', dragMove);
-        window.addEventListener('mouseup', dragEnd);
-
-        // Ouvintes de Eventos para Telas Touch (Dedo no Celular)
-        wrapperManual.addEventListener('touchstart', dragStart, { passive: true });
-        window.addEventListener('touchmove', dragMove, { passive: true });
-        window.addEventListener('touchend', dragEnd);
-        
-        // Evita comportamento padrão de arrastar imagens/links internos
-        wrapperManual.addEventListener('dragstart', (e) => e.preventDefault());
     }
+
+    // --- CONTROLE DE TOQUE (TOUCH / MOUSE ARRASTAR) ---
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    // Eventos de Mouse (Desktop)
+    wrapper.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - wrapper.offsetLeft;
+        scrollLeft = wrapper.scrollLeft;
+    });
+
+    wrapper.addEventListener("mouseleave", () => {
+        isDown = false;
+    });
+
+    wrapper.addEventListener("mouseup", () => {
+        isDown = false;
+    });
+
+    wrapper.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - wrapper.offsetLeft;
+        const walk = (x - startX) * 1.5; 
+        wrapper.scrollLeft = scrollLeft - walk;
+    });
+
+    // Eventos de Toque (Celular / Touchscreen)
+    wrapper.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].pageX - wrapper.offsetLeft;
+        scrollLeft = wrapper.scrollLeft;
+    });
+
+    wrapper.addEventListener("touchmove", (e) => {
+        const x = e.touches[0].pageX - wrapper.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        wrapper.scrollLeft = scrollLeft - walk;
+    });
 }
 
-// 3. LÓGICA DO MENU E BUSCA (Mantido original)
+
+// ==========================================
+// 4. LÓGICA DO MENU E BUSCA
+// ==========================================
 
 function inicializarLogicaMenu() {
     const btnMenu = document.getElementById("btn-menu");
@@ -210,7 +169,7 @@ function inicializarLogicaMenu() {
         });
     }
 
-    // Lógica de Abrir/Fechar Menu
+    // Controle do Menu Mobile
     if (btnMenu && navLista) {
         btnMenu.addEventListener("click", (e) => {
             e.stopPropagation();

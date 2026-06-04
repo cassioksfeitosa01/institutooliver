@@ -1,3 +1,8 @@
+
+/* ==========================================
+   CONFIGURAÇÃO DO SLIDER DE VÍDEOS (AJUSTADO)
+   ========================================== */
+
 /* Container do Slider Manual */
 .slider-container {
     position: relative;
@@ -11,7 +16,7 @@
 
 /* Wrapper limita a área de visualização e deixa espaço fixo para as setas nas laterais */
 .slider-wrapper-manual {
-    width: calc(100% - 100px); /* Garante espaço de 50px de cada lado para as setas não cobrirem o vídeo */
+    width: calc(100% - 100px); /* Garante espaço de 50px de cada lado para as setas */
     margin: 0 auto;
     overflow: hidden;
     cursor: grab;
@@ -24,36 +29,38 @@
 .slider-trilho-manual {
     display: flex;
     transition: transform 0.5s ease-out;
-    width: 100%;
+    width: max-content; /* Garante que o trilho cresça para o lado sem esmagar */
+    gap: 15px; /* PADRÃO PC: Espaço horizontal exato e colado entre as colunas */
 }
 
-/* --- ESTILO RESPONSIVO DOS CARDS (O segredo do ajuste de tela) --- */
-.card-short {
-    height: 440px;
+/* --- ESTRUTURA: COLUNA DE VÍDEOS (DOIS EMPILHADOS) --- */
+.coluna-videos {
+    display: flex;
+    flex-direction: column; /* Empilha um vídeo embaixo do outro */
+    gap: 15px; /* Espaço vertical controlado entre os dois vídeos */
     flex-shrink: 0;
+    width: max-content; /* REMOVIDO O CALC: Agora a coluna assume estritamente a largura do card */
+}
+
+/* --- ESTILO DOS CARDS (LARGURA FIXA POR PROPORÇÃO) --- */
+.card-short {
+    height: 440px; /* Altura cheia padrão no PC */
+    aspect-ratio: 9 / 16; /* Define a largura ideal automaticamente sem sobras (aprox. 247px) */
     background: #111;
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid #333;
-    
-    /* Configuração padrão para PC Grande: Mostra 4 cards inteiros na tela */
-    width: calc((100% - 60px) / 4); 
-    margin-right: 20px;
+    flex-shrink: 0;
 }
 
-/* Remove a margem do último card para o cálculo matemático fechar perfeito */
-.card-short:last-child {
-    margin-right: 0;
-}
-
-/* Garante que o vídeo preencha o card corretamente */
+/* Garante que o vídeo preencha o card sem sobras */
 .card-short video {
     width: 100%;
     height: 100%;
     object-fit: cover; 
 }
 
-/* Setas de Navegação (Mantidas visíveis em todos os dispositivos) */
+/* Setas de Navegação */
 .seta-slider {
     position: absolute;
     top: 50%;
@@ -77,40 +84,32 @@
 .seta-esquerda { left: 10px; }
 .seta-direita { right: 10px; }
 
+/* ==========================================
+   REGRAS DE TELA (PADRÃO CELULAR E TABLET)
+   ========================================== */
 
-/* ==========================================================================
-   MEDIA QUERIES (Ajusta a quantidade de cards na tela dinamicamente)
-   ========================================================================== */
-
-/* Notebooks / Telas Médias: Mostra 3 cards por vez */
-@media (max-width: 1200px) {
-    .card-short {
-        width: calc((100% - 40px) / 3);
+@media (max-width: 1024px) {
+    .slider-trilho-manual {
+        gap: 12px; /* Junta um pouco mais os cards em telas menores */
     }
-}
-
-/* Tablets / Telas Pequenas: Mostra 2 cards por vez */
-@media (max-width: 900px) {
-    .card-short {
-        width: calc((100% - 20px) / 2);
+    .coluna-videos {
+        gap: 12px;
     }
+    .card-short { 
+        height: 360px; /* Altura confortável para tablets */
+    } 
 }
 
-/* Celulares (Mobile): Mostra APENAS 1 CARD inteiro na tela, sem cortar, com as setas aparecendo */
-@media (max-width: 600px) {
-    .seta-slider {
-        padding: 12px 8px; /* Setas ligeiramente menores no celular para economizar espaço */
-        font-size: 1.5rem;
+@media (max-width: 768px) {
+    .slider-trilho-manual {
+        gap: 10px; /* Espaço bem compacto e idêntico no celular */
     }
-    
-    .slider-wrapper-manual {
-        width: calc(100% - 80px); /* Deixa exatamente 40px nas laterais para as setas */
+    .coluna-videos {
+        gap: 10px;
     }
-
-    .card-short {
-        width: 100%; /* O card ocupa 100% do espaço disponível do wrapper (Apenas 1 na tela) */
-        margin-right: 20px; /* Mantém o espaçamento para o próximo card que está escondido */
-    }
+    .card-short { 
+        height: 280px; /* Reduz a altura para caber perfeitamente dois vídeos na tela do celular */
+    } 
 }
 
 
@@ -118,53 +117,7 @@
 
 
 
-.esteira-wrapper {
-  width: 100%;
-  overflow: hidden;
-  padding: 40px 0;
-  background: #000;
-}
 
-.esteira-trilho {
-  display: flex;
-  width: max-content;
-  animation: rolar-suave 30s linear infinite;
-}
-
-.pausada-total {
-  animation-play-state: paused !important;
-}
-
-.esteira-trilho:hover {
-  animation-play-state: paused;
-}
-
-.card-short {
-  width: 250px;
-  height: 440px;
-  margin-right: 20px;
-  flex-shrink: 0;
-  background: #111;
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid #333;
-}
-
-.card-short video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@keyframes rolar-suave {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 
     /* ESTRUTURA DA SEÇÃO  MURAL ÓLIVER*/
