@@ -1,9 +1,7 @@
-
 /* ==========================================
-   CONFIGURAÇÃO DO SLIDER DE VÍDEOS (AJUSTADO)
+   SLIDER DE VÍDEOS (VERSÃO OTIMIZADA)
    ========================================== */
 
-/* Container do Slider Manual */
 .slider-container {
     position: relative;
     width: 100%;
@@ -14,38 +12,42 @@
     overflow: hidden;
 }
 
-/* Wrapper limita a área de visualização e deixa espaço fixo para as setas nas laterais */
+/* Área visível do slider */
 .slider-wrapper-manual {
-    width: calc(100% - 100px); /* Garante espaço de 50px de cada lado para as setas */
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
     cursor: grab;
+    padding: 0 60px; /* reserva espaço para setas sem depender de calc */
+    box-sizing: border-box;
 }
 
 .slider-wrapper-manual:active {
     cursor: grabbing;
 }
 
+/* Trilho */
 .slider-trilho-manual {
     display: flex;
+    gap: 15px;
+    width: max-content;
     transition: transform 0.5s ease-out;
-    width: max-content; /* Garante que o trilho cresça para o lado sem esmagar */
-    gap: 15px; /* PADRÃO PC: Espaço horizontal exato e colado entre as colunas */
+    will-change: transform;
 }
 
-/* --- ESTRUTURA: COLUNA DE VÍDEOS (DOIS EMPILHADOS) --- */
+/* Coluna de vídeos */
 .coluna-videos {
     display: flex;
-    flex-direction: column; /* Empilha um vídeo embaixo do outro */
-    gap: 15px; /* Espaço vertical controlado entre os dois vídeos */
+    flex-direction: column;
+    gap: 15px;
     flex-shrink: 0;
-    width: max-content; /* REMOVIDO O CALC: Agora a coluna assume estritamente a largura do card */
 }
 
-/* --- ESTILO DOS CARDS (LARGURA FIXA POR PROPORÇÃO) --- */
+/* Card de vídeo */
 .card-short {
-    height: 440px; /* Altura cheia padrão no PC */
-    aspect-ratio: 9 / 16; /* Define a largura ideal automaticamente sem sobras (aprox. 247px) */
+    aspect-ratio: 9 / 16;
+    height: clamp(260px, 35vw, 440px);
     background: #111;
     border-radius: 15px;
     overflow: hidden;
@@ -53,63 +55,61 @@
     flex-shrink: 0;
 }
 
-/* Garante que o vídeo preencha o card sem sobras */
 .card-short video {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
-/* Setas de Navegação */
+/* Setas */
 .seta-slider {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     color: white;
     border: none;
     font-size: 1.8rem;
-    padding: 15px 10px;
+    padding: 14px 10px;
     cursor: pointer;
     z-index: 10;
-    transition: 0.3s;
-    border-radius: 5px;
+    transition: 0.25s ease;
+    border-radius: 8px;
     user-select: none;
+    backdrop-filter: blur(6px);
 }
 
 .seta-slider:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .seta-esquerda { left: 10px; }
 .seta-direita { right: 10px; }
 
-/* ==========================================
-   REGRAS DE TELA (PADRÃO CELULAR E TABLET)
-   ========================================== */
+/* ==========================
+   RESPONSIVIDADE
+   ========================== */
 
 @media (max-width: 1024px) {
-    .slider-trilho-manual {
-        gap: 12px; /* Junta um pouco mais os cards em telas menores */
-    }
+    .slider-trilho-manual,
     .coluna-videos {
         gap: 12px;
     }
-    .card-short { 
-        height: 360px; /* Altura confortável para tablets */
-    } 
+
+    .slider-wrapper-manual {
+        padding: 0 50px;
+    }
 }
 
 @media (max-width: 768px) {
-    .slider-trilho-manual {
-        gap: 10px; /* Espaço bem compacto e idêntico no celular */
-    }
+    .slider-trilho-manual,
     .coluna-videos {
         gap: 10px;
     }
-    .card-short { 
-        height: 280px; /* Reduz a altura para caber perfeitamente dois vídeos na tela do celular */
-    } 
+
+    .slider-wrapper-manual {
+        padding: 0 40px;
+    }
 }
 
 
