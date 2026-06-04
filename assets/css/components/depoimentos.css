@@ -1,5 +1,5 @@
 /* ==========================================
-   SLIDER DE VÍDEOS (VERSÃO OTIMIZADA)
+   SLIDER DE VÍDEOS (VERSÃO DOURADA)
    ========================================== */
 
 .slider-container {
@@ -19,7 +19,7 @@
     margin: 0 auto;
     overflow: hidden;
     cursor: grab;
-    padding: 0 60px; /* reserva espaço para setas sem depender de calc */
+    padding: 0 60px;
     box-sizing: border-box;
 }
 
@@ -36,7 +36,7 @@
     will-change: transform;
 }
 
-/* Coluna de vídeos */
+/* Colunas de vídeos */
 .coluna-videos {
     display: flex;
     flex-direction: column;
@@ -44,15 +44,16 @@
     flex-shrink: 0;
 }
 
-/* Card de vídeo */
+/* Card de vídeo com borda dourada */
 .card-short {
     aspect-ratio: 9 / 16;
     height: clamp(260px, 35vw, 440px);
     background: #111;
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid #333;
+    border: 1px solid rgba(212, 175, 55, 0.65); /* dourado fino */
     flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.08);
 }
 
 .card-short video {
@@ -61,14 +62,14 @@
     object-fit: cover;
 }
 
-/* Setas */
+/* Setas douradas */
 .seta-slider {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
-    border: none;
+    background: rgba(212, 175, 55, 0.12);
+    color: #f5c542;
+    border: 1px solid rgba(212, 175, 55, 0.4);
     font-size: 1.8rem;
     padding: 14px 10px;
     cursor: pointer;
@@ -79,16 +80,20 @@
     backdrop-filter: blur(6px);
 }
 
+/* Hover dourado mais forte */
 .seta-slider:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(212, 175, 55, 0.25);
+    color: #ffd86b;
+    border: 1px solid rgba(255, 215, 0, 0.7);
+    transform: translateY(-50%) scale(1.05);
 }
 
 .seta-esquerda { left: 10px; }
 .seta-direita { right: 10px; }
 
-/* ==========================
+/* ==========================================
    RESPONSIVIDADE
-   ========================== */
+   ========================================== */
 
 @media (max-width: 1024px) {
     .slider-trilho-manual,
@@ -111,7 +116,6 @@
         padding: 0 40px;
     }
 }
-
 
 
 
