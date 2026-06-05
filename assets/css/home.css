@@ -84,12 +84,21 @@
     max-width: 550px;
 }
 
-/* Ajustes Verticais corrigidos para não quebrar o Flexbox */
+/* AJUSTE INDIVIDUAR DE CADA SEÇÃO */
+
 .sec1 .caixa-texto
 {
-     max-width: 500px;
+     max-width: 550px;
 }
-.sec2 .caixa-texto,
+
+.sec2 .caixa-texto {
+    margin-top: 150px;
+}
+
+.sec3 .caixa-texto {
+    margin-top: 100px;
+}
+
 .sec6 .caixa-texto {
     justify-content: center;
 }
