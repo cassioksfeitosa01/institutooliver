@@ -18,7 +18,7 @@ body {
     position: relative;
     /* Ajuste o valor abaixo (ex: 80px) com a altura exata do seu cabeçalho */
     margin-top: 40px; 
-    padding: 40px 0;
+    padding: 30px 0;
     text-align: center;
     background: #000;
 }
@@ -129,12 +129,11 @@ body {
 }
 
 .chamada-dourada {
-    color: #D4AF37 !important;
-    font-size: 2.4rem !important;
-    font-weight: 900 !important;
+    color: #D4AF37;
+   font-size: 1.2rem;
+    font-weight: 550;
     line-height: 1.1;
     text-transform: uppercase;
-    margin-top: 20px;
 }
 
 /* CARDS */
@@ -227,15 +226,4 @@ summary {
     padding: 0;
     color: #eee;
     line-height: 1.6;
-}
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .grid-cards {
-        grid-template-columns: 1fr;
-    }
 }
