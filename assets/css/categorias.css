@@ -142,20 +142,16 @@
     }
 }
 
-@media (max-width: 768px) {
-    .titulo-pagina h1 {
-        font-size: 1.8rem;
-    }
+@media (max-width: 768px) { 
+    .titulo-pagina h1 { 
+        font-size: 1.8rem; 
+    } 
+    
+    .grid-cursos { 
+        grid-template-columns: 1fr; 
+    } 
 
-    .grid-cursos {
-        grid-template-columns: 1fr;
-    }
-
-    .card-curso {
-        background-size: 100% auto;
-    }
-
-    .card-curso::before {
-        aspect-ratio: 1.2 / 1;
-    }
+    
 }
+
+
