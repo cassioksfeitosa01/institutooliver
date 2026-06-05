@@ -1,5 +1,4 @@
-/* CSS PADRAÕ INSTITUTO ÓLIVER: PARA TODO O SITE*/
-
+/* FIXME: CONFIGURAÇÃO GLOBAL DAS SEÇÕES (Desktop e Geral) */
 /* TODO: CSS RESET REMOVE FALHA DO NAVEGADOR */
 * {
     margin: 0;
@@ -217,26 +216,4 @@ body {
 /* TODO: Efeito ao tocar */
 .botao:active {
     transform: scale(0.95);
-}
-
-/* ==========================================================================
-   MACAQUICE CONTROLADA: CONFIGURAÇÃO EXCLUSIVA PARA O TOPO DA PM
-   ========================================================================== */
-
-.subtitulo2 {
-    color: #e5b702; /* Amarelo dourado marcante no subtítulo */
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-}
-
-.titulo2 {
-    color: #FFFFFF; /* Título principal em branco para destacar bem */
-    font-size: 35;
-    font-weight: 100;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    line-height: 1.2;
 }
