@@ -17,7 +17,7 @@ body {
 .hero {
     position: relative;
     /* Ajuste o valor abaixo (ex: 80px) com a altura exata do seu cabeçalho */
-    margin-top: 50px; 
+    margin-top: 40px; 
     padding: 40px 0;
     text-align: center;
     background: #000;
