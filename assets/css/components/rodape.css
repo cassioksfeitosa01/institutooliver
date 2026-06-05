@@ -82,9 +82,10 @@
     position: relative;
     width: 100%;
     max-width: 1920px;
-    height: 620px;
+    height: 900px;
     margin: 0 auto;
     overflow: hidden;
+    
   }
 
   /* TODO: Força a imagem de fundo de qualquer seção a ir para trás */
@@ -123,6 +124,7 @@
     margin-top: 75px;
     max-width: 55%;
   }
+
 
   /* FIXME: CONFIGURAÇÃO PARA CELULAR (Telas até 768px)*/
 
