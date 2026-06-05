@@ -2,419 +2,111 @@
 <html lang="pt-BR">
 
 <head>
-  <!-- CONFIGURAÇÃO BÁSICA DO SITE -->
-  <meta charset="UTF-8" />
-  <!-- AJUSTE DE TELA -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <!-- TÍTULO DO SITE -->
-  <title>Instituto Óliver - Escola Preparatória Online - Carreiras Policiais - Cursos Superior</title>
-  <!-- DESCRIÇÃO DO SITE -->
-  <meta name="description" content="Prepare-se para as Carreiras Policiais com o Instituto Óliver." />
-  <!-- INSTRUÇÃO PARA ROBÔS DO GOOGLE (SEO) -->
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+    <!-- CONFIGURAÇÃO BÁSICA DO SITE -->
+    <meta charset="UTF-8" />
+    <!-- AJUSTE DE TELA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- TÍTULO DO SITE -->
+    <title>Instituto Óliver - Escola Preparatória Online - Carreiras Policiais - Cursos Superior</title>
+    <!-- DESCRIÇÃO DO SITE -->
+    <meta name="description" content="Prepare-se para as Carreiras Policiais com o Instituto Óliver." />
+    <!-- INSTRUÇÃO PARA ROBÔS DO GOOGLE (SEO) -->
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <!-- OTIMIZAÇÃO CSS: Carregamento assíncrono para os estilos não críticos -->
-  <link rel="stylesheet" href="/assets/css/global.css">
-  <link rel="stylesheet" href="/assets/css/home.css" media="print" onload="this.media='all'">
-   <link rel="stylesheet" href="/assets/css/components/menu.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/components/depoimentos.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/components/rodape.css" media="print" onload="this.media='all'">
+    <!-- OTIMIZAÇÃO CSS: Carregamento assíncrono para os estilos não críticos -->
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/home.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/css/components/menu.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/css/components/rodape.css" media="print" onload="this.media='all'">
 
-  <!-- FAVICON -->
-  <link rel="icon"
-    href="/assets/images/computador/home/favicon-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-    type="image/avif" sizes="32x32">
+    <!-- FAVICON -->
+    <link rel="icon"
+        href="/assets/images/computador/home/favicon-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
+        type="image/avif" sizes="32x32">
 
-  <!-- PRELOAD MOBILE -->
-  <link rel="preload"
-    href="/assets/images/celular/home/seja-bem-vindo-ao-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-    as="image" media="(max-width: 768px)" fetchpriority="high" />
+    <!-- PRELOAD MOBILE -->
+    <link rel="preload"
+        href="/assets/images/celular/home/seja-bem-vindo-ao-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
+        as="image" media="(max-width: 768px)" fetchpriority="high" />
 
-  <!-- PRELOAD DESKTOP -->
-  <link rel="preload"
-    href="/assets/images/computador/home/seja-bem-vindo-ao-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-    as="image" media="(min-width: 769px)" fetchpriority="high" />
+    <!-- PRELOAD DESKTOP -->
+    <link rel="preload"
+        href="/assets/images/computador/home/seja-bem-vindo-ao-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
+        as="image" media="(min-width: 769px)" fetchpriority="high" />
 
-    <style>
-    .sec {
-      position: relative;
-      width: 100%;
-      max-width: 1920px;
-      height: 620px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
 
-    .caixa-imagem {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
 
-    .caixa-imagem img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .caixa-texto {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 5%;
-      box-sizing: border-box;
-      pointer-events: none;
-    }
-
-    .caixa-texto * {
-      pointer-events: auto;
-    }
-
-    .caixa-texto.texto-esquerda {
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    .caixa-texto.texto-direita {
-      align-items: flex-end;
-      text-align: left;
-    }
-
-    .caixa-texto.texto-direita .titulo,
-    .caixa-texto.texto-direita .subtitulo,
-    .caixa-texto.texto-direita .descricao,
-    .caixa-texto.texto-direita .caixa-botao {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .titulo,
-    .subtitulo,
-    .descricao,
-    .caixa-botao {
-      max-width: 550px;
-    }
-
-    @media (max-width: 768px) {
-      .sec {
-        position: relative !important;
-        width: 100% !important;
-        overflow: hidden !important;
-      }
-
-      .caixa-imagem,
-      .caixa-imagem picture,
-      .caixa-imagem img {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        z-index: 1 !important;
-      }
-
-      .caixa-imagem img {
-        object-position: top center !important;
-        object-fit: cover !important;
-      }
-
-      .caixa-texto {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        z-index: 2 !important;
-        width: 100% !important;
-        height: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding: 40px 20px !important;
-        box-sizing: border-box !important;
-      }
-
-      .caixa-texto.texto-esquerda .titulo,
-      .caixa-texto.texto-direita .titulo,
-      .caixa-texto.texto-esquerda .subtitulo,
-      .caixa-texto.texto-direita .subtitulo,
-      .caixa-texto.texto-esquerda .descricao,
-      .caixa-texto.texto-direita .descricao,
-      .caixa-texto.texto-esquerda .caixa-botao,
-      .caixa-texto.texto-direita .caixa-botao {
-        max-width: 100% !important;
-        align-items: center !important;
-        text-align: center !important;
-      }
-
-      .sec1 {
-        height: 550px !important;
-        margin-top: 60px !important;
-      }
-    }
-  </style>
-
-  <!-- SCRIPTS -->
-  <script src="/assets/javascript/gtm-otimizado.js" defer></script>
+    <!-- SCRIPTS -->
+    <script src="/assets/javascript/gtm-otimizado.js" defer></script>
 </head>
 
 <body>
 
-   <!-- Container do Menu Global de Navegação -->
-   <div id="menu-principal"></div>
-  
-  <main>
+    <main>
 
-    <section class="sec sec1">
-      <div class="caixa-imagem">
-        <picture>
-          <source media="(max-width: 768px)"
-            srcset="/assets/images/celular/home/seja-bem-vindo-ao-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-            width="800" height="1006" />
-          <img
-            src="/assets/images/computador/home/seja-bem-vindo-ao-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-            width="1920" height="620" alt="Instituto Óliver Escola Preparatória Carreiras Policiais"
-            fetchpriority="high" />
+        <!-- Container do Menu Global de Navegação -->
+        <div id="menu-principal"></div>
 
-        </picture>
-      </div>
-      <div class="caixa-texto texto-esquerda">
-        <h1 class="titulo">Seja bem-vindo ao Instituto Óliver :</h1>
-        <h2 class="subtitulo">
-          Sua aprovação começa aqui.
-        </h2>
-        <p class="descricao">
-          Aqui no Instituto Óliver, você tem acesso a um ecossistema completo que transforma esforço em
-          direção,
-          preparação em confiança e sonhos em conquista.
-        </p>
-      </div>
-    </section>
+        <section class="sec sec1">
+            <div class="caixa-imagem">
+                <picture>
+                    <source media="(max-width: 768px)"
+                        srcset="/assets/images/celular/home/seja-bem-vindo-ao-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
+                        width="800" height="1006" />
+                    <img src="/assets/images/computador/home/seja-bem-vindo-ao-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
+                        width="1920" height="620" alt="Instituto Óliver Escola Preparatória Carreiras Policiais"
+                        fetchpriority="high" />
 
-    <!--TODO: SEÇÃO 2: CURSOS SUPERIORES -->
+                </picture>
+            </div>
+            <div class="caixa-texto texto-esquerda">
+                <h1 class="titulo">Seja bem-vindo ao Instituto Óliver :</h1>
+                <h2 class="subtitulo">
+                    Sua aprovação começa aqui.
+                </h2>
+                <p class="descricao">
+                    Aqui no Instituto Óliver, você tem acesso a um ecossistema completo que transforma esforço em
+                    direção,
+                    preparação em confiança e sonhos em conquista.
+                </p>
+            </div>
+        </section>
 
-    <section class="sec sec2">
-      <div class="caixa-imagem">
-        <picture>
-          <source media="(max-width: 768px)"
-            srcset="/assets/images/celular/home/cursos-superiores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif" />
+        <!--TODO: SEÇÃO 2: CURSOS SUPERIORES -->
 
-          <img
-            src="/assets/images/computador/home/cursos-superiores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-            width="1920" height="620" alt="Metodologia" loading="eager" />
-        </picture>
-      </div>
-      <div class="caixa-texto texto-direita">
-        <h2 class="titulo">Cursos Superiores</h2>
-        <h3 class="subtitulo">
-          Conquiste seu nível superior com agilidade, reconhecimento e impacto
-          real.
-        </h3>
-        <p class="descricao">
-          Estude no seu ritmo, conquiste o certificado em até 3 meses, 100%
-          EAD e com reconhecimento oficial. Ideal para concursos, promoções e
-          crescimento profissional.
-        </p>
-        <div class="caixa-botao">
-          <a href="/pages/cursos-superiores/" class="botao">Acessar todos os cursos superiores</a>
-        </div>
-      </div>
-    </section>
+        <section class="sec sec2">
+            <div class="caixa-imagem">
+                <picture>
+                    <source media="(max-width: 768px)"
+                        srcset="/assets/images/celular/home/cursos-superiores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif" />
 
-    <!-- TODO:SEÇÃO 3: CURSO SUPERIOR SEQUENCIAL E TEOLOGIA  -->
+                    <img src="/assets/images/computador/home/cursos-superiores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
+                        width="1920" height="620" alt="Metodologia" loading="eager" />
+                </picture>
+            </div>
+            <div class="caixa-texto texto-direita">
+                <h2 class="titulo">Cursos Superiores</h2>
+                <h3 class="subtitulo">
+                    Conquiste seu nível superior com agilidade, reconhecimento e impacto
+                    real.
+                </h3>
+                <p class="descricao">
+                    Estude no seu ritmo, conquiste o certificado em até 3 meses, 100%
+                    EAD e com reconhecimento oficial. Ideal para concursos, promoções e
+                    crescimento profissional.
+                </p>
+                <div class="caixa-botao">
+                    <a href="/pages/cursos-superiores/" class="botao">Acessar todos os cursos superiores</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section class="sec sec3">
-      <div class="caixa-imagem">
-        <picture>
-          <source media="(max-width: 768px)"
-            srcset="/assets/images/celular/home/curso-sequencial-gestao-de-seguranca-publica-e-privada.avif" />
-
-          <img src="/assets/images/computador/home/curso-sequencial-gestao-de-seguranca-publica-e-privada.avif"
-            width="1920" height="620" alt="Cursos" loading="eager" />
-        </picture>
-      </div>
-      <div class="caixa-texto texto-esquerda">
-        <h2 class="titulo">Curso Superior Sequencial</h2>
-        <h3 class="subtitulo">
-          Certificação superior válida em tempo recorde.
-        </h3>
-        <p class="descricao">
-          Curso rápido, direto ao ponto e com validade nacional. Destrave
-          concursos, graduação e oportunidades profissionais com um
-          certificado reconhecido.
-        </p>
-        <div class="caixa-botao">
-          <a href="/pages/cursos-superiores/gestao-de-seguranca-publica-e-privada/" class="botao">Gestão de Segurança
-            Pública e Privada</a>
-          <a href="/pages/cursos-superiores/teologia/" class="botao">Teologia</a>
-        </div>
-      </div>
-    </section>
-
-    <!--TODO: SEÇÃO 4: EJA ENSINO  -->
-
-    <section class="sec sec4">
-      <div class="caixa-imagem">
-        <picture>
-          <source media="(max-width: 768px)"
-            srcset="/assets/images/celular/home/outros-curso-eja-encino-medioinstituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif" />
-          <img
-            src="/assets/images/computador/home/curso-eja-ensino-de-jovens-e-adultosinstituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-            alt="Suporte" loading="eager" />
-        </picture>
-      </div>
-      <div class="caixa-texto texto-direita">
-        <h2 class="titulo">Curso EJA - Ensino de Jovens e Adultos</h2>
-        <h3 class="subtitulo">
-          Conquiste o diploma do Ensino Fundamental ou Médio.
-        </h3>
-        <p class="descricao">
-          Conclua seus estudos em até 6 meses com validade nacional. Aulas
-          presenciais com apoio digital. Certificado reconhecido e aceito em
-          concursos, faculdades e empresas.
-        </p>
-        <div class="caixa-botao">
-          <a href="/pages/eja/" class="botao">Acessar agora</a>
-        </div>
-      </div>
-    </section>
-
-    <!--TODO: SEÇÃO 5: CARREIRAS POLICIAIS  -->
-
-    <section class="sec sec5">
-      <div class="caixa-imagem">
-        <picture>
-          <source media="(max-width: 768px)"
-            srcset="/assets/images/celular/home/policia-militar-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif" />
-          <img
-            src="/assets/images/computador/home/policia-militar-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-            alt="Categorias" loading="eager" />
-        </picture>
-      </div>
-      <div class="caixa-texto texto-esquerda">
-        <h2 class="titulo">Carreiras Policiais</h2>
-        <h3 class="subtitulo">A farda começa na preparação</h3>
-        <p class="descricao">
-          Você nasceu pra isso. Agora é hora de vestir a farda — e passar.<br />
-          <br />
-          Preparatórios completos para concursos de Polícia Militar. Civil.
-          Penal.<br />
-          <br />
-          Professores com vivência real, abrangência nacional e estratégia
-          voltada para aprovação.<br />
-          <br />
-          Escolha o seu curso abaixo:
-        </p>
-        <div class="caixa-botao">
-          <a href="/pages/carreiras-policiais/policia-militar/" class="botao">Polícia Militar</a>
-          <a href="/pages/carreiras-policiais/policia-civil/" class="botao">Polícia Civil</a>
-          <a href="/pages/carreiras-policiais/policia-penal/" class="botao">Polícia Penal</a>
-          <a href="/pages/carreiras-policiais/policia-federal/" class="botao">Polícia Federal</a>
-        </div>
-      </div>
-    </section>
-
-    <!--TODO:SEÇÃO 6: BOMBEIRO MILITAR   -->
-
-    <section class="sec sec6">
-      <div class="caixa-imagem">
-        <picture>
-          <source media="(max-width: 768px)"
-            srcset="/assets/images/celular/home/bombeiro-militar-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif" />
-          <img
-            src="/assets/images/computador/home/bombeiro-militar-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-            alt="Certificado" loading="eager" />
-        </picture>
-      </div>
-      <div class="caixa-texto texto-direita">
-        <h2 class="titulo">Bombeiro Militar</h2>
-        <h3 class="subtitulo">Sirva com coragem. Passe com preparo.</h3>
-        <p class="descricao">
-          Chegue pronto para os concursos do Corpo de Bombeiros de todo o
-          Brasil. Preparação certeira, professores experientes e conteúdo
-          alinhado aos editais.
-        </p>
-        <div class="caixa-botao">
-          <a href="/pages/carreiras-policiais/bombeiro-militar/" class="botao">Começar preparação para CBM</a>
-        </div>
-      </div>
-    </section>
-
-    <!--TODO: SEÇÃO 7: GUARDA MUNICIPAL  -->
-
-    <section class="sec sec7">
-      <div class="caixa-imagem">
-        <picture>
-          <source media="(max-width: 768px)"
-            srcset="/assets/images/celular/home/guarda-municipal-gcm-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif" />
-          <img
-            src="/assets/images/computador/home/guarda-municipal-gcm-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-            alt="EAD" loading="eager" />
-        </picture>
-      </div>
-      <div class="caixa-texto texto-esquerda">
-        <h2 class="titulo">Guarda Municipal</h2>
-        <h3 class="subtitulo">
-          Sua cidade precisa de você. Sua aprovação precisa da gente.
-        </h3>
-        <p class="descricao">
-          Curso específico para concursos de Guardas Municipais. Conteúdo
-          municipal atualizado e metodologia de aprovação testada.
-        </p>
-        <div class="caixa-botao">
-          <a href="/pages/carreiras-policiais/guarda-municipal/" class="botao">Ver preparatório GCM</a>
-        </div>
-      </div>
-    </section>
-
-    <!--TODO: SEÇÃO 8: OUTROS CURSOS  -->
-
-    <section class="sec sec8">
-      <div class="caixa-imagem">
-        <picture>
-          <source media="(max-width: 768px)"
-            srcset="/assets/images/celular/home/outros-curso-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif" />
-          <img
-            src="/assets/images/computador/home/outros-curso-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.avif"
-            alt="Matrícula" loading="eager" />
-        </picture>
-      </div>
-      <div class="caixa-texto texto-direita">
-        <h2 class="titulo">Outros Cursos</h2>
-        <h3 class="subtitulo">
-          Não encontrou seu concurso aqui? A gente tem mais.
-        </h3>
-        <p class="descricao">
-          Cursos como: ESA; Polícia Federal; PRF; CNH de Primeira; Português e
-          Redação do Zero; Raciocínio Lógico Matemático do Zero e outras
-          oportunidades. Preparações sob medida para diferentes editais.
-        </p>
-        <div class="caixa-botao">
-          <a href="/pages/outros-cursos/" class="botao">Ver todos os cursos</a>
-        </div>
-      </div>
-    </section>
-
-      <!--  Depimentos prova Social (Esteira Automática) -->
-  <div id="secao-depoimentos"></div>
-  </main>
-
-   <!-- Container do Rodapé Principal do Site -->
-  <div id="rodape-principal"></div>
-     <!--TODO: Google Tag Manager -->
-   <script src="/assets/javascript/montador-de-paginas.js" defer></script>
+    <!-- Container do Rodapé Principal do Site -->
+    <div id="rodape-principal"></div>
+    <!--TODO: Google Tag Manager -->
+    <script src="/" defer></script>
 
 </body>
 
