@@ -1,0 +1,219 @@
+/* ==========================================
+   SLIDER DE VÍDEOS (VERSÃO DOURADA)
+   ========================================== */
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    background: #000;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Área visível do slider */
+.slider-wrapper-manual {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: grab;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+.slider-wrapper-manual:active {
+    cursor: grabbing;
+}
+
+/* Trilho */
+.slider-trilho-manual {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+    transition: transform 0.5s ease-out;
+    will-change: transform;
+}
+
+/* Colunas de vídeos */
+.coluna-videos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+/* Card de vídeo com borda dourada */
+.card-short {
+    aspect-ratio: 9 / 16;
+    height: clamp(260px, 35vw, 440px);
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.65); /* dourado fino */
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.08);
+}
+
+.card-short video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Setas douradas */
+.seta-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(212, 175, 55, 0.12);
+    color: #f5c542;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    font-size: 1.8rem;
+    padding: 14px 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.25s ease;
+    border-radius: 8px;
+    user-select: none;
+    backdrop-filter: blur(6px);
+}
+
+/* Hover dourado mais forte */
+.seta-slider:hover {
+    background: rgba(212, 175, 55, 0.25);
+    color: #ffd86b;
+    border: 1px solid rgba(255, 215, 0, 0.7);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.seta-esquerda { left: 10px; }
+.seta-direita { right: 10px; }
+
+/* ==========================================
+   RESPONSIVIDADE
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .slider-trilho-manual,
+    .coluna-videos {
+        gap: 12px;
+    }
+
+    .slider-wrapper-manual {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-trilho-manual,
+    .coluna-videos {
+        gap: 10px;
+    }
+
+    .slider-wrapper-manual {
+        padding: 0 40px;
+    }
+}
+
+
+
+
+
+
+
+
+    /* ESTRUTURA DA SEÇÃO  MURAL ÓLIVER*/
+    .mural-oliver {
+        padding: 40px 5%;
+        background: #000;
+        color: #fff;
+    }
+
+    .container-texto-mural {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .container-texto-mural h2 { color: #ffce08; font-weight: bold; margin-bottom: 5px; }
+    .container-texto-mural h3 { color: #ccc; font-size: 1.2rem; }
+
+    /* GRID ESTILO MASONRY */
+    .masonry-grid {
+        column-gap: 15px;
+        width: 100%;
+        max-width: 2000px;
+        margin: 0 auto;
+        max-height: 1700px; /* Altura limite para o scroll interno */
+        overflow-y: auto;
+        padding-right: 10px;
+        column-count: 4; /* 4 colunas no PC */
+    }
+
+    /* ESTILO DE CADA ITEM */
+    .masonry-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(219, 175, 0, 0.3);
+        background: #0a0a0a;
+        break-inside: avoid;
+        position: relative;
+    }
+
+    .masonry-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    /* EFEITO DE BRILHO AO PASSAR O MOUSE */
+    .masonry-item::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,206,8,0.3) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        transition: none;
+    }
+
+    .masonry-item:hover::after {
+        animation: brilhoAnim 0.8s forwards;
+    }
+
+    .masonry-item:hover img {
+        transform: scale(1.08);
+    }
+
+    @keyframes brilhoAnim {
+        0% { left: -100%; }
+        100% { left: 150%; }
+    }
+
+    /* BARRA DE ROLAGEM DOURADA */
+    .masonry-grid::-webkit-scrollbar { width: 6px; }
+    .masonry-grid::-webkit-scrollbar-thumb {
+        background: #ffce08;
+        border-radius: 10px;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+
+        /* GRID ESTILO MASONRY */
+    .masonry-grid {
+        max-width: 2000px;
+        max-height: 1700px; /* Altura limite para o scroll interno */
+        column-count: 2; /* 2 colunas no no celular */
+    }
+    
+    
+    }
+
