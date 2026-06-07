@@ -21,6 +21,8 @@ if (containerDepoimentos) {
         .then(data => {
             containerDepoimentos.innerHTML = data;
             console.log("✅ Depoimentos carregados!");
+            // Reinicializar o slider após o HTML ser injetado
+            inicializarSliderDepoimentos();
         })
         .catch(err => console.error("Erro nos Depoimentos:", err));
 }
@@ -128,7 +130,7 @@ class VideoSliderSection {
         this.prevBtn = root.querySelector('.prev-arrow');
         this.nextBtn = root.querySelector('.next-arrow');
         this.track = root.querySelector('.videos-track');
-        this.dotsIndicator = root.querySelector('.dots-indicator');
+        this.dotsIndicator = root.closest('section')?.querySelector('.dots-indicator') || root.querySelector('.dots-indicator');
         this.videoItems = root.querySelectorAll('.video-item');
         this.totalVideos = this.videoItems.length;
 
@@ -170,6 +172,7 @@ class VideoSliderSection {
     }
 
     createDots() {
+        if (!this.dotsIndicator) return;
         const totalGroups = Math.ceil(this.totalVideos / this.itemsPerView);
         for (let i = 0; i < totalGroups; i++) {
             const dot = document.createElement('div');
@@ -191,18 +194,36 @@ class VideoSliderSection {
     }
 
     setupPlayButtons() {
+        const self = this;
+
+        // Setup play button clicks
         this.root.querySelectorAll('.play-btn').forEach((btn) => {
             btn.addEventListener('click', (e) => {
-                e.preventDefault();
                 e.stopPropagation();
-                const videoPlayer = btn.closest('.video-player');
+                e.preventDefault();
+
+                console.log('✅ Play button clicado');
+
+                // Navega até o vídeo
+                let videoPlayer = btn.parentElement; // .play-overlay
+                videoPlayer = videoPlayer?.parentElement; // .video-player
+
+                if (!videoPlayer || !videoPlayer.classList.contains('video-player')) {
+                    console.error('❌ video-player não encontrado');
+                    return;
+                }
+
                 const video = videoPlayer.querySelector('video');
                 const overlay = videoPlayer.querySelector('.play-overlay');
-                // Pausar outros vídeos sem zerar o tempo
-                this.root.querySelectorAll('video').forEach((v) => { if (v !== video) v.pause(); });
-                this.playVideo(video, overlay);
+
+                if (video && overlay) {
+                    self.playVideo(video, overlay);
+                }
             });
         });
+
+        // Não usar clique no overlay ou no vídeo para evitar chamadas duplicadas de play/pause.
+        // O botão amarelo já inicia o vídeo e o controle nativo do HTML ficará acessível.
     }
 
     setupDragListeners() {
@@ -295,36 +316,75 @@ class VideoSliderSection {
     }
 
     playVideo(video, overlay) {
-        if (!video) return;
-        // Mostrar controles nativos ao reproduzir e esconder o overlay
-        overlay.classList.add('hidden');
-        video.controls = true;
+        console.log('🎬 playVideo chamado', { videoSrc: video?.src, overlayHidden: overlay?.classList.contains('hidden') });
 
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise
-                .then(() => {
-                    overlay.classList.add('hidden');
-                })
-                .catch((error) => console.warn('Erro ao tocar o vídeo:', error));
+        if (!video || !overlay) {
+            console.error('❌ Video ou overlay é null/undefined');
+            return;
         }
 
-        const pauseHandler = () => {
+        // Pausa outros vídeos na seção
+        this.root.querySelectorAll('video').forEach((v) => {
+            if (v !== video) {
+                v.pause();
+            }
+        });
+
+        // Esconde overlay imediatamente para liberar os controles nativos
+        overlay.classList.add('hidden');
+        overlay.style.display = 'none';
+        console.log('✅ Overlay escondido');
+
+        // Garante controles e tenta reproduzir o vídeo
+        video.controls = true;
+
+        const restoreOverlay = () => {
             overlay.classList.remove('hidden');
-            try { video.controls = false; } catch(e) {}
+            overlay.style.display = 'flex';
         };
 
-        const endHandler = () => {
-            overlay.classList.remove('hidden');
-            try { video.controls = false; } catch(e) {}
-            try { video.currentTime = 0; } catch(e) {}
+        const tryPlay = async () => {
+            console.log('▶️ Tentando fazer play do vídeo...');
+            try {
+                await video.play();
+                console.log('✅ Play bem-sucedido!');
+            } catch (err) {
+                console.error('❌ Erro ao tocar vídeo:', err.name, err.message);
+                if (err.name === 'NotAllowedError' || err.name === 'AbortError') {
+                    console.log('🔁 Tentando play com o vídeo mudo para liberar o gesto do usuário');
+                    video.muted = true;
+                    try {
+                        await video.play();
+                        console.log('✅ Play com fallback mudo bem-sucedido!');
+                        video.muted = false;
+                        return;
+                    } catch (err2) {
+                        console.error('❌ Segunda tentativa falhou:', err2.name, err2.message);
+                    }
+                }
+                restoreOverlay();
+            }
         };
 
-        // Remover handlers antigos (se existirem) e definir os novos
-        video.removeEventListener('pause', pauseHandler);
-        video.removeEventListener('ended', endHandler);
-        video.addEventListener('pause', pauseHandler);
-        video.addEventListener('ended', endHandler);
+        tryPlay();
+
+        // Mostra overlay novamente quando pausa
+        const handlePause = () => {
+            console.log('⏸️ Vídeo pausado');
+            restoreOverlay();
+        };
+
+        // Mostra overlay novamente quando termina
+        const handleEnded = () => {
+            console.log('✅ Vídeo terminou');
+            restoreOverlay();
+        };
+
+        // Remove listeners antigos e adiciona os novos
+        video.removeEventListener('pause', handlePause);
+        video.removeEventListener('ended', handleEnded);
+        video.addEventListener('pause', handlePause);
+        video.addEventListener('ended', handleEnded);
     }
 
     pauseAllVideos() {
@@ -339,14 +399,15 @@ class VideoSliderSection {
     }
 }
 
-let slidersInited = false;
+let sliders = [];
 
 function inicializarSliderDepoimentos() {
-    if (slidersInited) return;
-    slidersInited = true;
+    // Destruir sliders anteriores para evitar duplicação
+    sliders = [];
 
     document.querySelectorAll('.video-slider-section').forEach((root) => {
-        new VideoSliderSection(root);
+        const slider = new VideoSliderSection(root);
+        sliders.push(slider);
     });
 }
 
