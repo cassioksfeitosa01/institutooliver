@@ -1,56 +1,47 @@
 // 1. CARREGAMENTO DOS COMPONENTES (FETCH)
 
-// --- MENU ---
-const containerMenu = document.getElementById('menu-principal');
-if (containerMenu) {
-    fetch('/components/menu.html')
-        .then(response => response.text())
-        .then(data => {
-            containerMenu.innerHTML = data;
-            console.log("✅ Menu carregado!");
-            inicializarLogicaMenu();
-        })
-        .catch(err => console.error("Erro no Menu:", err));
+// Função auxiliar para carregar componentes
+async function carregarComponente(id, url, callback) {
+    const container = document.getElementById(id);
+    if (!container) return;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.text();
+        container.innerHTML = data;
+        console.log(`✅ ${id} carregado!`);
+        if (callback) callback();
+    } catch (err) {
+        console.error(`Erro ao carregar ${id}:`, err);
+    }
 }
 
-// --- DEPOIMENTOS ---
-const containerDepoimentos = document.getElementById('depoimentos-principais');
-if (containerDepoimentos) {
-    fetch('/components/depoimentos.html')
-        .then(response => response.text())
-        .then(data => {
-            containerDepoimentos.innerHTML = data;
-            console.log("✅ Depoimentos carregados!");
-            // Reinicializar o slider após o HTML ser injetado
-            inicializarSliderDepoimentos();
-        })
-        .catch(err => console.error("Erro nos Depoimentos:", err));
-}
+// Inicialização Geral
+document.addEventListener('DOMContentLoaded', () => {
+    // Carrega Menu
+    carregarComponente('menu-principal', '/components/menu.html', inicializarLogicaMenu);
 
-// --- RODAPÉ ---
-const containerRodape = document.getElementById('rodape-principal');
-if (containerRodape) {
-    fetch('/components/rodape.html')
-        .then(response => response.text())
-        .then(data => {
-            containerRodape.innerHTML = data;
-            console.log("✅ Rodapé carregado!");
-        })
-        .catch(err => console.error("Erro no Rodapé:", err));
-}
+    // Carrega Depoimentos
+    carregarComponente('depoimentos-principais', '/components/depoimentos.html', inicializarSliderDepoimentos);
 
-// 4. LÓGICA DO MENU E BUSCA
+    // Carrega Rodapé
+    carregarComponente('rodape-principal', '/components/rodape.html');
+});
 
+// 2. LÓGICA DO MENU E BUSCA
 function inicializarLogicaMenu() {
     const btnMenu = document.getElementById("btn-menu");
     const navLista = document.getElementById("nav-lista");
     const categorias = document.querySelectorAll(".menu-item-cat");
 
-    // Lógica da Busca
-    const todosOsLinks = Array.from(document.querySelectorAll(".nav-links a")).map(a => ({
-        texto: a.innerText,
-        link: a.href
-    }));
+    // Busca: Pegar links após o carregamento total para garantir que todos existam
+    let todosOsLinks = [];
+    setTimeout(() => {
+        todosOsLinks = Array.from(document.querySelectorAll("a")).map(a => ({
+            texto: a.innerText.trim(),
+            link: a.href
+        })).filter(item => item.texto.length > 1);
+    }, 1000);
 
     function realizarBusca(termo, containerResultados, esconderMenu = false) {
         if (!containerResultados) return;
@@ -94,20 +85,20 @@ function inicializarLogicaMenu() {
 
     // Controle do Menu Mobile
     if (btnMenu && navLista) {
-        btnMenu.addEventListener("click", (e) => {
+        btnMenu.onclick = (e) => {
             e.stopPropagation();
             btnMenu.classList.toggle("active");
             navLista.classList.toggle("active");
-        });
+        };
 
         categorias.forEach((cat) => {
-            cat.addEventListener("click", (e) => {
+            cat.onclick = (e) => {
                 e.stopPropagation();
                 const submenu = cat.nextElementSibling;
                 if (submenu && submenu.classList.contains("submenu")) {
                     submenu.classList.toggle("open");
                 }
-            });
+            };
         });
 
         document.addEventListener("click", (e) => {
@@ -119,8 +110,7 @@ function inicializarLogicaMenu() {
     }
 }
 
-// LÓGICA DO SLIDER MANUAL (EMBUTIDO)
-
+// 3. LÓGICA DO SLIDER
 class VideoSliderSection {
     constructor(root) {
         this.root = root;
@@ -130,7 +120,7 @@ class VideoSliderSection {
         this.prevBtn = root.querySelector('.prev-arrow');
         this.nextBtn = root.querySelector('.next-arrow');
         this.track = root.querySelector('.videos-track');
-        this.dotsIndicator = root.closest('section')?.querySelector('.dots-indicator') || root.querySelector('.dots-indicator');
+        this.dotsIndicator = root.querySelector('.dots-indicator') || root.closest('section')?.querySelector('.dots-indicator');
         this.videoItems = root.querySelectorAll('.video-item');
         this.totalVideos = this.videoItems.length;
 
@@ -152,23 +142,20 @@ class VideoSliderSection {
     init() {
         this.createDots();
         this.attachEventListeners();
-
         this.setupDragListeners();
-        this.setupWindowResize();
+        window.addEventListener('resize', () => this.handleResize());
         this.updateSlider();
     }
 
-    setupWindowResize() {
-        window.addEventListener('resize', () => {
-            const newItemsPerView = this.getItemsPerView();
-            if (newItemsPerView !== this.itemsPerView) {
-                this.itemsPerView = newItemsPerView;
-                this.currentIndex = 0;
-                this.dotsIndicator.innerHTML = '';
-                this.createDots();
-                this.updateSlider();
-            }
-        });
+    handleResize() {
+        const newItemsPerView = this.getItemsPerView();
+        if (newItemsPerView !== this.itemsPerView) {
+            this.itemsPerView = newItemsPerView;
+            this.currentIndex = 0;
+            if (this.dotsIndicator) this.dotsIndicator.innerHTML = '';
+            this.createDots();
+            this.updateSlider();
+        }
     }
 
     createDots() {
@@ -184,102 +171,65 @@ class VideoSliderSection {
     }
 
     attachEventListeners() {
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => this.prevSlide());
-        }
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => this.nextSlide());
-        }
-        this.setupPlayButtons();
-    }
+        this.prevBtn?.addEventListener('click', () => this.prevSlide());
+        this.nextBtn?.addEventListener('click', () => this.nextSlide());
 
-    setupPlayButtons() {
-        const self = this;
-
-        // Setup play button clicks
         this.root.querySelectorAll('.play-btn').forEach((btn) => {
             btn.addEventListener('click', (e) => {
-                e.stopPropagation();
                 e.preventDefault();
-
-                console.log('✅ Play button clicado');
-
-                // Navega até o vídeo
-                let videoPlayer = btn.parentElement; // .play-overlay
-                videoPlayer = videoPlayer?.parentElement; // .video-player
-
-                if (!videoPlayer || !videoPlayer.classList.contains('video-player')) {
-                    console.error('❌ video-player não encontrado');
-                    return;
-                }
-
-                const video = videoPlayer.querySelector('video');
-                const overlay = videoPlayer.querySelector('.play-overlay');
-
-                if (video && overlay) {
-                    self.playVideo(video, overlay);
-                }
+                const videoPlayer = btn.closest('.video-player');
+                const video = videoPlayer?.querySelector('video');
+                const overlay = videoPlayer?.querySelector('.play-overlay');
+                if (video && overlay) this.playVideo(video, overlay);
             });
         });
-
-        // Não usar clique no overlay ou no vídeo para evitar chamadas duplicadas de play/pause.
-        // O botão amarelo já inicia o vídeo e o controle nativo do HTML ficará acessível.
     }
 
-    setupDragListeners() {
-        this.wrapper = this.root.querySelector('.videos-wrapper');
-        if (!this.wrapper) return;
+    playVideo(video, overlay) {
+        this.pauseAllVideos();
 
-        this.wrapper.addEventListener('mousedown', (e) => this.startDrag(e));
-        this.wrapper.addEventListener('mousemove', (e) => this.drag(e));
-        this.wrapper.addEventListener('mouseup', () => this.endDrag());
-        this.wrapper.addEventListener('mouseleave', () => this.endDrag());
+        overlay.classList.add('hidden');
+        video.controls = true;
 
-        this.wrapper.addEventListener('touchstart', (e) => this.startDrag(e), false);
-        this.wrapper.addEventListener('touchmove', (e) => this.drag(e), false);
-        this.wrapper.addEventListener('touchend', () => this.endDrag(), false);
+        video.play().catch(err => {
+            console.warn("Autoplay bloqueado, tentando mudo...");
+            video.muted = true;
+            video.play();
+        });
 
-        this.wrapper.addEventListener('selectstart', (e) => {
-            if (this.isDragging) e.preventDefault();
+        // Eventos para voltar o overlay quando o vídeo parar
+        const showOverlay = () => {
+            overlay.classList.remove('hidden');
+            video.controls = false;
+        };
+
+        video.onpause = showOverlay;
+        video.onended = showOverlay;
+    }
+
+    pauseAllVideos() {
+        this.root.querySelectorAll('video').forEach(v => {
+            v.pause();
+            const overlay = v.closest('.video-player')?.querySelector('.play-overlay');
+            overlay?.classList.remove('hidden');
         });
     }
 
-    startDrag(e) {
-        this.isDragging = true;
-        this.startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-        this.track.style.transition = 'none';
-    }
+    // --- Navegação e Drag ---
+    updateSlider() {
+        const offset = -this.currentIndex * (100 / this.itemsPerView);
+        if (this.track) this.track.style.transform = `translateX(${offset}%)`;
 
-    drag(e) {
-        if (!this.isDragging) return;
-        const currentClientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-        this.currentX = currentClientX - this.startX;
+        const dots = this.dotsIndicator?.querySelectorAll('.dot');
+        dots?.forEach((dot, index) => dot.classList.toggle('active', index === this.currentIndex));
 
-        const offset = -this.currentIndex * (100 / this.itemsPerView) + (this.currentX / this.wrapper.offsetWidth) * 100;
-        this.track.style.transform = `translateX(${offset}%)`;
-    }
-
-    endDrag() {
-        if (!this.isDragging) return;
-        this.isDragging = false;
-        this.track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-
-        if (Math.abs(this.currentX) > this.dragThreshold) {
-            if (this.currentX > 0) {
-                this.prevSlide();
-            } else {
-                this.nextSlide();
-            }
-        } else {
-            this.updateSlider();
-        }
+        if (this.prevBtn) this.prevBtn.disabled = this.currentIndex === 0;
+        if (this.nextBtn) this.nextBtn.disabled = this.currentIndex >= Math.ceil(this.totalVideos / this.itemsPerView) - 1;
     }
 
     nextSlide() {
-        const totalGroups = Math.ceil(this.totalVideos / this.itemsPerView);
-        if (this.currentIndex < totalGroups - 1) {
+        if (this.currentIndex < Math.ceil(this.totalVideos / this.itemsPerView) - 1) {
             this.currentIndex++;
-            this.pauseAllVideos();
             this.updateSlider();
         }
     }
@@ -287,130 +237,56 @@ class VideoSliderSection {
     prevSlide() {
         if (this.currentIndex > 0) {
             this.currentIndex--;
-            this.pauseAllVideos();
             this.updateSlider();
         }
     }
 
     goToSlide(index) {
         this.currentIndex = index;
-        this.pauseAllVideos();
         this.updateSlider();
     }
 
-    updateSlider() {
-        const offset = -this.currentIndex * (100 / this.itemsPerView);
-        this.track.style.transform = `translateX(${offset}%)`;
+    setupDragListeners() {
+        const wrapper = this.root.querySelector('.videos-wrapper');
+        if (!wrapper) return;
 
-        this.root.querySelectorAll('.dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentIndex);
-        });
+        const start = (e) => {
+            this.isDragging = true;
+            this.startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            this.track.style.transition = 'none';
+        };
 
-        const totalGroups = Math.ceil(this.totalVideos / this.itemsPerView);
-        if (this.prevBtn) this.prevBtn.disabled = this.currentIndex === 0;
-        if (this.nextBtn) this.nextBtn.disabled = this.currentIndex === totalGroups - 1;
+        const move = (e) => {
+            if (!this.isDragging) return;
+            const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            this.currentX = x - this.startX;
+            const offset = -this.currentIndex * (100 / this.itemsPerView) + (this.currentX / wrapper.offsetWidth) * 100;
+            this.track.style.transform = `translateX(${offset}%)`;
+        };
 
-        this.root.querySelectorAll('.play-overlay').forEach((overlay) => {
-            overlay.classList.remove('hidden');
-        });
-    }
-
-    playVideo(video, overlay) {
-        console.log('🎬 playVideo chamado', { videoSrc: video?.src, overlayHidden: overlay?.classList.contains('hidden') });
-
-        if (!video || !overlay) {
-            console.error('❌ Video ou overlay é null/undefined');
-            return;
-        }
-
-        // Pausa outros vídeos na seção
-        this.root.querySelectorAll('video').forEach((v) => {
-            if (v !== video) {
-                v.pause();
+        const end = () => {
+            if (!this.isDragging) return;
+            this.isDragging = false;
+            this.track.style.transition = 'transform 0.5s ease';
+            if (Math.abs(this.currentX) > this.dragThreshold) {
+                this.currentX > 0 ? this.prevSlide() : this.nextSlide();
+            } else {
+                this.updateSlider();
             }
-        });
-
-        // Esconde overlay imediatamente para liberar os controles nativos
-        overlay.classList.add('hidden');
-        overlay.style.display = 'none';
-        console.log('✅ Overlay escondido');
-
-        // Garante controles e tenta reproduzir o vídeo
-        video.controls = true;
-
-        const restoreOverlay = () => {
-            overlay.classList.remove('hidden');
-            overlay.style.display = 'flex';
+            this.currentX = 0;
         };
 
-        const tryPlay = async () => {
-            console.log('▶️ Tentando fazer play do vídeo...');
-            try {
-                await video.play();
-                console.log('✅ Play bem-sucedido!');
-            } catch (err) {
-                console.error('❌ Erro ao tocar vídeo:', err.name, err.message);
-                if (err.name === 'NotAllowedError' || err.name === 'AbortError') {
-                    console.log('🔁 Tentando play com o vídeo mudo para liberar o gesto do usuário');
-                    video.muted = true;
-                    try {
-                        await video.play();
-                        console.log('✅ Play com fallback mudo bem-sucedido!');
-                        video.muted = false;
-                        return;
-                    } catch (err2) {
-                        console.error('❌ Segunda tentativa falhou:', err2.name, err2.message);
-                    }
-                }
-                restoreOverlay();
-            }
-        };
-
-        tryPlay();
-
-        // Mostra overlay novamente quando pausa
-        const handlePause = () => {
-            console.log('⏸️ Vídeo pausado');
-            restoreOverlay();
-        };
-
-        // Mostra overlay novamente quando termina
-        const handleEnded = () => {
-            console.log('✅ Vídeo terminou');
-            restoreOverlay();
-        };
-
-        // Remove listeners antigos e adiciona os novos
-        video.removeEventListener('pause', handlePause);
-        video.removeEventListener('ended', handleEnded);
-        video.addEventListener('pause', handlePause);
-        video.addEventListener('ended', handleEnded);
-    }
-
-    pauseAllVideos() {
-        this.root.querySelectorAll('video').forEach((video) => {
-            video.pause();
-            video.currentTime = 0;
-        });
-
-        this.root.querySelectorAll('.play-overlay').forEach((overlay) => {
-            overlay.classList.remove('hidden');
-        });
+        wrapper.addEventListener('mousedown', start);
+        window.addEventListener('mousemove', move);
+        window.addEventListener('mouseup', end);
+        wrapper.addEventListener('touchstart', start);
+        wrapper.addEventListener('touchmove', move);
+        wrapper.addEventListener('touchend', end);
     }
 }
-
-let sliders = [];
 
 function inicializarSliderDepoimentos() {
-    // Destruir sliders anteriores para evitar duplicação
-    sliders = [];
-
-    document.querySelectorAll('.video-slider-section').forEach((root) => {
-        const slider = new VideoSliderSection(root);
-        sliders.push(slider);
+    document.querySelectorAll('.video-slider-section').forEach(root => {
+        new VideoSliderSection(root);
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    inicializarSliderDepoimentos();
-});
