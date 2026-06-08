@@ -1,31 +1,35 @@
 // 1. CARREGAMENTO DOS COMPONENTES (FETCH)
 
 // Função auxiliar para carregar componentes
-async function carregarComponente(id, url, callback) {
+async function carregarComponente(id, url) {
     const container = document.getElementById(id);
-    if (!container) return;
+    if (!container) return false;
 
     try {
         const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.text();
         container.innerHTML = data;
         console.log(`✅ ${id} carregado!`);
-        if (callback) callback();
+        return true;
     } catch (err) {
         console.error(`Erro ao carregar ${id}:`, err);
+        return false;
     }
 }
 
 // Inicialização Geral
-document.addEventListener('DOMContentLoaded', () => {
-    // Carrega Menu
-    carregarComponente('menu-principal', '/components/menu.html', inicializarLogicaMenu);
+document.addEventListener('DOMContentLoaded', async () => {
+    // Carrega todos os componentes concorrentemente de forma segura
+    await Promise.all([
+        carregarComponente('menu-principal', '/components/menu.html'),
+        carregarComponente('depoimentos-principais', '/components/depoimentos.html'),
+        carregarComponente('rodape-principal', '/components/rodape.html')
+    ]);
 
-    // Carrega Depoimentos
-    carregarComponente('depoimentos-principais', '/components/depoimentos.html', inicializarSliderDepoimentos);
-
-    // Carrega Rodapé
-    carregarComponente('rodape-principal', '/components/rodape.html');
+    // Inicializa as lógicas após carregar tudo
+    inicializarLogicaMenu();
+    inicializarSliderDepoimentos();
 });
 
 // 2. LÓGICA DO MENU E BUSCA
@@ -34,14 +38,13 @@ function inicializarLogicaMenu() {
     const navLista = document.getElementById("nav-lista");
     const categorias = document.querySelectorAll(".menu-item-cat");
 
-    // Busca: Pegar links após o carregamento total para garantir que todos existam
-    let todosOsLinks = [];
-    setTimeout(() => {
-        todosOsLinks = Array.from(document.querySelectorAll("a")).map(a => ({
+    // Coleta de links imediata após injeção segura de todos os componentes
+    const todosOsLinks = Array.from(document.querySelectorAll("a"))
+        .map(a => ({
             texto: a.innerText.trim(),
             link: a.href
-        })).filter(item => item.texto.length > 1);
-    }, 1000);
+        }))
+        .filter(item => item.texto.length > 1);
 
     function realizarBusca(termo, containerResultados, esconderMenu = false) {
         if (!containerResultados) return;
@@ -254,6 +257,11 @@ class VideoSliderSection {
             this.isDragging = true;
             this.startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
             this.track.style.transition = 'none';
+
+            window.addEventListener('mousemove', move);
+            window.addEventListener('mouseup', end);
+            window.addEventListener('touchmove', move);
+            window.addEventListener('touchend', end);
         };
 
         const move = (e) => {
@@ -274,14 +282,15 @@ class VideoSliderSection {
                 this.updateSlider();
             }
             this.currentX = 0;
+
+            window.removeEventListener('mousemove', move);
+            window.removeEventListener('mouseup', end);
+            window.removeEventListener('touchmove', move);
+            window.removeEventListener('touchend', end);
         };
 
         wrapper.addEventListener('mousedown', start);
-        window.addEventListener('mousemove', move);
-        window.addEventListener('mouseup', end);
         wrapper.addEventListener('touchstart', start);
-        wrapper.addEventListener('touchmove', move);
-        wrapper.addEventListener('touchend', end);
     }
 }
 

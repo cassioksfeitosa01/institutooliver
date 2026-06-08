@@ -521,17 +521,7 @@ body {
     }
 }
 
-/* Animação de entrada */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 
 /* Sem suporte a mouse/drag em telas pequenas - touchscreen otimizado */
 @media (hover: none) and (pointer: coarse) {
