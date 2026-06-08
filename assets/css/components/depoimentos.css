@@ -2,13 +2,7 @@
 #componento-professores-depoimentos {
     background: #000;
     color: #fff;
-    padding: 20px 10px;
-}
-
-@media (min-width: 1200px) {
-    #componento-professores-depoimentos {
-        padding: 40px 20px;
-    }
+    width: 100%;
 }
 
 /* === CSS GERAL DAS SEÇÕES === */
