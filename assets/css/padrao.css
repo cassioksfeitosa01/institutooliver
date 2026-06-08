@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+
+}
+
 /* Remove marcadores de bolinha de listas (ul, ol) */
 ul,
 ol {

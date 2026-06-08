@@ -1,6 +1,7 @@
 /* CONFIGURAÇÃO DA SEÇÃO PROFESSOR MATHEUS OLIVER */
 
 /*FIXME: TITULO, SUBITITULO, DESCRIÇÃO  */
+/*FIXME: TITULO, SUBTÍTULO, DESCRIÇÃO  */
 .titulo {
     /* Cor amarela/dourada marcante do Instituto Óliver */
     color: #e5b702;
@@ -73,6 +74,7 @@
 .titulo2 {
     color: #FFFFFF; /* Título principal em branco para destacar bem */
     font-size: 35;
+    font-size: 35px;
     font-weight: 100;
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -85,7 +87,7 @@
     height: 900px;
     margin: 0 auto;
     overflow: hidden;
-    
+
   }
 
   /* TODO: Força a imagem de fundo de qualquer seção a ir para trás */
@@ -206,7 +208,7 @@
     margin-bottom: 20px;
   }
 
-  
+
   .lista-check li {
     font-size: 18px;
     /* Tamanho da letra no PC */
