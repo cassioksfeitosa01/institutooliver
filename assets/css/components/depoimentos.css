@@ -1,19 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
+/* === FUNDO PRETO ESCOPO DA SEÇÃO DE DEPOIMENTOS E PROFESSORES === */
+#componento-professores-depoimentos {
     background: #000;
     color: #fff;
-    min-height: 100vh;
     padding: 20px 10px;
 }
 
 @media (min-width: 1200px) {
-    body {
+    #componento-professores-depoimentos {
         padding: 40px 20px;
     }
 }
