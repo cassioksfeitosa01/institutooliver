@@ -80,9 +80,9 @@ body {
     color: #D4AF37 !important;
 }
 
-/* --- VÍDEO (AJUSTADO PARA 16:9 - PADRÃO BUNNY/PANDA) --- */
+/* --- VÍDEO (CORRIGIDO: MAIOR E SEM FAIXAS PRETAS) --- */
 .video-wrapper {
-    max-width: 750px; /* Aumentei um pouco a largura para o 16:9 ficar mais imponente */
+    max-width: 920px; /* Aumentamos aqui para o vídeo crescer e ganhar altura */
     margin: 0 auto 30px;
     padding: 4px; 
     background: #D4AF37;
@@ -94,8 +94,7 @@ body {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    /* AJUSTE AQUI: 16/9 elimina as faixas pretas de vídeos modernos */
-    aspect-ratio: 16 / 9; 
+    aspect-ratio: 16 / 9; /* Voltamos para 16:9 para sumir com as faixas pretas */
     background: #000;
 }
 
@@ -107,6 +106,7 @@ body {
     height: 100%;
     border: none;
 }
+
 
 /* --- ÍCONES --- */
 .trust-icons {
