@@ -4,6 +4,8 @@ body {
     color: #fff;
     line-height: 1.4;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -17,29 +19,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px; /* Cria um espaço perfeito de 12px entre o botão e a frase */
+    gap: 12px;
 }
 
 /* Estilo da frase abaixo do botão */
 .aviso-botao {
     font-family: 'Arial', sans-serif;
-    font-size: 0.9rem;       /* Um pouco menor que o texto normal para dar um toque sutil */
-    color: #ffffff;          /* Mudei para branco puro para dar mais leitura no fundo vermelho */
-    text-align: center;      /* Garante que o texto fique centralizado */
-    font-weight: bold;       /* Coloquei em negrito para destacar bem o aviso */
-    margin: 0;               /* Remove margens padrões que possam desalinhá-lo */
-    
-    /* Configurações do fundo vermelho */
-    background-color: #990000; /* Vermelho escuro elegante */
-    padding: 8px 15px;         /* Espaço interno para o fundo não colar nas letras */
-    border-radius: 6px;        /* Deixa as pontas do fundo arredondadas */
-    display: inline-block;     /* Faz o fundo vermelho abraçar apenas o tamanho do texto */
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    background-color: #990000;
+    padding: 8px 15px;
+    border-radius: 6px;
+    display: inline-block;
 }
 
 /* --- HERO --- */
 .hero {
     position: relative;
-    /* Ajuste o valor abaixo (ex: 80px) com a altura exata do seu cabeçalho */
     margin-top: 40px; 
     padding: 30px 0;
     text-align: center;
@@ -81,29 +80,35 @@ body {
     color: #D4AF37 !important;
 }
 
-/* --- VÍDEO (SEM ANIMAÇÃO - ABRE NA HORA) --- */
+/* --- VÍDEO AJUSTADO (MOLDURA DOURADA E SEM FAIXAS PRETAS) --- */
 .video-wrapper {
-    max-width: 680px;
+    max-width: 750px; /* Tamanho do seu quadro no computador */
     margin: 0 auto 30px;
-    padding: 4px;
-    background: #D4AF37;
+    padding: 4px; /* Grossura da sua borda dourada */
+    background: #D4AF37; /* Cor da borda dourada */
     border-radius: 12px;
-  
-    opacity: 1;
-    transform: none;
+    position: relative;
+    z-index: 10;
 }
 
 .video-container {
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+    /* 16/9 é o formato do vídeo do Bunny. Isso remove as faixas pretas */
+    aspect-ratio: 16 / 9; 
+    position: relative;
+    background: #000;
 }
 
-.video-container video {
+/* Isso faz o iframe do Bunny preencher todo o seu quadro */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border: none;
 }
 
 /* --- ÍCONES --- */
@@ -156,7 +161,7 @@ body {
     text-transform: uppercase;
 }
 
-/* CARDS DE PREÇO - DESIGN PREMIUM */
+/* CARDS DE PREÇO */
 .grid-cards {
     display: flex;
     flex-wrap: wrap;
@@ -165,40 +170,37 @@ body {
 }
 
 .card {
-    background: #0d0d0d;       /* Preto profundo de luxo */
-    border: 1px solid #222;    /* Borda grafite bem discreta nas laterais */
+    background: #0d0d0d;
+    border: 1px solid #222;
     width: 290px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra suave para o card flutuar */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
-    display: inline-block;     /* Permite alinhar um ao lado do outro */
+    display: inline-block;
     margin: 10px;
 }
 
-/* Efeito sutil ao passar o mouse */
 .card:hover {
     transform: translateY(-5px);
-    border-color: #D4AF37;     /* A borda acende em dourado de leve */
+    border-color: #D4AF37;
 }
 
 .card-content {
-    padding: 30px 20px;        /* Mais espaço interno para o texto respirar */
+    padding: 30px 20px;
     text-align: center;
 }
 
-/* Títulos das formas de pagamento alterado para h4 */
 .card-content h4 {
-    color: #D4AF37 !important; /* DOURADO MANTIDO: Destaca o título */
+    color: #D4AF37 !important;
     font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;       /* Letras levemente espaçadas (estilo premium) */
+    letter-spacing: 1px;
     margin-bottom: 15px;
     margin-top: 0;
 }
 
-/* O texto do parcelamento (12x de / Em até 8x) AGORA DOURADO */
 .price {
     color: #D4AF37 !important; 
     font-size: 0.95rem;
@@ -207,18 +209,16 @@ body {
     margin-bottom: 5px;
 }
 
-/* O PREÇO GIGANTE EM BRANCO */
 .gold-price {
-    color: #ffffff !important; /* O preço agora fica em BRANCO puro */
-    font-size: 2.6rem;         /* Letra super grande e impactante */
-    font-weight: 800;          /* Bem grossa (Black/Extra Bold) */
+    color: #ffffff !important;
+    font-size: 2.6rem;
+    font-weight: 800;
     line-height: 1;
     margin-top: 5px;
-    margin-bottom: 25px;       /* Espaço perfeito antes do botão */
+    margin-bottom: 25px;
     display: block;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Brilho branco bem discreto */
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
 }
-
 
 /* AJUSTES CELULAR */
 @media (max-width: 768px) {
@@ -232,11 +232,12 @@ body {
     }
 
     .video-container {
-        aspect-ratio: 1 / 1;
+        /* Mantém o formato de vídeo no celular para não dar faixa preta */
+        aspect-ratio: 16 / 9; 
     }
 }
 
-/* FAQ - Estilo Tabela Contornada Dourada com Linhas Internas Finas */
+/* FAQ */
 .faq {
     padding: 60px 20px;
     text-align: left;
@@ -250,16 +251,15 @@ body {
     color: #E6B902;
 }
 
-/* CONTAINER DA TABELA: Centraliza o contorno grosso apenas por fora */
 .faq .container {
-    border: 2px solid #D4AF37; /* CONTORNO GROSSO SÓ POR FORA */
+    border: 2px solid #D4AF37;
     border-radius: 6px;
     overflow: hidden;
-    background: #000000; /* Fundo agora é preto puro */
+    background: #000000;
 }
 
 details {
-    background: #0d0d0d; /* Um preto levemente mais claro para não roubar a cena */
+    background: #0d0d0d;
     margin-bottom: 0;
     overflow: hidden;
     transition: background 0.3s ease;
@@ -269,7 +269,6 @@ details {
 details[open] summary {
     background: #FC8700;
     color: #fff;
-    /* LINHA DO MEIO (Aberta): Bem fina dividindo a pergunta da resposta */
     border-bottom: 1px solid rgba(212, 175, 55, 0.4); 
 }
 
@@ -280,18 +279,15 @@ summary {
     outline: none;
     color: #fff;
     transition: background 0.3s ease;
-    
-    /* LINHA DO MEIO (Fechada): Linha de 1px super fina para separar as perguntas */
     border-top: 1px solid rgba(212, 175, 55, 0.3); 
 }
 
-/* Remove a linha do topo da primeira pergunta para não grudar no contorno de fora */
 details:first-of-type summary {
     border-top: none;
 }
 
 .faq .content {
-    background: #000000; /* Fundo da resposta também preto para ficar limpo */
+    background: #000000;
     padding: 20px;
 }
 
