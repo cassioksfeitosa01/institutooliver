@@ -17,6 +17,530 @@ git add .; git commit -m "atualização nos aquivos "; git push origin main
  <!-- Container do Rodapé Principal do Site -->
   <div id="rodape-principal"></div>
 
+SALAV DOMINHO ]
+
+*.institutooliver.online
+
+
+
+
+
+
+/* === CSS GERAL DAS SEÇÕES === */
+.section {
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.section-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    animation: fadeIn 0.6s ease-in;
+}
+
+@media (min-width: 1200px) {
+    .section-header {
+        margin-bottom: 40px;
+    }
+}
+
+.section-header h2 {
+    font-size: 1.9rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+.section-header p {
+    font-size: 1rem;
+    color: #ddd;
+    opacity: 0.95;
+    margin-top: 8px;
+}
+
+/* === CSS PROFESSORES DEPOIMENTOS EM VÍDEO === */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.videos-wrapper {
+    flex: 1;
+    max-width: 1300px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    background: #000;
+    border-bottom: 4px solid white;
+}
+
+.videos-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.video-item {
+    min-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-bottom: 60px;
+    background: transparent;
+    overflow: visible;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+    .video-item {
+        min-width: 25%;
+        width: 25%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .video-item {
+        min-width: 50%;
+        width: 50%;
+    }
+}
+
+.video-player {
+    position: relative;
+    width: 100%;
+    padding-bottom: 177.78%;
+    background: #000;
+    border-radius: 18px;
+    overflow: visible;
+}
+
+.video-player video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.video-player video:not([controls]) ~ .play-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 215, 0, 0.95);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+    z-index: 11;
+}
+
+.play-btn:hover {
+    background: #FFD700;
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+}
+
+.play-btn:active {
+    transform: scale(0.95);
+}
+
+.play-icon {
+    font-size: 28px;
+    color: #000;
+}
+
+/* Garantir que o overlay escondido não bloqueie cliques e suma visualmente */
+.play-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+/* Forçar conteúdo das setas via CSS para não depender do HTML */
+.slider-arrow span {
+    display: block;
+    line-height: 1;
+    font-size: 20px;
+}
+
+.prev-arrow span::before {
+    content: '‹';
+}
+
+.next-arrow span::before {
+    content: '›';
+}
+
+.slider-arrow {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 215, 0, 0.9);
+    border: none;
+    border-radius: 50%;
+    font-size: 26px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.slider-arrow:hover {
+    background: #FFD700;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.slider-arrow:active {
+    transform: scale(0.95);
+}
+
+.slider-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.dots-indicator {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.dot.active {
+    background: white;
+    width: 30px;
+    border-radius: 6px;
+    border: 2px solid white;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* === CSS DEPOIMENTOS EM FOTOS === */
+.section-depoimentos-fotos .masonry-grid {
+    column-gap: 15px;
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    max-height: 1700px;
+    overflow-y: auto;
+    padding-right: 10px;
+    column-count: 4;
+}
+
+.section-depoimentos-fotos .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(219, 175, 0, 0.3);
+    background: #0a0a0a;
+    break-inside: avoid;
+    position: relative;
+}
+
+.section-depoimentos-fotos .masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.section-depoimentos-fotos .masonry-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,206,8,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+.section-depoimentos-fotos .masonry-item:hover::after {
+    animation: brilhoAnim 0.8s forwards;
+}
+
+.section-depoimentos-fotos .masonry-item:hover img {
+    transform: scale(1.08);
+}
+
+.section-depoimentos-fotos .masonry-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.section-depoimentos-fotos .masonry-grid::-webkit-scrollbar-thumb {
+    background: #ffce08;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .section-depoimentos-fotos .masonry-grid {
+        column-count: 2;
+        max-height: none;
+    }
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 767px) {
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+    }
+
+    .play-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .play-icon {
+        font-size: 24px;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .slider-container {
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .slider-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 28px;
+    }
+
+    .play-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    .play-icon {
+        font-size: 32px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVO - Tablets (768px - 1199px) */
+@media (max-width: 1024px) {
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .slider-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 28px;
+    }
+
+    .play-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    .play-icon {
+        font-size: 30px;
+    }
+}
+
+/* RESPONSIVO - Tablets e Celulares (480px - 640px) */
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+
+    .slider-container {
+        gap: 10px;
+    }
+
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    .play-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .play-icon {
+        font-size: 26px;
+    }
+
+    .video-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .video-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* RESPONSIVO - Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .teachers-section {
+        width: 100%;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .section-header p {
+        font-size: 0.95rem;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .slider-container {
+        gap: 8px;
+    }
+
+    .slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .play-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .play-icon {
+        font-size: 22px;
+    }
+
+    .video-info {
+        padding: 15px;
+        min-height: 70px;
+    }
+
+    .video-info h3 {
+        font-size: 1rem;
+    }
+
+    .video-info p {
+        font-size: 0.85rem;
+    }
+
+    .dots-indicator {
+        gap: 8px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dot.active {
+        width: 25px;
+    }
+}
+
+
+
+/* Sem suporte a mouse/drag em telas pequenas - touchscreen otimizado */
+@media (hover: none) and (pointer: coarse) {
+    .play-btn:active {
+        transform: scale(0.9);
+    }
+
+    .slider-arrow:active {
+        transform: scale(0.9);
+    }
+}
 
 
 
@@ -29,6 +553,213 @@ git add .; git commit -m "atualização nos aquivos "; git push origin main
 
 
 
+
+
+    <!-- === COMPONENTE COMPLETO: PROFESSORES + DEPOIMENTOS === -->
+    <div id="componento-professores-depoimentos">
+
+        <!-- === SEÇÃO 1: PROFESSORES === -->
+        <section id="secao-professores" class="section section-professores">
+        <div class="section-header">
+            <h2>Professores altamente qualificados</h2>
+            <p>Conheça alguns dos nossos professores:</p>
+        </div>
+
+        <div class="slider-container video-slider-section">
+            <button class="slider-arrow prev-arrow" id="prev-btn-professores">
+                <span></span>
+            </button>
+
+            <div class="videos-wrapper">
+                <div class="videos-track" id="videosTrack-professores">
+                    <div class="video-item">
+                        <div class="video-player">
+                            <video>
+                                <source src="https://jlbgigwrwbhayhufgkdq.supabase.co/storage/v1/object/public/videos/professores/01-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-overlay">
+                                <button class="play-btn"><span class="play-icon">▶</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-player">
+                            <video>
+                                <source src="https://jlbgigwrwbhayhufgkdq.supabase.co/storage/v1/object/public/videos/professores/02-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-overlay">
+                                <button class="play-btn"><span class="play-icon">▶</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-player">
+                            <video>
+                                <source src="https://jlbgigwrwbhayhufgkdq.supabase.co/storage/v1/object/public/videos/professores/03-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-overlay">
+                                <button class="play-btn"><span class="play-icon">▶</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-player">
+                            <video>
+                                <source src="https://jlbgigwrwbhayhufgkdq.supabase.co/storage/v1/object/public/videos/professores/04-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-overlay">
+                                <button class="play-btn"><span class="play-icon">▶</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-arrow next-arrow" id="next-btn-professores">
+                <span></span>
+            </button>
+        </div>
+
+        <div class="dots-indicator" id="dotsIndicator-professores"></div>
+    </section>
+
+    <!-- === SEÇÃO 2: DEPOIMENTOS EM FOTOS === -->
+    <section id="secao-fotos-depoimentos" class="section section-depoimentos-fotos">
+        <div class="section-header">
+            <h2>Depoimentos de alunos em fotos</h2>
+            <p>Confira alguns alunos e histórias reais em imagem.</p>
+        </div>
+
+        <div class="masonry-grid">
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778580012-afzst-r2cf-depoimento-1.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778583694-afzst-r2cf-depoimento-15.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778583405-afzst-r2cf-depoimento-14.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778583261-afzst-r2cf-depoimento-13.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778583106-afzst-r2cf-depoimento-11.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582081-afzst-r2cf-depoimento-6.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582358-afzst-r2cf-depoimento-7.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582518-afzst-r2cf-depoimento-8.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582769-afzst-r2cf-depoimento-9.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778582963-afzst-r2cf-depoimento-10.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584055-afzst-r2cf-depoimento-16.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584185-afzst-r2cf-depoimento-18.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584391-afzst-r2cf-depoimento-19.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584757-afzst-r2cf-depoimento-20.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778584878-afzst-r2cf-depoimento-21.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585095-afzst-r2cf-depoimento-22.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585187-afzst-r2cf-depoimento-23.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585312-afzst-r2cf-depoimento-3.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585443-afzst-r2cf-depoimento-17.webp" />
+            </div>
+            <div class="masonry-item">
+                <img src="https://cdn.afze-host3.com/user-gallery/0e7652e7-d3e2-11f0-983a-f23c94100626/1778585533-afzst-r2cf-depoimento-26.webp" />
+            </div>
+        </div>
+    </section>
+
+    <!--  SEÇÃO 3: DEPOIMENTOS EM VÍDEO  -->
+    <section id="secao-depoimentos" class="section section-depoimentos-videos">
+        <div class="section-header">
+            <h2>Depoimentos</h2>
+            <p>Veja o que nossos alunos estão dizendo:</p>
+        </div>
+
+        <div class="slider-container video-slider-section">
+            <button class="slider-arrow prev-arrow" id="prev-btn-depoimentos">
+                <span></span>
+            </button>
+
+            <div class="videos-wrapper">
+                <div class="videos-track" id="videosTrack-depoimentos">
+                    <div class="video-item">
+                        <div class="video-player">
+                            <video>
+                                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-overlay">
+                                <button class="play-btn"><span class="play-icon">▶</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-player">
+                            <video>
+                                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-overlay">
+                                <button class="play-btn"><span class="play-icon">▶</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-player">
+                            <video>
+                                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-overlay">
+                                <button class="play-btn"><span class="play-icon">▶</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-player">
+                            <video>
+                                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-overlay">
+                                <button class="play-btn"><span class="play-icon">▶</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-arrow next-arrow" id="next-btn-depoimentos">
+                <span></span>
+            </button>
+        </div>
+
+        <div class="dots-indicator" id="dotsIndicator-depoimentos"></div>
+    </section>
+
+</div>
 
 
 
