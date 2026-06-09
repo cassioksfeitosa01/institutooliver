@@ -81,12 +81,13 @@ body {
     color: #D4AF37 !important;
 }
 
+/* --- SEÇÃO DO VÍDEO EXCLUSIVO (CORRIGIDO) --- */
 .box-video-exclusiva {
     max-width: 680px !important;
     width: 100% !important;
     margin: 0 auto 30px !important;
     padding: 4px !important;
-    background: #D4AF37 !important;
+    background: #D4AF37 !important; /* Borda dourada externa */
     border-radius: 12px !important;
     box-sizing: border-box !important;
     display: block !important;
@@ -97,8 +98,9 @@ body {
     position: relative !important;
     border-radius: 8px !important;
     overflow: hidden !important;
-    aspect-ratio: 16 / 9 !important; 
+    aspect-ratio: 16 / 9 !important; /* Mantém a proporção do player Bunny sem cortar */
     height: auto !important;
+    background: #000000 !important; /* Remove a tela amarela enquanto o vídeo carrega */
 }
 
 .area-video-exclusiva iframe {
@@ -109,9 +111,6 @@ body {
     height: 100% !important;
     border: 0 !important;
 }
-
-
-
 
 /* --- ÍCONES --- */
 .trust-icons {
@@ -226,8 +225,7 @@ body {
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Brilho branco bem discreto */
 }
 
-
-/* AJUSTES CELULAR */
+/* AJUSTES CELULAR (RESPONSIVIDADE LIMPA) */
 @media (max-width: 768px) {
     .chamada-dourada {
         font-size: 1.7rem !important;
@@ -237,10 +235,8 @@ body {
     .hero h1 {
         font-size: 1.6rem;
     }
-
-    .video-container {
-        aspect-ratio: 1 / 1;
-    }
+    
+    /* Configurações do quadrado antigo removidas para evitar erros */
 }
 
 /* FAQ - Estilo Tabela Contornada Dourada com Linhas Internas Finas */
