@@ -1,193 +1,96 @@
-/* FIXME: CONFIGURAÇÃO GLOBAL DAS SEÇÕES (Desktop e Geral) */
-/* TODO: CSS RESET REMOVE FALHA DO NAVEGADOR */
+/* ============================================================
+   1. CONFIGURAÇÃO GLOBAL (PADRÃO PARA TODAS AS PÁGINAS)
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-
-}
-
-/* Remove marcadores de bolinha de listas (ul, ol) */
-ul,
-ol {
-    list-style: none;
-}
-
-/* Remove o sublinhado dos links e herda a cor do texto */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Evita que imagens quebrem o layout ou fiquem com espaços soltos */
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Limpa bordas e aparências padrões de botões e inputs */
-button,
-input,
-textarea {
-    font: inherit;
-    border: none;
-}
-
-html,
-body {
-    /* Garante que o site sempre ocupe 100% da largura da tela do celular ou computador */
+html, body {
     width: 100%;
-
-    /* Bloqueia a rolagem para os lados. Evita que o site fique "dançando" ou com uma barra branca feia na direita */
-    overflow-x: hidden;
-
-    /* Define uma fonte limpa, moderna e sem serifa (Arial) como padrão para todas as 150 páginas */
+    background-color: #000;
+    color: #fff;
     font-family: 'Arial', sans-serif;
-
-    /* Faz a página deslizar suavemente (efeito de rolagem macia) quando o aluno clica em um botão que o joga para outra seção */
+    line-height: 1.4;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
-/*FIXME: TITULO, SUBITITULO, DESCRIÇÃO  */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
+ul, ol { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* --- TIPOGRAFIA PADRÃO (DOURADO PREMIUM) --- */
 .titulo {
-    /* Cor amarela/dourada marcante do Instituto Óliver */
-    color: #e5b702;
-
-    /* 28px convertido para rem. Forte e imponente no topo da página */
+    color: #D4AF37; /* Dourado Premium aplicado */
     font-size: 1.75rem;
-
-    /* O negrito mais grosso possível, excelente para chamar atenção */
     font-weight: 900;
-
-    /* Afasta o título do subtítulo com um respiro elegante (8px) */
     margin-bottom: 0.5rem;
-
     text-transform: uppercase;
-
-    /* Afasta levemente as letras para o texto em maiúsculo não embolar */
     letter-spacing: 0.05rem;
-
-    /* Altura da linha ideal para títulos grandes */
     line-height: 1.2;
 }
 
 .subtitulo {
-    /* Cor cinza clara elegante para contraste */
     color: #FFFFFF;
-
-    /* 20px convertido para rem. Dá o destaque secundário perfeito */
     font-size: 1.25rem;
-
-    /* Negrito tradicional (Bold), dando contraste com o título */
     font-weight: 700;
-
-    /* Espaço até começar a descrição (12px) */
     margin-bottom: 0.75rem;
-
-    /* Respiro ideal para o subtítulo não colar se quebrar em duas linhas */
     line-height: 1.3;
 }
 
 .descricao {
-    /* Mesma cor cinza suave para uma leitura limpa */
     color: rgba(255, 255, 255, 0.75);
-
-    /* 15px convertido para rem. O tamanho universal ideal para leitura no mobile */
     font-size: 0.9375rem;
-
-    /* Peso normal (Regular) para o texto longo ficar leve e fácil de ler */
     font-weight: 400;
-
-    /* 1.6 de espaço entre linhas evita que o aluno se perca na leitura */
     line-height: 1.6;
-
-    /* Dá um espaço maior (20px) antes de vir o próximo bloco ou o botão de compra */
     margin-bottom: 1.25rem;
 }
 
-/*FIXME: BOTÃO*/
-
+/* ============================================================
+   2. O BOTÃO COM BRILHO (ESTILO INSTITUTO ÓLIVER PREMIUM)
+   ============================================================ */
 .caixa-botao {
     display: flex;
     flex-direction: column;
-    /* Padrão: um embaixo do outro */
     align-items: center;
     justify-content: center;
     gap: 15px;
-    /* Espaço entre os botões */
     width: 100%;
     margin: 20px 0;
 }
 
-/*TODO: REGRA PARA 4 BOTÕES: Se houver pelo menos 4, vira Grid 2x2 */
-
-.caixa-botao:has(.botao:nth-child(4)) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Duas colunas */
-    justify-items: center;
-    gap: 10px;
-    padding: 0 5%;
-}
-
-/*TODO: O BOTÃO ESTILIZADO */
 .botao {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
     border: none;
     transition: all 0.2s ease-in-out;
-
-    background-color: #ffce08;
+    background-color: #D4AF37; /* Dourado Premium */
     color: #000000;
-
-    /* Ajuste de fonte responsiva */
-    font-size: clamp(14px, 3.5vw, 18px);
-
-    white-space: normal;
-    /* Permite quebrar linha se o texto for grande */
-    word-wrap: break-word;
-    line-height: 1.2;
-
-    /* Espaçamento interno */
-    padding: 0.6em 2vw;
-
-    /* Altura mínima para elegância */
-    min-height: 3em;
-
-    border-radius: 5px;
-
-    /* Largura automática para se adaptar ao container */
+    font-size: clamp(16px, 4vw, 20px);
+    padding: 15px 30px;
+    min-height: 3.5em;
+    border-radius: 8px;
     width: 100%;
     max-width: 85%;
-    /* Limita para não ficar colado nas bordas */
-
     position: relative;
     overflow: hidden;
-    box-sizing: border-box;
-    /* Garante que o padding não aumente o tamanho final */
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
-/* TODO:Ajuste específico para os botões ficarem iguais no grid 2x2 */
-.caixa-botao:has(.botao:nth-child(4)) .botao {
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    /* Faz todos terem a mesma altura no grid */
-}
-
-/* TODO: O RAIO DE BRILHO: Linha de luz passando continuamente */
+/* O RAIO DE BRILHO PASSANDO */
 .botao::after {
     content: "";
     position: absolute;
@@ -195,30 +98,99 @@ body {
     left: -50%;
     width: 30%;
     height: 100%;
-    background: linear-gradient(to right,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.4) 50%,
-            rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
     transform: skewX(-25deg);
     animation: passarBrilho 3s infinite ease-in-out;
 }
 
-/* TODO: ANIMAÇÃO DO BRILHO */
 @keyframes passarBrilho {
-    0% {
-        left: -50%;
-    }
-
-    30% {
-        left: 125%;
-    }
-
-    100% {
-        left: 125%;
-    }
+    0% { left: -50%; }
+    30% { left: 125%; }
+    100% { left: 125%; }
 }
 
-/* TODO: Efeito ao tocar */
-.botao:active {
-    transform: scale(0.95);
+.botao:active { transform: scale(0.95); }
+
+/* Frase abaixo do botão */
+.aviso-botao {
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #990000;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+/* ============================================================
+   3. SEÇÃO DO VÍDEO BUNNY.NET (ULTRA RÁPIDO)
+   ============================================================ */
+.box-video-exclusiva {
+    max-width: 850px !important; /* Vídeo grande e imponente */
+    width: 95% !important;
+    margin: 0 auto 30px !important;
+    padding: 4px !important;
+    background: #D4AF37 !important; /* Borda Dourada Premium */
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.area-video-exclusiva {
+    width: 100% !important;
+    position: relative !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    aspect-ratio: 16 / 9 !important; /* Mata as faixas pretas */
+    background: #000 !important;
+}
+
+.area-video-exclusiva iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+}
+
+/* ============================================================
+   4. PÁGINA DE VENDAS (HERO, CARDS E FAQ)
+   ============================================================ */
+.hero { text-align: center; padding: 40px 0; }
+.hero h1 { font-size: 2.2rem; color: #fff; margin-bottom: 15px; text-transform: uppercase; }
+.highlight { color: #D4AF37 !important; }
+
+/* Cards de Preço */
+.grid-cards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 40px 0; }
+.card {
+    background: #0d0d0d;
+    border: 1px solid #222;
+    width: 290px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding: 30px 20px;
+    transition: 0.3s;
+}
+.card:hover { border-color: #D4AF37; transform: translateY(-5px); }
+.card h4 { color: #D4AF37 !important; margin-bottom: 15px; text-transform: uppercase; }
+.gold-price { color: #fff !important; font-size: 2.6rem; font-weight: 800; display: block; }
+
+/* FAQ */
+.faq { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+.faq h2 { color: #D4AF37; text-align: center; margin-bottom: 20px; }
+.faq .container { border: 2px solid #D4AF37; border-radius: 8px; overflow: hidden; }
+details { background: #0d0d0d; border-top: 1px solid rgba(212, 175, 55, 0.3); }
+summary { padding: 15px; cursor: pointer; font-weight: bold; color: #fff; outline: none; }
+details[open] summary { background: #FC8700; }
+.faq .content { padding: 20px; background: #000; color: #eee; }
+
+/* ============================================================
+   5. RESPONSIVIDADE (CELULAR)
+   ============================================================ */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 1.6rem; }
+    .box-video-exclusiva { width: 100% !important; border-radius: 0; padding: 2px !important; }
+    .botao { max-width: 95%; font-size: 16px; }
+    .caixa-botao:has(.botao:nth-child(4)) { grid-template-columns: 1fr; }
 }
