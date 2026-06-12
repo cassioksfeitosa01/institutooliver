@@ -343,6 +343,217 @@ img {
   }
 }
 
+  1. CONFIGURAÇÃO GERAL DAS SEÇÕES (PROFESSORES E FOTOS)
+   ============================================================ */
+.section {
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.section-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    animation: fadeIn 0.6s ease-in;
+}
+
+.section-header h2 {
+    font-size: 1.9rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #D4AF37; /* Dourado Premium */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+.section-header p {
+    font-size: 1rem;
+    color: #ddd;
+    opacity: 0.95;
+    margin-top: 8px;
+}
+
+/* ============================================================
+   2. ESTRUTURA DO SLIDER (CARROSSEL DE VÍDEOS)
+   ============================================================ */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.videos-wrapper {
+    flex: 1;
+    max-width: 1300px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    background: #000;
+    border-bottom: 4px solid #D4AF37; /* Linha dourada na base */
+}
+
+.videos-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.video-item {
+    min-width: 100%; /* Celular: 1 por vez */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-bottom: 40px;
+    background: transparent;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* Ajuste de quantos vídeos aparecem no PC e Tablet */
+@media (min-width: 1200px) {
+    .video-item { min-width: 25%; width: 25%; } /* PC: 4 por vez */
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .video-item { min-width: 50%; width: 50%; } /* Tablet: 2 por vez */
+}
+
+/* ============================================================
+   3. O PLAYER BUNNY VERTICAL (9:16 - FORMATO SHORTS)
+   ============================================================ */
+.video-player {
+    position: relative;
+    width: 100%;
+    padding-bottom: 177.78%; /* PROPORÇÃO 9:16 PERFEITA */
+    background: #000;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid #D4AF37; /* Borda dourada em cada vídeo */
+}
+
+/* Ajuste do Iframe para preencher a área vertical */
+.video-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 18px;
+}
+
+/* NOTA: Removido .play-overlay e .play-btn pois o Bunny já tem player próprio */
+
+/* ============================================================
+   4. SETAS E INDICADORES (DOTS)
+   ============================================================ */
+.slider-arrow {
+    width: 45px;
+    height: 45px;
+    background: #D4AF37;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+}
+
+.slider-arrow:hover { transform: scale(1.1); background: #fff; }
+
+.slider-arrow span::before {
+    content: ''; 
+    font-weight: bold;
+    font-size: 24px;
+}
+.prev-arrow span::before { content: '‹'; }
+.next-arrow span::before { content: '›'; }
+
+.dots-indicator {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #D4AF37;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* ============================================================
+   5. SEÇÃO DE FOTOS (MASONRY GRID)
+   ============================================================ */
+.section-depoimentos-fotos .masonry-grid {
+    column-gap: 15px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    column-count: 4; /* 4 colunas no PC */
+}
+
+.section-depoimentos-fotos .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #0a0a0a;
+    break-inside: avoid;
+    transition: transform 0.3s ease;
+}
+
+.section-depoimentos-fotos .masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-depoimentos-fotos .masonry-item:hover {
+    transform: scale(1.03);
+    border-color: #D4AF37;
+}
+
+/* Efeito de brilho nas fotos */
+@keyframes brilhoAnim {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* ============================================================
+   6. RESPONSIVIDADE FINAL
+   ============================================================ */
+@media (max-width: 768px) {
+    .section-header h2 { font-size: 1.6rem; }
+    .section-depoimentos-fotos .masonry-grid { column-count: 2; } /* 2 colunas no celular */
+    .video-item { padding-bottom: 20px; }
+    .slider-arrow { width: 38px; height: 38px; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* FAQ - Principais Dúvidas */
 .faq { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 .faq h2 { color: #D4AF37; text-align: center; margin-bottom: 20px; }
@@ -351,3 +562,318 @@ details { background: #0d0d0d; border-top: 1px solid rgba(212, 175, 55, 0.3); }
 summary { padding: 15px; cursor: pointer; font-weight: bold; color: #fff; outline: none; }
 details[open] summary { background: #FC8700; }
 .faq .content { padding: 20px; background: #000; color: #eee; }
+
+.titulo {
+    /* Cor amarela/dourada marcante do Instituto Óliver */
+    color: #e5b702;
+
+    /* 28px convertido para rem. Forte e imponente no topo da página */
+    font-size: 1.75rem;
+
+    /* O negrito mais grosso possível, excelente para chamar atenção */
+    font-weight: 900;
+
+    /* Afasta o título do subtítulo com um respiro elegante (8px) */
+    margin-bottom: 0.5rem;
+
+    text-transform: uppercase;
+
+    /* Afasta levemente as letras para o texto em maiúsculo não embolar */
+    letter-spacing: 0.05rem;
+
+    /* Altura da linha ideal para títulos grandes */
+    line-height: 1.2;
+}
+
+.subtitulo {
+    /* Cor cinza clara elegante para contraste */
+    color: #FFFFFF;
+
+    /* 20px convertido para rem. Dá o destaque secundário perfeito */
+    font-size: 1.25rem;
+
+    /* Negrito tradicional (Bold), dando contraste com o título */
+    font-weight: 700;
+
+    /* Espaço até começar a descrição (12px) */
+    margin-bottom: 0.75rem;
+
+    /* Respiro ideal para o subtítulo não colar se quebrar em duas linhas */
+    line-height: 1.3;
+}
+
+.descricao {
+    /* Mesma cor cinza suave para uma leitura limpa */
+    color: rgba(255, 255, 255, 0.75);
+
+    /* 15px convertido para rem. O tamanho universal ideal para leitura no mobile */
+    font-size: 0.9375rem;
+
+    /* Peso normal (Regular) para o texto longo ficar leve e fácil de ler */
+    font-weight: 400;
+
+    /* 1.6 de espaço entre linhas evita que o aluno se perca na leitura */
+    line-height: 1.6;
+
+    /* Dá um espaço maior (20px) antes de vir o próximo bloco ou o botão de compra */
+    margin-bottom: 1.25rem;
+}
+
+.sec11 {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+
+  }
+
+  /* TODO: Força a imagem de fundo de qualquer seção a ir para trás */
+  .sec11 .caixa-imagem,
+  .sec11 .caixa-imagem picture,
+  .sec11 .caixa-imagem img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sec11 .caixa-imagem img {
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+  }
+
+  /* TODO:Configuração base da Caixa de Texto para TODAS as seções */
+  .sec11 .caixa-texto {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 40%;
+    /* Garante os 40% de largura para quebrar o texto */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0px;
+
+  }
+
+  .sec11 .caixa-texto {
+    margin-top: 75px;
+    max-width: 55%;
+  }
+
+
+  /* FIXME: CONFIGURAÇÃO PARA CELULAR (Telas até 768px)*/
+
+  @media (max-width: 768px) {
+
+    .sec11 {
+      height: 1150px !important;
+      /* Aumenta o espaço para o texto grande no celular */
+      background-color: #000000 !important;
+      /* Pinta o novo espaço de preto */
+
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      /* Empurra o texto para a parte preta */
+    }
+
+    /* Trava a imagem do rodapé para não esticar no celular */
+    .sec11 .caixa-imagem,
+    .sec11 .caixa-imagem picture,
+    .sec11 .caixa-imagem img {
+      height: 500px !important;
+      /* Foto mantém o tamanho original no topo */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      object-fit: cover !important;
+    }
+
+    /* Garante que o texto ocupe toda a largura, fique centralizado e abaixo da foto */
+    .sec11 .caixa-texto {
+      position: relative;
+      z-index: 2;
+      width: 100% !important;
+      /* Força a caixa a ocupar a largura total do celular */
+      max-width: 100% !important;
+      /* Remove travas de tamanho do PC */
+      margin: 0 auto !important;
+      /* Centraliza a caixa na tela */
+
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      /* Empurra o texto para a base dos 950px */
+      align-items: center !important;
+      /* Centraliza os blocos de texto internamente */
+      text-align: center !important;
+      /* Centraliza as letras */
+
+      padding: 40px 24px 0px 24px !important;
+      /* Mantém o fundo zerado para colar embaixo */
+      box-sizing: border-box !important;
+    }
+
+
+    .lista-check li {
+      font-size: 15px;
+      /* Diminui um pouco a letra para não quebrar muita linha no celular */
+      margin-bottom: 10px;
+      /* Diminui o espaço entre os itens para economizar tela */
+      text-align: left;
+      /* Garante que o texto fique alinhado à esquerda por causa do ícone */
+    }
+
+    .lista-check li::before {
+      margin-right: 8px;
+      /* Ajusta a proximidade do V no mobile */
+    }
+  }
+
+
+  /* FIXME: CONFIGURÃO LISTA - CHECK CUPUTADOR*/
+
+  .lista-check {
+    list-style: none;
+    /* Remove a bola padrão */
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+
+  .lista-check li {
+    font-size: 18px;
+    /* Tamanho da letra no PC */
+    line-height: 1.6;
+    /* Espaçamento bom entre as linhas */
+    color: rgba(255, 255, 255, 0.75);
+    /* Cor branca com transparência */
+    margin-bottom: 12px;
+    /* Espaço entre um item e outro */
+  }
+
+  .lista-check li::before {
+    content: "✓ ";
+    /* Desenha o V direto */
+    color: #FFD62F;
+    /* Cor amarela do V */
+    font-weight: bold;
+    /* Deixa o V mais destacado */
+    margin-right: 10px;
+    /* Distância entre o V e o texto */
+  }
+
+
+/*TODO: Seleciona a tag principal do rodapé da página */
+footer {
+    background-color: #000000;
+    width: 100%;
+    border-top: 2px solid #e5b702;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 30px;
+
+    padding: 28px 35px;
+    margin-top: 0;
+
+    flex-wrap: wrap;
+}
+
+/* LOGO */
+.footer-logo {
+    height: 75px !important;
+    width: auto !important;
+
+    margin-bottom: 0;
+
+    object-fit: contain;
+}
+
+/* TEXTOS */
+.footer-textos {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-width: 900px;
+}
+
+/* PARÁGRAFOS */
+footer p {
+    color: #b7bec8;
+
+    font-size: 15px;
+
+    margin: 0;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.3px;
+}
+
+/* LINKS DO FOOTER */
+.footer-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-top: 5px;
+}
+
+/* LINKS */
+.footer-links a {
+    color: #ff3b3b;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+/* HOVER */
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+
+    footer {
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        height: 58px !important;
+    }
+
+    footer p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+}
