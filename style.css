@@ -99,13 +99,14 @@ img {
 .area-video-exclusiva {
   width: 100% !important;
   position: relative !important;
-  border-radius: 8px !important;
+  border-radius: 9px !important;
   overflow: hidden !important;
-  /* O SEGREDO: Aspect ratio 16/9 mata as faixas pretas */
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important;
-  background: #000000 !important;
+  /* MUDADO AQUI: Ganha muita altura vertical */
+  aspect-ratio: 4 / 3 !important; 
+  background: #000 !important;
 }
+
+
 
 
 /* --- SEÇÃO DO VÍDEO EXCLUSIVO (OTIMIZADO) --- */
