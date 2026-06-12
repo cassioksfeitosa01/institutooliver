@@ -96,18 +96,6 @@ img {
   /* Sombra para destacar */
 }
 
-.area-video-exclusiva {
-  width: 100% !important;
-  position: relative !important;
-  border-radius: 9px !important;
-  overflow: hidden !important;
-  /* MUDADO AQUI: Ganha muita altura vertical */
-  aspect-ratio: 4 / 3 !important; 
-  background: #000 !important;
-}
-
-
-
 
 /* --- SEÇÃO DO VÍDEO EXCLUSIVO (OTIMIZADO) --- */
 .box-video-exclusiva {
