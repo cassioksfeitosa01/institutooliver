@@ -8,7 +8,7 @@
 /* Garante que o fundo ocupe a tela toda sem criar barras de rolagem desnecessárias */
 html, body {
     width: 100%;
-
+background: #000000 
     color: #fff;
     font-family: 'Arial', sans-serif;
     line-height: 1.4;
