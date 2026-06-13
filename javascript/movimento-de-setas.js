@@ -2,19 +2,8 @@
  * ============================================================
  * [REFATORAÇÃO] MOVIMENTO DE SETAS E DESLIZE - 2026
  * ============================================================
- * 
- * Script para controlar sliders de vídeos:
- * - Navegação por setas (click)
- * - Deslize com dedo (touch/swipe)
- * - Deslize com mouse (click + arrastar)
- * - Atualização de indicadores (dots)
- * 
- * Suporta múltiplos sliders na mesma página
- * 
- * Trocado de iframes para video tags nativas
- * 
- */
 
+ 
 class SliderController {
     constructor(sliderContainer) {
         this.container = sliderContainer;
@@ -30,11 +19,9 @@ class SliderController {
         this.startX = 0;
         this.currentX = 0;
         this.dragThreshold = 50;
-        
-        
         this.init();
     }
-    
+
     /**
      * Inicializa o slider
      */
@@ -87,8 +74,9 @@ class SliderController {
      */
     updateDots() {
         const dots = this.dotsContainer.querySelectorAll('.dot');
+        const activePage = Math.floor(this.currentIndex / this.itemsPerView);
         dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentIndex);
+            dot.classList.toggle('active', index === activePage);
         });
     }
     
@@ -106,7 +94,8 @@ class SliderController {
      */
     goToSlide(index) {
         const maxIndex = Math.max(0, this.items.length - this.itemsPerView);
-        this.currentIndex = Math.max(0, Math.min(index, maxIndex));
+        const target = index * this.itemsPerView;
+        this.currentIndex = Math.max(0, Math.min(target, maxIndex));
         this.updateSlider();
     }
     
@@ -115,8 +104,9 @@ class SliderController {
      */
     nextSlide() {
         const maxIndex = Math.max(0, this.items.length - this.itemsPerView);
-        if (this.currentIndex < maxIndex) {
-            this.currentIndex++;
+        const nextIndex = Math.min(this.currentIndex + this.itemsPerView, maxIndex);
+        if (nextIndex !== this.currentIndex) {
+            this.currentIndex = nextIndex;
             this.updateSlider();
         }
     }
@@ -125,8 +115,9 @@ class SliderController {
      * Move para o slide anterior
      */
     prevSlide() {
-        if (this.currentIndex > 0) {
-            this.currentIndex--;
+        const prevIndex = Math.max(this.currentIndex - this.itemsPerView, 0);
+        if (prevIndex !== this.currentIndex) {
+            this.currentIndex = prevIndex;
             this.updateSlider();
         }
     }
@@ -166,6 +157,8 @@ class SliderController {
      * ========== EVENTOS DE TOQUE (TOUCH) ==========
      */
     handleTouchStart(e) {
+        // ignore touch start se for sobre o overlay de play
+        if (e.target && e.target.closest && e.target.closest('.play-overlay')) return;
         this.isDragging = true;
         this.startX = e.touches[0].clientX;
     }
@@ -195,6 +188,8 @@ class SliderController {
      * ========== EVENTOS DE MOUSE (CLICK + ARRASTAR) ==========
      */
     handleMouseDown(e) {
+        // ignore mousedown se for sobre o overlay de play
+        if (e.target && e.target.closest && e.target.closest('.play-overlay')) return;
         this.isDragging = true;
         this.startX = e.clientX;
         this.track.style.cursor = 'grabbing';
@@ -262,30 +257,83 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = '▶';
             player.appendChild(btn);
         }
+        // evita que mousedown/touchstart no botão propague para o track (previne swipe acidental)
+        btn.addEventListener('mousedown', (ev) => { ev.stopPropagation(); });
+        btn.addEventListener('touchstart', (ev) => { ev.stopPropagation(); });
 
-        // atualiza visibilidade inicial
-        btn.classList.toggle('hidden', !video.paused);
+        // determina se há fonte válida
+        const sourceEl = video.querySelector('source');
+        const src = (sourceEl && sourceEl.src) ? sourceEl.src.trim() : (video.currentSrc || video.src || '').trim();
+        if (!src) {
+            // sem vídeo disponível
+            btn.innerText = 'Sem vídeo';
+            btn.disabled = true;
+            btn.classList.remove('hidden');
+            return;
+        }
 
-        // clique no overlay controla play/pause
+        // remove controles nativos até o play (evita sobreposição dupla)
+        try { video.controls = false; } catch (e) {}
+
+        // estado inicial do overlay: mostra enquanto estiver pausado
+        if (video.paused) btn.classList.remove('hidden'); else btn.classList.add('hidden');
+
+        const showError = (message) => {
+            btn.classList.remove('hidden');
+            btn.innerText = 'Erro';
+            btn.title = message;
+            btn.disabled = true;
+            try { video.controls = false; } catch (e) {}
+        };
+
+        // clique no overlay controla play/pause com tratamento de promise
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (video.paused) video.play(); else video.pause();
+            if (btn.disabled) return;
+            if (video.paused) {
+                try { video.load(); } catch(e) {}
+                const p = video.play();
+                if (p && p.then) {
+                    p.then(() => {
+                        btn.classList.add('hidden');
+                        try { video.controls = true; } catch (e) {}
+                    }).catch(err => {
+                        showError('Não foi possível reproduzir o vídeo');
+                        console.warn('Play failed', err);
+                    });
+                } else {
+                    btn.classList.add('hidden');
+                    try { video.controls = true; } catch (e) {}
+                }
+            } else {
+                video.pause();
+            }
         });
 
         // esconde overlay quando o vídeo roda, mostra quando pausa
-        video.addEventListener('play', () => {
-            btn.classList.add('hidden');
-            // ativa controles nativos após iniciar reprodução
-            try { video.controls = true; } catch (e) {}
-        });
-        video.addEventListener('pause', () => {
-            btn.classList.remove('hidden');
+        video.addEventListener('play', () => { btn.classList.add('hidden'); try { video.controls = true; } catch(e){} });
+        video.addEventListener('pause', () => { if (!btn.disabled) btn.classList.remove('hidden'); });
+
+        // detectar erro de carregamento
+        video.addEventListener('error', () => showError('Erro ao carregar o vídeo'));
+
+        // quando houver quadro carregado, garante poster/capa visível
+        video.addEventListener('canplay', () => {
+            // some browsers may still show black; ensure poster removed so frame is visible
+            // nothing extra necessário aqui, mas mantenha o manipulador para ajustes futuros
         });
 
-        // clique na caixa do player também alterna play/pause
+        // clique na caixa do player também alterna play/pause (exceto quando clica no botão overlay)
         player.addEventListener('click', (e) => {
-            if (e.target === btn) return;
-            if (video.paused) video.play(); else video.pause();
+            if (e.target === btn || btn.disabled) return;
+            if (video.paused) {
+                try { video.load(); } catch(e) {}
+                const p = video.play();
+                if (p && p.then) {
+                    p.then(() => { try { video.controls = true; } catch(e){} })
+                     .catch(()=>{});
+                }
+            } else video.pause();
         });
     });
 });

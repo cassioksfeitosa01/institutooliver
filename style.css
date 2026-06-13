@@ -419,7 +419,11 @@ img {
   z-index: 5;
   box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
-.play-overlay.hidden { display: none; }
+.play-overlay.hidden { 
+  opacity: 0; 
+  pointer-events: none; 
+  transform: translate(-50%, -50%) scale(0.95);
+}
 
 /* Pulse animation and responsive sizing */
 .play-overlay {
