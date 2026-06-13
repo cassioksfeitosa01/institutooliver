@@ -22,7 +22,8 @@ class SliderController {
         this.items = sliderContainer.querySelectorAll('.video-item');
         this.prevBtn = sliderContainer.querySelector('.prev-arrow');
         this.nextBtn = sliderContainer.querySelector('.next-arrow');
-        this.dotsContainer = sliderContainer.querySelector('.dots-indicator');
+        // Os dots estão FORA do slider-container, então usamos nextElementSibling
+        this.dotsContainer = sliderContainer.nextElementSibling;
         
         console.log('🎯 SliderController - Elementos encontrados:');
         console.log('  - Track:', this.track);
