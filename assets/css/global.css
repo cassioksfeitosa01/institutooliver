@@ -1,0 +1,58 @@
+
+/* * - reset universal de margens e dimensionamento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY - configurações gerais do corpo da página */
+body, html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* UL - remove apenas as bolinhas das listas */
+ul, li {
+    list-style: none;
+}
+
+/* A - remove o sublinhado dos links do site */
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* H1 - título principal da página */
+.titulo-principal {
+    
+}
+
+/* H2 - título da seção */
+.titulo {
+    
+}
+
+/* H3 - subtítulo da seção */
+.subtitulo {
+  
+}
+
+/* P - descrição do texto */
+.descricao {
+ 
+}
+
+/* SPAN - segunda cor para usar dentro dos títulos */
+.texto-colorido {
+   
+}
+
+/* Botão padrão de clique do site */
+.botao-padrao {
+
+}
