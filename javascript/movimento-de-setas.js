@@ -20,9 +20,9 @@ class SliderController {
         this.container = sliderContainer;
         this.track = sliderContainer.querySelector('.videos-track');
         this.items = sliderContainer.querySelectorAll('.video-item');
-        this.prevBtn = sliderContainer.parentElement.querySelector('.prev-arrow');
-        this.nextBtn = sliderContainer.parentElement.querySelector('.next-arrow');
-        this.dotsContainer = sliderContainer.parentElement.nextElementSibling;
+        this.prevBtn = sliderContainer.querySelector('.prev-arrow');
+        this.nextBtn = sliderContainer.querySelector('.next-arrow');
+        this.dotsContainer = sliderContainer.querySelector('.dots-indicator');
         
         this.currentIndex = 0;
         this.itemsPerView = this.getItemsPerView();
@@ -234,9 +234,9 @@ class SliderController {
  * Encontra todos os sliders na página e os inicializa
  */
 document.addEventListener('DOMContentLoaded', () => {
-    const sliderContainers = document.querySelectorAll('.videos-track');
+    const sliderContainers = document.querySelectorAll('.slider-container');
     
     sliderContainers.forEach(sliderContainer => {
-        new SliderController(sliderContainer.closest('.slider-container').querySelector('.videos-track'));
+        new SliderController(sliderContainer);
     });
 });
