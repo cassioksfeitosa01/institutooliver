@@ -24,14 +24,6 @@ class SliderController {
         this.nextBtn = sliderContainer.querySelector('.next-arrow');
         // Os dots estão FORA do slider-container, então usamos nextElementSibling
         this.dotsContainer = sliderContainer.nextElementSibling;
-        
-        console.log('🎯 SliderController - Elementos encontrados:');
-        console.log('  - Track:', this.track);
-        console.log('  - Items:', this.items.length);
-        console.log('  - Prev Button:', this.prevBtn);
-        console.log('  - Next Button:', this.nextBtn);
-        console.log('  - Dots Container:', this.dotsContainer);
-        
         this.currentIndex = 0;
         this.itemsPerView = this.getItemsPerView();
         this.isDragging = false;
@@ -39,7 +31,6 @@ class SliderController {
         this.currentX = 0;
         this.dragThreshold = 50;
         
-        console.log(`  - Items Per View: ${this.itemsPerView}`);
         
         this.init();
     }
@@ -124,13 +115,9 @@ class SliderController {
      */
     nextSlide() {
         const maxIndex = Math.max(0, this.items.length - this.itemsPerView);
-        console.log(`➡️ nextSlide() - currentIndex: ${this.currentIndex}, maxIndex: ${maxIndex}`);
         if (this.currentIndex < maxIndex) {
             this.currentIndex++;
-            console.log(`   → Movendo para índice ${this.currentIndex}`);
             this.updateSlider();
-        } else {
-            console.log('   ⛔ Já está no final!');
         }
     }
     
@@ -138,13 +125,9 @@ class SliderController {
      * Move para o slide anterior
      */
     prevSlide() {
-        console.log(`⬅️ prevSlide() - currentIndex: ${this.currentIndex}`);
         if (this.currentIndex > 0) {
             this.currentIndex--;
-            console.log(`   → Movendo para índice ${this.currentIndex}`);
             this.updateSlider();
-        } else {
-            console.log('   ⛔ Já está no início!');
         }
     }
     
@@ -152,32 +135,21 @@ class SliderController {
      * Anexa todos os event listeners
      */
     attachEventListeners() {
-        console.log('🎧 Anexando event listeners...');
-        
         // Setas
-        this.prevBtn.addEventListener('click', () => {
-            console.log('🖱️ Clicou em PREV');
-            this.prevSlide();
-        });
-        this.nextBtn.addEventListener('click', () => {
-            console.log('🖱️ Clicou em NEXT');
-            this.nextSlide();
-        });
-        console.log('  ✅ Event listeners de setas anexados');
-        
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+
         // Touch (dedo/swipe)
         this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), false);
         this.track.addEventListener('touchmove', (e) => this.handleTouchMove(e), false);
         this.track.addEventListener('touchend', (e) => this.handleTouchEnd(e), false);
-        console.log('  ✅ Event listeners de touch anexados');
-        
+
         // Mouse (arrastar)
         this.track.addEventListener('mousedown', (e) => this.handleMouseDown(e));
         this.track.addEventListener('mousemove', (e) => this.handleMouseMove(e));
         this.track.addEventListener('mouseup', (e) => this.handleMouseUp(e));
         this.track.addEventListener('mouseleave', (e) => this.handleMouseLeave(e));
-        console.log('  ✅ Event listeners de mouse anexados');
-        
+
         // Atualiza o slider ao redimensionar
         window.addEventListener('resize', () => {
             const newItemsPerView = this.getItemsPerView();
@@ -188,7 +160,6 @@ class SliderController {
                 this.updateSlider();
             }
         });
-        console.log('  ✅ Event listener de resize anexado');
     }
     
     /**
@@ -264,15 +235,8 @@ class SliderController {
  * Encontra todos os sliders na página e os inicializa
  */
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚀 Iniciando SliderController...');
     const sliderContainers = document.querySelectorAll('.slider-container');
-    console.log(`📦 Encontrados ${sliderContainers.length} slider(s)`);
-    
-    sliderContainers.forEach((sliderContainer, index) => {
-        console.log(`⚙️ Inicializando slider ${index + 1}...`);
-        new SliderController(sliderContainer);
-    });
-    console.log('✅ SliderController inicializado com sucesso!');
+    sliderContainers.forEach(sliderContainer => new SliderController(sliderContainer));
 });
 
 /* ============================================================
