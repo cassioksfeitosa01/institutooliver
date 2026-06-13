@@ -18,7 +18,6 @@
     <!-- FAVICON -->
     <link rel="icon" href="" type="image/png" />
 
-
     <!--TODO: Google Tag Manager -->
     <script src="/javascript/gtm-otimizado.js" defer></script>
 </head>
@@ -40,24 +39,21 @@
                 <h1><span class="highlight">Curso Superior ACELERADO:</span> <br>Superior Sequencial em Gestão de
                     Segurança Pública e Privada <span class="highlight">em 3 MESES</span></h1>
 
+                <!-- [REFATORAÇÃO] Removido inline CSS - tudo agora em style.css na classe .box-video-exclusiva -->
+                <!-- [COMPORTAMENTO] Autoplay + muted + loop (vídeo principal toca automaticamente) -->
                 <div class="box-video-exclusiva">
-                    <div class="area-video-exclusiva" style="position:relative; padding-top: 60%;">
-
-                        <!-- Trocado iframe por video, mantendo o mesmo style de posição -->
+                    <div class="area-video-exclusiva">
                         <video
+                            class="video-hero"
                             src="https://midias.institutooliver.online/videos/vendas/curso-superior-sequencial-em-gestao-de-seguranca-publica-e-privada-instituto-oliver.mp4.mp4"
-                            autoplay muted loop playsinline controls preload="auto" fetchpriority="high"
-                            style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; border: 0 !important; object-fit: cover;">
+                            autoplay muted loop playsinline controls preload="auto" fetchpriority="high">
                         </video>
-
                     </div>
                 </div>
-
 
                 <div class="hero-buttons">
                     <p class="aviso-botao">Aceito em QUALQUER concurso público que exige somente curso superior!</p>
                     <a href="https://go.hotmart.com/V94993999N?ap=c4a0" class="botao">MATRICULAR AGORA</a>
-
                 </div>
             </div>
         </section>
@@ -119,7 +115,11 @@
             </div>
         </section>
 
-        <!-- === SEÇÃO 1: PROFESSORES (2 VÍDEOS TOPO) === -->
+        <!-- === SEÇÃO 1: PROFESSORES (SLIDER COM 11 VÍDEOS) === -->
+        <!-- [REFATORAÇÃO] Trocado todos os iframes por <video> tags nativas -->
+        <!-- [REFATORAÇÃO] Removido inline CSS - tudo em style.css -->
+        <!-- [COMPORTAMENTO] Vídeos parados (sem autoplay) - aguardam clique em play -->
+        <!-- [NAVEGAÇÃO] Setas, deslize com dedo (mobile) e deslize com mouse serão controladas por movimento-de-setas.js -->
         <section id="secao-professores" class="section video-slider-section">
             <div class="section-header">
                 <h2>Professores altamente qualificados</h2>
@@ -130,126 +130,104 @@
                 <button class="slider-arrow prev-arrow"><span></span></button>
 
                 <div class="videos-wrapper">
-                    <div class="videos-track">
+                    <div class="videos-track" data-slider="professores">
 
-                        <!-- VÍDEO 1 -->
+                        <!-- VÍDEO 1 - PROFESSOR 1 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="https://midias.institutooliver.online/videos/professores/01-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 2 (Réplica) -->
+                        <!-- VÍDEO 2 - PROFESSOR 2 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="https://midias.institutooliver.online/videos/professores/02-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 3 -->
+                        <!-- VÍDEO 3 - PROFESSOR 3 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 4 -->
+                        <!-- VÍDEO 4 - PROFESSOR 4 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 5 -->
+                        <!-- VÍDEO 5 - PROFESSOR 5 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 6 -->
+                        <!-- VÍDEO 6 - PROFESSOR 6 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 7 -->
+                        <!-- VÍDEO 7 - PROFESSOR 7 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 8 -->
+                        <!-- VÍDEO 8 - PROFESSOR 8 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 9 -->
+                        <!-- VÍDEO 9 - PROFESSOR 9 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 10 -->
+                        <!-- VÍDEO 10 - PROFESSOR 10 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <!-- VÍDEO 11 -->
+                        <!-- VÍDEO 11 - PROFESSOR 11 -->
                         <div class="video-item">
                             <div class="video-player">
-                                <iframe src="" loading="lazy"
-                                    style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
-                                    allowfullscreen="true">
-                                </iframe>
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
@@ -326,48 +304,52 @@
                     <img src="" />
                 </div>
                 <div class="masonry-item">
-                    <img src=" />
+                    <img src="" />
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- === SEÇÃO 3: DEPOIMENTOS (2 VÍDEOS BAIXO) === -->
-    <section id=" secao-depoimentos" class="section video-slider-section">
-                    <div class="section-header">
-                        <h2>Depoimentos em Vídeo</h2>
-                        <p>Veja o que nossos alunos estão dizendo:</p>
-                    </div>
+        <!-- === SEÇÃO 3: DEPOIMENTOS (SLIDER COM 2 VÍDEOS) === -->
+        <!-- [REFATORAÇÃO] Trocado todos os iframes por <video> tags nativas -->
+        <!-- [REFATORAÇÃO] Removido inline CSS - tudo em style.css -->
+        <!-- [COMPORTAMENTO] Vídeos parados (sem autoplay) - aguardam clique em play -->
+        <!-- [NAVEGAÇÃO] Setas, deslize com dedo (mobile) e deslize com mouse serão controladas por movimento-de-setas.js -->
+        <section id="secao-depoimentos" class="section video-slider-section">
+            <div class="section-header">
+                <h2>Depoimentos em Vídeo</h2>
+                <p>Veja o que nossos alunos estão dizendo:</p>
+            </div>
 
-                    <div class="slider-container">
-                        <button class="slider-arrow prev-arrow"><span></span></button>
+            <div class="slider-container">
+                <button class="slider-arrow prev-arrow"><span></span></button>
 
-                        <div class="videos-wrapper">
-                            <div class="videos-track">
+                <div class="videos-wrapper">
+                    <div class="videos-track" data-slider="depoimentos">
 
-                                <!-- VÍDEO 3 -->
-                                <div class="video-item">
-                                    <div class="video-player">
-                                        <iframe src="" loading="lazy"
-                                            style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                            allowfullscreen="true"></iframe>
-                                    </div>
-                                </div>
-
-                                <!-- VÍDEO 4 -->
-                                <div class="video-item">
-                                    <div class="video-player">
-                                        <iframe src="" loading="lazy"
-                                            style="border:0;position:absolute;top:0;height:100%;width:100%;"
-                                            allowfullscreen="true"></iframe>
-                                    </div>
-                                </div>
-
+                        <!-- VÍDEO 1 - DEPOIMENTO 1 -->
+                        <div class="video-item">
+                            <div class="video-player">
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
-                        <button class="slider-arrow next-arrow"><span></span></button>
+                        <!-- VÍDEO 2 - DEPOIMENTO 2 -->
+                        <div class="video-item">
+                            <div class="video-player">
+                                <video class="video-slider" preload="none" controls>
+                                    <source src="" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="dots-indicator"></div>
+                </div>
+
+                <button class="slider-arrow next-arrow"><span></span></button>
+            </div>
+            <div class="dots-indicator"></div>
         </section>
 
         <!-- SEÇÃO FAQ-->
@@ -395,8 +377,8 @@
                             <br>
 
                             4 – O Curso Sequencial é um curso superior reconhecido pelo MEC, porém sem caráter de
-                            graduação, que busca uma formação específica em um determinado “campo do saber” e não em
-                            “uma área de conhecimento e suas habilitações”. Oferece um certificado de complementação de
+                            graduação, que busca uma formação específica em um determinado "campo do saber" e não em
+                            "uma área de conhecimento e suas habilitações". Oferece um certificado de complementação de
                             estudos. As disciplinas de um curso sequencial podem ser aproveitadas em uma graduação
                             superior, conforme o currículo, dependendo da instituição de ensino superior; porém, para o
                             ingresso, haverá processo seletivo.
@@ -407,7 +389,7 @@
                 <details name="faq">
                     <summary>O que é Curso Superior Sequencial?</summary>
                     <div class="content">
-                        <p>O termo “Curso Sequencial” foi incorporado pela Lei de Diretrizes e Bases da Educação
+                        <p>O termo "Curso Sequencial" foi incorporado pela Lei de Diretrizes e Bases da Educação
                             Nacional como uma das modalidades de ensino superior.<br>
                             <br> O curso superior sequencial oferece
                             formação técnica de nível superior de forma breve, em até 3 meses, e justamente pela rapidez
@@ -452,8 +434,8 @@
                 <details name="faq">
                     <summary>Posso prestar concursos públicos de nível superior??</summary>
                     <div class="content">
-                        <p>Considerando-se os concursos públicos que especifiquem apenas o requisito de ter “certificado
-                            de curso superior”, os formados em um curso sequencial superior poderão se inscrever e
+                        <p>Considerando-se os concursos públicos que especifiquem apenas o requisito de ter "certificado
+                            de curso superior", os formados em um curso sequencial superior poderão se inscrever e
                             concorrer aos certames normalmente.<br>
                             <br>Ou seja, se QUALQUER Concurso Público exigir somente CURSO SUPERIOR sem falar GRADUAÇÃO
                             ou DIPLOMA o curso superior SEQUENCIAL será aceito.
@@ -578,9 +560,9 @@
             </p>
 
             <div class="footer-links">
-                <a href="/pages/legais/politica-de-privacidade.html">Política de Privacidade</a>
-                <a href="/pages/legais/termos-de-uso.html">Termos de Uso</a>
-                <a href="/pages/legais/politica-de-reembolso.html">Política de Reembolso</a>
+                <a href="">Política de Privacidade</a>
+                <a href="">Termos de Uso</a>
+                <a href="">Política de Reembolso</a>
             </div>
 
             <p class="footer-copy">
@@ -589,8 +571,8 @@
         </div>
     </footer>
 
-    <!-- Movimento das Setas dos Vídeos  -->
-    <script src="/javascript/movimento-de-seta.js"></script>
+    <!-- [REFATORAÇÃO] Script de navegação dos sliders: setas, deslize com dedo e mouse -->
+    <script src="/javascript/movimento-de-setas.js" defer></script>
 
 </body>
 
