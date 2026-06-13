@@ -274,3 +274,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     console.log('✅ SliderController inicializado com sucesso!');
 });
+
+/* ============================================================
+   Play overlay controller
+   - garante play centralizado consistente
+   - cria overlay se não existir
+   - toggle play/pause no clique
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+    const players = document.querySelectorAll('.video-player');
+    players.forEach(player => {
+        const video = player.querySelector('video');
+        if (!video) return;
+
+        // cria botão overlay se não existir
+        let btn = player.querySelector('.play-overlay');
+        if (!btn) {
+            btn = document.createElement('button');
+            btn.className = 'play-overlay';
+            btn.setAttribute('aria-label', 'Play');
+            btn.innerText = '▶';
+            player.appendChild(btn);
+        }
+
+        // atualiza visibilidade inicial
+        btn.classList.toggle('hidden', !video.paused);
+
+        // clique no overlay controla play/pause
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (video.paused) video.play(); else video.pause();
+        });
+
+        // esconde overlay quando o vídeo roda, mostra quando pausa
+        video.addEventListener('play', () => btn.classList.add('hidden'));
+        video.addEventListener('pause', () => btn.classList.remove('hidden'));
+
+        // clique na caixa do player também alterna play/pause
+        player.addEventListener('click', (e) => {
+            if (e.target === btn) return;
+            if (video.paused) video.play(); else video.pause();
+        });
+    });
+});
