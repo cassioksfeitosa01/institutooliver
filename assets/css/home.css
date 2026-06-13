@@ -2,14 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
 /* Garante a mágica da responsividade sem esticar fotos pequenas */
 .caixa-imagem img {
   max-width: 100%;
@@ -18,9 +10,16 @@
 }
 
 /* Centraliza e limita o tamanho no computador */
-.caixa-imagem {
-  width: 100%;
-  max-width: 1200px; 
-  margin: 0 auto;    
+.caixa-imagem { 
+    
 }
+
+@media (max-width: 767px) {
+  .caixa-imagem {
+  max-width: 1200px; 
+     
+}
+  
+}
+  
 

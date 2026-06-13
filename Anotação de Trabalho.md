@@ -7,7 +7,7 @@ git add .; git commit -m "atualização nos aquivos "; git push origin main
 
 
 
-professor-mateus-oliver-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
+logo-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
 
 
 
