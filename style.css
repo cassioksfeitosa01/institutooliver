@@ -421,6 +421,19 @@ img {
 }
 .play-overlay.hidden { display: none; }
 
+/* Hide native large play overlay in WebKit browsers as fallback */
+video::-webkit-media-controls-start-playback-button,
+video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls-start-playback-button\:hover {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Internal Blink controls (Chrome) */
+video::-internal-media-controls-overlay-play-button {
+  display: none !important;
+}
+
 /* ============================================================
    SETAS E INDICADORES (DOTS)
    ============================================================ */

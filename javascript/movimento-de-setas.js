@@ -250,6 +250,8 @@ document.addEventListener('DOMContentLoaded', () => {
     players.forEach(player => {
         const video = player.querySelector('video');
         if (!video) return;
+        // remove controles nativos até o usuário apertar play (evita overlay nativo)
+        try { video.controls = false; } catch (e) {}
 
         // cria botão overlay se não existir
         let btn = player.querySelector('.play-overlay');
@@ -271,8 +273,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // esconde overlay quando o vídeo roda, mostra quando pausa
-        video.addEventListener('play', () => btn.classList.add('hidden'));
-        video.addEventListener('pause', () => btn.classList.remove('hidden'));
+        video.addEventListener('play', () => {
+            btn.classList.add('hidden');
+            // ativa controles nativos após iniciar reprodução
+            try { video.controls = true; } catch (e) {}
+        });
+        video.addEventListener('pause', () => {
+            btn.classList.remove('hidden');
+        });
 
         // clique na caixa do player também alterna play/pause
         player.addEventListener('click', (e) => {
