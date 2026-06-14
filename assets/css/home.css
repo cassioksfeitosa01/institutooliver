@@ -1,4 +1,9 @@
-/* --- ESTILO PARA CELULAR (SOLTO) --- */
+/* ==========================================
+   MUNDO CELULAR - ATÉ 767PX (BLINDADO)
+   ========================================== */
+@media (max-width: 767px) {
+
+    /* --- ESTILO PARA CELULAR (SOLTO) --- */
 section {
     position: relative; /* Isso aqui é obrigatório para o texto não fugir da seção */
     width: 100%;
@@ -47,6 +52,15 @@ section {
 
 }
 
+}
+
+/* ==========================================
+   MUNDO PC - DE 768PX PARA CIMA (BLINDADO)
+   ========================================== */
+@media (min-width: 768px) {
+
+
+}
 
 
 

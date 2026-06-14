@@ -4,6 +4,10 @@ git add .; git commit -m "atualização nos aquivos "; git push origin main
    <!--TODO: Google Tag Manager -->
    <script src="/assets/javascript/gtm-otimizado.js" defer></script>
 
+   <script src="assets/javascript/carregador-componentes.js"></script>
+
+<div id="rodape"></div>
+
 
     
 
@@ -29,6 +33,22 @@ logo-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site
 
 
 
+/* ==========================================
+   MUNDO CELULAR - ATÉ 767PX (BLINDADO)
+   ========================================== */
+@media (max-width: 767px) {
 
+
+
+}
+
+/* ==========================================
+   MUNDO PC - DE 768PX PARA CIMA (BLINDADO)
+   ========================================== */
+@media (min-width: 768px) {
+
+
+
+}
 
     

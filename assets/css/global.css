@@ -1,4 +1,9 @@
-/* RESET CSS */
+/* ==========================================
+   MUNDO CELULAR - ATÉ 767PX (BLINDADO)
+   ========================================== */
+@media (max-width: 767px) {
+
+    /* RESET CSS */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +14,7 @@
 body,
 html {
     font-family: 'Montserrat', sans-serif;
-    background-color: #000;
+
 }
 
 /* UL - remove apenas as bolinhas das listas */
@@ -33,25 +38,31 @@ a {
 /* H2 - TÍTULO DA SEÇÃO */
 .titulo {
     color: #E2B502;
-    font-size: 1.625rem; 
-    margin-bottom: 6px; /* Apertou o espaço para o subtítulo subir um pouco */
-    line-height: 1.2;    /* Garante que se o título quebrar, não ocupe muita altura */
+    font-size: 1.625rem;
+    margin-bottom: 6px;
+    /* Apertou o espaço para o subtítulo subir um pouco */
+    line-height: 1.2;
+    /* Garante que se o título quebrar, não ocupe muita altura */
 }
 
 /* H3 - SUBTÍTULO DA SEÇÃO */
 .subtitulo {
     color: #FFFFD9;
-    font-size: 1.125rem; 
-    margin-bottom: 10px; /* Reduzido de 15px para o texto de baixo colar mais */
-    line-height: 1.3;    /* Juntou sutilmente as linhas amarelas claras */
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    /* Reduzido de 15px para o texto de baixo colar mais */
+    line-height: 1.3;
+    /* Juntou sutilmente as linhas amarelas claras */
 }
 
 /* P - DESCRIÇÃO DO TEXTO */
 .descricao {
     color: #99A0AA;
-    font-size: 1rem; 
-    margin-bottom: 15px; /* Reduzido de 25px para trazer o botão bem mais para cima */
-    line-height: 1.4;    /* Deixou o parágrafo cinza um pouco mais compacto na tela */
+    font-size: 1rem;
+    margin-bottom: 15px;
+    /* Reduzido de 25px para trazer o botão bem mais para cima */
+    line-height: 1.4;
+    /* Deixou o parágrafo cinza um pouco mais compacto na tela */
 }
 
 
@@ -64,7 +75,8 @@ a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    width: 100%; /* Padrão: 1 embaixo do outro ocupando a linha toda */
+    width: 100%;
+    /* Padrão: 1 embaixo do outro ocupando a linha toda */
     box-sizing: border-box;
     text-align: center;
 }
@@ -72,63 +84,163 @@ a {
 /* REGRA PARA O PAI (EX: .caixa-texto) - GERENCIA O ESPAÇAMENTO */
 .caixa-texto {
     display: flex;
-    flex-direction: column; /* Alinha um embaixo do outro por padrão */
-    gap: 12px; /* SEU GAP: Evita que os botões (2 ou mais) fiquem grudados */
+    flex-direction: column;
+    /* Alinha um embaixo do outro por padrão */
+    gap: 12px;
+    /* SEU GAP: Evita que os botões (2 ou mais) fiquem grudados */
 }
 
 /* A MÁGICA DOS 4 BOTÕES: Se o CSS contar exatamente 4 botões irmãos */
 .botao-padrao:nth-last-child(4),
-.botao-padrao:nth-last-child(4) ~ .botao-padrao {
-    width: calc(50% - 6px); /* Divide a linha em dois (descontando metade do gap) */
+.botao-padrao:nth-last-child(4)~.botao-padrao {
+    width: calc(50% - 6px);
+    /* Divide a linha em dois (descontando metade do gap) */
 }
 
 /* AJUSTA O PAI PARA VIRAR 2X2 QUANDO DETECTAR OS 4 BOTÕES */
 .caixa-texto:has(.botao-padrao:nth-last-child(4)) {
-    flex-direction: row; /* Muda de lista para linha lado a lado */
-    flex-wrap: wrap; /* Permite que os botões que não couberem caiam para baixo */
+    flex-direction: row;
+    /* Muda de lista para linha lado a lado */
+    flex-wrap: wrap;
+    /* Permite que os botões que não couberem caiam para baixo */
     justify-content: space-between;
 }
 
-/* AJUSTE DE SEÇÃO INDIVIDUAL */
-#sec9-professor-mateus-oliver{
-        padding-bottom: 600px;   /* Aqui você cria o espaço extra embaixo da foto */
-    background-color: #000; /* Aqui você cria o fundo preto */
+    /* mateu */
+
+    #mateus-oliver {
+        position: relative;
+        width: 100%;
+        display: block;
+        line-height: 0;
+        padding-bottom: 580px;
+        /* Seu espaço preto do celular */
+        background-color: #000;
+    }
+
+    .professor-caixa-imagem {
+        width: 100%;
+    }
+
+    .professor-caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .mateus-caixa-texto {
+        position: absolute;
+        bottom: 0%;
+        /* Preso no chão no celular */
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        z-index: 2;
+        line-height: normal;
+        box-sizing: border-box;
+    }
+
+
+    /* --- CONFIGURAÇÃO DO RODAPÉ --- */
+    #sec10-meu-rodape {
+        width: 100%;
+        background-color: #000;
+        /* Fundo preto puro */
+        padding: 15px 20px;
+        /* Pouco padding para o rodapé ficar bem baixinho */
+        box-sizing: border-box;
+        /* O SEGREDO: Cria a linha dourada fina e elegante no topo do rodapé */
+        border-top: 2px solid #E2B502;
+    }
+
+    .caixa-rodape {
+        display: flex;
+        justify-content: space-between;
+        /* Joga a logo para a esquerda e o texto para a direita */
+        align-items: center;
+        /* Alinha os dois no meio da altura */
+        width: 100%;
+    }
+
+    .link-logo-rodape {
+        display: block;
+    }
+
+    .link-logo-rodape img {
+        display: block;
+        max-width: 110px;
+        /* Diminui um pouco a logo no celular para caber tudo na mesma linha */
+        height: auto;
+    }
+
+    .caixa-texto-rodape {
+        text-align: right;
+        /* Alinha o texto dos direitos na direita */
+    }
+
+    .descricao-rodape {
+        color: #99A0AA;
+        font-size: 0.75rem;
+        /* Letra menor para ficar discreto e não quebrar linha */
+        margin: 0;
+        /* Zera qualquer margem antiga que vinha da classe geral */
+        line-height: normal;
+    }
+
+
 }
 
-/* --- CONFIGURAÇÃO DO RODAPÉ --- */
-#sec10-meu-rodape {
-    width: 100%;
-    background-color: #000; /* Fundo preto puro */
-    padding: 15px 20px; /* Pouco padding para o rodapé ficar bem baixinho */
-    box-sizing: border-box;
-     /* O SEGREDO: Cria a linha dourada fina e elegante no topo do rodapé */
-    border-top: 2px solid #E2B502; 
-}
+/* ==========================================
+   MUNDO PC - DE 768PX PARA CIMA (BLINDADO)
+   ========================================== */
+@media (min-width: 768px) {
 
-.caixa-rodape {
-    display: flex;
-    justify-content: space-between; /* Joga a logo para a esquerda e o texto para a direita */
-    align-items: center; /* Alinha os dois no meio da altura */
-    width: 100%;
-}
+    #mateus-oliver {
+        position: relative;
+        width: 100%;
 
-.link-logo-rodape {
-    display: block;
-}
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+        overflow: hidden;
+    }
 
-.link-logo-rodape img {
-    display: block;
-    max-width: 110px; /* Diminui um pouco a logo no celular para caber tudo na mesma linha */
-    height: auto;
-}
+    .professor-caixa-imagem {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        /* Colou a foto do PC na direita */
+    }
 
-.caixa-texto-rodape {
-    text-align: right; /* Alinha o texto dos direitos na direita */
-}
+    .professor-caixa-imagem img {
+        max-width: 1920px;
+        /* Tamanho real da sua imagem */
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-.descricao-rodape {
-    color: #99A0AA;
-    font-size: 0.75rem; /* Letra menor para ficar discreto e não quebrar linha */
-    margin: 0; /* Zera qualquer margem antiga que vinha da classe geral */
-    line-height: normal;
+    .mateus-caixa-texto {
+        /* Reset total dos comandos do celular */
+        position: absolute;
+        bottom: auto;
+        /* IMPORTANTE: Desgruda o texto do chão do celular */
+
+        /* Controle absoluto no PC */
+        top: 50%;
+        left: 2%;
+        /* Afasta o texto da borda esquerda */
+        transform: translateY(-50%);
+        /* Centraliza o texto verticalmente no meio da foto */
+
+        width: 50%;
+        /* Texto corre até passar um pouco do meio */
+        padding: 0;
+        text-align: left;
+        /* Texto elegante alinhado à esquerda */
+        z-index: 2;
+        line-height: normal;
+        box-sizing: border-box;
+    }
+
 }
