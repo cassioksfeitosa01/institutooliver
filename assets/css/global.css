@@ -9,6 +9,7 @@
 body,
 html {
     font-family: 'Montserrat', sans-serif;
+    background-color: #000;
 }
 
 /* UL - remove apenas as bolinhas das listas */
@@ -90,6 +91,44 @@ a {
 
 /* AJUSTE DE SEÇÃO INDIVIDUAL */
 #sec9-professor-mateus-oliver{
-        padding-bottom: 700px;   /* Aqui você cria o espaço extra embaixo da foto */
+        padding-bottom: 600px;   /* Aqui você cria o espaço extra embaixo da foto */
     background-color: #000; /* Aqui você cria o fundo preto */
+}
+
+/* --- CONFIGURAÇÃO DO RODAPÉ --- */
+#sec10-meu-rodape {
+    width: 100%;
+    background-color: #000; /* Fundo preto puro */
+    padding: 15px 20px; /* Pouco padding para o rodapé ficar bem baixinho */
+    box-sizing: border-box;
+     /* O SEGREDO: Cria a linha dourada fina e elegante no topo do rodapé */
+    border-top: 2px solid #E2B502; 
+}
+
+.caixa-rodape {
+    display: flex;
+    justify-content: space-between; /* Joga a logo para a esquerda e o texto para a direita */
+    align-items: center; /* Alinha os dois no meio da altura */
+    width: 100%;
+}
+
+.link-logo-rodape {
+    display: block;
+}
+
+.link-logo-rodape img {
+    display: block;
+    max-width: 110px; /* Diminui um pouco a logo no celular para caber tudo na mesma linha */
+    height: auto;
+}
+
+.caixa-texto-rodape {
+    text-align: right; /* Alinha o texto dos direitos na direita */
+}
+
+.descricao-rodape {
+    color: #99A0AA;
+    font-size: 0.75rem; /* Letra menor para ficar discreto e não quebrar linha */
+    margin: 0; /* Zera qualquer margem antiga que vinha da classe geral */
+    line-height: normal;
 }
