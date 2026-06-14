@@ -19,7 +19,8 @@ section {
 .caixa-texto {
     position: absolute;  /* Faz o texto flutuar */
     /* --- CONTROLE DE POSIÇÃO (Mova por aqui) --- */
-    bottom: 0%;        /* Distância do fundo. Mude para 'top' se quiser em cima */
+      /* Distância do fundo. Mude para 'top' se quiser em cima */
+      bottom: 0%;
     width: 100%;         /* Para o texto ocupar a largura toda e centralizar */
     /* --- AJUSTES INTERNOS --- */
     padding: 10px;
@@ -39,8 +40,21 @@ section {
     background-color: #000; /* Aqui você cria o fundo preto */
 
 }
-#sec8-outros-cursos{
 
+#sec5-carreiras-policiais .caixa-texto {
+    /* O SEGREDO: Aumentar a porcentagem do bottom empurra o texto para cima */
+    /* Vá testando os números (ex: 5%, 8%, 12%) até a caixa levantar o suficiente */
+    bottom: 8%;
+    .titulo, .subtitulo {
+    width: 100%; /* Obriga a linha a abrir totalmente de lado a lado */
+    text-align: center; /* Garante que o texto fique no meio dessa linha */
 }
+}
+
+
+
+
+
+
   
 
