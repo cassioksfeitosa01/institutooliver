@@ -33,25 +33,20 @@ a {
 /* H2 - título da seção */
 .titulo {
     color: #E2B502;
-    font-size: 1.625rem; 
-    margin-bottom: 10px;
+    
     
 }
 
 /* H3 - subtítulo da seção */
 .subtitulo {
     color: #FFFFD9;
-    font-size: 1.125rem; 
-    margin-bottom: 15px;
-    line-height: 1.4;
+   
 }
 
 /* P - descrição do texto */
 .descricao {
     color: #99A0AA;
-    font-size: 1rem; 
-    margin-bottom: 25px;
-    line-height: 1.6;
+ 
 }
 
 /* CONFIGURAÇÃO DO BOTÃO BASE */
@@ -87,10 +82,3 @@ a {
     flex-wrap: wrap; /* Permite que os botões que não couberem caiam para baixo */
     justify-content: space-between;
 }
-
-/* AJUSTE DE SEÇÃO INDIVIDUAL */
-#sec9-professor-mateus-oliver{
-        padding-bottom: 700px;   /* Aqui você cria o espaço extra embaixo da foto */
-    background-color: #000; /* Aqui você cria o fundo preto */
-}
-
