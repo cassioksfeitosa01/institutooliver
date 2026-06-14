@@ -1,4 +1,4 @@
-/* * - reset universal de margens e dimensionamento */
+/* RESET CSS */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ a {
 }
 
 
-
+/* CONFIGURAÇÃO DE TEXTOS */
 
 /* H1 - título principal da página */
 .titulo-principal {
@@ -34,29 +34,27 @@ a {
 /* H2 - título da seção */
 .titulo {
     color: #E2B502;
-    font-size: 26px;
+    font-size: 1.625rem; 
     margin-bottom: 10px;
-    font-weight: bold;
-
+    
 }
 
 /* H3 - subtítulo da seção */
 .subtitulo {
     color: #FFFFD9;
-    font-size: 18px;
+    font-size: 1.125rem; 
     margin-bottom: 15px;
     line-height: 1.4;
-
 }
 
 /* P - descrição do texto */
 .descricao {
     color: #99A0AA;
-    font-size: 16px;
+    font-size: 1rem; 
     margin-bottom: 25px;
     line-height: 1.6;
-
 }
+
 
 
 .botao-padrao {
