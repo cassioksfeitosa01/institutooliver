@@ -1,0 +1,51 @@
+/* --- ESTILO PARA CELULAR (SOLTO) --- */
+section {
+    position: relative; /* Isso aqui é obrigatório para o texto não fugir da seção */
+    width: 100%;
+    display: block;      /* No celular, para sobrepor, o block funciona melhor que flex */
+    line-height: 0;      /* Remove espaços bobos embaixo da imagem */
+}
+
+.caixa-imagem {
+    width: 100%;
+}
+
+.caixa-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caixa-texto {
+    position: absolute;  /* Faz o texto flutuar */
+    /* --- CONTROLE DE POSIÇÃO (Mova por aqui) --- */
+    bottom: 0%;        /* Distância do fundo. Mude para 'top' se quiser em cima */
+    width: 100%;         /* Para o texto ocupar a largura toda e centralizar */
+    /* --- AJUSTES INTERNOS --- */
+    padding: 10px;
+    text-align: center;  /* Centraliza o texto dentro da caixa */
+    z-index: 2;          /* Garante que o texto fique sempre na frente da imagem */
+    line-height: normal; /* Reseta o line-height para o texto ficar bonito */
+}
+
+/* AJUSTE DE SEÇÃO INDIVIDUAL */
+
+#sec3-gestao-de-seguranca-publica-e-privada-e-teologia{
+    padding-bottom: 350px;   /* Aqui você cria o espaço extra embaixo da foto */
+    background-color: #000; /* Aqui você cria o fundo preto */
+}
+#sec2-cursos-superiores{
+    padding-bottom: 170px;   /* Aqui você cria o espaço extra embaixo da foto */
+    background-color: #000; /* Aqui você cria o fundo preto */
+}
+#sec8-outros-cursos{
+    padding-bottom: 100px;   /* Aqui você cria o espaço extra embaixo da foto */
+    background-color: #000; /* Aqui você cria o fundo preto */
+}
+#sec7-guarda-municipal{
+ 
+
+}
+#sec6-bombeiro-militar{
+
+}
