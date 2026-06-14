@@ -20,7 +20,7 @@ section {
     position: absolute;  /* Faz o texto flutuar */
     
     /* --- CONTROLE DE POSIÇÃO (Mova por aqui) --- */
-    bottom: 20px;        /* Distância do fundo. Mude para 'top' se quiser em cima */
+    bottom: 0%;        /* Distância do fundo. Mude para 'top' se quiser em cima */
     left: 0;             /* Alinhado à esquerda */
     width: 100%;         /* Para o texto ocupar a largura toda e centralizar */
     
