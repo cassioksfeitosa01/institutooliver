@@ -45,9 +45,28 @@ logo-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site
 }
 
 
+   <!-- Preload da imagem de celular para carregar instantaneamente -->
+    <link rel="preload" as="image"
+        href="https://midias.institutooliver.online/imagens/celular/home/inicio-instituto-oliver-escola-preparatoria-online-carreira-policial-site-oficial"
+        media="(max-width: 767px)">
 
 
 
 
 
+
+
+    <footer id="sec10-meu-rodape">
+        <div class="caixa-rodape">
+            <!-- Logo apenas como imagem, sem link (não clicável) -->
+            <div class="caixa-logo-rodape">
+                <img src="https://midias.institutooliver.online/imagens/logotipo/logo-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial"
+                    width="150" height="50" alt="Instituto Óliver Logo">
+            </div>
+
+            <div class="caixa-texto">
+                <p class="descricao">2026 © Instituto Óliver - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
     

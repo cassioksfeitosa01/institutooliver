@@ -18,15 +18,11 @@ section {
 
 .caixa-texto {
     position: absolute;  /* Faz o texto flutuar */
-    
     /* --- CONTROLE DE POSIÇÃO (Mova por aqui) --- */
     bottom: 0%;        /* Distância do fundo. Mude para 'top' se quiser em cima */
-    left: 0;             /* Alinhado à esquerda */
     width: 100%;         /* Para o texto ocupar a largura toda e centralizar */
-    
     /* --- AJUSTES INTERNOS --- */
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 10px;
     text-align: center;  /* Centraliza o texto dentro da caixa */
     z-index: 2;          /* Garante que o texto fique sempre na frente da imagem */
     line-height: normal; /* Reseta o line-height para o texto ficar bonito */
