@@ -1,8 +1,6 @@
 #sec1-inicio{
    background-image: url('https://midias.institutooliver.online/imagens/celular/home/inicio-instituto-oliver-escola-preparatoria-online-carreira-policial-site-oficial');
      background-size: 100% auto;
-       /* Faz a foto preencher a seção sem amassar */
-    background-position: top center;  /* Centraliza o desenho da foto */
     background-repeat: no-repeat;
     display: block;
 }
@@ -16,18 +14,26 @@
     
     /* O SEGREDO: Use este padding-top para empurrar o texto para baixo. */
     /* Aumente ou diminua esse número até o texto ficar em cima da parte escura da foto */
-    padding-top: 175px; 
+    padding-top: 45vw; 
 }
 
-/* AJUSTE DE FONTE APENAS PARA A SEÇÃO 1 */
-#sec1-inicio .titulo-principal {
-    font-size: 1.4rem; /* Diminui um pouco o título principal */
-    margin-bottom: 8px;
+
+#sec2-cursos-superiores{
+   background-image: url('https://midias.institutooliver.online/imagens/celular/home/cursos-superiores-instituto-oliver-escola-preparatoria-online-carreira-policial-site-oficial');
+     background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: block;
 }
 
-#sec1-inicio .descricao {
-    font-size: 0.9rem; /* Deixa a descrição um pouco mais compacta */
-    line-height: 1.4;  /* Diminui o espaço entre as linhas do texto */
-    margin-bottom: 15px; /* Diminui o espaço antes do botão */
+/* CONTROLE DO TEXTO NO CELULAR */
+ #sec2-cursos-superiores .caixa-texto {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    
+    /* O SEGREDO: Use este padding-top para empurrar o texto para baixo. */
+    /* Aumente ou diminua esse número até o texto ficar em cima da parte escura da foto */
+    padding-top: 55vw; 
 }
 
