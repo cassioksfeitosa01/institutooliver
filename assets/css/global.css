@@ -1,4 +1,3 @@
-
 /* * - reset universal de margens e dimensionamento */
 * {
     margin: 0;
@@ -7,12 +6,14 @@
 }
 
 /* BODY - configurações gerais do corpo da página */
-body, html {
-  font-family: 'Montserrat', sans-serif;
+body,
+html {
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* UL - remove apenas as bolinhas das listas */
-ul, li {
+ul,
+li {
     list-style: none;
 }
 
@@ -24,33 +25,50 @@ a {
 
 
 
-
 /* H1 - título principal da página */
 .titulo-principal {
-    
+    color: #E2B502;
+
 }
 
 /* H2 - título da seção */
 .titulo {
-    
+    color: #E2B502;
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: bold;
+
 }
 
 /* H3 - subtítulo da seção */
 .subtitulo {
-  
+    color: #FFFFD9;
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+
 }
 
 /* P - descrição do texto */
 .descricao {
- 
+    color: #99A0AA;
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+
 }
 
-/* SPAN - segunda cor para usar dentro dos títulos */
-.texto-colorido {
-   
-}
 
-/* Botão padrão de clique do site */
 .botao-padrao {
-
+    display: inline-block;
+    background-color: #004a99;
+    /* Cor de exemplo (troque pela sua) */
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    /* No celular, o botão largo é mais fácil de clicar */
+    box-sizing: border-box;
 }

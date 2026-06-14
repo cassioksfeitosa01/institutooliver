@@ -1,25 +1,35 @@
+/* --- ESTILO PARA CELULAR (SOLTO) --- */
+section {
+    position: relative; /* Isso aqui é obrigatório para o texto não fugir da seção */
+    width: 100%;
+    display: block;      /* No celular, para sobrepor, o block funciona melhor que flex */
+    line-height: 0;      /* Remove espaços bobos embaixo da imagem */
+}
 
+.caixa-imagem {
+    width: 100%;
+}
 
-
-
-/* Garante a mágica da responsividade sem esticar fotos pequenas */
 .caixa-imagem img {
-  max-width: 100%;
-  height: auto;
-  display: block; 
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Centraliza e limita o tamanho no computador */
-.caixa-imagem { 
+.caixa-texto {
+    position: absolute;  /* Faz o texto flutuar */
     
+    /* --- CONTROLE DE POSIÇÃO (Mova por aqui) --- */
+    bottom: 20px;        /* Distância do fundo. Mude para 'top' se quiser em cima */
+    left: 0;             /* Alinhado à esquerda */
+    width: 100%;         /* Para o texto ocupar a largura toda e centralizar */
+    
+    /* --- AJUSTES INTERNOS --- */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;  /* Centraliza o texto dentro da caixa */
+    z-index: 2;          /* Garante que o texto fique sempre na frente da imagem */
+    line-height: normal; /* Reseta o line-height para o texto ficar bonito */
 }
 
-@media (max-width: 767px) {
-  .caixa-imagem {
-  max-width: 1200px; 
-     
-}
-  
-}
-  
 
