@@ -22,7 +22,6 @@ a {
     text-decoration: none;
 }
 
-
 /* CONFIGURAÇÃO DE TEXTOS */
 
 /* H1 - título principal da página */
@@ -59,9 +58,9 @@ a {
 
 .botao-padrao {
     display: inline-block;
-    background-color: #004a99;
+    background-color: #E2B502;
     /* Cor de exemplo (troque pela sua) */
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 15px 20px;
     text-decoration: none;
     font-weight: bold;
