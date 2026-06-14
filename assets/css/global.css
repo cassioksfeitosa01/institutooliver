@@ -54,7 +54,7 @@ a {
     line-height: 1.6;
 }
 
-/* BOTÃO PADRÃO DO SITE */
+/* CONFIGURAÇÃO DO BOTÃO BASE */
 .botao-padrao {
     display: inline-block;
     background-color: #E2B502;
@@ -63,8 +63,29 @@ a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    width: 100%;
+    width: 100%; /* Padrão: 1 embaixo do outro ocupando a linha toda */
     box-sizing: border-box;
-
+    text-align: center;
 }
+
+/* REGRA PARA O PAI (EX: .caixa-texto) - GERENCIA O ESPAÇAMENTO */
+.caixa-texto {
+    display: flex;
+    flex-direction: column; /* Alinha um embaixo do outro por padrão */
+    gap: 12px; /* SEU GAP: Evita que os botões (2 ou mais) fiquem grudados */
+}
+
+/* A MÁGICA DOS 4 BOTÕES: Se o CSS contar exatamente 4 botões irmãos */
+.botao-padrao:nth-last-child(4),
+.botao-padrao:nth-last-child(4) ~ .botao-padrao {
+    width: calc(50% - 6px); /* Divide a linha em dois (descontando metade do gap) */
+}
+
+/* AJUSTA O PAI PARA VIRAR 2X2 QUANDO DETECTAR OS 4 BOTÕES */
+.caixa-texto:has(.botao-padrao:nth-last-child(4)) {
+    flex-direction: row; /* Muda de lista para linha lado a lado */
+    flex-wrap: wrap; /* Permite que os botões que não couberem caiam para baixo */
+    justify-content: space-between;
+}
+
 
