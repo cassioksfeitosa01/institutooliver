@@ -40,12 +40,11 @@ section {
     background-color: #000; /* Aqui você cria o fundo preto */
 
 }
-
-#sec5-carreiras-policiais .caixa-texto {
-    .titulo, .subtitulo {
+#sec5-carreiras-policiais .caixa-texto .titulo, .subtitulo {
+   
     width: 100%; /* Obriga a linha a abrir totalmente de lado a lado */
     text-align: center; /* Garante que o texto fique no meio dessa linha */
-}
+
 }
 
 
