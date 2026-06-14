@@ -22,6 +22,29 @@ logo-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site
     <p class="descricao">
 
 
+    section {
+    position: relative;
+    width: 100%;
+    background-color: #000; /* Aqui você cria o fundo preto */
+    padding-bottom: 80px;   /* Aqui você cria o espaço extra embaixo da foto */
+    overflow: hidden;       /* Evita que qualquer coisa escape da caixa */
+}
+
+.caixa-imagem img {
+    width: 100%;
+    display: block; /* Remove espaços vazios embaixo da imagem */
+}
+
+.caixa-texto {
+    position: absolute;
+    bottom: 10px;   /* Agora o 'zero' é o fim da barra preta que você criou */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+
 
 
 
