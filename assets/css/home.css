@@ -42,14 +42,14 @@ section {
 }
 
 #sec5-carreiras-policiais .caixa-texto {
-    /* O SEGREDO: Aumentar a porcentagem do bottom empurra o texto para cima */
-    /* Vá testando os números (ex: 5%, 8%, 12%) até a caixa levantar o suficiente */
-    bottom: 8%;
     .titulo, .subtitulo {
     width: 100%; /* Obriga a linha a abrir totalmente de lado a lado */
     text-align: center; /* Garante que o texto fique no meio dessa linha */
 }
 }
+
+
+
 
 
 
