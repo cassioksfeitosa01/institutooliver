@@ -34,10 +34,23 @@ section {
     padding-bottom: 350px;   /* Aqui você cria o espaço extra embaixo da foto */
     background-color: #000; /* Aqui você cria o fundo preto */
 }
-
 #sec2-cursos-superiores{
     padding-bottom: 170px;   /* Aqui você cria o espaço extra embaixo da foto */
     background-color: #000; /* Aqui você cria o fundo preto */
+}
+#sec8-outros-cursos{
+    padding-bottom: 100px;   /* Aqui você cria o espaço extra embaixo da foto */
+    background-color: #000; /* Aqui você cria o fundo preto */
+}
+#sec7-guarda-municipal{
+   padding-bottom: 70px;   /* Aqui você cria o espaço extra embaixo da foto */
 
 }
+
+#sec6-bombeiro-militar{
+padding-bottom: 120px;   /* Aqui você cria o espaço extra embaixo da foto */
+
+}
+
+
 

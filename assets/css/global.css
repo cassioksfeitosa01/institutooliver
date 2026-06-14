@@ -88,4 +88,9 @@ a {
     justify-content: space-between;
 }
 
+/* AJUSTE DE SEÇÃO INDIVIDUAL */
+#sec9-professor-mateus-oliver{
+        padding-bottom: 700px;   /* Aqui você cria o espaço extra embaixo da foto */
+    background-color: #000; /* Aqui você cria o fundo preto */
+}
 
