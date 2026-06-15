@@ -1,73 +1,1119 @@
-/* ==========================================
-   MUNDO CELULAR - ATÉ 767PX (BLINDADO)
-   ========================================== */
-@media (max-width: 767px) {
+/* =============================================================================
+   HOME.CSS — MOBILE & TABLET PORTRAIT (320px → 767px)
+   Estrutura: 16 media queries min-width. Nenhum estilo fora dos blocos @media.
+   ============================================================================= */
 
-    /* --- ESTILO PARA CELULAR (SOLTO) --- */
-section {
-    position: relative; /* Isso aqui é obrigatório para o texto não fugir da seção */
-    width: 100%;
-    display: block;      /* No celular, para sobrepor, o block funciona melhor que flex */
-    line-height: 0;      /* Remove espaços bobos embaixo da imagem */
+
+/* =============================================================================
+   1/16 — CELULARES MUITO PEQUENOS (320px+)
+   Base completa: reset, tipografia mínima, layout overlay e rodapé empilhado.
+   ============================================================================= */
+@media (min-width: 320px) {
+
+    /* --- RESET GLOBAL --- */
+    /* Zera margens/paddings padrão e garante box-model previsível em todos os elementos */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* --- TIPOGRAFIA BASE --- */
+    /* Montserrat como fonte única; tamanho raiz pequeno para caber em 320px sem esmagar textos */
+    body,
+    html {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    /* Remove marcadores de lista (caso existam no futuro) */
+    ul,
+    li {
+        list-style: none;
+    }
+
+    /* Links sem sublinhado — padrão visual do site */
+    a {
+        text-decoration: none;
+    }
+
+    /* --- PALETA E HIERARQUIA DE TEXTOS --- */
+    /* H1 hero: dourado, tamanho compacto, quebra equilibrada */
+    .titulo-principal {
+        color: #E2B502;
+        font-size: 1.35rem;
+        font-weight: 800;
+        line-height: 1.15;
+        text-wrap: balance;
+        overflow-wrap: break-word;
+        hyphens: manual;
+    }
+
+    /* H2 de seção: dourado, levemente menor que o hero nesta faixa */
+    .titulo {
+        color: #E2B502;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+        line-height: 1.2;
+        text-wrap: balance;
+        overflow-wrap: break-word;
+    }
+
+    /* H3 subtítulo: amarelo claro, legível sem ocupar demais a tela */
+    .subtitulo {
+        color: #FFFFD9;
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 1.3;
+        text-wrap: balance;
+        overflow-wrap: break-word;
+    }
+
+    /* Parágrafo descritivo: cinza, compacto para liberar espaço aos botões */
+    .descricao {
+        color: #99A0AA;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        line-height: 1.45;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    /* --- BOTÕES --- */
+    /* Botão full-width empilhado — ideal para telas estreitas de 320px */
+    .botao-padrao {
+        display: inline-block;
+        background-color: #E2B502;
+        color: rgb(0, 0, 0);
+        padding: 12px 14px;
+        font-weight: bold;
+        font-size: 0.8rem;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+    }
+
+    /* Container de texto: coluna com gap uniforme entre blocos e botões */
+    .caixa-texto {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* --- LAYOUT DAS SEÇÕES (GRID OVERLAY — TEXTO COLADO NA BASE DA FOTO) --- */
+    /*
+     * Grid empilha imagem + texto na mesma célula.
+     * A altura da seção acompanha a foto; o texto fica no rodapé DA IMAGEM,
+     * sem padding-bottom fixo que criava vão preto ao aumentar a largura.
+     */
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        width: 100%;
+        line-height: 0;
+        background-color: #000;
+    }
+
+    /* Imagem no topo da célula — cresce proporcionalmente com a largura */
+    .caixa-imagem {
+        grid-row: 1;
+        grid-column: 1;
+        align-self: start;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /*
+     * Texto na mesma célula, ancorado na base da foto (align-self: end).
+     * position: relative mantém o fluxo dentro do grid — não gruda no fundo da seção.
+     */
+    .caixa-texto {
+        grid-row: 1;
+        grid-column: 1;
+        align-self: end;
+        position: relative;
+        width: 100%;
+        padding: 8px 10px;
+        text-align: center;
+        z-index: 2;
+        line-height: normal;
+        box-sizing: border-box;
+    }
+
+    /* --- AJUSTES INDIVIDUAIS DE SEÇÃO --- */
+    /* Fundo preto de fallback caso o texto ultrapasse a área da imagem */
+    #sec2-cursos-superiores,
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        background-color: #000;
+    }
+
+    /* Carreiras policiais: títulos centralizados e largura total */
+    #sec5-carreiras-policiais .caixa-texto .titulo,
+    #sec5-carreiras-policiais .caixa-texto .subtitulo {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- SEÇÃO PROFESSOR MATEUS ÓLIVER (MESMO GRID OVERLAY) --- */
+    #mateus-oliver {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        width: 100%;
+        line-height: 0;
+        background-color: #000;
+    }
+
+    .professor-caixa-imagem {
+        grid-row: 1;
+        grid-column: 1;
+        align-self: start;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .professor-caixa-imagem img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .mateus-caixa-texto {
+        grid-row: 1;
+        grid-column: 1;
+        align-self: end;
+        position: relative;
+        width: 100%;
+        padding: 14px 10px;
+        text-align: center;
+        z-index: 2;
+        line-height: normal;
+        box-sizing: border-box;
+    }
+
+    /* --- RODAPÉ — LOGO HORIZONTAL NO CANTO ESQUERDO --- */
+    #sec10-meu-rodape {
+        width: 100%;
+        background-color: #000;
+        padding: 14px 12px;
+        box-sizing: border-box;
+        border-top: 2px solid #E2B502;
+        line-height: normal;
+    }
+
+    /* Logo à esquerda, copyright à direita — mesma linha */
+    .caixa-rodape {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Logo presa no canto esquerdo do rodapé */
+    .link-logo-rodape {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .link-logo-rodape img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 90px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    .caixa-texto-rodape {
+        flex: 1;
+        text-align: right;
+    }
+
+    .descricao-rodape {
+        color: #99A0AA;
+        font-size: 0.65rem;
+        margin: 0;
+        line-height: 1.35;
+        overflow-wrap: break-word;
+    }
 }
 
-.caixa-imagem {
-    width: 100%;
+
+/* =============================================================================
+   2/16 — CELULARES PEQUENOS (350px+)
+   Leve respiro horizontal e tipografia um pouco maior.
+   ============================================================================= */
+@media (min-width: 350px) {
+
+    /* Raiz tipográfica sobe 1px para melhorar legibilidade */
+    body,
+    html {
+        font-size: 15px;
+    }
+
+    .titulo-principal {
+        font-size: 1.4rem;
+    }
+
+    .titulo {
+        font-size: 1.3rem;
+    }
+
+    .subtitulo {
+        font-size: 0.98rem;
+    }
+
+    .descricao {
+        font-size: 0.88rem;
+    }
+
+    .botao-padrao {
+        padding: 12px 16px;
+        font-size: 0.82rem;
+    }
+
+    .caixa-texto {
+        padding: 9px 12px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 95px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 250px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 535px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 76px;
+        max-width: 60px;
+    }
+
+    .descricao-rodape {
+        font-size: 0.68rem;
+    }
 }
 
-.caixa-imagem img {
-    width: 100%;
-    height: auto;
-    display: block;
+
+/* =============================================================================
+   3/16 — CELULARES (380px+)
+   Ativa grade 2×2 para seções com 4 botões; fontes continuam crescendo.
+   ============================================================================= */
+@media (min-width: 380px) {
+
+    body,
+    html {
+        font-size: 15px;
+    }
+
+    .titulo-principal {
+        font-size: 1.45rem;
+    }
+
+    .titulo {
+        font-size: 1.35rem;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+        margin-bottom: 9px;
+    }
+
+    .descricao {
+        font-size: 0.9rem;
+        margin-bottom: 13px;
+    }
+
+    .botao-padrao {
+        padding: 13px 16px;
+        font-size: 0.84rem;
+    }
+
+    /* Grade 2×2 quando existem exatamente 4 botões (ex.: Carreiras Policiais) */
+    .botao-padrao:nth-last-child(4),
+    .botao-padrao:nth-last-child(4)~.botao-padrao {
+        width: calc(50% - 5px);
+    }
+
+    .caixa-texto:has(.botao-padrao:nth-last-child(4)) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .caixa-texto {
+        padding: 10px 14px;
+        gap: 11px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 98px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 258px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 545px;
+    }
+
+    .mateus-caixa-texto {
+        padding: 16px 12px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 80px;
+        max-width: 64px;
+    }
+
+    .descricao-rodape {
+        font-size: 0.7rem;
+    }
 }
 
-.caixa-texto {
-    position: absolute;  /* Faz o texto flutuar */
-    /* --- CONTROLE DE POSIÇÃO (Mova por aqui) --- */
-      /* Distância do fundo. Mude para 'top' se quiser em cima */
-      bottom: 0%;
-    width: 100%;         /* Para o texto ocupar a largura toda e centralizar */
-    /* --- AJUSTES INTERNOS --- */
-    padding: 10px;
-    text-align: center;  /* Centraliza o texto dentro da caixa */
-    z-index: 2;          /* Garante que o texto fique sempre na frente da imagem */
-    line-height: normal; /* Reseta o line-height para o texto ficar bonito */
+
+/* =============================================================================
+   4/16 — CELULARES (410px+)
+   Refino de espaçamentos e tipografia intermediária.
+   ============================================================================= */
+@media (min-width: 410px) {
+
+    .titulo-principal {
+        font-size: 1.5rem;
+        line-height: 1.18;
+    }
+
+    .titulo {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+    }
+
+    .subtitulo {
+        font-size: 1.02rem;
+    }
+
+    .descricao {
+        font-size: 0.92rem;
+        line-height: 1.42;
+    }
+
+    .botao-padrao {
+        padding: 13px 18px;
+        font-size: 0.86rem;
+    }
+
+    .caixa-texto {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 100px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 265px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 555px;
+    }
+
+    #sec10-meu-rodape {
+        padding: 15px 16px;
+    }
+
+    .caixa-rodape {
+        gap: 11px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 84px;
+        max-width: 68px;
+    }
 }
 
-/* AJUSTE DE SEÇÃO INDIVIDUAL */
 
-#sec3-gestao-de-seguranca-publica-e-privada-e-teologia{
-    padding-bottom: 270px;   /* Aqui você cria o espaço extra embaixo da foto */
-    background-color: #000; /* Aqui você cria o fundo preto */
+/* =============================================================================
+   5/16 — CELULARES (440px+)
+   Tipografia mais confortável; logo do rodapé ganha presença vertical.
+   ============================================================================= */
+@media (min-width: 440px) {
+
+    body,
+    html {
+        font-size: 16px;
+    }
+
+    .titulo-principal {
+        font-size: 1.55rem;
+    }
+
+    .titulo {
+        font-size: 1.45rem;
+    }
+
+    .subtitulo {
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+    }
+
+    .descricao {
+        font-size: 0.94rem;
+        margin-bottom: 14px;
+    }
+
+    .botao-padrao {
+        padding: 14px 18px;
+        font-size: 0.88rem;
+    }
+
+    .botao-padrao:nth-last-child(4),
+    .botao-padrao:nth-last-child(4)~.botao-padrao {
+        width: calc(50% - 6px);
+    }
+
+    .caixa-texto:has(.botao-padrao:nth-last-child(4)) {
+        gap: 12px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 270px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 565px;
+    }
+
+    .mateus-caixa-texto {
+        padding: 18px 14px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 88px;
+        max-width: 72px;
+    }
+
+    .descricao-rodape {
+        font-size: 0.72rem;
+    }
 }
-#sec2-cursos-superiores{
-    padding-bottom: 100px;   /* Aqui você cria o espaço extra embaixo da foto */
-    background-color: #000; /* Aqui você cria o fundo preto */
 
+
+/* =============================================================================
+   6/16 — CELULARES (470px+)
+   Ajuste fino de padding das caixas de texto overlay.
+   ============================================================================= */
+@media (min-width: 470px) {
+
+    .titulo-principal {
+        font-size: 1.6rem;
+    }
+
+    .titulo {
+        font-size: 1.48rem;
+    }
+
+    .subtitulo {
+        font-size: 1.07rem;
+    }
+
+    .descricao {
+        font-size: 0.96rem;
+    }
+
+    .caixa-texto {
+        padding: 11px 18px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 102px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 275px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 575px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 92px;
+        max-width: 76px;
+    }
 }
-#sec5-carreiras-policiais .caixa-texto .titulo, .subtitulo {
-   
-    width: 100%; /* Obriga a linha a abrir totalmente de lado a lado */
-    text-align: center; /* Garante que o texto fique no meio dessa linha */
 
+
+/* =============================================================================
+   7/16 — CELULARES (500px+)
+   Escala tipográfica próxima ao padrão original do projeto.
+   ============================================================================= */
+@media (min-width: 500px) {
+
+    .titulo-principal {
+        font-size: 1.65rem;
+    }
+
+    .titulo {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+    }
+
+    .subtitulo {
+        font-size: 1.08rem;
+    }
+
+    .descricao {
+        font-size: 0.98rem;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .botao-padrao {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+
+    .caixa-texto {
+        padding: 12px 20px;
+        gap: 12px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 105px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 280px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 585px;
+    }
+
+    .mateus-caixa-texto {
+        padding: 20px 16px;
+    }
+
+    #sec10-meu-rodape {
+        padding: 16px 18px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 96px;
+        max-width: 80px;
+    }
+
+    .descricao-rodape {
+        font-size: 0.74rem;
+    }
 }
 
+
+/* =============================================================================
+   8/16 — CELULARES GRANDES (530px+)
+   Mais respiro lateral; títulos com text-wrap balance reforçado.
+   ============================================================================= */
+@media (min-width: 530px) {
+
+    .titulo-principal {
+        font-size: 1.7rem;
+        line-height: 1.2;
+    }
+
+    .titulo {
+        font-size: 1.52rem;
+    }
+
+    .subtitulo {
+        font-size: 1.1rem;
+    }
+
+    .descricao {
+        font-size: 0.99rem;
+    }
+
+    .caixa-texto {
+        padding: 12px 22px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 285px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 595px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 100px;
+        max-width: 84px;
+    }
 }
 
-/* ==========================================
-   MUNDO PC - DE 768PX PARA CIMA (BLINDADO)
-   ========================================== */
-@media (min-width: 768px) {
 
+/* =============================================================================
+   9/16 — CELULARES GRANDES (560px+)
+   Botões com padding generoso; seções com mais área de respiro inferior.
+   ============================================================================= */
+@media (min-width: 560px) {
 
+    .titulo-principal {
+        font-size: 1.75rem;
+    }
+
+    .titulo {
+        font-size: 1.55rem;
+    }
+
+    .subtitulo {
+        font-size: 1.12rem;
+        margin-bottom: 10px;
+    }
+
+    .descricao {
+        font-size: 1rem;
+    }
+
+    .botao-padrao {
+        padding: 15px 20px;
+        font-size: 0.92rem;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 108px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 290px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 605px;
+    }
+
+    .caixa-rodape {
+        gap: 12px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 104px;
+        max-width: 88px;
+    }
+
+    .descricao-rodape {
+        font-size: 0.75rem;
+    }
 }
 
 
+/* =============================================================================
+   10/16 — CELULARES GRANDES (590px+)
+   Tipografia se aproxima do tamanho desktop-mobile original (1rem base desc.).
+   ============================================================================= */
+@media (min-width: 590px) {
+
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+
+    .titulo {
+        font-size: 1.58rem;
+    }
+
+    .subtitulo {
+        font-size: 1.14rem;
+    }
+
+    .descricao {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .caixa-texto {
+        padding: 13px 24px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 110px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 295px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 615px;
+    }
+
+    .mateus-caixa-texto {
+        padding: 20px 18px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 108px;
+        max-width: 92px;
+    }
+}
 
 
+/* =============================================================================
+   11/16 — PHABLETS (620px+)
+   Títulos maiores sem quebra agressiva graças a text-wrap: balance.
+   ============================================================================= */
+@media (min-width: 620px) {
+
+    .titulo-principal {
+        font-size: 1.85rem;
+    }
+
+    .titulo {
+        font-size: 1.6rem;
+    }
+
+    .subtitulo {
+        font-size: 1.15rem;
+    }
+
+    .descricao {
+        font-size: 1.01rem;
+        margin-bottom: 16px;
+    }
+
+    .botao-padrao {
+        font-size: 0.94rem;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 300px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 625px;
+    }
+
+    .descricao-rodape {
+        font-size: 0.76rem;
+    }
+}
 
 
+/* =============================================================================
+   12/16 — PHABLETS (650px+)
+   Refino de gap e padding-bottom das seções críticas.
+   ============================================================================= */
+@media (min-width: 650px) {
+
+    .titulo-principal {
+        font-size: 1.9rem;
+    }
+
+    .titulo {
+        font-size: 1.62rem;
+    }
+
+    .subtitulo {
+        font-size: 1.16rem;
+    }
+
+    .descricao {
+        font-size: 1.02rem;
+    }
+
+    .caixa-texto {
+        padding: 14px 26px;
+        gap: 13px;
+    }
+
+    .caixa-texto:has(.botao-padrao:nth-last-child(4)) {
+        gap: 13px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 112px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 305px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 635px;
+    }
+
+    #sec10-meu-rodape {
+        padding: 16px 20px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 112px;
+        max-width: 96px;
+    }
+}
 
 
-  
+/* =============================================================================
+   13/16 — TABLETS PEQUENOS EM PÉ (680px+)
+   Tipografia quase no patamar final; botões com peso visual reforçado.
+   ============================================================================= */
+@media (min-width: 680px) {
 
+    .titulo-principal {
+        font-size: 1.95rem;
+        line-height: 1.22;
+    }
+
+    .titulo {
+        font-size: 1.65rem;
+    }
+
+    .subtitulo {
+        font-size: 1.17rem;
+        margin-bottom: 11px;
+    }
+
+    .descricao {
+        font-size: 1.03rem;
+    }
+
+    .botao-padrao {
+        padding: 15px 22px;
+        font-size: 0.95rem;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 310px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 645px;
+    }
+
+    .mateus-caixa-texto {
+        padding: 22px 20px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 116px;
+        max-width: 100px;
+    }
+
+    .descricao-rodape {
+        font-size: 0.77rem;
+    }
+}
+
+
+/* =============================================================================
+   14/16 — TABLETS PEQUENOS EM PÉ (710px+)
+   Últimos ajustes de respiro antes do limite tablet portrait.
+   ============================================================================= */
+@media (min-width: 710px) {
+
+    .titulo-principal {
+        font-size: 2rem;
+    }
+
+    .titulo {
+        font-size: 1.68rem;
+    }
+
+    .subtitulo {
+        font-size: 1.18rem;
+    }
+
+    .descricao {
+        font-size: 1.04rem;
+        margin-bottom: 17px;
+    }
+
+    .caixa-texto {
+        padding: 14px 28px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 115px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 315px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 655px;
+    }
+
+    .caixa-rodape {
+        gap: 14px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 120px;
+        max-width: 104px;
+    }
+}
+
+
+/* =============================================================================
+   15/16 — TABLETS EM PÉ (740px+)
+   Tipografia máxima mobile/tablet portrait; layout estável e legível.
+   ============================================================================= */
+@media (min-width: 740px) {
+
+    body,
+    html {
+        font-size: 16px;
+    }
+
+    .titulo-principal {
+        font-size: 2.05rem;
+    }
+
+    .titulo {
+        font-size: 1.7rem;
+        margin-bottom: 6px;
+    }
+
+    .subtitulo {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+
+    .descricao {
+        font-size: 1.05rem;
+        line-height: 1.4;
+        margin-bottom: 18px;
+    }
+
+    .botao-padrao {
+        padding: 15px 24px;
+        font-size: 0.96rem;
+    }
+
+    .caixa-texto {
+        padding: 15px 30px;
+        gap: 14px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 118px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 320px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 665px;
+    }
+
+    .mateus-caixa-texto {
+        padding: 24px 22px;
+    }
+
+    .link-logo-rodape img {
+        max-height: 124px;
+        max-width: 108px;
+    }
+
+    .descricao-rodape {
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+}
+
+
+/* =============================================================================
+   16/16 — LIMITE MÁXIMO CELULAR / TABLET EM PÉ (767px+)
+   Patamar final: valores originais do projeto refinados para 767px.
+   ============================================================================= */
+@media (min-width: 767px) {
+
+    .titulo-principal {
+        font-size: 2.1rem;
+        line-height: 1.25;
+    }
+
+    .titulo {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    .subtitulo {
+        font-size: 1.22rem;
+    }
+
+    .descricao {
+        font-size: 1.0625rem;
+        margin-bottom: 18px;
+    }
+
+    .botao-padrao {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+
+    .botao-padrao:nth-last-child(4),
+    .botao-padrao:nth-last-child(4)~.botao-padrao {
+        width: calc(50% - 7px);
+    }
+
+    .caixa-texto:has(.botao-padrao:nth-last-child(4)) {
+        gap: 14px;
+    }
+
+    #sec2-cursos-superiores {
+        padding-bottom: 120px;
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+        padding-bottom: 325px;
+    }
+
+    #mateus-oliver {
+        padding-bottom: 680px;
+    }
+
+    #sec10-meu-rodape {
+        padding: 18px 24px;
+    }
+
+    /*
+     * Logo final em pé: altura dominante, largura proporcional,
+     * centralizada no rodapé vertical do mobile/tablet portrait.
+     */
+    .link-logo-rodape img {
+        max-height: 128px;
+        max-width: 112px;
+        object-fit: contain;
+        object-position: center center;
+    }
+
+    .descricao-rodape {
+        font-size: 0.8rem;
+    }
+}
