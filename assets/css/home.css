@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== CORES ===== */
+
+.titulo-principal {
+    color: #E6B902;
+}
+
+.titulo {
+    color: #E6B902;
+}
+
+.subtitulo {
+    color: #FFFFFF;
+}
+
+.descricao {
+    color: #99A0AA;
+}
+
+/* Botão estilizado */
+.botao-padrao {
+    background-color: #E6B902;
+    color: #000000;
+    padding: 14px 32px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.botao-padrao:hover {
+    background-color: #f5c400;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.botao-padrao:active {
+    transform: translateY(0);
+}
+
+
+    /* O "palco" - a seção vira referência de posição */
+    section {
+        position: relative;
+    }
+
+    /* A imagem ocupa toda a seção */
+    section .caixa-imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* O texto flutua por cima da imagem */
+    section .caixa-texto {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+/* ===== MEDIA QUERIES ===== */
+
+@media (min-width: 320px) {
+
+    .titulo-principal {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .titulo {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .descricao {
+        font-size: 14px;
+        line-height: 1.4;
+        /* Melhora a leitura em tela pequena */
+    }
+
+
+    /* ===== AJUSTE INDIVIDUAL DE CADA SEÇÃO  ===== */
+
+    #sec2-cursos-superiores {
+        padding-bottom: 145px;
+       background-color:#000000;
+
+    }
+
+    #sec3-gestao-de-seguranca-publica-e-privada-e-teologia {
+         padding-bottom: 400px;
+       background-color:#000000;
+
+    }
+
+    /* ===== AJUSTE INDIVIDUAL DE CADA SEÇÃO CAIXA DE TEXTO  ===== */
+
+    #sec1-inicio .caixa-texto {
+        top: 40%;
+    }
+
+    #sec2-cursos-superiores .caixa-texto {
+        top: 40%;
+    }
+       #sec3-gestao-de-seguranca-publica-e-privada-e-teologia .caixa-texto {
+  top: 33%;
+    }
+
+
+
+
+
+}
+
+
+@media (min-width: 360px) {}
+
+@media (min-width: 390px) {}
+
+@media (min-width: 430px) {}
+
+@media (min-width: 600px) {}
