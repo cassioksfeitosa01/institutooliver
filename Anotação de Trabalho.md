@@ -24,8 +24,17 @@ capa-venda-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiore
 
 
 
-</head>
-<body>
+<section class="video-section">
+    <picture class="video-bg">
+        <source media="(max-width: 768px)" srcset="https://midias.institutooliver.online/imagens/celular/home/capa-venda-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial%20(2).avif">
+        <img src="https://midias.institutooliver.online/imagens/computador/home/capa-venda-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial.avif" alt="">
+    </picture>
+    <div class="container">
+        <video src="https://midias.institutooliver.online/videos/vendas/curso-superior-sequencial-em-gestao-de-seguranca-publica-e-privada-instituto-oliver.mp4.mp4" autoplay muted loop playsinline controls></video>
+        <p>Aceito em QUALQUER concurso público que exige somente curso superior!</p>
+        <a href="https://hotmart.com" class="botao-padrao">MATRICULAR AGORA</a>
+    </div>
+</section>
 
 
 
