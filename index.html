@@ -307,6 +307,7 @@
 
 <script>
 // ── SLIDER: setas + swipe de dedo ──────────────────────────
+
 document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
     const track  = wrapper.querySelector('.slider-track');
     const slides = Array.from(track.querySelectorAll('.slide'));
@@ -334,8 +335,7 @@ document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
         const largura  = slideEl.offsetWidth + gap;
         track.style.transform = `translateX(-${atual * largura}px)`;
 
-        // Pausa todos os vídeos ao trocar de slide para não ficar áudio sobrando
-        document.querySelectorAll('video').forEach(v => {
+        document.querySelectorAll('.slider-section video').forEach(v => {
             v.pause();
             const btn = v.closest('.video-short-box')?.querySelector('.play-btn');
             if (btn) btn.style.opacity = '1';
@@ -355,7 +355,6 @@ document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
     btnEsq.addEventListener('click', () => ir(atual - 1));
     btnDir.addEventListener('click', () => ir(atual + 1));
 
-    // ── swipe de dedo (Mobile) ──
     let touchX = 0;
     track.addEventListener('touchstart', e => {
         touchX = e.touches[0].clientX;
@@ -365,17 +364,13 @@ document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
         if (Math.abs(diff) > 40) ir(diff > 0 ? atual + 1 : atual - 1);
     });
 
-    // ── LÓGICA DE PLAY / PAUSE (CORRIGIDA) ──
     wrapper.querySelectorAll('.video-short-box').forEach(box => {
         const video = box.querySelector('video');
         const btn = box.querySelector('.play-btn');
 
-        // Ouvir clique no box inteiro para facilitar o uso
         box.addEventListener('click', (e) => {
-            // Se o vídeo estiver pausado, dá play
             if (video.paused) {
-                // 1. Pausa todos os outros vídeos da página primeiro
-                document.querySelectorAll('video').forEach(v => {
+                document.querySelectorAll('.slider-section video').forEach(v => {
                     if (v !== video) {
                         v.pause();
                         const outroBtn = v.closest('.video-short-box')?.querySelector('.play-btn');
@@ -383,27 +378,23 @@ document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
                     }
                 });
 
-                // 2. Dá play neste
                 video.play();
-                btn.style.opacity = '0'; // Esconde o botão dourado
-            } 
-            // Se já estiver rodando, ele pausa
-            else {
+                btn.style.opacity = '0';
+            } else {
                 video.pause();
-                btn.style.opacity = '1'; // Mostra o botão dourado
+                btn.style.opacity = '1';
             }
         });
 
-        // Garantir que o botão volte se o vídeo acabar sozinho
         video.addEventListener('ended', () => {
             btn.style.opacity = '1';
         });
     });
 
-    // recalcula ao redimensionar a tela
     window.addEventListener('resize', () => ir(0));
     atualizarSetas();
 });
+
 </script>
 
 </html>
