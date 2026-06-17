@@ -39,19 +39,16 @@ h1 {
     letter-spacing: 0.5px;
     line-height: 1.2;
     margin-bottom: 1rem;
+}
 
-    /* Gradiente: Dourado → Branco no meio → Dourado */
-    background: linear-gradient(
-        90deg,
-        #C9A84C 0%,
-        #FFE97A 25%,
-        #FFFFFF 50%,
-        #FFE97A 75%,
-        #C9A84C 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.h1-dourado {
+    color: #FFD700;
+    -webkit-text-fill-color: #FFD700;
+}
+
+.h1-branco {
+    color: #FFFFFF;
+    -webkit-text-fill-color: #FFFFFF;
 }
 
 /* ---------- H2 — Subtítulo: Branco forte ---------- */
@@ -129,19 +126,19 @@ p {
 }
 
 /* ============================================================
-   FRASE DESTAQUE — Letras brancas, fundo VERMELHO ESCARLATE
+   FRASE DESTAQUE — Letras brancas, fundo VERMELHO mais discreto
    ============================================================ */
-.video-section p,
-.video-section > .container > p {
+.frase-vermelho {
     display: inline-block;
-    background-color: #C0000A;       /* vermelho escarlate */
-    color: #FFFFFF !important;       /* letras brancas */
-    font-weight: 700;
-    font-size: clamp(0.9rem, 2.2vw, 1.15rem);
-    padding: 10px 24px;
+    background-color: #A00008;
+    color: #FFFFFF !important;
+    font-weight: 600;
+    font-size: clamp(0.72rem, 1.6vw, 0.88rem);
+    padding: 8px 20px;
     border-radius: 4px;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
     text-transform: uppercase;
+    max-width: 520px;
 }
 
 /* ============================================================
