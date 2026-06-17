@@ -71,6 +71,98 @@
         </div>
     </section>
 
+    <!-- CONHEÇA NOSSOS PROFESSORES -->
+    <section class="slider-section" id="professores">
+        <div class="container">
+            <h2 class="slider-titulo">Conheça Nossos <span class="dourado">Professores</span></h2>
+        </div>
+        <div class="slider-wrapper" id="slider-professores">
+            <div class="slider-track" id="track-professores">
+
+                <!-- SLIDE 1 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="https://midias.institutooliver.online/videos/professores/01-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 1</p>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="https://midias.institutooliver.online/videos/professores/02-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 2</p>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="https://midias.institutooliver.online/videos/professores/03-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 3</p>
+                </div>
+
+            </div><!-- /slider-track -->
+
+            <!-- SETAS -->
+            <button class="seta seta-esq" data-target="track-professores" aria-label="Anterior">&#10094;</button>
+            <button class="seta seta-dir" data-target="track-professores" aria-label="Próximo">&#10095;</button>
+        </div><!-- /slider-wrapper -->
+    </section>
+
+    <!-- DEPOIMENTOS EM VÍDEO -->
+    <section class="slider-section" id="depoimentos">
+        <div class="container">
+            <h2 class="slider-titulo">O que nossos <span class="dourado">Alunos</span> dizem</h2>
+        </div>
+        <div class="slider-wrapper" id="slider-depoimentos">
+            <div class="slider-track" id="track-depoimentos">
+
+                <!-- SLIDE 1 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="https://midias.institutooliver.online/videos/professores/03-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Aluno 1</p>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="https://midias.institutooliver.online/videos/professores/03-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Aluno 2</p>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="https://midias.institutooliver.online/videos/professores/03-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Aluno 3</p>
+                </div>
+
+            </div><!-- /slider-track -->
+
+            <!-- SETAS -->
+            <button class="seta seta-esq" data-target="track-depoimentos" aria-label="Anterior">&#10094;</button>
+            <button class="seta seta-dir" data-target="track-depoimentos" aria-label="Próximo">&#10095;</button>
+        </div><!-- /slider-wrapper -->
+    </section>
+
     <!-- FAQ -->
     <section class="faq">
         <div class="container">
@@ -132,4 +224,80 @@
 </footer>
 
 </body>
+
+<script>
+// ── SLIDER: setas + swipe de dedo ──────────────────────────
+document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
+    const track      = wrapper.querySelector('.slider-track');
+    const slides     = track.querySelectorAll('.slide');
+    const btnEsq     = wrapper.querySelector('.seta-esq');
+    const btnDir     = wrapper.querySelector('.seta-dir');
+    let atual        = 0;
+
+    function slidesPorVez() {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 640)  return 2;
+        return 1;
+    }
+
+    function totalPaginas() {
+        return Math.ceil(slides.length / slidesPorVez());
+    }
+
+    function ir(indice) {
+        const n = slidesPorVez();
+        atual = Math.max(0, Math.min(indice, slides.length - n));
+        const pct = (atual / slides.length) * 100;
+        track.style.transform = `translateX(-${pct}%)`;
+
+        // pausa todos os vídeos ao trocar slide
+        track.querySelectorAll('video').forEach(v => { v.pause(); });
+        atualizarSetas();
+    }
+
+    function atualizarSetas() {
+        const n = slidesPorVez();
+        btnEsq.style.opacity = atual === 0 ? '0.3' : '1';
+        btnDir.style.opacity = atual >= slides.length - n ? '0.3' : '1';
+    }
+
+    btnEsq.addEventListener('click', () => ir(atual - slidesPorVez()));
+    btnDir.addEventListener('click', () => ir(atual + slidesPorVez()));
+
+    // ── swipe de dedo ──
+    let touchX = 0;
+    track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   e => {
+        const diff = touchX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) ir(diff > 0 ? atual + 1 : atual - 1);
+    });
+
+    // ── botão play individual ──
+    wrapper.querySelectorAll('.play-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const video = btn.previousElementSibling;
+            // pausa todos da seção
+            wrapper.querySelectorAll('video').forEach(v => {
+                v.pause();
+                v.closest('.video-short-box').querySelector('.play-btn').style.opacity = '1';
+            });
+            if (video.paused) {
+                video.play();
+                btn.style.opacity = '0';
+            }
+        });
+    });
+
+    // volta o play quando vídeo termina
+    wrapper.querySelectorAll('video').forEach(v => {
+        v.addEventListener('ended', () => {
+            v.closest('.video-short-box').querySelector('.play-btn').style.opacity = '1';
+        });
+    });
+
+    window.addEventListener('resize', () => ir(0));
+    atualizarSetas();
+});
+</script>
+
 </html>
