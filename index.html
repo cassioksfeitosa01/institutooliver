@@ -109,6 +109,66 @@
                     <p class="slide-nome">Professor 3</p>
                 </div>
 
+                 <!-- SLIDE 4 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="https://midias.institutooliver.online/videos/professores/04-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 4</p>
+                </div>
+
+                 <!-- SLIDE 3 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="SEU_VIDEO_PROFESSOR_3.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 3</p>
+                </div>
+
+                 <!-- SLIDE 3 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="SEU_VIDEO_PROFESSOR_3.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 3</p>
+                </div>
+
+                 <!-- SLIDE 3 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="SEU_VIDEO_PROFESSOR_3.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 3</p>
+                </div>
+
+                 <!-- SLIDE 3 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="SEU_VIDEO_PROFESSOR_3.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 3</p>
+                </div>
+
+                 <!-- SLIDE 3 -->
+                <div class="slide">
+                    <div class="video-short-box">
+                        <video src="SEU_VIDEO_PROFESSOR_3.mp4" preload="metadata" playsinline poster=""></video>
+                        <button class="play-btn" aria-label="Play">&#9654;</button>
+                        <div class="video-borda-dourada"></div>
+                    </div>
+                    <p class="slide-nome">Professor 3</p>
+                </div>
+
             </div><!-- /slider-track -->
 
             <!-- SETAS -->
@@ -128,7 +188,7 @@
                 <!-- SLIDE 1 -->
                 <div class="slide">
                     <div class="video-short-box">
-                        <video src="https://midias.institutooliver.online/videos/professores/03-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <video src="SEU_VIDEO_DEPOIMENTO_1.mp4" preload="metadata" playsinline poster=""></video>
                         <button class="play-btn" aria-label="Play">&#9654;</button>
                         <div class="video-borda-dourada"></div>
                     </div>
@@ -138,7 +198,7 @@
                 <!-- SLIDE 2 -->
                 <div class="slide">
                     <div class="video-short-box">
-                        <video src="https://midias.institutooliver.online/videos/professores/03-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <video src="SEU_VIDEO_DEPOIMENTO_2.mp4" preload="metadata" playsinline poster=""></video>
                         <button class="play-btn" aria-label="Play">&#9654;</button>
                         <div class="video-borda-dourada"></div>
                     </div>
@@ -148,7 +208,7 @@
                 <!-- SLIDE 3 -->
                 <div class="slide">
                     <div class="video-short-box">
-                        <video src="https://midias.institutooliver.online/videos/professores/03-professores-instituto-oliver-escola-preparatoria-online-carreiras-policiais-cursos-superior-site-oficial.mp4.mp4" preload="metadata" playsinline poster=""></video>
+                        <video src="SEU_VIDEO_DEPOIMENTO_3.mp4" preload="metadata" playsinline poster=""></video>
                         <button class="play-btn" aria-label="Play">&#9654;</button>
                         <div class="video-borda-dourada"></div>
                     </div>
@@ -228,11 +288,11 @@
 <script>
 // ── SLIDER: setas + swipe de dedo ──────────────────────────
 document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
-    const track      = wrapper.querySelector('.slider-track');
-    const slides     = track.querySelectorAll('.slide');
-    const btnEsq     = wrapper.querySelector('.seta-esq');
-    const btnDir     = wrapper.querySelector('.seta-dir');
-    let atual        = 0;
+    const track  = wrapper.querySelector('.slider-track');
+    const slides = Array.from(track.querySelectorAll('.slide'));
+    const btnEsq = wrapper.querySelector('.seta-esq');
+    const btnDir = wrapper.querySelector('.seta-dir');
+    let atual = 0;
 
     function slidesPorVez() {
         if (window.innerWidth >= 1024) return 3;
@@ -240,43 +300,49 @@ document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
         return 1;
     }
 
-    function totalPaginas() {
-        return Math.ceil(slides.length / slidesPorVez());
+    function maxIndice() {
+        return Math.max(0, slides.length - slidesPorVez());
     }
 
     function ir(indice) {
-        const n = slidesPorVez();
-        atual = Math.max(0, Math.min(indice, slides.length - n));
-        const pct = (atual / slides.length) * 100;
-        track.style.transform = `translateX(-${pct}%)`;
+        atual = Math.max(0, Math.min(indice, maxIndice()));
 
-        // pausa todos os vídeos ao trocar slide
-        track.querySelectorAll('video').forEach(v => { v.pause(); });
+        // calcula deslocamento em px real (largura do slide + gap)
+        const slideEl  = slides[0];
+        const gap      = 20; // deve bater com o gap do CSS
+        const largura  = slideEl.offsetWidth + gap;
+        track.style.transform = `translateX(-${atual * largura}px)`;
+
+        // pausa todos os vídeos ao trocar
+        track.querySelectorAll('video').forEach(v => v.pause());
+        wrapper.querySelectorAll('.play-btn').forEach(b => b.style.opacity = '1');
         atualizarSetas();
     }
 
     function atualizarSetas() {
-        const n = slidesPorVez();
-        btnEsq.style.opacity = atual === 0 ? '0.3' : '1';
-        btnDir.style.opacity = atual >= slides.length - n ? '0.3' : '1';
+        btnEsq.style.opacity = atual === 0           ? '0.3' : '1';
+        btnDir.style.opacity = atual >= maxIndice()  ? '0.3' : '1';
+        btnEsq.style.pointerEvents = atual === 0          ? 'none' : 'auto';
+        btnDir.style.pointerEvents = atual >= maxIndice() ? 'none' : 'auto';
     }
 
-    btnEsq.addEventListener('click', () => ir(atual - slidesPorVez()));
-    btnDir.addEventListener('click', () => ir(atual + slidesPorVez()));
+    btnEsq.addEventListener('click', () => ir(atual - 1));
+    btnDir.addEventListener('click', () => ir(atual + 1));
 
     // ── swipe de dedo ──
     let touchX = 0;
-    track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend',   e => {
+    track.addEventListener('touchstart', e => {
+        touchX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', e => {
         const diff = touchX - e.changedTouches[0].clientX;
         if (Math.abs(diff) > 40) ir(diff > 0 ? atual + 1 : atual - 1);
     });
 
-    // ── botão play individual ──
+    // ── botão play ──
     wrapper.querySelectorAll('.play-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const video = btn.previousElementSibling;
-            // pausa todos da seção
             wrapper.querySelectorAll('video').forEach(v => {
                 v.pause();
                 v.closest('.video-short-box').querySelector('.play-btn').style.opacity = '1';
@@ -288,16 +354,17 @@ document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
         });
     });
 
-    // volta o play quando vídeo termina
     wrapper.querySelectorAll('video').forEach(v => {
         v.addEventListener('ended', () => {
             v.closest('.video-short-box').querySelector('.play-btn').style.opacity = '1';
         });
     });
 
+    // recalcula ao redimensionar
     window.addEventListener('resize', () => ir(0));
     atualizarSetas();
 });
+</script>
 </script>
 
 </html>
