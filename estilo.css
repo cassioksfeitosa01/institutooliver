@@ -626,18 +626,3 @@ footer img {
         flex: 0 0 calc((100% - 20px) / 2);
     }
 }
-
-/* Esconde o botão de play/pause padrão do navegador (Chrome, Safari, Edge) */
-video::-webkit-media-controls-play-button {
-    display: none !important;
-}
-
-/* Esconde o botão de play central que aparece em alguns celulares */
-video::-webkit-media-controls-start-playback-button {
-    display: none !important;
-}
-
-/* Garante o mesmo comportamento no Firefox */
-video::-moz-media-controls-play-button {
-    display: none !important;
-}
