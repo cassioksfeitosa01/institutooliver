@@ -9,8 +9,7 @@ git add .; git commit -m "atualização nos aquivos "; git push origin main
 <div id="rodape"></div>
 
 
-
-favicon-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
+aluno-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
 
 
 
