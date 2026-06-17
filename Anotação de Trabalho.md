@@ -10,7 +10,7 @@ git add .; git commit -m "atualização nos aquivos "; git push origin main
 
 
 
-capa-venda-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
+favicon-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
 
 
 
