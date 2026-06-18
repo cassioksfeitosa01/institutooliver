@@ -571,15 +571,6 @@ footer {
     background: rgba(201, 168, 76, 0.3);
 }
 
-.slide-nome {
-    color: #ADADAD;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-align: center;
-    background: none !important;
-    padding: 0 !important;
-    display: block !important;
-}
 
 .seta {
     position: absolute;
