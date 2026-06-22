@@ -1,4 +1,8 @@
-/* ---------- VARIÁVEIS COM SUA PALETA OFICIAL ---------- */
+/* ============================================================
+   PADRÃO VISUAL — INFORMAÇÕES LEGAIS (INSTITUTO ÓLIVER)
+   Atende: Privacidade, Termos de Uso e Reembolso
+   ============================================================ */
+
 :root {
     --preto-puro: #000000;
     --preto-card: #0D0D0D;
@@ -7,8 +11,7 @@
     --branco: #FFFFFF;
     --cinza-texto: #ADADAD;
     --cinza-escuro: #1A1A1A;
-    --vermelho-aviso: #A00008;
-    --radius: 6px;
+    --radius: 8px;
 }
 
 /* ---------- RESET E BASE ---------- */
@@ -16,6 +19,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -26,19 +33,22 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Links em geral */
 a {
     color: var(--dourado);
     text-decoration: none;
-    transition: color 0.2s ease;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s ease;
 }
 
 a:hover {
     color: var(--dourado-brilhante);
+    border-bottom-color: var(--dourado-brilhante);
 }
 
-/* ===== TOPO (ESTILO HERO) ===== */
+/* ===== TOPO / HEADER (PADRÃO PREMIUM) ===== */
 .topo {
-    background: linear-gradient(135deg, #000000 0%, #111111 100%);
+    background: linear-gradient(135deg, #000 0%, #111 100%);
     padding: 60px 24px;
     text-align: center;
     border-bottom: 2px solid var(--dourado);
@@ -50,7 +60,7 @@ a:hover {
     background: rgba(201, 168, 76, 0.1);
     border: 1px solid var(--dourado);
     color: var(--dourado-brilhante);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     padding: 6px 16px;
@@ -64,15 +74,15 @@ a:hover {
     font-size: clamp(1.8rem, 5vw, 2.5rem);
     font-weight: 800;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .topo p.subtitulo {
     color: var(--cinza-texto);
     font-size: 1rem;
-    margin-top: 10px;
 }
 
-/* ===== FAIXA DE AVISO (PADRÃO DE URGÊNCIA) ===== */
+/* ===== FAIXA DE AVISO (URGÊNCIA/IMPORTÂNCIA) ===== */
 .faixa-aviso {
     max-width: 850px;
     margin: -25px auto 0;
@@ -82,8 +92,8 @@ a:hover {
     padding: 20px;
     position: relative;
     z-index: 2;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    font-size: 0.9rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    font-size: 0.92rem;
     text-align: center;
     color: var(--branco);
 }
@@ -92,14 +102,14 @@ a:hover {
     color: var(--dourado-brilhante);
 }
 
-/* ===== LAYOUT CENTRALIZADO ===== */
+/* ===== CONTAINER CENTRAL (SEM BARRA LATERAL) ===== */
 .container {
-    max-width: 900px;
+    max-width: 900px; /* Largura otimizada para leitura focada */
     margin: 0 auto;
     padding: 60px 24px 80px;
 }
 
-/* ===== CONTEÚDO (ESTILO CARD PRETO) ===== */
+/* ===== CONTEÚDO (BOX CENTRAL) ===== */
 .conteudo {
     background: var(--preto-card);
     border: 1px solid var(--cinza-escuro);
@@ -112,17 +122,19 @@ a:hover {
     color: var(--dourado);
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    display: block;
 }
 
 .conteudo .intro {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--branco);
     padding-bottom: 30px;
     margin-bottom: 30px;
     border-bottom: 1px solid var(--cinza-escuro);
 }
 
+/* ===== SEÇÕES E TEXTOS ===== */
 .secao {
     margin-bottom: 45px;
 }
@@ -131,7 +143,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 800;
     color: var(--branco);
     margin-bottom: 20px;
@@ -139,11 +151,12 @@ a:hover {
 }
 
 .secao h2 .numero {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--dourado);
     border: 1px solid var(--dourado);
-    padding: 2px 8px;
+    padding: 2px 10px;
     border-radius: 4px;
+    flex-shrink: 0;
 }
 
 .secao p {
@@ -152,59 +165,59 @@ a:hover {
     color: var(--cinza-texto);
 }
 
-.secao ul {
-    margin: 18px 0;
-    padding-left: 25px;
-    list-style: none;
-}
-
-.secao li {
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.secao li::before {
-    content: "⚡"; /* Ícone que combina com seu estilo */
-    position: absolute;
-    left: -25px;
-    color: var(--dourado);
-    font-size: 0.8rem;
-}
-
 .secao strong {
     color: var(--branco);
 }
 
-/* ===== DESTAQUE (ESTILO FRASE VERMELHA) ===== */
+/* Estilização das Listas (Importante para Termos e Reembolso) */
+.secao ul {
+    margin: 20px 0 20px 25px;
+    list-style: none;
+}
+
+.secao li {
+    margin-bottom: 12px;
+    position: relative;
+    color: var(--cinza-texto);
+    padding-left: 5px;
+}
+
+.secao li::before {
+    content: "●"; /* Marcador circular sólido */
+    position: absolute;
+    left: -25px;
+    color: var(--dourado);
+    font-size: 0.8rem;
+    top: 2px;
+}
+
+/* ===== BOX DE DESTAQUE (CÓDIGO DO CONSUMIDOR, ETC) ===== */
 .destaque {
-    background: rgba(160, 0, 8, 0.1);
-    border-left: 4px solid var(--vermelho-aviso);
-    padding: 20px;
+    background: rgba(201, 168, 76, 0.05);
+    border-left: 4px solid var(--dourado);
+    padding: 20px 25px;
     border-radius: 4px;
     margin: 25px 0;
     color: var(--branco);
+    font-size: 0.95rem;
 }
 
-/* ===== CARD DE CONTATO (DENTRO DO PADRÃO DO SITE) ===== */
+/* ===== CARD DE CONTATO (FINAL DA PÁGINA) ===== */
 .card-contato {
     background: linear-gradient(135deg, #000 0%, #111 100%);
     border: 1px solid var(--dourado);
     border-radius: var(--radius);
     padding: 40px;
-    color: var(--cinza-texto);
+    margin-top: 20px;
 }
 
 .card-contato h2 { 
-    color: var(--dourado-brilhante) !important; 
-    border: none;
+    color: var(--dourado-brilhante) !important;
 }
 
 .card-contato p {
     margin-bottom: 8px;
-}
-
-.card-contato strong {
-    color: var(--branco);
+    font-size: 0.95rem;
 }
 
 /* ===== RODAPÉ ===== */
@@ -212,23 +225,34 @@ a:hover {
     text-align: center;
     padding: 40px 24px;
     border-top: 2px solid var(--dourado);
-    background-color: var(--preto-puro);
     color: var(--cinza-texto);
-    font-size: 0.8rem;
+    font-size: 0.82rem;
+    background-color: var(--preto-puro);
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ===== RESPONSIVIDADE (MOBILE) ===== */
 @media (max-width: 768px) {
     .conteudo {
         padding: 30px 20px;
     }
     
     .topo {
-        padding: 40px 20px;
+        padding: 45px 20px;
     }
 
     .faixa-aviso {
-        width: 95%;
+        width: 92%;
         margin-top: -15px;
+        font-size: 0.85rem;
+        padding: 15px;
+    }
+
+    .secao h2 {
+        font-size: 1.15rem;
+        align-items: flex-start;
+    }
+
+    .secao h2 .numero {
+        margin-top: 3px;
     }
 }

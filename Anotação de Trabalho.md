@@ -1,5 +1,5 @@
-
-git add .; git commit -m "atualização nos aquivos "; git push origin main
+main
+git add .; git commit -m "atualização nos aquivos "; git push origin 
 
    <!--TODO: Google Tag Manager -->
    <script src="/assets/javascript/gtm-otimizado.js" defer></script>
