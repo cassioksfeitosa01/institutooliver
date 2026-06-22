@@ -1,198 +1,234 @@
+/* ---------- VARIÁVEIS COM SUA PALETA OFICIAL ---------- */
 :root {
-    --azul-marinho: #0F2A47;
-    --azul-petroleo: #14406B;
-    --dourado: #C9A227;
-    --dourado-claro: #E4C766;
-    --cinza-texto: #3D4754;
-    --cinza-claro: #6B7686;
-    --fundo-pagina: #F7F8FA;
-    --fundo-card: #FFFFFF;
-    --linha-divisoria: #E3E7ED;
-    --aviso-fundo: #FFF8E8;
-    --aviso-borda: #C9A227;
-    --radius: 10px;
-    --sombra: 0 4px 18px rgba(15, 42, 71, 0.07);
+    --preto-puro: #000000;
+    --preto-card: #0D0D0D;
+    --dourado: #C9A84C;
+    --dourado-brilhante: #FFD700;
+    --branco: #FFFFFF;
+    --cinza-texto: #ADADAD;
+    --cinza-escuro: #1A1A1A;
+    --vermelho-aviso: #A00008;
+    --radius: 6px;
 }
 
+/* ---------- RESET E BASE ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Montserrat', sans-serif;
-    background: var(--fundo-pagina);
+    background-color: var(--preto-puro);
     color: var(--cinza-texto);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
 
 a {
-    color: var(--azul-petroleo);
+    color: var(--dourado);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    color: var(--dourado);
-    border-bottom-color: var(--dourado);
+    color: var(--dourado-brilhante);
 }
 
-/* ===== TOPO ===== */
+/* ===== TOPO (ESTILO HERO) ===== */
 .topo {
-    background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-petroleo) 100%);
-    padding: 40px 24px;
+    background: linear-gradient(135deg, #000000 0%, #111111 100%);
+    padding: 60px 24px;
     text-align: center;
+    border-bottom: 2px solid var(--dourado);
 }
 
 .topo .selo {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(201, 162, 39, 0.5);
-    color: var(--dourado-claro);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    background: rgba(201, 168, 76, 0.1);
+    border: 1px solid var(--dourado);
+    color: var(--dourado-brilhante);
+    font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
     padding: 6px 16px;
-    border-radius: 999px;
-    margin-bottom: 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
 }
 
 .topo h1 {
-    color: #FFFFFF;
-    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    color: var(--branco);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     font-weight: 800;
+    text-transform: uppercase;
 }
 
 .topo p.subtitulo {
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 0.95rem;
-    margin-top: 8px;
+    color: var(--cinza-texto);
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
-/* ===== FAIXA DE AVISO ===== */
+/* ===== FAIXA DE AVISO (PADRÃO DE URGÊNCIA) ===== */
 .faixa-aviso {
-    max-width: 800px;
-    margin: -22px auto 0;
-    background: var(--aviso-fundo);
-    border: 1px solid var(--aviso-borda);
+    max-width: 850px;
+    margin: -25px auto 0;
+    background: var(--preto-card);
+    border: 1px solid var(--dourado);
     border-radius: var(--radius);
-    padding: 18px 22px;
+    padding: 20px;
     position: relative;
     z-index: 2;
-    box-shadow: var(--sombra);
-    font-size: 0.92rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    font-size: 0.9rem;
     text-align: center;
+    color: var(--branco);
 }
 
-/* ===== LAYOUT PRINCIPAL (CENTRALIZADO) ===== */
+.faixa-aviso strong {
+    color: var(--dourado-brilhante);
+}
+
+/* ===== LAYOUT CENTRALIZADO ===== */
 .container {
-    max-width: 850px; /* Largura focada na leitura */
+    max-width: 900px;
     margin: 0 auto;
-    padding: 40px 24px 80px;
+    padding: 60px 24px 80px;
 }
 
-/* ===== CONTEÚDO ===== */
+/* ===== CONTEÚDO (ESTILO CARD PRETO) ===== */
 .conteudo {
-    background: var(--fundo-card);
-    border: 1px solid var(--linha-divisoria);
+    background: var(--preto-card);
+    border: 1px solid var(--cinza-escuro);
     border-radius: var(--radius);
-    padding: 44px 48px;
+    padding: 50px;
 }
 
 .conteudo .atualizado {
-    font-size: 0.82rem;
-    color: var(--cinza-claro);
-    font-weight: 500;
-    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: var(--dourado);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 .conteudo .intro {
-    font-size: 1.05rem;
-    color: var(--cinza-texto);
-    padding-bottom: 28px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--linha-divisoria);
+    font-size: 1.1rem;
+    color: var(--branco);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--cinza-escuro);
 }
 
 .secao {
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 .secao h2 {
     display: flex;
-    align-items: baseline;
-    gap: 12px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--azul-marinho);
-    margin-bottom: 16px;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--branco);
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .secao h2 .numero {
-    font-size: 0.9rem;
-    font-weight: 800;
+    font-size: 1rem;
     color: var(--dourado);
+    border: 1px solid var(--dourado);
+    padding: 2px 8px;
+    border-radius: 4px;
 }
 
 .secao p {
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     font-size: 1rem;
+    color: var(--cinza-texto);
 }
 
 .secao ul {
-    margin: 14px 0;
-    padding-left: 22px;
+    margin: 18px 0;
+    padding-left: 25px;
+    list-style: none;
 }
 
 .secao li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.secao li::before {
+    content: "⚡"; /* Ícone que combina com seu estilo */
+    position: absolute;
+    left: -25px;
+    color: var(--dourado);
+    font-size: 0.8rem;
+}
+
+.secao strong {
+    color: var(--branco);
+}
+
+/* ===== DESTAQUE (ESTILO FRASE VERMELHA) ===== */
+.destaque {
+    background: rgba(160, 0, 8, 0.1);
+    border-left: 4px solid var(--vermelho-aviso);
+    padding: 20px;
+    border-radius: 4px;
+    margin: 25px 0;
+    color: var(--branco);
+}
+
+/* ===== CARD DE CONTATO (DENTRO DO PADRÃO DO SITE) ===== */
+.card-contato {
+    background: linear-gradient(135deg, #000 0%, #111 100%);
+    border: 1px solid var(--dourado);
+    border-radius: var(--radius);
+    padding: 40px;
+    color: var(--cinza-texto);
+}
+
+.card-contato h2 { 
+    color: var(--dourado-brilhante) !important; 
+    border: none;
+}
+
+.card-contato p {
     margin-bottom: 8px;
 }
 
-.destaque {
-    background: var(--fundo-pagina);
-    border-left: 4px solid var(--dourado);
-    padding: 20px;
-    border-radius: 6px;
-    margin: 20px 0;
+.card-contato strong {
+    color: var(--branco);
 }
-
-/* ===== CARD DE CONTATO ===== */
-.card-contato {
-    background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-petroleo) 100%);
-    border-radius: 8px;
-    padding: 30px;
-    color: rgba(255, 255, 255, 0.92);
-}
-
-.card-contato h2 { color: #FFFFFF !important; }
-.card-contato h2 .numero { color: var(--dourado-claro) !important; }
-.card-contato a { color: var(--dourado-claro); border-bottom-color: rgba(228, 199, 102, 0.4); }
 
 /* ===== RODAPÉ ===== */
 .rodape {
     text-align: center;
     padding: 40px 24px;
-    color: var(--cinza-claro);
-    font-size: 0.85rem;
+    border-top: 2px solid var(--dourado);
+    background-color: var(--preto-puro);
+    color: var(--cinza-texto);
+    font-size: 0.8rem;
 }
 
-/* ===== RESPONSIVO ===== */
-@media (max-width: 600px) {
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
     .conteudo {
         padding: 30px 20px;
     }
     
-    .topo h1 {
-        font-size: 1.6rem;
+    .topo {
+        padding: 40px 20px;
+    }
+
+    .faixa-aviso {
+        width: 95%;
+        margin-top: -15px;
     }
 }
