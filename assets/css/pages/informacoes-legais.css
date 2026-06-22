@@ -1,0 +1,192 @@
+:root {
+    --azul-marinho: #0F2A47;
+    --azul-petroleo: #14406B;
+    --dourado: #C9A227;
+    --dourado-claro: #E4C766;
+    --cinza-texto: #3D4754;
+    --cinza-claro: #6B7686;
+    --fundo-pagina: #F7F8FA;
+    --fundo-card: #FFFFFF;
+    --linha-divisoria: #E3E7ED;
+    --aviso-fundo: #FFF8E8;
+    --aviso-borda: #C9A227;
+    --radius: 10px;
+    --sombra: 0 4px 18px rgba(15, 42, 71, 0.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--fundo-pagina);
+    color: var(--cinza-texto);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--azul-petroleo);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    color: var(--dourado);
+    border-bottom-color: var(--dourado);
+}
+
+/* ===== TOPO ===== */
+.topo {
+    background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-petroleo) 100%);
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.topo .selo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(201, 162, 39, 0.5);
+    color: var(--dourado-claro);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.topo h1 {
+    color: #FFFFFF;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    font-weight: 800;
+}
+
+.topo p.subtitulo {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+/* ===== FAIXA DE AVISO ===== */
+.faixa-aviso {
+    max-width: 800px;
+    margin: -22px auto 0;
+    background: var(--aviso-fundo);
+    border: 1px solid var(--aviso-borda);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--sombra);
+    font-size: 0.92rem;
+    text-align: center;
+}
+
+/* ===== LAYOUT PRINCIPAL (CENTRALIZADO) ===== */
+.container {
+    max-width: 850px; /* Largura focada na leitura */
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+/* ===== CONTEÚDO ===== */
+.conteudo {
+    background: var(--fundo-card);
+    border: 1px solid var(--linha-divisoria);
+    border-radius: var(--radius);
+    padding: 44px 48px;
+}
+
+.conteudo .atualizado {
+    font-size: 0.82rem;
+    color: var(--cinza-claro);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.conteudo .intro {
+    font-size: 1.05rem;
+    color: var(--cinza-texto);
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--linha-divisoria);
+}
+
+.secao {
+    margin-bottom: 40px;
+}
+
+.secao h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--azul-marinho);
+    margin-bottom: 16px;
+}
+
+.secao h2 .numero {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--dourado);
+}
+
+.secao p {
+    margin-bottom: 14px;
+    font-size: 1rem;
+}
+
+.secao ul {
+    margin: 14px 0;
+    padding-left: 22px;
+}
+
+.secao li {
+    margin-bottom: 8px;
+}
+
+.destaque {
+    background: var(--fundo-pagina);
+    border-left: 4px solid var(--dourado);
+    padding: 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+/* ===== CARD DE CONTATO ===== */
+.card-contato {
+    background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-petroleo) 100%);
+    border-radius: 8px;
+    padding: 30px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.card-contato h2 { color: #FFFFFF !important; }
+.card-contato h2 .numero { color: var(--dourado-claro) !important; }
+.card-contato a { color: var(--dourado-claro); border-bottom-color: rgba(228, 199, 102, 0.4); }
+
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+    .conteudo {
+        padding: 30px 20px;
+    }
+    
+    .topo h1 {
+        font-size: 1.6rem;
+    }
+}
