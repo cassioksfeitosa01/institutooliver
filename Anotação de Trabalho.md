@@ -2,12 +2,6 @@
 git add .; git commit -m "atualização nos arquivos"; git push
 
 
-   <!--TODO: Google Tag Manager -->
-   <script src="/assets/javascript/gtm-otimizado.js" defer></script>
-
-   <script src="assets/javascript/carregador-componentes.js"></script>
-
-
 
 aluno-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
 
@@ -22,6 +16,9 @@ aluno-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
     <a href="" class="botao-padrao">
 
 
+
+<!-- SCRIPT DOS VÍDEOS -->
+<script src="/assets/javascript/montador-de-paginas.js"></script>
 
 <div data-component="professores"></div>
 <div data-component="mateus-oliver"></div>
