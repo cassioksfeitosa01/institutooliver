@@ -20,8 +20,8 @@ body {
    ============================================================ */
 h1 {
     font-size: clamp(1.8rem, 5vw, 3rem);
-    font-weight: 800;
-    text-transform: uppercase;
+    font-weight: 500;
+    text-transform: none;
     letter-spacing: 0.5px;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -79,7 +79,14 @@ p {
     border-radius: 4px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(201, 168, 76, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.botao-padrao:hover,
+.btn:hover,
+.botao-padrao:active,
+.btn:active {
+    transform: translateY(-4px);
 }
 
 /* ============================================================

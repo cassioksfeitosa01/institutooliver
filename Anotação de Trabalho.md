@@ -7,7 +7,6 @@ git add .; git commit -m "atualização nos arquivos"; git push
 
    <script src="assets/javascript/carregador-componentes.js"></script>
 
-<div id="rodape"></div>
 
 
 aluno-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
@@ -21,6 +20,14 @@ aluno-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
     <h3 class="subtitulo">
     <p class="descricao">
     <a href="" class="botao-padrao">
+
+
+
+<div data-component="professores"></div>
+<div data-component="mateus-oliver"></div>
+<div data-component="footer"></div>
+<div data-component="depoimentos-videos"></div>
+<div data-component="depoimentos-fotos"></div> 
 
 
 

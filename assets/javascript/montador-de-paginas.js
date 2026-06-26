@@ -1,4 +1,44 @@
+
+// INJETOR DE COMPONENTES — carrega HTML de /components/*.html
+
+(function () {
+    const CAMINHO_COMPONENTS = '/components/';
+
+    async function carregarComponente(div) {
+        const nome = div.getAttribute('data-component');
+        if (!nome) return;
+
+        try {
+            const resposta = await fetch(`${CAMINHO_COMPONENTS}${nome}.html`);
+            if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+
+            div.innerHTML = await resposta.text();
+            div.setAttribute('data-component-status', 'carregado');
+        } catch (erro) {
+            console.error(`Erro ao carregar componente "${nome}":`, erro);
+            div.setAttribute('data-component-status', 'erro');
+        }
+    }
+
+    async function carregarTodosComponentes() {
+        const divs = document.querySelectorAll('[data-component]');
+        await Promise.all(Array.from(divs).map(carregarComponente));
+
+        // Avisa o resto do arquivo (o slider, lá embaixo) que já
+        // pode procurar os elementos, porque eles já existem agora.
+        document.dispatchEvent(new CustomEvent('components:loaded'));
+    }
+
+    document.addEventListener('DOMContentLoaded', carregarTodosComponentes);
+})();
+
+
 // ── SLIDER: setas + swipe de dedo ──────────────────────────
+// (código original, sem nenhuma alteração — só passou a rodar
+//  dentro do evento "components:loaded" em vez de direto, porque
+//  os vídeos só existem na página depois que o componente carrega)
+
+document.addEventListener('components:loaded', function () {
 
     document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
         const track = wrapper.querySelector('.slider-track');
@@ -86,3 +126,5 @@
         window.addEventListener('resize', () => ir(0));
         atualizarSetas();
     });
+
+});
