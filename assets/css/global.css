@@ -463,3 +463,35 @@ footer {
         align-items: center;
     }
 }
+
+/* ============================================================
+   DEPOIMENTOS — MOSAICO DE FOTOS
+   ============================================================ */
+.depoimentos-mosaico {
+    background-color: #000000;
+    padding: 70px 0;
+}
+
+.mosaico-grid {
+    column-count: 4;
+    column-gap: 14px;
+}
+
+.mosaico-grid img {
+    width: 100%;
+    display: block;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    border: 1px solid #2A2A2A;
+}
+
+@media (max-width: 768px) {
+    .mosaico-grid {
+        column-count: 2;
+        column-gap: 10px;
+    }
+
+    .mosaico-grid img {
+        margin-bottom: 10px;
+    }
+}
