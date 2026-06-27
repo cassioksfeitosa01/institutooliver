@@ -162,13 +162,13 @@
 }
 
 .card-preto h3 {
-    color: #FFFFFF;
+    color: #DBAF00;
 }
 
 .card-preto p {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #C9A84C;
+    color: #FFFFFF;
 }
 
 /* ============================================================
@@ -237,7 +237,6 @@ details[name="faq"] > p {
 
     .features ul {
         flex-direction: column;
-        align-items: center;
         gap: 8px;
     }
 
