@@ -46,6 +46,11 @@ h2 {
     margin-bottom: 1.2rem;
 }
 
+.h2-dourado {
+    color: #DBAF00;
+    -webkit-text-fill-color: #DBAF00;
+}
+
 /* ---------- H3 ---------- */
 h3 {
     font-size: clamp(1.1rem, 2.5vw, 1.5rem);
@@ -242,7 +247,7 @@ p {
 
 .bio-texto h3 {
     font-size: clamp(1.3rem, 3vw, 1.9rem);
-    color: #C9A84C;
+    color: #DBAF00;
     margin-bottom: 1rem;
 }
 
@@ -304,7 +309,7 @@ footer {
 }
 
 .footer-titulo {
-    color: #C9A84C;
+    color: #DBAF00;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
