@@ -1,0 +1,57 @@
+/* Configura a seção como a base para o posicionamento */
+section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Faz a imagem ocupar toda a largura da seção */
+.caixa-imagem img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Faz o texto flutuar em cima da imagem */
+/* Faz o texto flutuar em cima da imagem */
+.caixa-texto {
+  position: absolute;
+  
+  padding: 0 20px;   /* Cria uma barreira de 20px nas laterais para o texto não encostar */
+
+  /* Garante que o texto fique por cima de tudo */
+  z-index: 2; 
+  
+  /* Centraliza as linhas de texto */
+  text-align: center;
+}
+
+/* AJUSTE DE CADA SEÇÃO */
+
+#curso-gestao-de-seguranca-publica-e-privada {
+  padding-bottom: 200px;
+  
+}
+
+
+#cursos-superiores {
+  padding-bottom: 130px;
+  background-color: #000000;
+}
+
+
+
+/* AJUSTE DE TEXTO CADA SEÇÃO */
+#inicio .caixa-texto {
+top: 55%;
+
+}
+
+#cursos-superiores .caixa-texto{
+  top: 45%;
+}
+
+#curso-gestao-de-seguranca-publica-e-privada .caixa-texto {
+ top: 50%; 
+}
+  

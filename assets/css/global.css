@@ -25,6 +25,7 @@ h1 {
     letter-spacing: 0.5px;
     line-height: 1.2;
     margin-bottom: 1rem;
+    color: #DBAF00;
 }
 
 .h1-dourado {
@@ -41,7 +42,7 @@ h1 {
 h2 {
     font-size: clamp(1.4rem, 3.5vw, 2.2rem);
     font-weight: 800;
-    color: #FFFFFF;
+    color: #DBAF00;
     letter-spacing: 0.3px;
     margin-bottom: 1.2rem;
 }
@@ -49,6 +50,11 @@ h2 {
 .h2-dourado {
     color: #DBAF00;
     -webkit-text-fill-color: #DBAF00;
+}
+
+.h2-branco {
+    color: #FFFFFF;
+    -webkit-text-fill-color: #FFFFFF;
 }
 
 /* ---------- H3 ---------- */
