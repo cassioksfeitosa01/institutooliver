@@ -128,3 +128,39 @@ document.addEventListener('components:loaded', function () {
     });
 
 });
+
+// ── LIGHTBOX: ampliar foto de depoimento ───────────────────
+// (bloco novo e isolado — escuta o mesmo evento "components:loaded"
+//  do slider, mas não toca em nenhuma lógica do slider)
+
+document.addEventListener('components:loaded', function () {
+
+    const grid = document.querySelector('.mosaico-grid');
+    if (!grid) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<span class="lightbox-fechar">&times;</span><img class="lightbox-img" src="" alt="">';
+    document.body.appendChild(overlay);
+
+    const imgGrande = overlay.querySelector('.lightbox-img');
+    const btnFechar = overlay.querySelector('.lightbox-fechar');
+
+    grid.querySelectorAll('img').forEach(img => {
+        img.addEventListener('click', () => {
+            imgGrande.src = img.src;
+            overlay.classList.add('ativo');
+        });
+    });
+
+    function fechar() {
+        overlay.classList.remove('ativo');
+        imgGrande.src = '';
+    }
+
+    btnFechar.addEventListener('click', fechar);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) fechar();
+    });
+
+});

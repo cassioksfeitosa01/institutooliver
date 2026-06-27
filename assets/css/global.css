@@ -495,3 +495,49 @@ footer {
         margin-bottom: 10px;
     }
 }
+
+/* ============================================================
+   LIGHTBOX — ampliar foto de depoimento
+   ============================================================ */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.lightbox-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 6px;
+    border: 2px solid #C9A84C;
+    display: block;
+}
+
+.lightbox-fechar {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    color: #FFFFFF;
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.mosaico-grid img {
+    cursor: pointer;
+}
