@@ -15,18 +15,14 @@
     <link rel="icon" type="image/avif"
         href="https://midias.institutooliver.online/imagens/computador/home/favicon-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial.avif">
 
-        <head>
     <!-- Preload da versão para computador (telas grandes) -->
     <link rel="preload" fetchpriority="high" as="image" href="https://midias.institutooliver.online/imagens/computador/home/capa-venda-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial.avif" type="image/avif" media="(min-width: 769px)">
 
     <!-- Preload da versão para celular (telas pequenas) -->
     <link rel="preload" fetchpriority="high" as="image" href="https://midias.institutooliver.online/imagens/celular/home/capa-venda-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial%20(2).avif" type="image/avif" media="(max-width: 768px)">
-</head>
 
-
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/cursos-superiores.css">
-
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/venda-cursos-superiores.css">
 
 </head>
 
@@ -34,7 +30,7 @@
     <main>
 
         <!-- HERO -->
-        <section class="video-section">
+        <section id="hero">
             <!-- fundo decorativo -->
             <div class="video-bg">
                 <picture>
@@ -59,7 +55,7 @@
         </section>
 
         <!-- INFO RÁPIDA -->
-        <section class="features">
+        <section id="features">
             <div class="container">
                 <ul>
                     <li>EAD - Estude de onde quiser</li>
@@ -73,7 +69,7 @@
         </section>
 
         <!-- CARDS DE PREÇO -->
-        <section class="pricing">
+        <section id="pricing">
             <div class="container">
                 <h2 style="text-align: center;"><span class="h1-dourado">Não perca tempo,</span><span class="h1-branco"> confira abaixo os preços de compra </span> e garanta seu nível superior<span class="h1-branco"> agora mesmo!</span> </h2>
                 <div class="pricing-row">
@@ -95,14 +91,8 @@
             </div>
         </section>
 
-        <div data-component="professores"></div>
-
-        <div data-component="depoimentos-videos"></div>
-
-        <div data-component="depoimentos-fotos"></div>
-
         <!-- FAQ -->
-        <section class="faq">
+        <section id="faq">
             <div class="container">
                 <h2><span class="h2-dourado">FAQ</span> - Principais Dúvidas</h2>
 
@@ -203,15 +193,17 @@
 
             </div>
         </section>
-
+         
+        <!-- MATEUS OLIVER -->
         <div data-component="mateus-oliver"></div>
 
     </main>
-    
-<div data-component="footer"></div>
 
-<!-- SCRIPT DOS VÍDEOS -->
-<script src="/assets/javascript/montador-de-paginas.js"></script>
+          <!-- RODA PÉ -->
+        <div data-component="footer"></div>
+    
+<!-- SCRIPT QUE INJETA COMPONENTES E MOVIMENTOS DE VÍDEOS E FOTOS -->
+<script src="/javascript/montador-de-paginas.js"></script>
 
 </body>
 
