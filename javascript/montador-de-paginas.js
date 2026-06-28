@@ -1,4 +1,3 @@
-
 // INJETOR DE COMPONENTES — carrega HTML de /components/*.html
 
 (function () {
@@ -24,7 +23,7 @@
         const divs = document.querySelectorAll('[data-component]');
         await Promise.all(Array.from(divs).map(carregarComponente));
 
-        // Avisa o resto do arquivo (o slider, lá embaixo) que já
+        // Avisa o resto do arquivo (o slider, o menu, etc.) que já
         // pode procurar os elementos, porque eles já existem agora.
         document.dispatchEvent(new CustomEvent('components:loaded'));
     }
@@ -161,6 +160,200 @@ document.addEventListener('components:loaded', function () {
     btnFechar.addEventListener('click', fechar);
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) fechar();
+    });
+
+});
+
+// ── MENU HAMBÚRGUER: abrir/fechar painel, acordeão e busca ──
+// (bloco novo — escuta o mesmo evento "components:loaded" porque
+//  o menu inteiro só existe na página depois que o /components/menu.html
+//  é injetado pelo bloco do topo deste arquivo)
+
+document.addEventListener('components:loaded', function () {
+
+    const menuPanel = document.getElementById('menuPanel');
+    if (!menuPanel) return; // esta página não tem o componente do menu, então não faz nada
+
+    /* ---------- Abrir / fechar o painel (hambúrguer -> X) ---------- */
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const overlay = document.getElementById('overlay');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+    function toggleMenu() {
+        hamburgerBtn.classList.toggle('active');
+        menuPanel.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+
+    function fecharMenu() {
+        hamburgerBtn.classList.remove('active');
+        menuPanel.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+
+    hamburgerBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', fecharMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', fecharMenu);
+
+    /* ---------- Acordeão: abre/fecha qualquer categoria ao clicar ---------- */
+    // Pega TODOS os ".menu-item" que têm uma "div.item-label" clicável
+    // (ou seja: que NÃO são link <a> — esses têm filhos pra abrir/fechar)
+    const todasCategorias = menuPanel.querySelectorAll('.menu-item');
+
+    todasCategorias.forEach(item => {
+        const label = item.querySelector(':scope > .item-label');
+        const submenu = item.querySelector(':scope > .submenu');
+
+        // Se o label for uma tag <a>, é link direto — não tem o que abrir/fechar
+        if (!submenu || label.tagName === 'A') return;
+
+        label.addEventListener('click', () => {
+            const estaAberto = item.classList.contains('open');
+            item.classList.toggle('open');
+            submenu.style.maxHeight = estaAberto ? null : submenu.scrollHeight + 'px';
+
+            // Se algum pai estava aberto, recalcula a altura dele também,
+            // porque o filho cresceu/diminuiu (efeito em cascata)
+            let pai = item.parentElement.closest('.menu-item');
+            while (pai) {
+                const submenuPai = pai.querySelector(':scope > .submenu');
+                if (pai.classList.contains('open') && submenuPai) {
+                    submenuPai.style.maxHeight = submenuPai.scrollHeight + 'px';
+                }
+                pai = pai.parentElement.closest('.menu-item');
+            }
+        });
+    });
+
+    /* ---------- Busca dentro do menu ---------- */
+    const searchInput = document.getElementById('menuSearchInput');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const searchCount = document.getElementById('searchCount');
+    const noResults = document.getElementById('noResults');
+
+    // Lista plana com todos os itens, pra busca não precisar
+    // varrer a árvore inteira toda vez
+    const todosOsItens = Array.from(todasCategorias).map(item => {
+        const label = item.querySelector(':scope > .item-label');
+        const labelTextEl = label.querySelector('.label-text');
+        return {
+            item,
+            labelTextEl,
+            textoOriginal: labelTextEl.textContent,
+            submenu: item.querySelector(':scope > .submenu')
+        };
+    });
+
+    function normalizar(str) {
+        return str
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase();
+    }
+
+    function destacar(el, textoOriginal, queryNormalizada) {
+        if (!queryNormalizada) {
+            el.textContent = textoOriginal;
+            return;
+        }
+        const textoNormalizado = normalizar(textoOriginal);
+        const idx = textoNormalizado.indexOf(queryNormalizada);
+        if (idx === -1) {
+            el.textContent = textoOriginal;
+            return;
+        }
+        const antes = textoOriginal.slice(0, idx);
+        const trecho = textoOriginal.slice(idx, idx + queryNormalizada.length);
+        const depois = textoOriginal.slice(idx + queryNormalizada.length);
+
+        el.innerHTML = '';
+        el.append(document.createTextNode(antes));
+        const marcado = document.createElement('mark');
+        marcado.className = 'hl';
+        marcado.textContent = trecho;
+        el.appendChild(marcado);
+        el.append(document.createTextNode(depois));
+    }
+
+    function abrirAncestrais(item) {
+        let pai = item.parentElement.closest('.menu-item');
+        while (pai) {
+            pai.classList.add('open');
+            const submenuPai = pai.querySelector(':scope > .submenu');
+            if (submenuPai) submenuPai.style.maxHeight = submenuPai.scrollHeight + 'px';
+            pai = pai.parentElement.closest('.menu-item');
+        }
+    }
+
+    function fecharTudo() {
+        todosOsItens.forEach(({ item, submenu }) => {
+            item.classList.remove('open');
+            if (submenu) submenu.style.maxHeight = null;
+        });
+    }
+
+    function executarBusca() {
+        const query = normalizar(searchInput.value.trim());
+        clearBtn.classList.toggle('show', query.length > 0);
+
+        if (!query) {
+            todosOsItens.forEach(({ item, labelTextEl, textoOriginal }) => {
+                item.classList.remove('hidden-by-search');
+                destacar(labelTextEl, textoOriginal, '');
+            });
+            fecharTudo();
+            searchCount.classList.remove('show');
+            noResults.classList.remove('show');
+            return;
+        }
+
+        let totalEncontrados = 0;
+        const itensParaMostrar = new Set();
+
+        todosOsItens.forEach(({ item, textoOriginal }) => {
+            if (normalizar(textoOriginal).includes(query)) {
+                totalEncontrados++;
+                itensParaMostrar.add(item);
+
+                let pai = item.parentElement.closest('.menu-item');
+                while (pai) {
+                    itensParaMostrar.add(pai);
+                    pai = pai.parentElement.closest('.menu-item');
+                }
+            }
+        });
+
+        todosOsItens.forEach(({ item, labelTextEl, textoOriginal }) => {
+            const textoNormalizado = normalizar(textoOriginal);
+            if (itensParaMostrar.has(item)) {
+                item.classList.remove('hidden-by-search');
+                destacar(labelTextEl, textoOriginal, textoNormalizado.includes(query) ? query : '');
+            } else {
+                item.classList.add('hidden-by-search');
+            }
+        });
+
+        fecharTudo();
+        todosOsItens.forEach(({ item, textoOriginal, submenu }) => {
+            if (normalizar(textoOriginal).includes(query)) {
+                abrirAncestrais(item);
+                if (submenu) {
+                    item.classList.add('open');
+                    submenu.style.maxHeight = submenu.scrollHeight + 'px';
+                }
+            }
+        });
+
+        searchCount.textContent = `${totalEncontrados} resultado${totalEncontrados === 1 ? '' : 's'} encontrado${totalEncontrados === 1 ? '' : 's'}`;
+        searchCount.classList.add('show');
+        noResults.classList.toggle('show', totalEncontrados === 0);
+    }
+
+    searchInput.addEventListener('input', executarBusca);
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        executarBusca();
+        searchInput.focus();
     });
 
 });

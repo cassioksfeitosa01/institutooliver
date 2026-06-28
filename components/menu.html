@@ -1,0 +1,246 @@
+<header>
+  <a href="index.html" class="logo">
+    <img src="https://midias.institutooliver.online/imagens/logotipo/logo-instituto-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial.avif" alt="Instituto Oliver">
+  </a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+<nav class="menu-panel" id="menuPanel">
+  <div class="menu-panel-header">
+    <span>Menu</span>
+    <button class="close-menu-btn" id="closeMenuBtn" aria-label="Fechar menu">✕</button>
+  </div>
+
+  <div class="menu-search">
+    <input type="text" id="menuSearchInput" placeholder="Buscar no menu..." autocomplete="off">
+    <button class="clear-btn" id="clearSearchBtn" aria-label="Limpar busca">✕</button>
+    <div class="search-count" id="searchCount"></div>
+  </div>
+
+  <div class="menu-scroll" id="menuTree">
+
+    <!-- ===========================================================
+         ITEM SIMPLES (sem filhos) — é só um link direto
+         =========================================================== -->
+    <div class="menu-item level-1">
+      <a class="item-label" href="index.html">
+        <span class="label-text">Início</span>
+      </a>
+    </div>
+
+    <!-- ===========================================================
+         CATEGORIA COM FILHOS (nível 2) — "Cursos Superiores"
+         Estrutura: .menu-item > .item-label (clicável) + .submenu
+         =========================================================== -->
+    <div class="menu-item level-1">
+      <div class="item-label">
+        <span class="label-text">Cursos Superiores</span>
+        <span class="arrow">›</span>
+      </div>
+      <div class="submenu">
+
+        <div class="menu-item level-2">
+          <a class="item-label" href="#">
+            <span class="label-text">Curso 1</span>
+          </a>
+        </div>
+
+        <div class="menu-item level-2">
+          <a class="item-label" href="#">
+            <span class="label-text">Curso 2</span>
+          </a>
+        </div>
+
+        <div class="menu-item level-2">
+          <a class="item-label" href="#">
+            <span class="label-text">Curso 3</span>
+          </a>
+        </div>
+
+        <!-- 👆 EXEMPLO: copie um bloco ".menu-item level-2" acima
+             e cole quantas vezes precisar pra criar Curso 4, 5, 6... -->
+
+      </div>
+    </div>
+
+    <!-- ===========================================================
+         CATEGORIA COM SUB-SUBCATEGORIA (3 níveis) — "Carreiras Policiais"
+         Carreiras Policiais (nível 1)
+           > Polícia Militar (nível 2 — também abre/fecha)
+             > Acre (nível 3 — link final)
+         =========================================================== -->
+    <div class="menu-item level-1">
+      <div class="item-label">
+        <span class="label-text">Carreiras Policiais</span>
+        <span class="arrow">›</span>
+      </div>
+      <div class="submenu">
+
+        <!-- ---- Polícia Militar (com filhos = estados) ---- -->
+        <div class="menu-item level-2">
+          <div class="item-label">
+            <span class="label-text">Polícia Militar</span>
+            <span class="arrow">›</span>
+          </div>
+          <div class="submenu">
+
+            <div class="menu-item level-3">
+              <a class="item-label" href="pm-acre.html">
+                <span class="label-text">Acre</span>
+              </a>
+            </div>
+
+            <!-- 👆 EXEMPLO: copie o bloco ".menu-item level-3" acima
+                 e cole 26 vezes, trocando "Acre" / "pm-acre.html"
+                 pelos outros estados (Alagoas, Amapá, Amazonas...) -->
+
+          </div>
+        </div>
+
+        <!-- ---- Polícia Civil (com filhos = estados) ---- -->
+        <div class="menu-item level-2">
+          <div class="item-label">
+            <span class="label-text">Polícia Civil</span>
+            <span class="arrow">›</span>
+          </div>
+          <div class="submenu">
+
+            <div class="menu-item level-3">
+              <a class="item-label" href="pc-acre.html">
+                <span class="label-text">Acre</span>
+              </a>
+            </div>
+
+            <!-- 👆 mesmo esquema: replique trocando "pc-acre.html" -->
+
+          </div>
+        </div>
+
+        <!-- ---- Polícia Penal (com filhos = estados) ---- -->
+        <div class="menu-item level-2">
+          <div class="item-label">
+            <span class="label-text">Polícia Penal</span>
+            <span class="arrow">›</span>
+          </div>
+          <div class="submenu">
+
+            <div class="menu-item level-3">
+              <a class="item-label" href="pp-acre.html">
+                <span class="label-text">Acre</span>
+              </a>
+            </div>
+
+            <!-- 👆 mesmo esquema: replique trocando "pp-acre.html" -->
+
+          </div>
+        </div>
+
+        <!-- ---- Polícia Federal (com filhos = estados) ---- -->
+        <div class="menu-item level-2">
+          <div class="item-label">
+            <span class="label-text">Polícia Federal</span>
+            <span class="arrow">›</span>
+          </div>
+          <div class="submenu">
+
+            <div class="menu-item level-3">
+              <a class="item-label" href="pf-acre.html">
+                <span class="label-text">Acre</span>
+              </a>
+            </div>
+
+            <!-- 👆 mesmo esquema: replique trocando "pf-acre.html" -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===========================================================
+         "Bombeiro Militar" — fica FORA de Carreiras Policiais,
+         no mesmo nível dela (nível 1), mas também abre estados
+         =========================================================== -->
+    <div class="menu-item level-1">
+      <div class="item-label">
+        <span class="label-text">Bombeiro Militar</span>
+        <span class="arrow">›</span>
+      </div>
+      <div class="submenu">
+
+        <div class="menu-item level-2">
+          <a class="item-label" href="bm-acre.html">
+            <span class="label-text">Acre</span>
+          </a>
+        </div>
+
+        <!-- 👆 EXEMPLO: copie o bloco ".menu-item level-2" acima
+             e cole 26 vezes, trocando "Acre" / "bm-acre.html"
+             pelos outros estados -->
+
+      </div>
+    </div>
+
+    <!-- ===========================================================
+         "Guarda Municipal" — lista direta de cidades (nível 2)
+         =========================================================== -->
+    <div class="menu-item level-1">
+      <div class="item-label">
+        <span class="label-text">Guarda Municipal</span>
+        <span class="arrow">›</span>
+      </div>
+      <div class="submenu">
+
+        <div class="menu-item level-2">
+          <a class="item-label" href="#">
+            <span class="label-text">GCM - Almirante Tamandaré - PR</span>
+          </a>
+        </div>
+
+        <div class="menu-item level-2">
+          <a class="item-label" href="#">
+            <span class="label-text">GCM - Curitiba - PR</span>
+          </a>
+        </div>
+
+        <!-- 👆 EXEMPLO: copie o bloco ".menu-item level-2" acima
+             e cole pra cada nova cidade de Guarda Municipal -->
+
+      </div>
+    </div>
+
+    <!-- ===========================================================
+         "Outros Cursos"
+         =========================================================== -->
+    <div class="menu-item level-1">
+      <div class="item-label">
+        <span class="label-text">Outros Cursos</span>
+        <span class="arrow">›</span>
+      </div>
+      <div class="submenu">
+
+        <div class="menu-item level-2">
+          <a class="item-label" href="#">
+            <span class="label-text">Curso resumido 1</span>
+          </a>
+        </div>
+
+        <div class="menu-item level-2">
+          <a class="item-label" href="#">
+            <span class="label-text">Curso resumido 2</span>
+          </a>
+        </div>
+
+        <!-- 👆 EXEMPLO: copie o bloco ".menu-item level-2" acima
+             pra cada novo curso resumido -->
+
+      </div>
+    </div>
+
+    <div class="no-results" id="noResults">Nenhum resultado encontrado.</div>
+  </div>
+</nav>

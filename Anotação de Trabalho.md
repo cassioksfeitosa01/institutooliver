@@ -19,7 +19,7 @@ aluno-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
 
 <!-- SCRIPT DOS VÍDEOS -->
 <script src="/assets/javascript/montador-de-paginas.js"></script>
-
+ <div data-component="menu"></div>
 <div data-component="professores"></div>
 <div data-component="depoimentos-videos"></div> 
 <div data-component="depoimentos-fotos"></div>
