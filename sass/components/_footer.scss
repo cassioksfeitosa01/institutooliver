@@ -1,0 +1,126 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    background-color: #000000;
+    border-top: 2px solid #C9A84C;
+}
+
+.footer-top {
+    padding: 50px 0 36px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-col-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.footer-col-logo img {
+    max-width: 160px;
+}
+
+.footer-titulo {
+    color: #DBAF00;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 8px;
+}
+
+.footer-aviso-label {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.footer-aviso {
+    font-size: 0.78rem;
+    color: #777777 !important;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.footer-dados {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-dados li {
+    font-size: 0.78rem;
+    color: #ADADAD;
+    line-height: 1.5;
+}
+
+.footer-dados li span {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #ADADAD;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #FFD700;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom strong {
+    color: #ADADAD;
+}
+
+@media (max-width: 768px){
+        /* Footer mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-col-logo {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+/* ============================================================
+   RESPONSIVO — Tablet
+   ============================================================ */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-col-logo {
+        grid-column: 1 / -1;
+        align-items: center;
+    }
+}

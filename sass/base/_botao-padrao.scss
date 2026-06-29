@@ -1,0 +1,27 @@
+/* ============================================================
+   BOTÃO PADRÃO
+   ============================================================ */
+.botao-padrao,
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #B8860B 0%, #FFD700 50%, #B8860B 100%);
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 40px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.botao-padrao:hover,
+.btn:hover,
+.botao-padrao:active,
+.btn:active {
+    transform: translateY(-4px);
+}

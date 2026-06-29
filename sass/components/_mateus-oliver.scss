@@ -1,0 +1,106 @@
+/* ============================================================
+   BIO — Professor
+   ============================================================ */
+.bio {
+    background-color: #000000;
+    padding: 70px 0 0;
+    overflow: hidden;
+}
+
+.bio-inner {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.bio-texto {
+    flex: 0 0 50%;
+    padding-right: 32px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.bio-texto h3 {
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    color: #DBAF00;
+    margin-bottom: 1rem;
+}
+
+.bio-foto-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 0;
+}
+
+.bio-foto-wrapper picture {
+    display: block;
+    width: 100%;
+}
+
+.bio-foto-wrapper img {
+    width: 100%;
+    display: block;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: contain;
+    object-position: bottom right;
+}
+
+@media (max-width: 768px){
+     .bio {
+        padding: 10px 0 0;
+    }
+
+    .bio-inner {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0;
+        position: relative;
+    }
+
+    .bio-foto-wrapper {
+        order: -1;
+        width: 100%;
+        flex: none;
+        justify-content: center;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        z-index: 0;
+    }
+
+    .bio-foto-wrapper img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        transform: none;
+        transform-origin: unset;
+    }
+
+    .bio-texto {
+        flex: none;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        margin-top: -45%;
+        padding: 20px 20px 30px;
+        box-sizing: border-box;
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0,0,0,0.88) 15%,
+            #000000 35%
+        );
+    }
+}

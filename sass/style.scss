@@ -1,10 +1,14 @@
 // Pasta BASE
 @import 'base/reset';
 @import 'base/global';
+@import 'base/botao-padrao';
 
 // Pasta PAGES
 @import 'pages/home';
 @import 'pages/venda-cursos-superiores';
 
 // Pasta COMPONENTS
+@import 'components/mateus-oliver';
+@import 'components/depoimentos-videos';
 @import 'components/depoimentos-fotos';
+@import 'components/footer';
