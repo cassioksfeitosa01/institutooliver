@@ -470,6 +470,50 @@ footer {
     align-items: center;
   }
 }
+/* Configura a seção como a base para o posicionamento */
+section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Controla a caixa que segura todo o bloco da foto */
+.caixa-imagem, .caixa-imagem picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Controla a imagem real que aparece na tela (computador ou celular) */
+.caixa-imagem img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Faz o texto flutuar em cima da imagem */
+.caixa-texto {
+  position: absolute;
+  padding: 0 20px; /* Cria uma barreira de 20px nas laterais para o texto não encostar */
+  z-index: 2; /* Garante que o texto fique por cima de tudo */
+  text-align: center; /* Centraliza as linhas de texto */
+}
+
+/* 1 - Deixe o F12 em: 336px */
+/* 2 - Deixe o F12 em: 368px */
+/* 3 - Deixe o F12 em: 400px */
+/* 4 - Deixe o F12 em: 432px */
+/* 5 - Deixe o F12 em: 464px */
+/* 6 - Deixe o F12 em: 496px */
+/* 7 - Deixe o F12 em: 528px */
+/* 8 - Deixe o F12 em: 560px */
+/* 9 - Deixe o F12 em: 592px */
+/* 10 - Deixe o F12 em: 624px */
+/* 11 - Deixe o F12 em: 656px */
+/* 12 - Deixe o F12 em: 688px */
+/* 13 - Deixe o F12 em: 720px */
+/* 14 - Deixe o F12 em: 752px */
+/* 15 - Telas abaixo de 320px - Deixe o F12 em: 280px */
 /* INSTITUTO ÓLIVER — Gestão de Segurança Pública e Privada */
 /* ---------- CONTAINER ---------- */
 .container {
