@@ -30,4 +30,12 @@ aluno-oliver-escola-preparatoria-online-carreira-cursos-superiores-site-oficial
 
 
 
-   
+ 
+
+
+
+@import 'global';
+@import 'menu';
+@import 'venda-cursos-superiores';
+@import 'professores';
+@import 'footer';
