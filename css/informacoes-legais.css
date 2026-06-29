@@ -1,0 +1,254 @@
+@charset "UTF-8";
+/* ============================================================
+   PADRÃO VISUAL — INFORMAÇÕES LEGAIS (INSTITUTO ÓLIVER)
+   Atende: Privacidade, Termos de Uso e Reembolso
+   ============================================================ */
+:root {
+  --preto-puro: #000000;
+  --preto-card: #0D0D0D;
+  --dourado: #C9A84C;
+  --dourado-brilhante: #FFD700;
+  --branco: #FFFFFF;
+  --cinza-texto: #ADADAD;
+  --cinza-escuro: #1A1A1A;
+  --radius: 8px;
+}
+
+/* ---------- RESET E BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--preto-puro);
+  color: var(--cinza-texto);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links em geral */
+a {
+  color: var(--dourado);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: var(--dourado-brilhante);
+  border-bottom-color: var(--dourado-brilhante);
+}
+
+/* ===== TOPO / HEADER (PADRÃO PREMIUM) ===== */
+.topo {
+  background: linear-gradient(135deg, #000 0%, #111 100%);
+  padding: 60px 24px;
+  text-align: center;
+  border-bottom: 2px solid var(--dourado);
+}
+
+.topo .selo {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid var(--dourado);
+  color: var(--dourado-brilhante);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.topo h1 {
+  color: var(--branco);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.topo p.subtitulo {
+  color: var(--cinza-texto);
+  font-size: 1rem;
+}
+
+/* ===== FAIXA DE AVISO (URGÊNCIA/IMPORTÂNCIA) ===== */
+.faixa-aviso {
+  max-width: 850px;
+  margin: -25px auto 0;
+  background: var(--preto-card);
+  border: 1px solid var(--dourado);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  font-size: 0.92rem;
+  text-align: center;
+  color: var(--branco);
+}
+
+.faixa-aviso strong {
+  color: var(--dourado-brilhante);
+}
+
+/* ===== CONTAINER CENTRAL (SEM BARRA LATERAL) ===== */
+.container {
+  max-width: 900px; /* Largura otimizada para leitura focada */
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* ===== CONTEÚDO (BOX CENTRAL) ===== */
+.conteudo {
+  background: var(--preto-card);
+  border: 1px solid var(--cinza-escuro);
+  border-radius: var(--radius);
+  padding: 50px;
+}
+
+.conteudo .atualizado {
+  font-size: 0.8rem;
+  color: var(--dourado);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.conteudo .intro {
+  font-size: 1.05rem;
+  color: var(--branco);
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--cinza-escuro);
+}
+
+/* ===== SEÇÕES E TEXTOS ===== */
+.secao {
+  margin-bottom: 45px;
+}
+
+.secao h2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--branco);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.secao h2 .numero {
+  font-size: 0.95rem;
+  color: var(--dourado);
+  border: 1px solid var(--dourado);
+  padding: 2px 10px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.secao p {
+  margin-bottom: 18px;
+  font-size: 1rem;
+  color: var(--cinza-texto);
+}
+
+.secao strong {
+  color: var(--branco);
+}
+
+/* Estilização das Listas (Importante para Termos e Reembolso) */
+.secao ul {
+  margin: 20px 0 20px 25px;
+  list-style: none;
+}
+
+.secao li {
+  margin-bottom: 12px;
+  position: relative;
+  color: var(--cinza-texto);
+  padding-left: 5px;
+}
+
+.secao li::before {
+  content: "●"; /* Marcador circular sólido */
+  position: absolute;
+  left: -25px;
+  color: var(--dourado);
+  font-size: 0.8rem;
+  top: 2px;
+}
+
+/* ===== BOX DE DESTAQUE (CÓDIGO DO CONSUMIDOR, ETC) ===== */
+.destaque {
+  background: rgba(201, 168, 76, 0.05);
+  border-left: 4px solid var(--dourado);
+  padding: 20px 25px;
+  border-radius: 4px;
+  margin: 25px 0;
+  color: var(--branco);
+  font-size: 0.95rem;
+}
+
+/* ===== CARD DE CONTATO (FINAL DA PÁGINA) ===== */
+.card-contato {
+  background: linear-gradient(135deg, #000 0%, #111 100%);
+  border: 1px solid var(--dourado);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.card-contato h2 {
+  color: var(--dourado-brilhante) !important;
+}
+
+.card-contato p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 2px solid var(--dourado);
+  color: var(--cinza-texto);
+  font-size: 0.82rem;
+  background-color: var(--preto-puro);
+}
+
+/* ===== RESPONSIVIDADE (MOBILE) ===== */
+@media (max-width: 768px) {
+  .conteudo {
+    padding: 30px 20px;
+  }
+  .topo {
+    padding: 45px 20px;
+  }
+  .faixa-aviso {
+    width: 92%;
+    margin-top: -15px;
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+  .secao h2 {
+    font-size: 1.15rem;
+    align-items: flex-start;
+  }
+  .secao h2 .numero {
+    margin-top: 3px;
+  }
+}/*# sourceMappingURL=informacoes-legais.css.map */
