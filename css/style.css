@@ -15,9 +15,6 @@ body {
   line-height: 1.7;
 }
 
-/* ============================================================
-   H1
-   ============================================================ */
 h1 {
   font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 550;
@@ -82,9 +79,6 @@ p {
   font-weight: 400;
 }
 
-/* ============================================================
-   BOTÃO PADRÃO
-   ============================================================ */
 .botao-padrao,
 .btn {
   display: inline-block;
@@ -673,9 +667,6 @@ section {
     flex: 0 0 calc((100% - 20px) / 2);
   }
 }
-/* ============================================================
-   DEPOIMENTOS — MOSAICO DE FOTOS
-   ============================================================ */
 .depoimentos-mosaico {
   background-color: #000000;
   padding: 70px 0;
@@ -707,9 +698,7 @@ section {
     margin-bottom: 10px;
   }
 }
-/* ============================================================
-   LIGHTBOX — ampliar foto de depoimento
-   ============================================================ */
+/*  LIGHTBOX — ampliar foto de depoimento */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
