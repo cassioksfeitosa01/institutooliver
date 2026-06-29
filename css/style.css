@@ -822,4 +822,98 @@ footer {
 
 .mosaico-grid img {
   cursor: pointer;
+}
+
+/* ============================================================
+   PÁGINA: Cursos Superiores
+   (h1 e botão usam as classes do global.css: .h1-dourado / .botao-padrao)
+   (box-sizing já vem do reset geral do global.css)
+   ============================================================ */
+body {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.5;
+  background: #000;
+}
+
+h1 {
+  text-align: center;
+}
+
+.subtitulo {
+  color: #fff;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+/* GRID: 4 colunas no PC (fixo, não aumenta em telas grandes), reduz no celular */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr; /* um embaixo do outro no celular */
+  }
+}
+.curso {
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+.curso img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.curso-conteudo {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoria {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.78em;
+  color: #FFD700;
+}
+
+.nome-curso {
+  font-size: 1.05em;
+  margin: 6px 0 16px 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.badge {
+  background: #ff0000;
+  color: #ffffff;
+  font-size: 0.7em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
 }/*# sourceMappingURL=style.css.map */
