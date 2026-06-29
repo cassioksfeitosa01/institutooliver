@@ -1,5 +1,11 @@
-@import 'global';
-@import 'venda-cursos-superiores';
-@import 'depoimentos-fotos';
+// Pasta BASE
+@import 'base/reset';
+@import 'base/global';
 
+// Pasta PAGES
+@import 'pages/home';
+@import 'pages/venda-cursos-superiores';
 
+// Pasta COMPONENTS
+@import 'components/depoimentos-videos';
+@import 'components/depoimentos-fotos';
