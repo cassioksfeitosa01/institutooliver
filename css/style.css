@@ -16,372 +16,120 @@ body {
 }
 
 /* ==========================================================================
-   TIPOGRAFIA - CONFIGURAÇÕES PADRÃO (RESET & BASE)
+   VARIAVEIS DE DESIGN (Configuração Centralizada)
    ========================================================================== */
-h1 {
-  font-size: clamp(1.6rem, 5vw, 3rem);
-  font-weight: 550;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
+:root {
+  /* Cores */
+  --cor-dourado: #DBAF00;
+  --cor-branco: #FFFFFF;
+  --cor-cinza: #ADADAD;
+  /* Fonte Montserrat (Importada no HTML) */
+  --font-principal: 'Montserrat', sans-serif;
+  /* Escala Tipográfica Fluida (Min, Ideal, Max) */
+  /* Ajustei o H1 para não ficar exagerado em telas grandes */
+  --font-h1: clamp(1.8rem, 4.5vw, 3rem);
+  --font-h2: clamp(1.5rem, 3.5vw, 2.2rem);
+  --font-h3: clamp(1.1rem, 2.5vw, 1.5rem);
+  --font-p: clamp(0.95rem, 1vw, 1.05rem);
+}
+
+/* ==========================================================================
+   RESET & BASE (Aplicação Global da Montserrat)
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-principal);
+  -webkit-font-smoothing: antialiased; /* Deixa a Montserrat mais nítida */
+  background-color: #000; /* Assumi fundo preto pelo contraste das cores */
+}
+
+h1, h2, h3, p {
+  font-family: var(--font-principal);
   margin-bottom: 1rem;
-  color: #DBAF00;
+}
+
+h1 {
+  font-size: var(--font-h1);
+  font-weight: 800; /* Peso extra negrito para H1 */
+  line-height: 1.1;
+  letter-spacing: -0.8px; /* Montserrat fica elegante com letras juntas no H1 */
+  color: var(--cor-dourado);
 }
 
 h2 {
-  font-size: clamp(1.3rem, 3.5vw, 2.2rem);
-  font-weight: 800;
-  letter-spacing: 0.3px;
-  margin-bottom: 1.2rem;
-  color: #DBAF00;
+  font-size: var(--font-h2);
+  font-weight: 700; /* Negrito padrão */
+  line-height: 1.2;
+  color: var(--cor-dourado);
 }
 
 h3 {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: var(--font-h3);
   font-weight: 700;
-  margin-bottom: 0.8rem;
-  color: #FFFFFF;
+  color: var(--cor-branco);
 }
 
 p {
-  color: #ADADAD;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5; /* Padrão de mercado para melhor legibilidade de parágrafos */
+  font-size: var(--font-p);
+  color: var(--cor-cinza);
+  line-height: 1.6;
+  font-weight: 400; /* Peso normal */
 }
 
 /* ==========================================================================
-   CLASSES UTILITÁRIAS DE COR (DRY - Don't Repeat Yourself)
+   UTILITÁRIOS (Cores rápidas)
    ========================================================================== */
-.text-dourado,
-.h1-dourado,
-.h2-dourado,
-.h3-dourado {
-  color: #DBAF00;
+.text-dourado {
+  color: var(--cor-dourado) !important;
 }
 
-.text-branco,
-.h1-branco,
-.h2-branco,
-.h3-branco {
-  color: #FFFFFF;
+.text-branco {
+  color: var(--cor-branco) !important;
 }
 
 /* ==========================================================================
-   CONTROLE CIRÚRGICO DE TIPOGRAFIA VIA MEDIA QUERIES (320px até 768px)
-   Faixas fechadas, sem sobreposição e sem buraco entre elas.
+   GAVETAS DE RESPONSIVIDADE (Ajustes de Mercado)
    ========================================================================== */
-/* 0 - Telas muito pequenas - abaixo de 320px - F12 em: 280px */
-@media (max-width: 319px) {
+/* --- TABLETS E INTERMEDIÁRIOS (Acima de 768px) --- */
+@media (min-width: 768px) {
   h1 {
-    font-size: 1.6rem;
-  }
-  h2 {
-    font-size: 1.3rem;
-  }
-  h3 {
-    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
   p {
-    font-size: 0.85rem;
+    line-height: 1.7;
   }
 }
-/* 1 - F12 em: 336px */
-@media (min-width: 320px) and (max-width: 352px) {
+/* --- DESKTOPS (Acima de 1200px) --- */
+@media (min-width: 1200px) {
+  /* Limita a largura do H1 para não ocupar a tela toda de forma exagerada */
   h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.4rem;
-  }
-  h3 {
-    font-size: 1.05rem;
-  }
-  p {
-    font-size: 0.88rem;
+    max-width: 80%;
+    line-height: 1.2;
   }
 }
-/* 2 - F12 em: 368px */
-@media (min-width: 353px) and (max-width: 384px) {
-  h1 {
-    font-size: 1.9rem;
-  }
-  h2 {
-    font-size: 1.45rem;
-  }
-  h3 {
-    font-size: 1.08rem;
-  }
-  p {
-    font-size: 0.88rem;
-  }
-}
-/* 3 - F12 em: 400px */
-@media (min-width: 385px) and (max-width: 416px) {
-  h1 {
-    font-size: 1.95rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.1rem;
-  }
-  p {
-    font-size: 0.9rem;
-  }
-}
-/* 4 - F12 em: 432px */
-@media (min-width: 417px) and (max-width: 448px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.55rem;
-  }
-  h3 {
-    font-size: 1.12rem;
-  }
-  p {
-    font-size: 0.9rem;
-  }
-}
-/* 5 - F12 em: 464px */
-@media (min-width: 449px) and (max-width: 480px) {
-  h1 {
-    font-size: 2.05rem;
-  }
-  h2 {
-    font-size: 1.6rem;
-  }
-  h3 {
-    font-size: 1.15rem;
-  }
-  p {
-    font-size: 0.92rem;
-  }
-}
-/* 6 - F12 em: 496px */
-@media (min-width: 481px) and (max-width: 512px) {
-  h1 {
-    font-size: 2.1rem;
-  }
-  h2 {
-    font-size: 1.65rem;
-  }
-  h3 {
-    font-size: 1.18rem;
-  }
-  p {
-    font-size: 0.92rem;
-  }
-}
-/* 7 - F12 em: 528px */
-@media (min-width: 513px) and (max-width: 544px) {
-  h1 {
-    font-size: 2.15rem;
-  }
-  h2 {
-    font-size: 1.7rem;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  p {
-    font-size: 0.95rem;
-  }
-}
-/* 8 - F12 em: 560px */
-@media (min-width: 545px) and (max-width: 576px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  h3 {
-    font-size: 1.22rem;
-  }
-  p {
-    font-size: 0.95rem;
-  }
-}
-/* 9 - F12 em: 592px */
-@media (min-width: 577px) and (max-width: 608px) {
-  h1 {
-    font-size: 2.3rem;
-  }
-  h2 {
-    font-size: 1.8rem;
-  }
-  h3 {
-    font-size: 1.25rem;
-  }
-  p {
-    font-size: 0.96rem;
-  }
-}
-/* 10 - F12 em: 624px */
-@media (min-width: 609px) and (max-width: 640px) {
-  h1 {
-    font-size: 2.4rem;
-  }
-  h2 {
-    font-size: 1.85rem;
-  }
-  h3 {
-    font-size: 1.28rem;
-  }
-  p {
-    font-size: 0.96rem;
-  }
-}
-/* 11 - F12 em: 656px */
-@media (min-width: 641px) and (max-width: 672px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  h2 {
-    font-size: 1.9rem;
-  }
-  h3 {
-    font-size: 1.3rem;
-  }
-  p {
-    font-size: 0.98rem;
-  }
-}
-/* 12 - F12 em: 688px */
-@media (min-width: 673px) and (max-width: 704px) {
-  h1 {
-    font-size: 2.6rem;
-  }
-  h2 {
-    font-size: 1.95rem;
-  }
-  h3 {
-    font-size: 1.35rem;
-  }
-  p {
-    font-size: 0.98rem;
-  }
-}
-/* 13 - F12 em: 720px */
-@media (min-width: 705px) and (max-width: 736px) {
-  h1 {
-    font-size: 2.7rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  h3 {
-    font-size: 1.4rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-}
-/* 14 - F12 em: 752px */
-@media (min-width: 737px) and (max-width: 768px) {
-  h1 {
-    font-size: 2.8rem;
-  }
-  h2 {
-    font-size: 2.1rem;
-  }
-  h3 {
-    font-size: 1.45rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-}
-/* ==========================================================================
-   FONTES PARA TELAS MAIORES (TABLETS, NOTEBOOKS E DESKTOPS)
-   ========================================================================== */
-/* 15 - Tablets e Telas Médias - F12 em: 992px */
-@media (min-width: 769px) and (max-width: 1024px) {
-  h1 {
-    font-size: 3.2rem;
-  }
-  h2 {
-    font-size: 2.4rem;
-  }
-  h3 {
-    font-size: 1.6rem;
-  }
-  p {
-    font-size: 1.05rem;
-  }
-}
-/* 16 - Notebooks e Desktops Padrão - F12 em: 1366px */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  h1 {
-    font-size: 3.6rem;
-  }
-  h2 {
-    font-size: 2.6rem;
-  }
-  h3 {
-    font-size: 1.8rem;
-  }
-  p {
-    font-size: 1.1rem;
-  }
-}
-/* 17 - Telas Ultra-Largas (Monitores Grandes) - Acima de 1440px */
-@media (min-width: 1441px) {
-  h1 {
-    font-size: 4rem;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
-  p {
-    font-size: 1.15rem;
-  }
-}
-/* ==========================================================================
-   TRAVA DE SEGURANÇA: CELULAR DEITADO (PAISAGEM)
-   --------------------------------------------------------------------------
-   Esse é o ajuste que faltava. As faixas acima reagem só à LARGURA da tela.
-   Quando o celular deita, a largura aumenta e o navegador entra nas faixas
-   de tablet/desktop (15, 16, 17) — só que a altura continua pequena, e o
-   texto fica gigante e estourado na tela.
-
-   Aqui a gente trava por ALTURA (height) + orientação, então essa regra
-   sobrescreve qualquer uma das faixas acima quando a tela é baixa,
-   independente da largura. Cobre praticamente todos os celulares deitados.
-   ========================================================================== */
+/* --- TRAVA DE SEGURANÇA: CELULAR DEITADO (LANDSCAPE) --- */
 @media (orientation: landscape) and (max-height: 500px) {
-  h1 {
-    font-size: 1.9rem;
+  :root {
+    --font-h1: 1.7rem;
+    --font-h2: 1.4rem;
+    --font-h3: 1.1rem;
+    --font-p: 0.9rem;
   }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.1rem;
-  }
-  p {
-    font-size: 0.92rem;
+  h1, h2 {
+    margin-bottom: 0.5rem;
+    line-height: 1;
   }
 }
-/* 18 - Celular pequeno deitado (ex: iPhone SE deitado) - altura ainda menor */
-@media (orientation: landscape) and (max-height: 400px) {
-  h1 {
-    font-size: 1.6rem;
-  }
-  h2 {
-    font-size: 1.3rem;
-  }
-  h3 {
-    font-size: 1rem;
-  }
-  p {
-    font-size: 0.85rem;
+/* --- AJUSTE PARA TELAS "MINI" (Abaixo de 350px) --- */
+@media (max-width: 350px) {
+  :root {
+    --font-h1: 1.5rem;
+    --font-p: 0.85rem;
   }
 }
 .botao-padrao,
