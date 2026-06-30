@@ -1,4 +1,3 @@
-
 /* ============================================================
    DEPOIMENTOS MOSAICO
    ============================================================ */
@@ -10,6 +9,12 @@
 .mosaico-grid {
     column-count: 5;
     column-gap: 14px;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .mosaico-grid img {
@@ -25,31 +30,34 @@
 @media (max-width: 768px) {
 
     .mosaico-grid {
-        column-count: unset;
-        column-gap: unset;
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 10px;
-        padding: 0 16px 16px;
-        scrollbar-width: none;
-    }
-
-    .mosaico-grid::-webkit-scrollbar {
-        display: none;
+        /* EM VEZ DE GRID, USAMOS O MOSAICO DE COLUNAS DO DESKTOP ATIVADO PARA 3 NO MOBILE */
+        column-count: 3;
+        column-gap: 8px;            /* Espaçamento pequeno e fixo entre as colunas */
+        
+        display: block;             /* Garante o comportamento correto das colunas nativas */
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 10px;            /* Respiro mínimo nas laterais da tela do celular */
+        box-sizing: border-box;
+        overflow-x: visible;
     }
 
     .mosaico-grid img {
-        flex: 0 0 auto;
-        width: auto;
-        max-width: 75vw;
-        max-height: 70vh;
-        object-fit: contain;
-        margin-bottom: 0;
-        scroll-snap-align: start;
+        flex: unset;
+        scroll-snap-align: unset;
+        
+        width: 100%;                /* Ocupa a largura total da coluna do mosaico */
+        height: auto;               /* Mantém a proporção real para não cortar o texto do print */
+        display: block;
+        margin-bottom: 8px;         /* Espaçamento vertical igual ao espaço lateral para ficar simétrico */
+        border-radius: 4px;
+        border: 1px solid #C9A84C;
+        break-inside: avoid;        /* Evita que o print se quebre ao meio entre uma coluna e outra */
     }
 }
+
 
 /* ============================================================
    LIGHTBOX — ampliar foto de depoimento
