@@ -23,8 +23,6 @@
         const divs = document.querySelectorAll('[data-component]');
         await Promise.all(Array.from(divs).map(carregarComponente));
 
-        // Avisa o resto do arquivo (o slider, o menu, etc.) que já
-        // pode procurar os elementos, porque eles já existem agora.
         document.dispatchEvent(new CustomEvent('components:loaded'));
     }
 
@@ -33,9 +31,6 @@
 
 
 // ── SLIDER: setas + swipe de dedo ──────────────────────────
-// (código original, sem nenhuma alteração — só passou a rodar
-//  dentro do evento "components:loaded" em vez de direto, porque
-//  os vídeos só existem na página depois que o componente carrega)
 
 document.addEventListener('components:loaded', function () {
 
@@ -47,9 +42,9 @@ document.addEventListener('components:loaded', function () {
         let atual = 0;
 
         function slidesPorVez() {
-            if (window.innerWidth >= 1024) return 3;
-            if (window.innerWidth >= 640) return 2;
-            return 1;
+            if (window.innerWidth >= 1024) return 5;
+            if (window.innerWidth >= 640) return 3;
+            return 2;
         }
 
         function maxIndice() {
@@ -62,7 +57,7 @@ document.addEventListener('components:loaded', function () {
             const slideEl = slides[0];
             if (!slideEl) return;
 
-            const gap = 20;
+            const gap = 8;
             const largura = slideEl.offsetWidth + gap;
             track.style.transform = `translateX(-${atual * largura}px)`;
 
@@ -128,9 +123,8 @@ document.addEventListener('components:loaded', function () {
 
 });
 
+
 // ── LIGHTBOX: ampliar foto de depoimento ───────────────────
-// (bloco novo e isolado — escuta o mesmo evento "components:loaded"
-//  do slider, mas não toca em nenhuma lógica do slider)
 
 document.addEventListener('components:loaded', function () {
 
@@ -162,19 +156,20 @@ document.addEventListener('components:loaded', function () {
         if (e.target === overlay) fechar();
     });
 
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') fechar();
+    });
+
 });
 
+
 // ── MENU HAMBÚRGUER: abrir/fechar painel, acordeão e busca ──
-// (bloco novo — escuta o mesmo evento "components:loaded" porque
-//  o menu inteiro só existe na página depois que o /components/menu.html
-//  é injetado pelo bloco do topo deste arquivo)
 
 document.addEventListener('components:loaded', function () {
 
     const menuPanel = document.getElementById('menuPanel');
-    if (!menuPanel) return; // esta página não tem o componente do menu, então não faz nada
+    if (!menuPanel) return;
 
-    /* ---------- Abrir / fechar o painel (hambúrguer -> X) ---------- */
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const overlay = document.getElementById('overlay');
     const closeMenuBtn = document.getElementById('closeMenuBtn');
@@ -195,16 +190,12 @@ document.addEventListener('components:loaded', function () {
     overlay.addEventListener('click', fecharMenu);
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', fecharMenu);
 
-    /* ---------- Acordeão: abre/fecha qualquer categoria ao clicar ---------- */
-    // Pega TODOS os ".menu-item" que têm uma "div.item-label" clicável
-    // (ou seja: que NÃO são link <a> — esses têm filhos pra abrir/fechar)
     const todasCategorias = menuPanel.querySelectorAll('.menu-item');
 
     todasCategorias.forEach(item => {
         const label = item.querySelector(':scope > .item-label');
         const submenu = item.querySelector(':scope > .submenu');
 
-        // Se o label for uma tag <a>, é link direto — não tem o que abrir/fechar
         if (!submenu || label.tagName === 'A') return;
 
         label.addEventListener('click', () => {
@@ -212,8 +203,6 @@ document.addEventListener('components:loaded', function () {
             item.classList.toggle('open');
             submenu.style.maxHeight = estaAberto ? null : submenu.scrollHeight + 'px';
 
-            // Se algum pai estava aberto, recalcula a altura dele também,
-            // porque o filho cresceu/diminuiu (efeito em cascata)
             let pai = item.parentElement.closest('.menu-item');
             while (pai) {
                 const submenuPai = pai.querySelector(':scope > .submenu');
@@ -225,14 +214,11 @@ document.addEventListener('components:loaded', function () {
         });
     });
 
-    /* ---------- Busca dentro do menu ---------- */
     const searchInput = document.getElementById('menuSearchInput');
     const clearBtn = document.getElementById('clearSearchBtn');
     const searchCount = document.getElementById('searchCount');
     const noResults = document.getElementById('noResults');
 
-    // Lista plana com todos os itens, pra busca não precisar
-    // varrer a árvore inteira toda vez
     const todosOsItens = Array.from(todasCategorias).map(item => {
         const label = item.querySelector(':scope > .item-label');
         const labelTextEl = label.querySelector('.label-text');
