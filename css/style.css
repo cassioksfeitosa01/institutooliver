@@ -1059,32 +1059,35 @@ body.curso-de-nivel-superiores .subtitulo {
 }
 
 @media (max-width: 768px) {
+  /* CORREÇÃO DO ESPAÇO ENTRE O BOTÃO E O TÍTULO */
+  .depoimentos-mosaico {
+    padding: 35px 0 20px; /* Reduz o espaço do topo para o título subir e ficar alinhado */
+  }
   .mosaico-grid {
-    /* EM VEZ DE GRID, USAMOS O MOSAICO DE COLUNAS DO DESKTOP ATIVADO PARA 3 NO MOBILE */
     -moz-column-count: 3;
          column-count: 3;
     -moz-column-gap: 8px;
-         column-gap: 8px; /* Espaçamento pequeno e fixo entre as colunas */
-    display: block; /* Garante o comportamento correto das colunas nativas */
+         column-gap: 8px;
+    display: block;
     width: 100%;
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
-    padding: 0 10px; /* Respiro mínimo nas laterais da tela do celular */
+    padding: 0 10px;
     box-sizing: border-box;
     overflow-x: visible;
   }
   .mosaico-grid img {
     flex: unset;
     scroll-snap-align: unset;
-    width: 100%; /* Ocupa a largura total da coluna do mosaico */
-    height: auto; /* Mantém a proporção real para não cortar o texto do print */
+    width: 100%;
+    height: auto;
     display: block;
-    margin-bottom: 8px; /* Espaçamento vertical igual ao espaço lateral para ficar simétrico */
+    margin-bottom: 8px;
     border-radius: 4px;
     border: 1px solid #C9A84C;
     -moz-column-break-inside: avoid;
-         break-inside: avoid; /* Evita que o print se quebre ao meio entre uma coluna e outra */
+         break-inside: avoid;
   }
 }
 /* ============================================================
