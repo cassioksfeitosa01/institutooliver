@@ -1060,6 +1060,9 @@ p {
   z-index: 1000;
 }
 
+/* ==========================================================================
+   BIOGRAFIA - CONFIGURAÇÃO BASE (ESTILO GLOBAL / DESKTOP PRIMEIRAMENTE)
+   ========================================================================== */
 .bio {
   background-color: #000000;
   padding: 70px 0 0;
@@ -1118,7 +1121,31 @@ p {
      object-position: bottom right;
 }
 
-@media (max-width: 768px) {
+/* ==========================================================================
+   CONTROLE CIRÚRGICO DA SEÇÃO BIO VIA MEDIA QUERIES
+   ========================================================================== */
+/* 18 - Telas Ultra-Largas - Acima de 1440px */
+@media (min-width: 1441px) {
+  /* Mantém o padrão fluido do desktop */
+}
+/* 17 - Notebooks e Desktops Padrão - Deixe o F12 em: 1366px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* Mantém os padrões do código base */
+}
+/* 16 - Tablets e Telas Médias - Deixe o F12 em: 992px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bio-inner {
+    min-height: 450px;
+  }
+  .bio-texto {
+    flex: 0 0 55%;
+  }
+  .bio-foto-wrapper {
+    width: 50%;
+  }
+}
+/* 14 - Deixe o F12 em: 752px */
+@media (min-width: 737px) and (max-width: 768px) {
   .bio {
     padding: 10px 0 0;
   }
@@ -1151,8 +1178,243 @@ p {
     position: relative;
     z-index: 1;
     margin-top: -45%;
-    padding: 20px 20px 30px;
+    padding: 25px 25px 35px;
     box-sizing: border-box;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 13 - Deixe o F12 em: 720px */
+@media (min-width: 705px) and (max-width: 736px) {
+  .bio {
+    padding: 10px 0 0;
+  }
+  .bio-inner {
+    flex-direction: column;
+    position: relative;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+    right: auto;
+    bottom: auto;
+  }
+  .bio-texto {
+    width: 100%;
+    position: relative;
+    margin-top: -45%;
+    padding: 25px 25px 35px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 12 - Deixe o F12 em: 688px */
+@media (min-width: 673px) and (max-width: 704px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -44%;
+    padding: 22px 22px 32px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 11 - Deixe o F12 em: 656px */
+@media (min-width: 641px) and (max-width: 672px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -44%;
+    padding: 22px 22px 32px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 10 - Deixe o F12 em: 624px */
+@media (min-width: 609px) and (max-width: 640px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -43%;
+    padding: 20px 20px 30px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 9 - Deixe o F12 em: 592px */
+@media (min-width: 577px) and (max-width: 608px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -43%;
+    padding: 20px 20px 30px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 8 - Deixe o F12 em: 560px */
+@media (min-width: 545px) and (max-width: 576px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -42%;
+    padding: 20px 20px 30px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 7 - Deixe o F12 em: 528px */
+@media (min-width: 513px) and (max-width: 544px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -42%;
+    padding: 20px 20px 30px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 6 - Deixe o F12 em: 496px */
+@media (min-width: 481px) and (max-width: 512px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -41%;
+    padding: 18px 18px 28px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 5 - Deixe o F12 em: 464px */
+@media (min-width: 449px) and (max-width: 480px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -41%;
+    padding: 18px 18px 28px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 4 - Deixe o F12 em: 432px */
+@media (min-width: 417px) and (max-width: 448px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -40%;
+    padding: 16px 16px 26px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 3 - Deixe o F12 em: 400px */
+@media (min-width: 385px) and (max-width: 416px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -40%;
+    padding: 16px 16px 26px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 2 - Deixe o F12 em: 368px */
+@media (min-width: 353px) and (max-width: 384px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -38%;
+    padding: 14px 14px 24px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 1 - Deixe o F12 em: 336px */
+@media (min-width: 320px) and (max-width: 352px) {
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -38%;
+    padding: 14px 14px 24px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* 15 - Telas abaixo de 320px - Deixe o F12 em: 280px */
+@media (max-width: 319px) {
+  .bio {
+    padding: 5px 0 0;
+  }
+  .bio-inner {
+    flex-direction: column;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    position: relative;
+  }
+  .bio-texto {
+    margin-top: -35%;
+    padding: 12px 12px 20px;
     background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
   }
 }
