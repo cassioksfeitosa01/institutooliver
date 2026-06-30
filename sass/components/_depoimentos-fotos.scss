@@ -3,8 +3,9 @@
    ============================================================ */
 .depoimentos-mosaico {
     background-color: #000000;
-    padding: 0 0 70px;          /* Zera o topo no PC e mantém respiro embaixo */
+    padding: 20px 0; /* 60px de espaço em cima e 60px embaixo. Fica simétrico no PC! */
 }
+
 
 .mosaico-grid {
     column-count: 5;
@@ -33,7 +34,10 @@
 @media (max-width: 768px) {
 
     .depoimentos-mosaico {
-        padding: 0 0 70px; 
+       .depoimentos-mosaico {
+    padding: 20px 0; /* 30px em cima e 30px embaixo. Perfeitamente centralizado no Mobile! */
+}
+
     }
 
     .mosaico-grid {
