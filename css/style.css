@@ -54,7 +54,6 @@ h1 {
   font-weight: 800; /* Extra bold da Montserrat */
   line-height: 1.1;
   letter-spacing: -0.8px;
-  /* Removi a cor fixa do H1 para ele aceitar as cores dos SPANS dentro dele */
 }
 
 h2 {
