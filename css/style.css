@@ -1027,11 +1027,11 @@ body.curso-de-nivel-superiores .subtitulo {
   }
 }
 /* ============================================================
-   DEPOIMENTOS MOSAICO
+   DEPOIMENTOS MOSAICO (Versão Computador)
    ============================================================ */
 .depoimentos-mosaico {
   background-color: #000000;
-  padding: 70px 0;
+  padding: 0 0 70px; /* Zera o topo no PC e mantém respiro embaixo */
 }
 
 .mosaico-grid {
@@ -1058,10 +1058,12 @@ body.curso-de-nivel-superiores .subtitulo {
        break-inside: avoid;
 }
 
+/* ============================================================
+   CONFIGURAÇÃO DO CELULAR (Mobile)
+   ============================================================ */
 @media (max-width: 768px) {
-  /* CORREÇÃO DO ESPAÇO ENTRE O BOTÃO E O TÍTULO */
   .depoimentos-mosaico {
-    padding: 35px 0 20px; /* Reduz o espaço do topo para o título subir e ficar alinhado */
+    padding: 0 0 70px;
   }
   .mosaico-grid {
     -moz-column-count: 3;
