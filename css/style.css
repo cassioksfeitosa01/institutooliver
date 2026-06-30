@@ -15,70 +15,333 @@ body {
   line-height: 1.7;
 }
 
+/* ==========================================================================
+   TIPOGRAFIA - CONFIGURAÇÕES PADRÃO (RESET & BASE)
+   ========================================================================== */
 h1 {
   font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 550;
-  text-transform: none;
-  letter-spacing: 0.5px;
   line-height: 1.2;
+  letter-spacing: 0.5px;
   margin-bottom: 1rem;
   color: #DBAF00;
 }
 
-.h1-dourado {
-  color: #DBAF00;
-  -webkit-text-fill-color: #DBAF00;
-}
-
-.h1-branco {
-  color: #FFFFFF;
-  -webkit-text-fill-color: #FFFFFF;
-}
-
-/* ---------- H2 ---------- */
 h2 {
   font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 800;
-  color: #DBAF00;
   letter-spacing: 0.3px;
   margin-bottom: 1.2rem;
-}
-
-.h2-dourado {
   color: #DBAF00;
-  -webkit-text-fill-color: #DBAF00;
 }
 
-.h2-branco {
-  color: #FFFFFF;
-  -webkit-text-fill-color: #FFFFFF;
-}
-
-/* ---------- H3 ---------- */
 h3 {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-weight: 700;
-  color: #FFFFFF;
   margin-bottom: 0.8rem;
-}
-
-.h3-dourado {
-  color: #DBAF00;
-  -webkit-text-fill-color: #DBAF00;
-}
-
-.h3-branco {
   color: #FFFFFF;
-  -webkit-text-fill-color: #FFFFFF;
 }
 
-/* ---------- Parágrafo ---------- */
 p {
   color: #ADADAD;
   font-size: 1rem;
   font-weight: 400;
+  line-height: 1.5; /* Padrão de mercado para melhor legibilidade de parágrafos */
 }
 
+/* ==========================================================================
+   CLASSES UTILITÁRIAS DE COR (DRY - Don't Repeat Yourself)
+   ========================================================================== */
+.text-dourado,
+.h1-dourado,
+.h2-dourado,
+.h3-dourado {
+  color: #DBAF00;
+}
+
+.text-branco,
+.h1-branco,
+.h2-branco,
+.h3-branco {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   CONTROLE CIRÚRGICO DE TIPOGRAFIA VIA MEDIA QUERIES (320px até 768px)
+   ========================================================================== */
+/* 14 - Deixe o F12 em: 752px */
+@media (min-width: 737px) and (max-width: 768px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  h2 {
+    font-size: 2.1rem;
+  }
+  h3 {
+    font-size: 1.45rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+/* 13 - Deixe o F12 em: 720px */
+@media (min-width: 705px) and (max-width: 736px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+/* 12 - Deixe o F12 em: 688px */
+@media (min-width: 673px) and (max-width: 704px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+  h2 {
+    font-size: 1.95rem;
+  }
+  h3 {
+    font-size: 1.35rem;
+  }
+  p {
+    font-size: 0.98rem;
+  }
+}
+/* 11 - Deixe o F12 em: 656px */
+@media (min-width: 641px) and (max-width: 672px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.9rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 0.98rem;
+  }
+}
+/* 10 - Deixe o F12 em: 624px */
+@media (min-width: 609px) and (max-width: 640px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 1.85rem;
+  }
+  h3 {
+    font-size: 1.28rem;
+  }
+  p {
+    font-size: 0.96rem;
+  }
+}
+/* 9 - Deixe o F12 em: 592px */
+@media (min-width: 577px) and (max-width: 608px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  p {
+    font-size: 0.96rem;
+  }
+}
+/* 8 - Deixe o F12 em: 560px */
+@media (min-width: 545px) and (max-width: 576px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.22rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+}
+/* 7 - Deixe o F12 em: 528px */
+@media (min-width: 513px) and (max-width: 544px) {
+  h1 {
+    font-size: 2.15rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+}
+/* 6 - Deixe o F12 em: 496px */
+@media (min-width: 481px) and (max-width: 512px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+  h2 {
+    font-size: 1.65rem;
+  }
+  h3 {
+    font-size: 1.18rem;
+  }
+  p {
+    font-size: 0.92rem;
+  }
+}
+/* 5 - Deixe o F12 em: 464px */
+@media (min-width: 449px) and (max-width: 480px) {
+  h1 {
+    font-size: 2.05rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  p {
+    font-size: 0.92rem;
+  }
+}
+/* 4 - Deixe o F12 em: 432px */
+@media (min-width: 417px) and (max-width: 448px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.55rem;
+  }
+  h3 {
+    font-size: 1.12rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+/* 3 - Deixe o F12 em: 400px */
+@media (min-width: 385px) and (max-width: 416px) {
+  h1 {
+    font-size: 1.95rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+/* 2 - Deixe o F12 em: 368px */
+@media (min-width: 353px) and (max-width: 384px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+  h2 {
+    font-size: 1.45rem;
+  }
+  h3 {
+    font-size: 1.08rem;
+  }
+  p {
+    font-size: 0.88rem;
+  }
+}
+/* 1 - Deixe o F12 em: 336px */
+@media (min-width: 320px) and (max-width: 352px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.05rem;
+  }
+  p {
+    font-size: 0.88rem;
+  }
+}
+/* 15 - Telas abaixo de 320px - Deixe o F12 em: 280px */
+@media (max-width: 319px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.85rem;
+  }
+}
+/* ==========================================================================
+   FONTES PARA TELAS MAIORES (TABLETS, NOTEBOOKS E DESKTOPS)
+   ========================================================================== */
+/* 16 - Tablets e Telas Médias - Deixe o F12 em: 992px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  p {
+    font-size: 1.05rem;
+  }
+}
+/* 17 - Notebooks e Desktops Padrão - Deixe o F12 em: 1366px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+}
+/* 18 - Telas Ultra-Largas (Monitores Grandes) - Acima de 1440px */
+@media (min-width: 1441px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.15rem;
+  }
+}
 .botao-padrao,
 .btn {
   display: inline-block;
@@ -104,51 +367,6 @@ p {
   transform: translateY(-4px);
 }
 
-/* Configura a seção como a base para o posicionamento */
-section {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Controla a caixa que segura todo o bloco da foto */
-.caixa-imagem, .caixa-imagem picture {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* Controla a imagem real que aparece na tela (computador ou celular) */
-.caixa-imagem img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Faz o texto flutuar em cima da imagem */
-.caixa-texto {
-  position: absolute;
-  padding: 0 20px; /* Cria uma barreira de 20px nas laterais para o texto não encostar */
-  z-index: 2; /* Garante que o texto fique por cima de tudo */
-  text-align: center; /* Centraliza as linhas de texto */
-  top: 50%;
-}
-
-/* 1 - Deixe o F12 em: 336px */
-/* 2 - Deixe o F12 em: 368px */
-/* 3 - Deixe o F12 em: 400px */
-/* 4 - Deixe o F12 em: 432px */
-/* 5 - Deixe o F12 em: 464px */
-/* 6 - Deixe o F12 em: 496px */
-/* 7 - Deixe o F12 em: 528px */
-/* 8 - Deixe o F12 em: 560px */
-/* 9 - Deixe o F12 em: 592px */
-/* 10 - Deixe o F12 em: 624px */
-/* 11 - Deixe o F12 em: 656px */
-/* 12 - Deixe o F12 em: 688px */
-/* 13 - Deixe o F12 em: 720px */
-/* 14 - Deixe o F12 em: 752px */
-/* 15 - Telas abaixo de 320px - Deixe o F12 em: 280px */
 /* INSTITUTO ÓLIVER — Gestão de Segurança Pública e Privada */
 /* ---------- CONTAINER ---------- */
 .container {
@@ -421,102 +639,6 @@ section {
   }
   #hero {
     padding: 16px 0;
-  }
-}
-.bio {
-  background-color: #000000;
-  padding: 70px 0 0;
-  overflow: hidden;
-}
-
-.bio-inner {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-  min-height: 500px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.bio-texto {
-  flex: 0 0 50%;
-  padding-right: 32px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-}
-
-.bio-texto h3 {
-  font-size: clamp(1.3rem, 3vw, 1.9rem);
-  color: #DBAF00;
-  margin-bottom: 1rem;
-}
-
-.bio-foto-wrapper {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 55%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  z-index: 0;
-}
-
-.bio-foto-wrapper picture {
-  display: block;
-  width: 100%;
-}
-
-.bio-foto-wrapper img {
-  width: 100%;
-  display: block;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: bottom right;
-     object-position: bottom right;
-}
-
-@media (max-width: 768px) {
-  .bio {
-    padding: 10px 0 0;
-  }
-  .bio-inner {
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 0;
-    position: relative;
-  }
-  .bio-foto-wrapper {
-    order: -1;
-    width: 100%;
-    flex: none;
-    justify-content: center;
-    position: relative;
-    right: auto;
-    bottom: auto;
-    z-index: 0;
-  }
-  .bio-foto-wrapper img {
-    width: 100%;
-    max-width: 100%;
-    display: block;
-    transform: none;
-    transform-origin: unset;
-  }
-  .bio-texto {
-    flex: none;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    margin-top: -45%;
-    padding: 20px 20px 30px;
-    box-sizing: border-box;
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
   }
 }
 /* ============================================================
@@ -938,9 +1060,105 @@ section {
   z-index: 1000;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
+.bio {
+  background-color: #000000;
+  padding: 70px 0 0;
+  overflow: hidden;
+}
+
+.bio-inner {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bio-texto {
+  flex: 0 0 50%;
+  padding-right: 32px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.bio-texto h3 {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  color: #DBAF00;
+  margin-bottom: 1rem;
+}
+
+.bio-foto-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 0;
+}
+
+.bio-foto-wrapper picture {
+  display: block;
+  width: 100%;
+}
+
+.bio-foto-wrapper img {
+  width: 100%;
+  display: block;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: bottom right;
+     object-position: bottom right;
+}
+
+@media (max-width: 768px) {
+  .bio {
+    padding: 10px 0 0;
+  }
+  .bio-inner {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0;
+    position: relative;
+  }
+  .bio-foto-wrapper {
+    order: -1;
+    width: 100%;
+    flex: none;
+    justify-content: center;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    z-index: 0;
+  }
+  .bio-foto-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    transform: none;
+    transform-origin: unset;
+  }
+  .bio-texto {
+    flex: none;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: -45%;
+    padding: 20px 20px 30px;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.88) 15%, #000000 35%);
+  }
+}
+/* ==========================================================================
+   FOOTER - CONFIGURAÇÃO BASE (ESTILO GLOBAL / DESKTOP PRIMEIRAMENTE)
+   ========================================================================== */
 footer {
   background-color: #000000;
   border-top: 2px solid #C9A84C;
@@ -967,6 +1185,7 @@ footer {
 
 .footer-col-logo img {
   max-width: 160px;
+  width: 100%;
 }
 
 .footer-titulo {
@@ -1038,8 +1257,34 @@ footer {
   color: #ADADAD;
 }
 
-@media (max-width: 768px) {
-  /* Footer mobile */
+/* ==========================================================================
+   CONTROLE CIRÚRGICO DO FOOTER VIA MEDIA QUERIES
+   ========================================================================== */
+/* 18 - Telas Ultra-Largas - Acima de 1440px */
+@media (min-width: 1441px) {
+  .footer-grid {
+    gap: 50px;
+  }
+  .footer-titulo {
+    font-size: 0.95rem;
+  }
+  .footer-links a {
+    font-size: 0.95rem;
+  }
+}
+/* 17 - Notebooks e Desktops Padrão - Deixe o F12 em: 1366px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* Mantém os padrões do código base */
+}
+/* 16 - Tablets e Telas Médias - Deixe o F12 em: 992px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 24px;
+  }
+}
+/* 14 - Deixe o F12 em: 752px */
+@media (min-width: 737px) and (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1049,15 +1294,229 @@ footer {
     text-align: left;
   }
 }
-/* ============================================================
-   RESPONSIVO — Tablet
-   ============================================================ */
-@media (min-width: 640px) and (max-width: 1023px) {
+/* 13 - Deixe o F12 em: 720px */
+@media (min-width: 705px) and (max-width: 736px) {
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
   .footer-col-logo {
-    grid-column: 1/-1;
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+/* 12 - Deixe o F12 em: 688px */
+@media (min-width: 673px) and (max-width: 704px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+/* 11 - Deixe o F12 em: 656px */
+@media (min-width: 641px) and (max-width: 672px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+/* 10 - Deixe o F12 em: 624px */
+@media (min-width: 609px) and (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-top {
+    padding: 45px 0 30px;
+  }
+}
+/* 9 - Deixe o F12 em: 592px */
+@media (min-width: 577px) and (max-width: 608px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+/* 8 - Deixe o F12 em: 560px */
+@media (min-width: 545px) and (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-col-logo img {
+    max-width: 150px;
+  }
+}
+/* 7 - Deixe o F12 em: 528px */
+@media (min-width: 513px) and (max-width: 544px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+/* 6 - Deixe o F12 em: 496px */
+@media (min-width: 481px) and (max-width: 512px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-top {
+    padding: 40px 0 26px;
+  }
+}
+/* 5 - Deixe o F12 em: 464px */
+@media (min-width: 449px) and (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-titulo {
+    font-size: 0.82rem;
+    margin-bottom: 12px;
+  }
+}
+/* 4 - Deixe o F12 em: 432px */
+@media (min-width: 417px) and (max-width: 448px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-col-logo img {
+    max-width: 140px;
+  }
+  .footer-links a {
+    font-size: 0.82rem;
+  }
+}
+/* 3 - Deixe o F12 em: 400px */
+@media (min-width: 385px) and (max-width: 416px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-aviso {
+    font-size: 0.75rem;
+  }
+  .footer-dados li {
+    font-size: 0.75rem;
+  }
+}
+/* 2 - Deixe o F12 em: 368px */
+@media (min-width: 353px) and (max-width: 384px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-titulo {
+    font-size: 0.8rem;
+  }
+  .footer-top {
+    padding: 35px 0 22px;
+  }
+}
+/* 1 - Deixe o F12 em: 336px */
+@media (min-width: 320px) and (max-width: 352px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-col-logo img {
+    max-width: 130px;
+  }
+  .footer-titulo {
+    font-size: 0.78rem;
+  }
+  .footer-aviso {
+    font-size: 0.72rem;
+  }
+  .footer-dados li {
+    font-size: 0.72rem;
+  }
+  .footer-links a {
+    font-size: 0.78rem;
+  }
+}
+/* 15 - Telas abaixo de 320px - Deixe o F12 em: 280px */
+@media (max-width: 319px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .footer-col-logo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-col-logo img {
+    max-width: 120px;
+  }
+  .footer-titulo {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+  }
+  .footer-aviso {
+    font-size: 0.7rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .footer-dados li {
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+  .footer-links a {
+    font-size: 0.75rem;
+  }
+  .footer-top {
+    padding: 30px 0 20px;
+  }
+  .footer-bottom {
+    padding: 15px 0;
   }
 }/*# sourceMappingURL=style.css.map */

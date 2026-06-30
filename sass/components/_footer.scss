@@ -1,6 +1,6 @@
-/* ============================================================
-   FOOTER
-   ============================================================ */
+/* ==========================================================================
+   FOOTER - CONFIGURAÇÃO BASE (ESTILO GLOBAL / DESKTOP PRIMEIRAMENTE)
+   ========================================================================== */
 footer {
     background-color: #000000;
     border-top: 2px solid #C9A84C;
@@ -27,6 +27,7 @@ footer {
 
 .footer-col-logo img {
     max-width: 160px;
+    width: 100%;
 }
 
 .footer-titulo {
@@ -98,29 +99,135 @@ footer {
     color: #ADADAD;
 }
 
-@media (max-width: 768px){
-        /* Footer mobile */
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
+/* ==========================================================================
+   CONTROLE CIRÚRGICO DO FOOTER VIA MEDIA QUERIES
+   ========================================================================== */
 
-    .footer-col-logo {
-        align-items: flex-start;
-        text-align: left;
-    }
+/* 18 - Telas Ultra-Largas - Acima de 1440px */
+@media (min-width: 1441px) {
+    .footer-grid { gap: 50px; }
+    .footer-titulo { font-size: 0.95rem; }
+    .footer-links a { font-size: 0.95rem; }
 }
 
-/* ============================================================
-   RESPONSIVO — Tablet
-   ============================================================ */
-@media (min-width: 640px) and (max-width: 1023px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+/* 17 - Notebooks e Desktops Padrão - Deixe o F12 em: 1366px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* Mantém os padrões do código base */
+}
 
-    .footer-col-logo {
-        grid-column: 1 / -1;
-        align-items: center;
-    }
+/* 16 - Tablets e Telas Médias - Deixe o F12 em: 992px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1.5fr 1fr; gap: 24px; }
+}
+
+/* 14 - Deixe o F12 em: 752px */
+@media (min-width: 737px) and (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+}
+
+/* 13 - Deixe o F12 em: 720px */
+@media (min-width: 705px) and (max-width: 736px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+}
+
+/* 12 - Deixe o F12 em: 688px */
+@media (min-width: 673px) and (max-width: 704px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+}
+
+/* 11 - Deixe o F12 em: 656px */
+@media (min-width: 641px) and (max-width: 672px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+}
+
+/* 10 - Deixe o F12 em: 624px */
+@media (min-width: 609px) and (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-top { padding: 45px 0 30px; }
+}
+
+/* 9 - Deixe o F12 em: 592px */
+@media (min-width: 577px) and (max-width: 608px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+}
+
+/* 8 - Deixe o F12 em: 560px */
+@media (min-width: 545px) and (max-width: 576px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-col-logo img { max-width: 150px; }
+}
+
+/* 7 - Deixe o F12 em: 528px */
+@media (min-width: 513px) and (max-width: 544px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+}
+
+/* 6 - Deixe o F12 em: 496px */
+@media (min-width: 481px) and (max-width: 512px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-top { padding: 40px 0 26px; }
+}
+
+/* 5 - Deixe o F12 em: 464px */
+@media (min-width: 449px) and (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-titulo { font-size: 0.82rem; margin-bottom: 12px; }
+}
+
+/* 4 - Deixe o F12 em: 432px */
+@media (min-width: 417px) and (max-width: 448px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-col-logo img { max-width: 140px; }
+    .footer-links a { font-size: 0.82rem; }
+}
+
+/* 3 - Deixe o F12 em: 400px */
+@media (min-width: 385px) and (max-width: 416px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-aviso { font-size: 0.75rem; }
+    .footer-dados li { font-size: 0.75rem; }
+}
+
+/* 2 - Deixe o F12 em: 368px */
+@media (min-width: 353px) and (max-width: 384px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-titulo { font-size: 0.8rem; }
+    .footer-top { padding: 35px 0 22px; }
+}
+
+/* 1 - Deixe o F12 em: 336px */
+@media (min-width: 320px) and (max-width: 352px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-col-logo img { max-width: 130px; }
+    .footer-titulo { font-size: 0.78rem; }
+    .footer-aviso { font-size: 0.72rem; }
+    .footer-dados li { font-size: 0.72rem; }
+    .footer-links a { font-size: 0.78rem; }
+}
+
+/* 15 - Telas abaixo de 320px - Deixe o F12 em: 280px */
+@media (max-width: 319px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 18px; }
+    .footer-col-logo { align-items: flex-start; text-align: left; }
+    .footer-col-logo img { max-width: 120px; }
+    .footer-titulo { font-size: 0.75rem; margin-bottom: 10px; padding-bottom: 6px; }
+    .footer-aviso { font-size: 0.7rem; line-height: 1.6; margin-bottom: 12px; }
+    .footer-dados li { font-size: 0.7rem; gap: 4px; }
+    .footer-links a { font-size: 0.75rem; }
+    .footer-top { padding: 30px 0 20px; }
+    .footer-bottom { padding: 15px 0; }
 }

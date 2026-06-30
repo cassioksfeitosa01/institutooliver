@@ -1,14 +1,13 @@
 // Pasta BASE
 @use 'base/reset';
-@use 'base/global';
+@use 'base/fonte';
 @use 'base/botao-padrao';
 
 // Pasta PAGES
-@use 'pages/home';
 @use 'pages/venda-cursos-superiores';
 
 // Pasta COMPONENTS
-@use 'components/mateus-oliver';
 @use 'components/depoimentos-videos';
 @use 'components/depoimentos-fotos';
+@use 'components/mateus-oliver';
 @use 'components/footer';
