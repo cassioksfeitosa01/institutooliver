@@ -640,7 +640,7 @@ section {
    ============================================================ */
 #pricing {
   background-color: #000000;
-  padding: 70px 0;
+  padding: 20px 0; /* 60px de espaço em cima e 60px embaixo. Fica simétrico no PC! */
 }
 
 #pricing h2 {
@@ -697,7 +697,7 @@ section {
    ============================================================ */
 #faq {
   background-color: #050505;
-  padding: 70px 0;
+  padding: 20px 0; /* 60px de espaço em cima e 60px embaixo. Fica simétrico no PC! */
 }
 
 #faq h2 {
@@ -760,6 +760,7 @@ section {
   #pricing .pricing-row {
     flex-direction: column;
     align-items: center;
+    padding: 20px 0; /* 60px de espaço em cima e 60px embaixo. Fica simétrico no PC! */
   }
   #hero {
     padding: 16px 0;
@@ -863,7 +864,7 @@ body.curso-de-nivel-superiores .subtitulo {
    ============================================================ */
 .slider-section {
   background-color: #000000;
-  padding: 36px 0 30px;
+  padding: 20px 0; /* 60px de espaço em cima e 60px embaixo. Fica simétrico no PC! */
   overflow: hidden;
 }
 
@@ -1139,7 +1140,7 @@ body.curso-de-nivel-superiores .subtitulo {
    ========================================================================== */
 .bio {
   background-color: #000000;
-  padding: 70px 0 0;
+  padding: 20px 0; /* 60px de espaço em cima e 60px embaixo. Fica simétrico no PC! */
   overflow: hidden;
 }
 
