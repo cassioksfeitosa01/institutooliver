@@ -2,16 +2,13 @@
    VARIAVEIS DE DESIGN (Configuração Centralizada)
    ========================================================================== */
 :root {
-    /* Cores */
     --cor-dourado: #DBAF00;
     --cor-branco: #FFFFFF;
     --cor-cinza: #ADADAD;
 
-    /* Fonte Montserrat (Importada no HTML) */
     --font-principal: 'Montserrat', sans-serif;
     
-    /* Escala Tipográfica Fluida (Min, Ideal, Max) */
-    /* Ajustei o H1 para não ficar exagerado em telas grandes */
+    /* Escala Tipográfica Fluida */
     --font-h1: clamp(1.8rem, 4.5vw, 3rem); 
     --font-h2: clamp(1.5rem, 3.5vw, 2.2rem);
     --font-h3: clamp(1.1rem, 2.5vw, 1.5rem);
@@ -19,7 +16,7 @@
 }
 
 /* ==========================================================================
-   RESET & BASE (Aplicação Global da Montserrat)
+   RESET & BASE (Tipografia Geral)
    ========================================================================== */
 * {
     margin: 0;
@@ -29,8 +26,7 @@
 
 body {
     font-family: var(--font-principal);
-    -webkit-font-smoothing: antialiased; /* Deixa a Montserrat mais nítida */
-    background-color: #000; /* Assumi fundo preto pelo contraste das cores */
+    -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, p {
@@ -40,15 +36,15 @@ h1, h2, h3, p {
 
 h1 {
     font-size: var(--font-h1);
-    font-weight: 800; /* Peso extra negrito para H1 */
+    font-weight: 800; /* Extra bold da Montserrat */
     line-height: 1.1;
-    letter-spacing: -0.8px; /* Montserrat fica elegante com letras juntas no H1 */
-    color: var(--cor-dourado);
+    letter-spacing: -0.8px;
+    /* Removi a cor fixa do H1 para ele aceitar as cores dos SPANS dentro dele */
 }
 
 h2 {
     font-size: var(--font-h2);
-    font-weight: 700; /* Negrito padrão */
+    font-weight: 700;
     line-height: 1.2;
     color: var(--cor-dourado);
 }
@@ -63,17 +59,38 @@ p {
     font-size: var(--font-p);
     color: var(--cor-cinza);
     line-height: 1.6;
-    font-weight: 400; /* Peso normal */
+    font-weight: 400;
 }
 
 /* ==========================================================================
-   UTILITÁRIOS (Cores rápidas)
+   CLASSES DE COR (Para funcionar com seu HTML)
    ========================================================================== */
-.text-dourado { color: var(--cor-dourado) !important; }
-.text-branco  { color: var(--cor-branco) !important; }
+.h1-dourado, .text-dourado { 
+    color: var(--cor-dourado) !important; 
+}
+
+.h1-branco, .text-branco { 
+    color: var(--cor-branco) !important; 
+}
+
+.h2-dourado, .text-dourado { 
+    color: var(--cor-dourado) !important; 
+}
+
+.h2-branco, .text-branco { 
+    color: var(--cor-branco) !important; 
+}
+
+.h3-dourado, .text-dourado { 
+    color: var(--cor-dourado) !important; 
+}
+
+.h3-branco, .text-branco { 
+    color: var(--cor-branco) !important; 
+}
 
 /* ==========================================================================
-   GAVETAS DE RESPONSIVIDADE (Ajustes de Mercado)
+   GAVETAS DE RESPONSIVIDADE
    ========================================================================== */
 
 /* --- TABLETS E INTERMEDIÁRIOS (Acima de 768px) --- */
@@ -84,9 +101,8 @@ p {
 
 /* --- DESKTOPS (Acima de 1200px) --- */
 @media (min-width: 1200px) {
-    /* Limita a largura do H1 para não ocupar a tela toda de forma exagerada */
     h1 { 
-        max-width: 80%; 
+        max-width: 1000px; /* Evita que o título estique demais para os lados */
         line-height: 1.2;
     } 
 }
