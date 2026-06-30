@@ -6,7 +6,8 @@ section {
 }
 
 /* Controla a caixa que segura todo o bloco da foto */
-.caixa-imagem, .caixa-imagem picture {
+.caixa-imagem,
+.caixa-imagem picture {
   display: block;
   width: 100%;
   height: auto;
@@ -22,55 +23,59 @@ section {
 /* Faz o texto flutuar em cima da imagem */
 .caixa-texto {
   position: absolute;
-  padding: 0 20px;   /* Cria uma barreira de 20px nas laterais para o texto não encostar */
-  z-index: 2; /* Garante que o texto fique por cima de tudo */
-  text-align: center; /* Centraliza as linhas de texto */
-  top: 50%;
+  padding: 0 20px;
+  /* Cria uma barreira de 20px nas laterais para o texto não encostar */
+  z-index: 2;
+  /* Garante que o texto fique por cima de tudo */
+  text-align: left;
+  /* Centraliza as linhas de texto */
+  top: 25%;
+  max-inline-size: 45%;
+  /* Limita o tamanho em 50% */
 }
 
+#inicio .caixa-texto {
+  max-inline-size: 40%;
+  /* Limita o tamanho em 50% */
+}
 
-  
-/* 1 - Deixe o F12 em: 336px */
-@media (min-width: 320px) and (max-width: 352px) {}
+#cursos-superiores .caixa-texto {
+  margin-left: 50%;
+  /* Empurra o início do bloco para o meio da tela */
+  top: 10%;
+}
 
-/* 2 - Deixe o F12 em: 368px */
-@media (min-width: 353px) and (max-width: 384px) {}
+#curso-gestao-de-seguranca-publica-e-privada .caixa-texto {
+  top: 15%;
+  max-inline-size: 50%;
+  /* Limita o tamanho em 50% */
+}
 
-/* 3 - Deixe o F12 em: 400px */
-@media (min-width: 385px) and (max-width: 416px) {}
+#curso-eja-ensino-de-jovens-e-adultos .caixa-texto {
+  margin-left: 55%;
+  /* Empurra o início do bloco para o meio da tela */
+  top: 5%;
+  max-inline-size: 50%;/* Limita o tamanho em 50% */
+}
 
-/* 4 - Deixe o F12 em: 432px */
-@media (min-width: 417px) and (max-width: 448px) {}
+#carreiras-policiais .caixa-texto {
+  top: 5%;
+  max-inline-size: 50%;/* Limita o tamanho em 50% */
+}
 
-/* 5 - Deixe o F12 em: 464px */
-@media (min-width: 449px) and (max-width: 480px) {}
+#bombeiro-militar .caixa-texto {
+    margin-left: 55%;
+  /* Empurra o início do bloco para o meio da tela */
+  top: 15%;
+}
 
-/* 6 - Deixe o F12 em: 496px */
-@media (min-width: 481px) and (max-width: 512px) {}
+#guarda-municipal .caixa-texto {
+  max-inline-size: 50%;/* Limita o tamanho em 50% */
+  top: 8%;
+}
 
-/* 7 - Deixe o F12 em: 528px */
-@media (min-width: 513px) and (max-width: 544px) {}
-
-/* 8 - Deixe o F12 em: 560px */
-@media (min-width: 545px) and (max-width: 576px) {}
-
-/* 9 - Deixe o F12 em: 592px */
-@media (min-width: 577px) and (max-width: 608px) {}
-
-/* 10 - Deixe o F12 em: 624px */
-@media (min-width: 609px) and (max-width: 640px) {}
-
-/* 11 - Deixe o F12 em: 656px */
-@media (min-width: 641px) and (max-width: 672px) {}
-
-/* 12 - Deixe o F12 em: 688px */
-@media (min-width: 673px) and (max-width: 704px) {}
-
-/* 13 - Deixe o F12 em: 720px */
-@media (min-width: 705px) and (max-width: 736px) {}
-
-/* 14 - Deixe o F12 em: 752px */
-@media (min-width: 737px) and (max-width: 768px) {}
-
-/* 15 - Telas abaixo de 320px - Deixe o F12 em: 280px */
-@media (max-width: 319px) {}
+#outros-cursos .caixa-texto {
+    margin-left: 50%;
+  /* Empurra o início do bloco para o meio da tela */
+  top: 8%;
+}
