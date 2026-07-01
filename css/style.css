@@ -24,9 +24,9 @@ body {
   --cor-cinza: #ADADAD;
   --font-principal: 'Montserrat', sans-serif;
   /* Escala Tipográfica Fluida */
-  --font-h1: clamp(1.8rem, 4.5vw, 3rem);
-  --font-h2: clamp(1.5rem, 3.5vw, 2.2rem);
-  --font-h3: clamp(1.1rem, 2.5vw, 1.5rem);
+  --font-h1: clamp(1.5rem, 3vw, 2.2rem);
+  --font-h2: clamp(1.25rem, 2.5vw, 1.8rem);
+  --font-h3: clamp(1.1rem, 2vw, 1.4rem);
   --font-p: clamp(0.95rem, 1vw, 1.05rem);
 }
 
@@ -51,9 +51,9 @@ h1, h2, h3, p {
 
 h1 {
   font-size: var(--font-h1);
-  font-weight: 800; /* Extra bold da Montserrat */
-  line-height: 1.1;
-  letter-spacing: -0.8px;
+  font-weight: 700; /* Bold da Montserrat */
+  line-height: 1.3;
+  letter-spacing: -0.5px;
 }
 
 h2 {
@@ -119,26 +119,26 @@ p {
 @media (min-width: 1200px) {
   h1 {
     max-width: 1000px; /* Evita que o título estique demais para os lados */
-    line-height: 1.2;
+    line-height: 1.3;
   }
 }
 /* --- TRAVA DE SEGURANÇA: CELULAR DEITADO (LANDSCAPE) --- */
 @media (orientation: landscape) and (max-height: 500px) {
   :root {
-    --font-h1: 1.7rem;
-    --font-h2: 1.4rem;
-    --font-h3: 1.1rem;
+    --font-h1: 1.4rem;
+    --font-h2: 1.2rem;
+    --font-h3: 1.05rem;
     --font-p: 0.9rem;
   }
   h1, h2 {
     margin-bottom: 0.5rem;
-    line-height: 1;
+    line-height: 1.2;
   }
 }
 /* --- AJUSTE PARA TELAS "MINI" (Abaixo de 350px) --- */
 @media (max-width: 350px) {
   :root {
-    --font-h1: 1.5rem;
+    --font-h1: 1.3rem;
     --font-p: 0.85rem;
   }
 }
